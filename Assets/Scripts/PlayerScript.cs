@@ -14,8 +14,9 @@ public class PlayerScript : MonoBehaviour
 
     public GameObject obj;
 
+
     
-    float moving_speed = 3.0f;
+    float moving_speed = 2.0f;
 
 
 
@@ -30,6 +31,8 @@ public class PlayerScript : MonoBehaviour
 
 
         this.speed = 5.0f;
+
+
     }
 
     // Update is called once per frame
@@ -41,37 +44,37 @@ public class PlayerScript : MonoBehaviour
 
 
 
-        //Debug.Log(x_pos);
-
+        /*
         x_pos = transform.position.x;
         y_pos = transform.position.y;
 
-        /*
 
-        if (Input.GetKeyDown(KeyCode.Space))
+
+
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            Debug.Log("HI");
-        }
-        else if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            Debug.Log("left");
-            x_diff = -speed*Time.deltaTime;
+            //Debug.Log("left");
+            x_diff = -speed * Time.deltaTime;
+
         }
         else if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            Debug.Log("right");
-            x_diff = speed*Time.deltaTime;
-        }
-        else if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            Debug.Log("up");
+            //Debug.Log("right");
+            x_diff = speed * Time.deltaTime;
+
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            Debug.Log("down");
-        }
+            x_diff = 0;
+        else if (Input.GetKeyDown(KeyCode.UpArrow))
+            transform.Translate(Vector3.up * this.moving_speed * Time.fixedDeltaTime * keyVertical, Space.World);
+
+        transform.Translate(x_diff, y_diff, 0.0f);
+
+
+
+        //Debug.Log(x_pos);
         */
-        //  transform.Translate(x_diff, y_diff, 0.0f);
+
     }
 
     void my_shoot()
@@ -87,7 +90,7 @@ public class PlayerScript : MonoBehaviour
 
     
 
-
+    
     void my_translation()
     {
 
@@ -99,6 +102,18 @@ public class PlayerScript : MonoBehaviour
 
         transform.Translate(Vector3.right * this.moving_speed * Time.fixedDeltaTime * keyHorizontal, Space.World);
 
+
+
+
+
         transform.Translate(Vector3.up * this.moving_speed * Time.fixedDeltaTime * keyVertical, Space.World);
+    }
+    
+     void OnTriggerEnter(Collider col)
+    {
+        if(col.tag == "Portal")
+        {
+            Debug.Log("Hi");
+        }
     }
 }
