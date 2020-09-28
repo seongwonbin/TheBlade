@@ -14,8 +14,8 @@ public class PlayerScript : MonoBehaviour
 
     public GameObject obj;
 
-    float rot_speed = 10.0f;
-    float moving_speed = 10.0f;
+    
+    float moving_speed = 3.0f;
 
 
 
@@ -36,7 +36,6 @@ public class PlayerScript : MonoBehaviour
     void Update()
     {
         my_translation();
-        //my_rotation();
         my_shoot();
 
 
@@ -86,24 +85,7 @@ public class PlayerScript : MonoBehaviour
 
     }
 
-
-    void my_rotation()
-    {
-
-
-        float h = Input.GetAxis("Horizontal");
-        float v = Input.GetAxis("Vertical");
-
-
-
-        h = h * this.rot_speed * Time.deltaTime;
-        v = v * this.rot_speed * Time.deltaTime;
-
-
-        transform.Rotate(Vector3.back * h);
-        transform.Rotate(Vector3.right * v);
-
-    }
+    
 
 
     void my_translation()
@@ -115,8 +97,8 @@ public class PlayerScript : MonoBehaviour
         float keyHorizontal = Input.GetAxis("Horizontal");
         float keyVertical = Input.GetAxis("Vertical");
 
-        transform.Translate(Vector3.right * this.moving_speed * Time.smoothDeltaTime * keyHorizontal, Space.World);
+        transform.Translate(Vector3.right * this.moving_speed * Time.fixedDeltaTime * keyHorizontal, Space.World);
 
-        transform.Translate(Vector3.up * this.moving_speed * Time.smoothDeltaTime * keyVertical, Space.World);
+        transform.Translate(Vector3.up * this.moving_speed * Time.fixedDeltaTime * keyVertical, Space.World);
     }
 }
