@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
 {
+
+    /*
     public float speed;
 
     private float x_diff;
@@ -11,19 +13,21 @@ public class PlayerScript : MonoBehaviour
 
     private float x_pos;
     private float y_pos;
+    */
 
     public GameObject obj;
     public GameObject obj2;
 
 
 
-    float moving_speed = 2.0f;
+    //float moving_speed = 2.0f;
 
 
 
     // Start is called before the first frame update
     void Start()
     {
+        /*
         this.x_diff = 0.0f;
         this.y_diff = 0.0f;
 
@@ -32,7 +36,7 @@ public class PlayerScript : MonoBehaviour
 
 
         this.speed = 5.0f;
-
+        */
 
     }
 

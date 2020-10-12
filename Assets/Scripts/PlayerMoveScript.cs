@@ -39,8 +39,10 @@ public class PlayerMoveScript : MonoBehaviour
 
     void Move ()
     {
+        //Vector3.zero == Vector3(0,0,0)
         Vector3 moveVelocity = Vector3.zero;
 
+        //유니티 내부 Input Horizontal 반영된 값
         if (Input.GetAxisRaw("Horizontal") < 0)
         { 
             moveVelocity = Vector3.left;
@@ -63,6 +65,9 @@ public class PlayerMoveScript : MonoBehaviour
         rigid.velocity = Vector2.zero;
 
         Vector2 jumpVelocity = new Vector2(0, jumpPower);
+
+        // AddForce 일정량 힘을 가하는 함수
+        // ForceMode  // .Force 연속적인 힘 .Impulse 순간적인 힘 (질량적용)
         rigid.AddForce(jumpVelocity, ForceMode2D.Impulse);
 
         isJumping = false;
