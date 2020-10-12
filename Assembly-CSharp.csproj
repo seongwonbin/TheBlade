@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\PlayerMoveScript.cs" />
     <Compile Include="Assets\Scripts\PlayerScript.cs" />
     <Compile Include="Assets\Scripts\PortalScript.cs" />
+    <Compile Include="Assets\Scripts\ShootingMetLeftSc.cs" />
     <Compile Include="Assets\Scripts\ShootingMetSc.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/UnityProject/FinalProject/FinalProject/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>

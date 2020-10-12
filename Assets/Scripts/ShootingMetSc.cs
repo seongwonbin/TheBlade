@@ -16,7 +16,7 @@ public class ShootingMetSc : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-            transform.Translate(movingMet, 0, 0);
+        transform.Translate(movingMet, 0, 0);
 
         movingMet += 0.02f;
 

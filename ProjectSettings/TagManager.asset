@@ -52,3 +52,6 @@ TagManager:
   - name: BackGround
     uniqueID: 2864615499
     locked: 0
+  - name: UI Canvas
+    uniqueID: 1557190687
+    locked: 0

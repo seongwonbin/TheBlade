@@ -13,9 +13,10 @@ public class PlayerScript : MonoBehaviour
     private float y_pos;
 
     public GameObject obj;
+    public GameObject obj2;
 
 
-    
+
     float moving_speed = 2.0f;
 
 
@@ -38,7 +39,7 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        my_translation();
+
         my_shoot();
 
 
@@ -79,9 +80,16 @@ public class PlayerScript : MonoBehaviour
 
     void my_shoot()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.X) & (PlayerMoveScript.spr.flipX == false))
         {
-            Instantiate(obj, new Vector3(transform.position.x, transform.position.y, transform.position.z),
+            Instantiate(obj, new Vector3(transform.position.x+0.5f, transform.position.y, transform.position.z),
+            Quaternion.identity);
+
+        }
+
+        else if (Input.GetKeyDown(KeyCode.X) & (PlayerMoveScript.spr.flipX == true))
+        {
+            Instantiate(obj2, new Vector3(transform.position.x, transform.position.y, transform.position.z),
             Quaternion.identity);
 
         }
@@ -91,29 +99,5 @@ public class PlayerScript : MonoBehaviour
     
 
     
-    void my_translation()
-    {
 
-        float speed;
-
-
-        float keyHorizontal = Input.GetAxis("Horizontal");
-        float keyVertical = Input.GetAxis("Vertical");
-
-        transform.Translate(Vector3.right * this.moving_speed * Time.fixedDeltaTime * keyHorizontal, Space.World);
-
-
-
-
-
-        transform.Translate(Vector3.up * this.moving_speed * Time.fixedDeltaTime * keyVertical, Space.World);
-    }
-    
-     void OnTriggerEnter(Collider col)
-    {
-        if(col.tag == "Portal")
-        {
-            Debug.Log("Hi");
-        }
-    }
 }

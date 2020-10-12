@@ -13,10 +13,14 @@ public class PlayerMoveScript : MonoBehaviour
     Vector3 movement;
     bool isJumping = false;
 
+    static public SpriteRenderer spr;
+ 
+
     // Start is called before the first frame update
     void Start()
     {
         rigid = gameObject.GetComponent<Rigidbody2D>();
+        spr = gameObject.GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -30,6 +34,7 @@ public class PlayerMoveScript : MonoBehaviour
     {
         Move();
         Jump();
+
     }
 
     void Move ()
@@ -37,11 +42,16 @@ public class PlayerMoveScript : MonoBehaviour
         Vector3 moveVelocity = Vector3.zero;
 
         if (Input.GetAxisRaw("Horizontal") < 0)
+        { 
             moveVelocity = Vector3.left;
+            spr.flipX = true;
+        }
 
         else if (Input.GetAxisRaw("Horizontal") > 0)
+        { 
             moveVelocity = Vector3.right;
-
+            spr.flipX = false;
+        }
         transform.position += moveVelocity * movePower * Time.deltaTime;
     }
 
@@ -57,6 +67,7 @@ public class PlayerMoveScript : MonoBehaviour
 
         isJumping = false;
     }
+
 
 
 }
