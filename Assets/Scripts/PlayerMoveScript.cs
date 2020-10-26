@@ -32,9 +32,12 @@ public class PlayerMoveScript : MonoBehaviour
     void Update()
     {
         if (Input.GetButtonDown("Jump"))
+        { 
             isJumping = true;
+            animator.SetBool("isJumping", true);
+        }
 
- 
+       
     }
 
     private void FixedUpdate()
@@ -54,6 +57,8 @@ public class PlayerMoveScript : MonoBehaviour
     {
         //Vector3.zero == Vector3(0,0,0)
         Vector3 moveVelocity = Vector3.zero;
+
+        //animator.SetBool("isFalling", false);
 
         //유니티 내부 Input Horizontal 반영된 값
         if (Input.GetAxisRaw("Horizontal") < 0)
@@ -86,6 +91,9 @@ public class PlayerMoveScript : MonoBehaviour
         rigid.AddForce(jumpVelocity, ForceMode2D.Impulse);
 
         isJumping = false;
+        animator.SetBool("isJumping", false);
+        //animator.SetBool("isFalling", true);
+
     }
 
 
