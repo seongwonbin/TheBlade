@@ -14,13 +14,18 @@ public class PlayerMoveScript : MonoBehaviour
     bool isJumping = false;
 
     static public SpriteRenderer spr;
- 
+
+    // static public bool isMoving = false;
+
+
+    protected Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
         rigid = gameObject.GetComponent<Rigidbody2D>();
         spr = gameObject.GetComponent<SpriteRenderer>();
+        animator = gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -28,12 +33,20 @@ public class PlayerMoveScript : MonoBehaviour
     {
         if (Input.GetButtonDown("Jump"))
             isJumping = true;
+
+ 
     }
 
     private void FixedUpdate()
     {
         Move();
         Jump();
+
+        if (Input.GetAxisRaw("Horizontal") != 0)
+            animator.SetBool("isMoving", true);
+        else
+            animator.SetBool("isMoving", false);
+       
 
     }
 
@@ -55,6 +68,8 @@ public class PlayerMoveScript : MonoBehaviour
             spr.flipX = false;
         }
         transform.position += moveVelocity * movePower * Time.deltaTime;
+
+       
     }
 
     void Jump()
