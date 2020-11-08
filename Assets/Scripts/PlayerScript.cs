@@ -18,7 +18,7 @@ public class PlayerScript : MonoBehaviour
     public GameObject obj;
     public GameObject obj2;
 
-
+    protected Animator animator;
 
     //float moving_speed = 2.0f;
 
@@ -37,7 +37,7 @@ public class PlayerScript : MonoBehaviour
 
         this.speed = 5.0f;
         */
-
+        animator = gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -46,7 +46,7 @@ public class PlayerScript : MonoBehaviour
 
         my_shoot();
 
-
+        BasicAttack1();
 
 
         /*
@@ -81,6 +81,14 @@ public class PlayerScript : MonoBehaviour
         */
 
     }
+
+    void BasicAttack1()
+    {
+        if (Input.GetKeyDown(KeyCode.Z))
+            animator.SetTrigger("isAttack2");
+
+    }
+
 
     void my_shoot()
     {

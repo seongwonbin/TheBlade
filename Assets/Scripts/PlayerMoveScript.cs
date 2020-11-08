@@ -15,9 +15,6 @@ public class PlayerMoveScript : MonoBehaviour
 
     static public SpriteRenderer spr;
 
-    // static public bool isMoving = false;
-
-
     protected Animator animator;
 
     // Start is called before the first frame update
@@ -36,8 +33,6 @@ public class PlayerMoveScript : MonoBehaviour
             isJumping = true;
             animator.SetBool("isJumping", true);
         }
-
-       
     }
 
     private void FixedUpdate()
@@ -55,10 +50,10 @@ public class PlayerMoveScript : MonoBehaviour
 
     void Move ()
     {
-        //Vector3.zero == Vector3(0,0,0)
+        // Vector3.zero == Vector3(0,0,0) // .zero는 0,0,0과 같음
         Vector3 moveVelocity = Vector3.zero;
 
-        //animator.SetBool("isFalling", false);
+      
 
         //유니티 내부 Input Horizontal 반영된 값
         if (Input.GetAxisRaw("Horizontal") < 0)
@@ -92,7 +87,7 @@ public class PlayerMoveScript : MonoBehaviour
 
         isJumping = false;
         animator.SetBool("isJumping", false);
-        //animator.SetBool("isFalling", true);
+      
 
     }
 
