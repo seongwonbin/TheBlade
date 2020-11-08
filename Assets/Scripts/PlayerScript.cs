@@ -5,38 +5,16 @@ using UnityEngine;
 public class PlayerScript : MonoBehaviour
 {
 
-    /*
-    public float speed;
-
-    private float x_diff;
-    private float y_diff;
-
-    private float x_pos;
-    private float y_pos;
-    */
 
     public GameObject obj;
     public GameObject obj2;
 
     protected Animator animator;
 
-    //float moving_speed = 2.0f;
 
-
-
-    // Start is called before the first frame update
     void Start()
     {
-        /*
-        this.x_diff = 0.0f;
-        this.y_diff = 0.0f;
 
-        this.x_pos = transform.position.x;
-        this.y_pos = transform.position.y;
-
-
-        this.speed = 5.0f;
-        */
         animator = gameObject.GetComponent<Animator>();
     }
 
@@ -47,45 +25,32 @@ public class PlayerScript : MonoBehaviour
         my_shoot();
 
         BasicAttack1();
+        BasicAttack2();
 
-
-        /*
-        x_pos = transform.position.x;
-        y_pos = transform.position.y;
-
-
-
-
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            //Debug.Log("left");
-            x_diff = -speed * Time.deltaTime;
-
-        }
-        else if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            //Debug.Log("right");
-            x_diff = speed * Time.deltaTime;
-
-        }
-        else if (Input.GetKeyDown(KeyCode.DownArrow))
-            x_diff = 0;
-        else if (Input.GetKeyDown(KeyCode.UpArrow))
-            transform.Translate(Vector3.up * this.moving_speed * Time.fixedDeltaTime * keyVertical, Space.World);
-
-        transform.Translate(x_diff, y_diff, 0.0f);
-
-
-
-        //Debug.Log(x_pos);
-        */
 
     }
 
     void BasicAttack1()
     {
         if (Input.GetKeyDown(KeyCode.Z))
-            animator.SetTrigger("isAttack2");
+        {
+            PlayerAttack1Script.playerAttack1 = true;
+            animator.SetBool("isAttack", true);
+        }
+        else
+            animator.SetBool("isAttack", false);
+
+    }
+
+    void BasicAttack2()
+    {
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            PlayerAttack2Script.playerAttack2 = true;
+            animator.SetBool("isAttack2", true);
+        }
+        else
+            animator.SetBool("isAttack2", false);
 
     }
 
