@@ -17,6 +17,11 @@ public class PlayerMoveScript : MonoBehaviour
 
     protected Animator animator;
 
+    public static bool dashIsCooltime = false;
+
+
+    public GameObject obj; // Dash CoolTimer
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,12 +33,63 @@ public class PlayerMoveScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Vector3 moveVelocity = Vector3.zero;
+
+      
+        Vector2 leftDashVelocity = new Vector2(-20, 0);
+        Vector2 rightDashVelocity = new Vector2(20, 0);
+
         if (Input.GetButtonDown("Jump"))
         { 
             isJumping = true;
             animator.SetBool("isJumping", true);
         }
+   
+
+      
+        if (Input.GetKey(KeyCode.LeftArrow) && Input.GetKeyDown(KeyCode.X))
+        {
+           
+            PlayerDashScript.playerDash = true;
+
+
+                animator.SetBool("isDash", true);
+                moveVelocity = Vector3.left;
+
+                rigid.AddForce(leftDashVelocity, ForceMode2D.Impulse);
+            
+
+
+        }        
+        else if (Input.GetKey(KeyCode.RightArrow) && Input.GetKeyDown(KeyCode.X))
+        {
+           
+
+            PlayerDashScript.playerDash = true;
+
+
+                animator.SetBool("isDash", true);
+                moveVelocity = Vector3.right;
+
+                rigid.AddForce(rightDashVelocity, ForceMode2D.Impulse);
+            
+        }
+        else
+            animator.SetBool("isDash", false);
+
+        
+
+
+        if (rigid.velocity.x > 0 && rigid.velocity.x <= 18)
+            rigid.velocity = new Vector2(0, 0);
+        if(rigid.velocity.x < 0 && rigid.velocity.x >= -18)
+            rigid.velocity = new Vector2(0, 0);
+
+
+       
+
     }
+
 
     private void FixedUpdate()
     {
@@ -47,8 +103,16 @@ public class PlayerMoveScript : MonoBehaviour
             animator.SetBool("isMoving", true);
         else
             animator.SetBool("isMoving", false);
-       
 
+
+        //must fix
+        /*
+        if (PlayerDashScript.playerDash == true && dashIsCooltime == false)
+        {
+            Instantiate(obj, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+            dashIsCooltime = true;
+        }
+        */
     }
 
     void Move ()

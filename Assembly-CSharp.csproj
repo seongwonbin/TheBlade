@@ -64,10 +64,12 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\BackgroundScript.cs" />
     <Compile Include="Assets\Scripts\CameraScript.cs" />
+    <Compile Include="Assets\Scripts\DashCoolTimerScript.cs" />
     <Compile Include="Assets\Scripts\EnemyScript.cs" />
     <Compile Include="Assets\Scripts\FrameObjectScript.cs" />
     <Compile Include="Assets\Scripts\PlayerAttack1Script.cs" />
     <Compile Include="Assets\Scripts\PlayerAttack2Script.cs" />
+    <Compile Include="Assets\Scripts\PlayerDashScript.cs" />
     <Compile Include="Assets\Scripts\PlayerMoveScript.cs" />
     <Compile Include="Assets\Scripts\PlayerScript.cs" />
     <Compile Include="Assets\Scripts\PortalScript.cs" />

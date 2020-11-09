@@ -19,6 +19,8 @@ public class PlayerScript : MonoBehaviour
     private float curTime;
     public float coolTime = 0.5f;
 
+
+
     void Start()
     {
       //  myCollider = GetComponent<Collider2D>();
@@ -30,7 +32,7 @@ public class PlayerScript : MonoBehaviour
     void Update()
     {
 
-        my_shoot();
+      //  my_shoot();
     
 
         //  colliderControl();
@@ -39,6 +41,8 @@ public class PlayerScript : MonoBehaviour
         BasicAttack2();
 
 
+
+    
     }
 
     void BasicAttack1()

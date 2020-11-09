@@ -4,7 +4,7 @@ using UnityEngine;
 
 [System.Serializable]
 struct Enemystat{
-    public float health;
+  //  public float health;
 }
 
 public class EnemyScript : MonoBehaviour
