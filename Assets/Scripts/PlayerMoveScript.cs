@@ -37,7 +37,10 @@ public class PlayerMoveScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Move();
+
+        if(PlayerAttack1Script.playerAttack1 == false && PlayerAttack2Script.playerAttack2 == false)
+            Move();
+
         Jump();
 
         if (Input.GetAxisRaw("Horizontal") != 0)

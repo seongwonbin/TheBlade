@@ -11,9 +11,17 @@ public class PlayerScript : MonoBehaviour
 
     protected Animator animator;
 
+    // public Collider2D myCollider;
+
+    public Transform pos;
+    public Vector2 boxSize;
+
+    private float curTime;
+    public float coolTime = 0.5f;
 
     void Start()
     {
+      //  myCollider = GetComponent<Collider2D>();
 
         animator = gameObject.GetComponent<Animator>();
     }
@@ -23,7 +31,10 @@ public class PlayerScript : MonoBehaviour
     {
 
         my_shoot();
+    
 
+        //  colliderControl();
+      
         BasicAttack1();
         BasicAttack2();
 
@@ -73,8 +84,12 @@ public class PlayerScript : MonoBehaviour
 
     }
 
-    
+    private void OnDrawGizmos()
+    {
+     //   Gizmos.color = Color.blue;
+     //   Gizmos.DrawWireCube(pos.position, boxSize);
+    }
 
-    
+
 
 }
