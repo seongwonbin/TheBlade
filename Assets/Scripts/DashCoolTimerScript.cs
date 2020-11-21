@@ -4,27 +4,39 @@ using UnityEngine;
 
 public class DashCoolTimerScript : MonoBehaviour
 {
+    public float timer = 0.0f;
 
-    public static float leftTime = 10.0f;
-    public float tempTime = 2.0f;
+    public float coolTime = 1.0f;
 
+    public Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
-       
+        animator = gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        leftTime -= Time.deltaTime * tempTime;
+        timer += Time.deltaTime;
 
-        if (leftTime <= 0)
+        if (timer >= coolTime)
         {
-            PlayerMoveScript.dashIsCooltime = false;
+
+            PlayerMoveScript.dashCoolTime = false;
+            //Debug.Log("스크립트까지 접근완료");
+           
+            //animator.SetBool("isDash", false);
+
             Destroy(gameObject);
+            
         }
+    }
+    private void FixedUpdate()
+    {
+    //    Debug.Log(Time.deltaTime);
+
 
     }
 }

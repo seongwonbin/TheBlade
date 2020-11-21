@@ -32,29 +32,32 @@ public class PlayerScript : MonoBehaviour
     void Update()
     {
 
-      //  my_shoot();
-    
+        //  my_shoot();
+
 
         //  colliderControl();
-      
+
+
         BasicAttack1();
         BasicAttack2();
+        
 
 
 
-    
     }
 
     void BasicAttack1()
     {
+
         if (Input.GetKeyDown(KeyCode.Z))
         {
             PlayerAttack1Script.playerAttack1 = true;
             animator.SetBool("isAttack", true);
         }
+        
         else
             animator.SetBool("isAttack", false);
-
+        
     }
 
     void BasicAttack2()
