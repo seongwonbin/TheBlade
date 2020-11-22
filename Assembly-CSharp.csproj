@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\DashCoolTimerScript.cs" />
     <Compile Include="Assets\Scripts\EnemyScript.cs" />
     <Compile Include="Assets\Scripts\FrameObjectScript.cs" />
+    <Compile Include="Assets\Scripts\LightScript.cs" />
     <Compile Include="Assets\Scripts\PlayerAttack1Script.cs" />
     <Compile Include="Assets\Scripts\PlayerAttack2Script.cs" />
     <Compile Include="Assets\Scripts\PlayerDashScript.cs" />
@@ -77,14 +78,34 @@
     <Compile Include="Assets\Scripts\ShootingMetSc.cs" />
     <Compile Include="Assets\Scripts\WorldFrameExitScript.cs" />
     <Compile Include="Assets\Scripts\WorldFrameScript.cs" />
+    <Compile Include="Assets\StarNestSkybox\Scripts\CameraScroll.cs" />
+    <Compile Include="Assets\StarNestSkybox\Scripts\SkyboxSwitcher.cs" />
+    <None Include="Assets\StarNestSkybox\StarNestSkyboxReadme.txt" />
+    <None Include="Assets\StarNestSkybox\StarNestSkybox_HSV.shader" />
+    <None Include="Assets\StarNestSkybox\StarNestSkyboxMask.shader" />
+    <None Include="Assets\StarNestSkybox\hsv.cginc" />
+    <None Include="Assets\StarNestSkybox\StarNestSkybox.shader" />
+    <None Include="Assets\StarNestSkybox\StarNest.shader" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/UnityProject/FinalProject/FinalProject/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>C:/UnityProject/FinalProject/FinalProject/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.Editor">
+      <HintPath>C:/UnityProject/FinalProject/FinalProject/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.Runtime">
+      <HintPath>C:/UnityProject/FinalProject/FinalProject/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/UnityProject/FinalProject/FinalProject/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Lightweight.Runtime">
+      <HintPath>C:/UnityProject/FinalProject/FinalProject/Library/ScriptAssemblies/Unity.RenderPipelines.Lightweight.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Lightweight.Editor">
+      <HintPath>C:/UnityProject/FinalProject/FinalProject/Library/ScriptAssemblies/Unity.RenderPipelines.Lightweight.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>C:/UnityProject/FinalProject/FinalProject/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
@@ -95,47 +116,35 @@
     <Reference Include="Unity.CollabProxy.Editor">
       <HintPath>C:/UnityProject/FinalProject/FinalProject/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Rider.Editor">
-      <HintPath>C:/UnityProject/FinalProject/FinalProject/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Sprite.Editor">
-      <HintPath>C:/UnityProject/FinalProject/FinalProject/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Tilemap.Editor">
-      <HintPath>C:/UnityProject/FinalProject/FinalProject/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/UnityProject/FinalProject/FinalProject/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.UI">
-      <HintPath>C:/UnityProject/FinalProject/FinalProject/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Core.Editor">
-      <HintPath>C:/UnityProject/FinalProject/FinalProject/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Core.Runtime">
-      <HintPath>C:/UnityProject/FinalProject/FinalProject/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Lightweight.Runtime">
-      <HintPath>C:/UnityProject/FinalProject/FinalProject/Library/ScriptAssemblies/Unity.RenderPipelines.Lightweight.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Lightweight.Editor">
-      <HintPath>C:/UnityProject/FinalProject/FinalProject/Library/ScriptAssemblies/Unity.RenderPipelines.Lightweight.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Postprocessing.Editor">
       <HintPath>C:/UnityProject/FinalProject/FinalProject/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Rider.Editor">
+      <HintPath>C:/UnityProject/FinalProject/FinalProject/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
       <HintPath>C:/UnityProject/FinalProject/FinalProject/Library/ScriptAssemblies/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.2D.Sprite.Editor">
+      <HintPath>C:/UnityProject/FinalProject/FinalProject/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Postprocessing.Runtime">
       <HintPath>C:/UnityProject/FinalProject/FinalProject/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Tilemap.Editor">
+      <HintPath>C:/UnityProject/FinalProject/FinalProject/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ShaderGraph.Editor">
       <HintPath>C:/UnityProject/FinalProject/FinalProject/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
       <HintPath>C:/UnityProject/FinalProject/FinalProject/Library/ScriptAssemblies/Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>C:/UnityProject/FinalProject/FinalProject/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.UI">
+      <HintPath>C:/UnityProject/FinalProject/FinalProject/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.21f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
