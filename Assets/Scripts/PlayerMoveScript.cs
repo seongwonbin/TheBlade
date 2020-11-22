@@ -64,9 +64,9 @@ public class PlayerMoveScript : MonoBehaviour
         
 
         if(dashCoolTime == false)
-            mytext.text = "dashCoolTime is false";
+            mytext.text = " ";
         else
-            mytext.text = "dashCoolTime is true";
+            mytext.text = "Dash Cooldown";
 
     }
 

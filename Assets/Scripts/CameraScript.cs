@@ -19,6 +19,8 @@ public class CameraScript : MonoBehaviour
 
     public bool bound;
 
+    private Camera titleCam;
+
 
 
     // 캐릭터 초기화
@@ -26,7 +28,25 @@ public class CameraScript : MonoBehaviour
     void Start()
     {
 
+        titleCam = GetComponent<Camera>();
+
         player = GameObject.FindGameObjectWithTag("Player");
+
+    }
+
+    private void Update()
+    {
+        if (TitleScript.eventTrigger == true)
+        { 
+            if(titleCam.orthographicSize >= 4.5)
+                titleCam.orthographicSize -= 0.015f;
+
+            maxPos.x = 40;
+            minPos.y = -20;
+            smoothTimeX = 1;
+            smoothTimeY = 1;
+
+        }
 
     }
 

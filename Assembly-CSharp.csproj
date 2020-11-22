@@ -67,7 +67,8 @@
     <Compile Include="Assets\Scripts\DashCoolTimerScript.cs" />
     <Compile Include="Assets\Scripts\EnemyScript.cs" />
     <Compile Include="Assets\Scripts\FrameObjectScript.cs" />
-    <Compile Include="Assets\Scripts\LightScript.cs" />
+    <Compile Include="Assets\Scripts\MainCameraScript.cs" />
+    <Compile Include="Assets\Scripts\MainSceneManager.cs" />
     <Compile Include="Assets\Scripts\PlayerAttack1Script.cs" />
     <Compile Include="Assets\Scripts\PlayerAttack2Script.cs" />
     <Compile Include="Assets\Scripts\PlayerDashScript.cs" />
@@ -76,6 +77,9 @@
     <Compile Include="Assets\Scripts\PortalScript.cs" />
     <Compile Include="Assets\Scripts\ShootingMetLeftSc.cs" />
     <Compile Include="Assets\Scripts\ShootingMetSc.cs" />
+    <Compile Include="Assets\Scripts\TitleButtonScript.cs" />
+    <Compile Include="Assets\Scripts\TitleScript.cs" />
+    <Compile Include="Assets\Scripts\TitleTextScript.cs" />
     <Compile Include="Assets\Scripts\WorldFrameExitScript.cs" />
     <Compile Include="Assets\Scripts\WorldFrameScript.cs" />
     <Compile Include="Assets\StarNestSkybox\Scripts\CameraScroll.cs" />
