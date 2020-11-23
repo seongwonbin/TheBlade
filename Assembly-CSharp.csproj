@@ -85,6 +85,7 @@
     <Compile Include="Assets\StarNestSkybox\Scripts\CameraScroll.cs" />
     <Compile Include="Assets\StarNestSkybox\Scripts\SkyboxSwitcher.cs" />
     <None Include="Assets\StarNestSkybox\StarNestSkyboxReadme.txt" />
+    <None Include="Assets\Forest road BG\READ_ME_\READ_ME_.txt" />
     <None Include="Assets\StarNestSkybox\StarNestSkybox_HSV.shader" />
     <None Include="Assets\StarNestSkybox\StarNestSkyboxMask.shader" />
     <None Include="Assets\StarNestSkybox\hsv.cginc" />

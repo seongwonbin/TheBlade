@@ -484,7 +484,7 @@ GameObject:
   - component: {fileID: 8006579331722238101}
   - component: {fileID: 4734249759307433288}
   m_Layer: 31
-  m_Name: New Palette2
+  m_Name: RedRock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
