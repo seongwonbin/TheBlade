@@ -2,10 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-struct Enemystat{
-  //  public float health;
-}
+
+
 
 public class EnemyScript : MonoBehaviour
 {
@@ -25,7 +23,7 @@ public class EnemyScript : MonoBehaviour
     {
         currentHealth -= damage;
 
-        if(currentHealth <= 0)
+        if (currentHealth <= 0)
         {
             Die();
         }

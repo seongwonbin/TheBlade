@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: bc2bf2a411f189f4990b7269db52cb6c
+guid: 3b49a4e8318e6794182a4d64aa82ea7d
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -63,7 +63,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 200
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -142,7 +142,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 57f05193586136045b1798a2d2b437aa
+      spriteID: 7f6628ae9687a8349a42bbc247de47c8
       internalID: -7117110007024914641
       vertices: []
       indices: 
@@ -163,7 +163,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0b1ba3cf264b90746aafe4941fcb588a
+      spriteID: ce656bd2f76152246927b640d25f912b
       internalID: 4898652434482888652
       vertices: []
       indices: 
@@ -184,7 +184,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 722c4525150befb40968c17fa33a5ac9
+      spriteID: 8bf7203a92f8da748815b250a1c1be4c
       internalID: 1216821835047967251
       vertices: []
       indices: 
@@ -205,7 +205,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d2ac8ca7ca9523c449bc53b6195f3208
+      spriteID: d9a81b88a7aa36142860ab13ee311c59
       internalID: 396307197612213772
       vertices: []
       indices: 
@@ -226,7 +226,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1ff94dc1157faf744ac5f64ac1992c57
+      spriteID: 620f1580a9704c6469100b6bd7d3212e
       internalID: 5168668752246375726
       vertices: []
       indices: 
@@ -247,7 +247,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 410236285092c9b4cb1773a9b62d3820
+      spriteID: e5e2c595e95970b40afec5518244ae45
       internalID: -739871238097864535
       vertices: []
       indices: 

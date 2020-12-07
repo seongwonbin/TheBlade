@@ -10,7 +10,7 @@ public class PlayerScript : MonoBehaviour
     public GameObject obj2;
 
     protected Animator animator;
-
+    protected SpriteRenderer spr;
     // public Collider2D myCollider;
 
     public Transform pos;
@@ -19,9 +19,10 @@ public class PlayerScript : MonoBehaviour
     private float curTime;
     public float coolTime = 0.5f;
 
-    public static float changeColor = 0.0f;
 
-    public SpriteRenderer spr;
+
+    public static bool startBool = false;
+    private float changeColor = 0.0f;
 
     public Transform attackPoint;
     public float attackRange = 0.5f;
@@ -29,14 +30,14 @@ public class PlayerScript : MonoBehaviour
 
     public int attackDamage = 40;
 
-    public static bool startBool = false;
-
     void Start()
     {
       //  myCollider = GetComponent<Collider2D>();
 
         animator = gameObject.GetComponent<Animator>();
         spr = gameObject.GetComponent<SpriteRenderer>();
+
+       
     }
 
     // Update is called once per frame
@@ -52,11 +53,12 @@ public class PlayerScript : MonoBehaviour
         BasicAttack1();
         BasicAttack2();
 
-      if(startBool == true)
-        {
 
-        }
-           
+        spr.color = new Color(spr.color.r, spr.color.g, spr.color.b, changeColor);
+
+        if (startBool == true)
+            changeColor = 1.0f;
+
 
     }
 
@@ -72,9 +74,7 @@ public class PlayerScript : MonoBehaviour
         
         else
             animator.SetBool("isAttack", false);
-
-
-
+        
     }
 
     void BasicAttack2()

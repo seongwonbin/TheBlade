@@ -18,7 +18,8 @@ public class IntroScript : MonoBehaviour
 
     void introFunction()
     {
-        Debug.Log("hi ~");
+        //   Debug.Log("hi ~");
+        PlayerScript.startBool = true;
         Destroy(gameObject);
 
     }
