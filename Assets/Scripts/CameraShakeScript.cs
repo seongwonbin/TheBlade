@@ -60,11 +60,17 @@ public class CameraShakeScript : MonoBehaviour
 
         if (timer >= 5.0f && introInit == false)
         {
-            //ShakeAmount = 0.1f;
+            ShakeAmount = 3f;
             introInit = true;
             Instantiate(obj, new Vector3(transform.position.x, transform.position.y, transform.position.z),Quaternion.identity);
             VibrateForTime(0.6f);
 
+        }
+
+        if (timer >= 2.0f && introInit == false)
+        {
+            ShakeAmount = 0.2f;
+            VibrateForTime(0.6f);
         }
 
        // Zoom();

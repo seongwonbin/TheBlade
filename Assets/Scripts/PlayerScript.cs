@@ -29,6 +29,8 @@ public class PlayerScript : MonoBehaviour
 
     public int attackDamage = 40;
 
+    public static bool startBool = false;
+
     void Start()
     {
       //  myCollider = GetComponent<Collider2D>();
@@ -50,7 +52,10 @@ public class PlayerScript : MonoBehaviour
         BasicAttack1();
         BasicAttack2();
 
-      
+      if(startBool == true)
+        {
+
+        }
            
 
     }

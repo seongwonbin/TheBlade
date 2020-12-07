@@ -15,4 +15,11 @@ public class IntroScript : MonoBehaviour
     {
         
     }
+
+    void introFunction()
+    {
+        Debug.Log("hi ~");
+        Destroy(gameObject);
+
+    }
 }
