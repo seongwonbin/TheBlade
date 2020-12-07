@@ -14,7 +14,7 @@ public class CameraShakeScript : MonoBehaviour
 
     public float timer = 0.0f;
     public float timer2 = 0.0f;
-    private bool introTimer = false;
+    //private bool introTimer = false;
     private bool introInit = false;
 
     public static bool playerAlpha = false;
@@ -36,7 +36,7 @@ public class CameraShakeScript : MonoBehaviour
 
         initialPosition = new Vector3(0f, 0f, -5f);
 
-        myCam = GetComponent<Camera>();
+      //  myCam = GetComponent<Camera>();
     }
 
     // Update is called once per frame
@@ -50,7 +50,7 @@ public class CameraShakeScript : MonoBehaviour
         else
         {
             ShakeTime = 0.0f;
-            transform.position = initialPosition;
+           // transform.position = initialPosition;
         }
 
         timer += Time.deltaTime;

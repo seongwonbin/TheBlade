@@ -30,6 +30,10 @@ public class PlayerScript : MonoBehaviour
 
     public int attackDamage = 40;
 
+
+    public int maxHealth = 100;
+    int currentHealth;
+
     void Start()
     {
       //  myCollider = GetComponent<Collider2D>();
@@ -37,7 +41,8 @@ public class PlayerScript : MonoBehaviour
         animator = gameObject.GetComponent<Animator>();
         spr = gameObject.GetComponent<SpriteRenderer>();
 
-       
+        currentHealth = maxHealth;
+
     }
 
     // Update is called once per frame
@@ -126,5 +131,18 @@ public class PlayerScript : MonoBehaviour
         }
 
     }
+
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+
+        if (currentHealth <= 0)
+        {
+
+            MainSceneManager.playerdied = true;
+            Destroy(gameObject);
+        }
+    }
+
 
 }
