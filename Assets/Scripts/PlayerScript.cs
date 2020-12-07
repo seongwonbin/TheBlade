@@ -19,13 +19,22 @@ public class PlayerScript : MonoBehaviour
     private float curTime;
     public float coolTime = 0.5f;
 
+    public static float changeColor = 0.0f;
 
+    public SpriteRenderer spr;
+
+    public Transform attackPoint;
+    public float attackRange = 0.5f;
+    public LayerMask enemyLayers;
+
+    public int attackDamage = 40;
 
     void Start()
     {
       //  myCollider = GetComponent<Collider2D>();
 
         animator = gameObject.GetComponent<Animator>();
+        spr = gameObject.GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -40,9 +49,9 @@ public class PlayerScript : MonoBehaviour
 
         BasicAttack1();
         BasicAttack2();
-        
 
-
+      
+           
 
     }
 
@@ -53,11 +62,14 @@ public class PlayerScript : MonoBehaviour
         {
             PlayerAttack1Script.playerAttack1 = true;
             animator.SetBool("isAttack", true);
+            
         }
         
         else
             animator.SetBool("isAttack", false);
-        
+
+
+
     }
 
     void BasicAttack2()
@@ -91,12 +103,23 @@ public class PlayerScript : MonoBehaviour
 
     }
 
-    private void OnDrawGizmos()
+    void OnDrawGizmosSelected()
     {
-     //   Gizmos.color = Color.blue;
-     //   Gizmos.DrawWireCube(pos.position, boxSize);
+        if (attackPoint == null)
+            return;
+
+        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
 
+    void attackTask()
+    {
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 
+        foreach (Collider2D enemy in hitEnemies)
+        {
+            enemy.GetComponent<EnemyScript>().TakeDamage(attackDamage);
+        }
+
+    }
 
 }
