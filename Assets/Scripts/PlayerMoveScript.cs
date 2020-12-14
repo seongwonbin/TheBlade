@@ -5,33 +5,26 @@ using UnityEngine.UI;
 
 public class PlayerMoveScript : MonoBehaviour
 {
+    private Animator animator;
+    private Rigidbody2D rigid;
+    private Vector3 movement;
 
     public float movePower = 1f;
     public float jumpPower = 1f;
-
-    Rigidbody2D rigid;
-
-    Vector3 movement;
-    bool isJumping = false;
-
-    static public SpriteRenderer spr;
-
-    public Animator animator;
-
-    public static bool dashCoolTime = false;
-
     public float limitVelocity = 18;
 
     public GameObject obj; // Dash CoolTimer
-
-    Vector2 leftDashVelocity = new Vector2(-20, 0);
-    Vector2 rightDashVelocity = new Vector2(20, 0);
-
     public Text mytext;
 
-    Vector3 moveVelocity = Vector3.zero;
+    public bool isJumping = false;
 
-    // Start is called before the first frame update
+    public static bool dashCoolTime = false;
+    public static SpriteRenderer spr;
+
+    public Vector2 leftDashVelocity = new Vector2(-20, 0);
+    public Vector2 rightDashVelocity = new Vector2(20, 0);
+    public Vector3 moveVelocity = Vector3.zero;
+
     void Start()
     {
         rigid = gameObject.GetComponent<Rigidbody2D>();
@@ -41,37 +34,14 @@ public class PlayerMoveScript : MonoBehaviour
        
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
         Dash();
-
-        if (Input.GetButtonDown("Jump"))
-        { 
-            isJumping = true;
-            animator.SetBool("isJumping", true);
-        }
-
-
-        if (PlayerDashScript.playerDash == true && dashCoolTime == false)
-        {
-           
-            Instantiate(obj, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
-            dashCoolTime = true;
-            
-        }
-
-        
-
-        if(dashCoolTime == false)
-            mytext.text = " ";
-        else
-            mytext.text = "Dash Cooldown";
-
+        JumpTask();
+        DashCoolTimeTask();
     }
 
-
+    
     private void FixedUpdate()
     {
 
@@ -84,17 +54,12 @@ public class PlayerMoveScript : MonoBehaviour
             animator.SetBool("isMoving", true);
         else
             animator.SetBool("isMoving", false);
-
-
-       
     }
 
-    void Move ()
+    public void Move()
     {
         // Vector3.zero == Vector3(0,0,0) // .zero는 0,0,0과 같음
         Vector3 moveVelocity = Vector3.zero;
-
-      
 
         //유니티 내부 Input Horizontal 반영된 값
         if (Input.GetAxisRaw("Horizontal") < 0)
@@ -109,11 +74,9 @@ public class PlayerMoveScript : MonoBehaviour
             spr.flipX = false;
         }
         transform.position += moveVelocity * movePower * Time.deltaTime;
-
-       
     }
 
-    void Jump()
+    public void Jump()
     {
         if (!isJumping)
             return;
@@ -131,8 +94,31 @@ public class PlayerMoveScript : MonoBehaviour
       
 
     }
+    public void JumpTask()
+    {
+        if (Input.GetButtonDown("Jump"))
+        {
+            isJumping = true;
+            animator.SetBool("isJumping", true);
+        }
+    }
 
-    void Dash()
+    public void DashCoolTimeTask()
+    {
+        if (PlayerDashScript.playerDash == true && dashCoolTime == false)
+        {
+            Instantiate(obj, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+            dashCoolTime = true;
+        }
+
+        if (dashCoolTime == false)
+            mytext.text = " ";
+        else
+            mytext.text = "Dash Cooldown";
+    }
+
+
+    public void Dash()
     {
         if(dashCoolTime == false)
         { 
@@ -156,14 +142,10 @@ public class PlayerMoveScript : MonoBehaviour
             animator.SetBool("isDash", false);
             PlayerDashScript.playerDash = false;
         }
-            
 
         if (rigid.velocity.x > 0 && rigid.velocity.x <= limitVelocity)
             rigid.velocity = new Vector2(0, 0);
         if (rigid.velocity.x < 0 && rigid.velocity.x >= -limitVelocity)
             rigid.velocity = new Vector2(0, 0);
-
-        
-
     }
 }

@@ -5,22 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class WorldFrameExitScript : MonoBehaviour
 {
-    SpriteRenderer spr;
-    Color color;
 
     private bool nextScene = false;
 
-    // Start is called before the first frame update
+    public SpriteRenderer spr;
+    public Color color;
+
     void Start()
     {
         spr = GetComponent<SpriteRenderer>();
-        color = spr.color;
 
+        color = spr.color;
         color.a = 1f;
         spr.color = color;
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         if (color.a >= 0.0f)
@@ -30,8 +29,6 @@ public class WorldFrameExitScript : MonoBehaviour
         }
         else if (color.a < 0.0f)
             Destroy(gameObject);
-            //nextScene = true;
-
     }
 
     private void LateUpdate()

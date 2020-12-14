@@ -495,10 +495,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  player: {fileID: 0}
+  currentHealth: 0
   isFlipped: 0
-  diedVelocity: {x: 20, y: 20}
   timer: 0
+  player: {fileID: 0}
 --- !u!1 &141845034
 GameObject:
   m_ObjectHideFlags: 0
@@ -763,10 +763,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  player: {fileID: 1366530060}
+  currentHealth: 0
   isFlipped: 0
-  diedVelocity: {x: 20, y: 20}
   timer: 0
+  player: {fileID: 1366530060}
 --- !u!212 &237752488
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2801,8 +2801,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac1719b4e2a4e754abbf835ade689fad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShakeAmount: 3
-  timer2: 0
+  introInit: 0
+  initialPosition: {x: 0, y: 0, z: 0}
+  shakeAmount: 0
   obj: {fileID: 4392823398681765595, guid: ef23555318892a6439bc42f5754d955f, type: 3}
 --- !u!1 &541700863
 GameObject:
@@ -3961,10 +3962,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  player: {fileID: 1366530060}
+  currentHealth: 0
   isFlipped: 0
-  diedVelocity: {x: 20, y: 20}
   timer: 0
+  player: {fileID: 1366530060}
 --- !u!212 &1038603864
 SpriteRenderer:
   m_ObjectHideFlags: 0

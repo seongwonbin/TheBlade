@@ -5,12 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class WorldFrameScript : MonoBehaviour
 {
-    SpriteRenderer spr;
-    Color color;
-
     private bool nextScene = false;
 
-    // Start is called before the first frame update
+    public SpriteRenderer spr;
+    public Color color;
+
+
     void Start()
     {
         spr = GetComponent<SpriteRenderer>();
@@ -20,7 +20,6 @@ public class WorldFrameScript : MonoBehaviour
         spr.color = color;
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         if (color.a <= 2.0f)
@@ -30,7 +29,6 @@ public class WorldFrameScript : MonoBehaviour
         }
         else if (color.a > 2.0f)
             nextScene = true;
-        
     }
 
     private void LateUpdate()

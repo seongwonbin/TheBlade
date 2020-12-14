@@ -5,34 +5,28 @@ using UnityEngine;
 
 public class FrameObjectScript : MonoBehaviour
 {
-    float deltaTime = 0.0f;
+    private float deltaTime = 0.0f;
+    private float msec;
+    private float fps;
+    private float worstFps = 100f;
+    private string text;
 
-    GUIStyle style;
-    Rect rect;
-    float msec;
-    float fps;
-    float worstFps = 100f;
-    string text;
+    private GUIStyle style;
+    private Rect rect;
 
     void Awake()
     {
         Application.targetFrameRate = 40; // 프레임레이트 고정 // +Vsync 사용하지말아야 적용됨
 
-    
-
-
-
         int w = Screen.width, h = Screen.height;
 
         rect = new Rect(0, 0, w, h * 4 / 100);
-
         style = new GUIStyle();
         style.alignment = TextAnchor.UpperLeft;
         style.fontSize = h * 4 / 100;
         style.normal.textColor = Color.cyan;
 
         StartCoroutine("worstReset");
-
     }
 
 
@@ -53,7 +47,6 @@ public class FrameObjectScript : MonoBehaviour
 
     void OnGUI()//소스로 GUI 표시.
     {
-
         msec = deltaTime * 1000.0f;
         fps = 1.0f / deltaTime;  //초당 프레임 - 1초에
 

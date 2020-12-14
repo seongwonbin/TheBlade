@@ -5,27 +5,22 @@ using UnityEngine;
 
 public class EnemyScript : MonoBehaviour
 {
-    // [SerializeField]private Enemystat enemystat;
+
+    private SpriteRenderer spr;
+    private Animator enemy;
+    private BoxCollider2D col;
+    private Rigidbody2D rigid;
+
+    private Vector2 diedVelocity = new Vector2(12, 12);
+    private Vector2 diedVelocity2 = new Vector2(-12, 12);
 
     public int maxHealth = 100;
-    int currentHealth;
+    public int currentHealth;
+    public bool isFlipped = false;
+    public float timer = 0.0f;
 
     public Transform player;
 
-    public bool isFlipped = false;
-
-    SpriteRenderer spr;
-    Animator enemy;
-    BoxCollider2D col;
-    Rigidbody2D rigid;
-
-    Vector2 diedVelocity = new Vector2(12,12);
-    Vector2 diedVelocity2 = new Vector2(-12,12);
-
-    public float timer = 0.0f;
-
-
-    // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
@@ -37,7 +32,7 @@ public class EnemyScript : MonoBehaviour
 
     private void Update()
     {
-        if(currentHealth <= 0)
+        if (currentHealth <= 0)
             Die();
     }
 
@@ -47,52 +42,41 @@ public class EnemyScript : MonoBehaviour
         StartCoroutine("BeatTime");
 
         if (currentHealth <= 0)
-        { 
+        {
             enemy.SetBool("Died", true);
-            if(isFlipped == false)
+            if (isFlipped == false)
                 rigid.AddForce(diedVelocity, ForceMode2D.Impulse);
             else
                 rigid.AddForce(diedVelocity2, ForceMode2D.Impulse);
         }
-
     }
+
     IEnumerator BeatTime()
     {
         int countTime = 0;
-
 
         while (countTime < 8)
         {
             if (countTime % 2 == 0)
                 spr.color = new Color(90, 90, 90, 1f);
-
             else
                 spr.color = new Color(0, 0, 0, 1f);
 
-
             yield return new WaitForSeconds(0.05f);
-
             countTime++;
         }
-
         spr.color = new Color(255, 255, 255, 255);
-
-        //isUnBeatTime = false;
 
         yield return null;
     }
 
-
     void Die()
     {
-        
         timer += Time.deltaTime;
         col.isTrigger = true;
-       
-        
+
         if (timer >= 5.0f)
             Destroy(gameObject);
-
     }
 
     public void LookAtPlayer()
@@ -112,7 +96,5 @@ public class EnemyScript : MonoBehaviour
             transform.Rotate(0f, 180f, 0f);
             isFlipped = true;
         }
-
     }
-
 }
