@@ -678,12 +678,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5eeb3d9640db31409d5deb13846e6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackPoint: {fileID: 1873746092}
+  attackDamage: 40
   attackRange: 2.63
+  attackPoint: {fileID: 1873746092}
   enemyLayers:
     serializedVersion: 2
     m_Bits: 512
-  attackDamage: 40
 --- !u!95 &237752484
 Animator:
   serializedVersion: 3
@@ -2725,13 +2725,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 755f32eab1483f6439837ef603bf0ad9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bound: 1
   smoothTimeX: 1
   smoothTimeY: 1
-  velocity: {x: 1, y: 1}
   player: {fileID: 1366530056}
   minPos: {x: -10, y: 0}
   maxPos: {x: 100, y: 20}
-  bound: 1
+  velocity: {x: 1, y: 1}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -4083,12 +4083,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5eeb3d9640db31409d5deb13846e6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackPoint: {fileID: 154619007}
+  attackDamage: 40
   attackRange: 2.63
+  attackPoint: {fileID: 154619007}
   enemyLayers:
     serializedVersion: 2
     m_Bits: 512
-  attackDamage: 40
 --- !u!1 &1050646312
 GameObject:
   m_ObjectHideFlags: 0
@@ -23556,20 +23556,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca1089687d40a20458bb4a08d5357c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coolTime: 3
+  attackRange: 1.26
+  damagedTimer: 0
+  attackDamage: 40
+  maxHealth: 100
+  currentHealth: 0
+  isUnBeatTime: 0
   obj: {fileID: 5477332469077078688, guid: ba83eecb60283ed448005f0412d3581c, type: 3}
   obj2: {fileID: 2903356181703716627, guid: f1d83072eb1e6404ab22a3e117e04fb4, type: 3}
   pos: {fileID: 490315387}
   boxSize: {x: 5.46, y: 2.62}
-  coolTime: 3
   attackPoint: {fileID: 490315387}
-  attackRange: 1.26
   enemyLayers:
     serializedVersion: 2
     m_Bits: 256
-  attackDamage: 40
-  maxHealth: 1000
-  damagedTimer: 0
-  isUnBeatTime: 0
   takeDamageVelocity: {x: -21, y: 0.1}
 --- !u!114 &1366530062
 MonoBehaviour:
@@ -23585,10 +23586,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movePower: 7
   jumpPower: 15
-  animator: {fileID: 0}
   limitVelocity: 18
   obj: {fileID: 8551493142062083254, guid: 0c49d3084797ff6418f0ba1dc88df9b2, type: 3}
   mytext: {fileID: 0}
+  isJumping: 0
+  leftDashVelocity: {x: -20, y: 0}
+  rightDashVelocity: {x: 20, y: 0}
+  moveVelocity: {x: 0, y: 0, z: 0}
 --- !u!95 &1366530063
 Animator:
   serializedVersion: 3

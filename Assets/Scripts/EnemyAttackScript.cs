@@ -4,27 +4,13 @@ using UnityEngine;
 
 public class EnemyAttackScript : MonoBehaviour
 {
+    public int attackDamage = 40;
+    public float attackRange = 0.5f;
 
     public Transform attackPoint;
-    public float attackRange = 0.5f;
     public LayerMask enemyLayers;
 
-    public int attackDamage = 40;
-
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-     
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+   
     void OnDrawGizmosSelected()
     {
         if (attackPoint == null)
@@ -41,9 +27,6 @@ public class EnemyAttackScript : MonoBehaviour
         {
             enemy.GetComponent<PlayerScript>().TakeDamage(attackDamage);
         }
-
-        //Debug.Log("attack");
-        
 
     }
 }

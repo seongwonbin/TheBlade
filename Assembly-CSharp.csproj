@@ -62,12 +62,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\EnemyAttackScript.cs" />
-    <Compile Include="Assets\EnemyRun.cs" />
     <Compile Include="Assets\Scripts\BackgroundScript.cs" />
     <Compile Include="Assets\Scripts\CameraScript.cs" />
     <Compile Include="Assets\Scripts\CameraShakeScript.cs" />
     <Compile Include="Assets\Scripts\DashCoolTimerScript.cs" />
+    <Compile Include="Assets\Scripts\EnemyAttackScript.cs" />
+    <Compile Include="Assets\Scripts\EnemyRun.cs" />
     <Compile Include="Assets\Scripts\EnemyScript.cs" />
     <Compile Include="Assets\Scripts\FrameObjectScript.cs" />
     <Compile Include="Assets\Scripts\IntroScript.cs" />
