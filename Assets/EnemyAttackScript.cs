@@ -11,10 +11,12 @@ public class EnemyAttackScript : MonoBehaviour
 
     public int attackDamage = 40;
 
+
+
     // Start is called before the first frame update
     void Start()
     {
-        
+     
     }
 
     // Update is called once per frame
@@ -40,6 +42,8 @@ public class EnemyAttackScript : MonoBehaviour
             enemy.GetComponent<PlayerScript>().TakeDamage(attackDamage);
         }
 
-        Debug.Log("attakc");
+        //Debug.Log("attack");
+        
+
     }
 }

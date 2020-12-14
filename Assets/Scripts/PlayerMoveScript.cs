@@ -38,6 +38,7 @@ public class PlayerMoveScript : MonoBehaviour
         spr = gameObject.GetComponent<SpriteRenderer>();
         animator = gameObject.GetComponent<Animator>();
         mytext = GameObject.Find("Text").GetComponent<Text>();
+        rigid = gameObject.GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -133,33 +134,25 @@ public class PlayerMoveScript : MonoBehaviour
 
     void Dash()
     {
-
         if(dashCoolTime == false)
-
         { 
-
-        if (Input.GetKey(KeyCode.LeftArrow) && Input.GetKeyDown(KeyCode.X))
-        {
-            PlayerDashScript.playerDash = true;
-            animator.SetBool("isDash", true);
-            moveVelocity = Vector3.left;
-            rigid.AddForce(leftDashVelocity, ForceMode2D.Impulse);
-
+            if (Input.GetKey(KeyCode.LeftArrow) && Input.GetKeyDown(KeyCode.X))
+            {
+                PlayerDashScript.playerDash = true;
+                animator.SetBool("isDash", true);
+                moveVelocity = Vector3.left;
+                rigid.AddForce(leftDashVelocity, ForceMode2D.Impulse);
+            }
+            else if (Input.GetKey(KeyCode.RightArrow) && Input.GetKeyDown(KeyCode.X))
+            {
+                PlayerDashScript.playerDash = true;
+                animator.SetBool("isDash", true);
+                moveVelocity = Vector3.right;
+                rigid.AddForce(rightDashVelocity, ForceMode2D.Impulse);
+            }
         }
-        else if (Input.GetKey(KeyCode.RightArrow) && Input.GetKeyDown(KeyCode.X))
-        {
-            PlayerDashScript.playerDash = true;
-            animator.SetBool("isDash", true);
-            moveVelocity = Vector3.right;
-            rigid.AddForce(rightDashVelocity, ForceMode2D.Impulse);
-
-        }
-
-        }
-
         else
         {
-            
             animator.SetBool("isDash", false);
             PlayerDashScript.playerDash = false;
         }

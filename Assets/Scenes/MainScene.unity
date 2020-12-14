@@ -2798,7 +2798,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShakeAmount: 3
-  timer: 0
   timer2: 0
   obj: {fileID: 4392823398681765595, guid: ef23555318892a6439bc42f5754d955f, type: 3}
 --- !u!1 &541700863
@@ -23561,7 +23560,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   attackDamage: 40
-  maxHealth: 100
+  maxHealth: 1000
+  damagedTimer: 0
+  isUnBeatTime: 0
+  takeDamageVelocity: {x: -21, y: 0.1}
 --- !u!114 &1366530062
 MonoBehaviour:
   m_ObjectHideFlags: 0

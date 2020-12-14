@@ -8,11 +8,11 @@ public class CameraShakeScript : MonoBehaviour
 {
     //public GameObject player;
     public float ShakeAmount;
-    float ShakeTime;
+    public static float ShakeTime;
     Vector3 initialPosition;
     public static Camera myCam;
 
-    public float timer = 0.0f;
+    public static float timer = 0.0f;
     public float timer2 = 0.0f;
     //private bool introTimer = false;
     private bool introInit = false;
@@ -21,22 +21,13 @@ public class CameraShakeScript : MonoBehaviour
 
     public GameObject obj;
 
-    public void VibrateForTime(float time)
-    {
-        ShakeTime = time;
-    }
+   
 
     // Start is called before the first frame update
     void Start()
     {
+        initialPosition = new Vector3(-0.1f, -0.1f, -5f);
 
-
-
-
-
-        initialPosition = new Vector3(0f, 0f, -5f);
-
-      //  myCam = GetComponent<Camera>();
     }
 
     // Update is called once per frame
@@ -61,10 +52,9 @@ public class CameraShakeScript : MonoBehaviour
         if (timer >= 5.0f && introInit == false)
         {
             ShakeAmount = 3f;
-            introInit = true;
             Instantiate(obj, new Vector3(transform.position.x, transform.position.y, transform.position.z),Quaternion.identity);
             VibrateForTime(0.6f);
-
+            introInit = true;
         }
 
         if (timer >= 2.0f && introInit == false)
@@ -73,7 +63,13 @@ public class CameraShakeScript : MonoBehaviour
             VibrateForTime(0.6f);
         }
 
-       // Zoom();
+        if (timer >= 7.5f)
+        {
+            initialPosition = new Vector3(MainCameraScript.posX, MainCameraScript.posY+0.05f, transform.position.z);
+            ShakeAmount = 0.2f;
+        }
+
+        // Zoom();
 
     }
 
@@ -83,13 +79,10 @@ public class CameraShakeScript : MonoBehaviour
 
         offset.x -= 1.5f;
         //offset.y -= 0.75f;
+    }
 
-
-
-       
-
-
-
-
+    public static void VibrateForTime(float time)
+    {
+        ShakeTime = time;
     }
 }

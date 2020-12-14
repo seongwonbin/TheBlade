@@ -17,6 +17,8 @@ public class MainCameraScript : MonoBehaviour
     public bool bound;
 
     private Camera titleCam;
+
+    public static float posX, posY;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,11 +36,11 @@ public class MainCameraScript : MonoBehaviour
     void FixedUpdate()
     {
 
-        float posX = Mathf.SmoothDamp(transform.position.x, player.transform.position.x, ref velocity.x, smoothTimeX);
+        posX = Mathf.SmoothDamp(transform.position.x, player.transform.position.x, ref velocity.x, smoothTimeX);
 
         // Mathf.SmoothDamp는 천천히 값을 증가시키는 메소드
 
-        float posY = Mathf.SmoothDamp(transform.position.y, player.transform.position.y, ref velocity.y, smoothTimeY);
+        posY = Mathf.SmoothDamp(transform.position.y, player.transform.position.y, ref velocity.y, smoothTimeY);
 
         // 카메라 이동
 
