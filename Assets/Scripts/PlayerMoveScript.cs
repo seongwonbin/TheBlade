@@ -38,7 +38,7 @@ public class PlayerMoveScript : MonoBehaviour
         spr = gameObject.GetComponent<SpriteRenderer>();
         animator = gameObject.GetComponent<Animator>();
         mytext = GameObject.Find("Text").GetComponent<Text>();
-        rigid = gameObject.GetComponent<Rigidbody2D>();
+       
     }
 
     // Update is called once per frame

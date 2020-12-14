@@ -497,6 +497,8 @@ MonoBehaviour:
   maxHealth: 100
   player: {fileID: 0}
   isFlipped: 0
+  diedVelocity: {x: 20, y: 20}
+  timer: 0
 --- !u!1 &141845034
 GameObject:
   m_ObjectHideFlags: 0
@@ -763,6 +765,8 @@ MonoBehaviour:
   maxHealth: 100
   player: {fileID: 1366530060}
   isFlipped: 0
+  diedVelocity: {x: 20, y: 20}
+  timer: 0
 --- !u!212 &237752488
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3959,6 +3963,8 @@ MonoBehaviour:
   maxHealth: 100
   player: {fileID: 1366530060}
   isFlipped: 0
+  diedVelocity: {x: 20, y: 20}
+  timer: 0
 --- !u!212 &1038603864
 SpriteRenderer:
   m_ObjectHideFlags: 0
