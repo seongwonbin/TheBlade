@@ -1398,13 +1398,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1551857d7ed18684c935ace994697dd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smoothTimeX: 4
-  smoothTimeY: 4
   velocity: {x: 1, y: 1}
-  player: {fileID: 1712654243}
   minPos: {x: 18.07, y: -1.33}
   maxPos: {x: 21.92, y: 1.73}
-  bound: 1
+  smoothTimeX: 4
+  smoothTimeY: 4
 --- !u!1 &1169340190
 GameObject:
   m_ObjectHideFlags: 0
@@ -2120,10 +2118,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1affc1140fcad6a49b7b3b943a21621f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  titleText: {fileID: 0}
   changeColor: 0
   pivot: 0.01
   timer: 0
+  titleText: {fileID: 0}
 --- !u!1 &1878131762
 GameObject:
   m_ObjectHideFlags: 0

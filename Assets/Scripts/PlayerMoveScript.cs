@@ -30,7 +30,7 @@ public class PlayerMoveScript : MonoBehaviour
         rigid = gameObject.GetComponent<Rigidbody2D>();
         spr = gameObject.GetComponent<SpriteRenderer>();
         animator = gameObject.GetComponent<Animator>();
-        mytext = GameObject.Find("Text").GetComponent<Text>();
+        mytext = GameObject.Find("Dash Cooltime Text").GetComponent<Text>();
        
     }
 

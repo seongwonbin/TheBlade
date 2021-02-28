@@ -10,7 +10,7 @@ public class CameraScript : MonoBehaviour
 
     private GameObject player;
     private Camera titleCam;
-    private bool bound;
+    //private bool bound;
 
     public Vector2 velocity;
     public Vector2 minPos, maxPos;
@@ -50,6 +50,7 @@ public class CameraScript : MonoBehaviour
         // 카메라 이동
         transform.position = new Vector3(posX, posY, transform.position.z);
 
+        /*
         if (bound)
         {
             //Mathf.Clamp(현재값, 최대값, 최소값);  현재값이 최대값까지만 반환해주고 최소값보다 작으면 그 최소값까지만 반환합니다.
@@ -58,6 +59,7 @@ public class CameraScript : MonoBehaviour
                                              Mathf.Clamp(transform.position.z, transform.position.z, transform.position.z)
             );
         }
+        */
     }
 }
 
