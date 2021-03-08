@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class EnemyScript : MonoBehaviour
 {
+    public static bool isFlipped = false;
 
     private SpriteRenderer spr;
     private Animator enemy;
@@ -16,7 +17,7 @@ public class EnemyScript : MonoBehaviour
 
     public int maxHealth = 100;
     public int currentHealth;
-    public bool isFlipped = false;
+    
     public float timer = 0.0f;
 
     public Transform player;

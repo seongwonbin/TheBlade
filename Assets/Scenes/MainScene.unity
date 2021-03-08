@@ -454,7 +454,7 @@ Transform:
   m_LocalScale: {x: 3.556, y: 4.804, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &122274972
 BoxCollider2D:
@@ -496,7 +496,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 0
-  isFlipped: 0
   timer: 0
   player: {fileID: 0}
 --- !u!1 &141845034
@@ -665,7 +664,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &237752483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -764,7 +763,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 0
-  isFlipped: 0
   timer: 0
   player: {fileID: 1366530060}
 --- !u!212 &237752488
@@ -830,7 +828,7 @@ Transform:
   m_Children:
   - {fileID: 1873746092}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &242776698
 GameObject:
@@ -1289,7 +1287,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &356059118
 GameObject:
@@ -3552,7 +3550,7 @@ PrefabInstance:
     - target: {fileID: 2019070972034787559, guid: ef23555318892a6439bc42f5754d955f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 2019070972034787559, guid: ef23555318892a6439bc42f5754d955f,
         type: 3}
@@ -3963,7 +3961,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 0
-  isFlipped: 0
   timer: 0
   player: {fileID: 1366530060}
 --- !u!212 &1038603864
@@ -4029,7 +4026,7 @@ Transform:
   m_Children:
   - {fileID: 154619007}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1038603866
 Rigidbody2D:
@@ -23560,7 +23557,7 @@ MonoBehaviour:
   attackRange: 1.26
   damagedTimer: 0
   attackDamage: 40
-  maxHealth: 100
+  maxHealth: 1000
   currentHealth: 0
   isUnBeatTime: 0
   obj: {fileID: 5477332469077078688, guid: ba83eecb60283ed448005f0412d3581c, type: 3}
@@ -23571,7 +23568,7 @@ MonoBehaviour:
   enemyLayers:
     serializedVersion: 2
     m_Bits: 256
-  takeDamageVelocity: {x: -21, y: 0.1}
+  takeDamageVelocity: {x: -18.1, y: 4}
 --- !u!114 &1366530062
 MonoBehaviour:
   m_ObjectHideFlags: 0

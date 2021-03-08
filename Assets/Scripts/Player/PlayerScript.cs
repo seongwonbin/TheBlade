@@ -29,7 +29,10 @@ public class PlayerScript : MonoBehaviour
     public Vector2 boxSize;
     public Transform attackPoint;
     public LayerMask enemyLayers;
-    public Vector2 takeDamageVelocity = new Vector2(-5, 0);
+    public Vector2 takeDamageVelocity = new Vector2(-18.1f, 4);
+    public Vector2 takeDamageVelocity2 = new Vector2(18.1f, 4);
+    
+
 
     void Start()
     {
@@ -101,7 +104,12 @@ public class PlayerScript : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        rigid.AddForce(takeDamageVelocity, ForceMode2D.Impulse);
+
+        if (EnemyScript.isFlipped == false)
+            rigid.AddForce(takeDamageVelocity, ForceMode2D.Impulse);
+        else
+            rigid.AddForce(takeDamageVelocity2, ForceMode2D.Impulse);
+
         CameraShakeScript.VibrateForTime(0.3f);
         BlinkRoutine();
 

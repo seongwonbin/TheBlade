@@ -27,7 +27,7 @@ public class MainSceneManager : MonoBehaviour
         mainScreen.color = new Color(mainScreen.color.r, mainScreen.color.g, mainScreen.color.b, changeColor);
 
         if (changeColor >= 0.0f && playerdied == false)
-            changeColor -= 0.01f;
+            changeColor -= 0.003f;
 
         if (changeColor <= 1.0f && playerdied == true)
         {
