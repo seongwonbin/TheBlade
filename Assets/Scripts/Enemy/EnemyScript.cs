@@ -12,13 +12,16 @@ public class EnemyScript : MonoBehaviour
     private BoxCollider2D col;
     private Rigidbody2D rigid;
 
-    private Vector2 diedVelocity = new Vector2(12, 12);
-    private Vector2 diedVelocity2 = new Vector2(-12, 12);
+    private Vector2 diedVelocity = new Vector2(6f, 5f);
+    private Vector2 diedVelocity2 = new Vector2(-6f, 5f);
+
+    private bool enemyDiedChecker = false;
 
     public int maxHealth = 100;
     public int currentHealth;
     
     public float timer = 0.0f;
+
 
     public Transform player;
 
@@ -43,13 +46,8 @@ public class EnemyScript : MonoBehaviour
         StartCoroutine("BeatTime");
 
         if (currentHealth <= 0)
-        {
             enemy.SetBool("Died", true);
-            if (isFlipped == false)
-                rigid.AddForce(diedVelocity, ForceMode2D.Impulse);
-            else
-                rigid.AddForce(diedVelocity2, ForceMode2D.Impulse);
-        }
+
     }
 
     IEnumerator BeatTime()
@@ -73,6 +71,20 @@ public class EnemyScript : MonoBehaviour
 
     void Die()
     {
+        if (transform.position.x < player.position.x && enemyDiedChecker == false)
+        { 
+            rigid.AddForce(diedVelocity2, ForceMode2D.Impulse);
+            rigid.AddForce(diedVelocity2, ForceMode2D.Impulse);
+        }
+
+        if (transform.position.x > player.position.x && enemyDiedChecker == false)
+        { 
+            rigid.AddForce(diedVelocity, ForceMode2D.Impulse);
+            rigid.AddForce(diedVelocity, ForceMode2D.Impulse);
+        }
+
+        enemyDiedChecker = true;
+
         timer += Time.deltaTime;
         col.isTrigger = true;
 

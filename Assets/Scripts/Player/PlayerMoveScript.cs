@@ -25,8 +25,6 @@ public class PlayerMoveScript : MonoBehaviour
     public Vector2 rightDashVelocity = new Vector2(20, 0);
     public Vector3 moveVelocity = Vector3.zero;
 
-    public bool rotateLog = false;
-
 
     void Start()
     {
@@ -42,6 +40,7 @@ public class PlayerMoveScript : MonoBehaviour
         Dash();
         JumpTask();
         DashCoolTimeTask();
+
     }
 
     
@@ -71,31 +70,22 @@ public class PlayerMoveScript : MonoBehaviour
         
 
             moveVelocity = Vector3.left;
-            spr.flipX = true;
-           
-            
+            //spr.flipX = true;
+            transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
+
         }
+
 
         else if (Input.GetAxisRaw("Horizontal") > 0)
         {
-       
 
             moveVelocity = Vector3.right;
-            spr.flipX = false;
-            
-           
+            transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+
         }
         transform.position += moveVelocity * movePower * Time.deltaTime;
 
-        RotateChecker();
 
-
-    }
-
-    public void RotateChecker()
-    {
-       // if (rotateLog == )
-            
     }
 
     public void Jump()
@@ -142,7 +132,7 @@ public class PlayerMoveScript : MonoBehaviour
 
     public void Dash()
     {
-        if(dashCoolTime == false)
+        if (dashCoolTime == false && PlayerScript.isUnBeatTime == false)
         { 
             if (Input.GetKey(KeyCode.LeftArrow) && Input.GetKeyDown(KeyCode.X))
             {

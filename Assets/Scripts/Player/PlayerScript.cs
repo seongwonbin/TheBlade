@@ -19,8 +19,8 @@ public class PlayerScript : MonoBehaviour
     public int attackDamage = 40;
     public int maxHealth = 100;
     public int currentHealth;
-    public bool isUnBeatTime = false;
 
+    public static bool isUnBeatTime = false;
     public static bool startBool = false;
     public static bool map1 = true;
 
@@ -48,8 +48,11 @@ public class PlayerScript : MonoBehaviour
 
     void Update()
     {
-        BasicAttack1();
-        BasicAttack2();
+        if(isUnBeatTime == false)
+        { 
+            BasicAttack1();
+            BasicAttack2();
+        }
 
         spr.color = new Color(spr.color.r, spr.color.g, spr.color.b, changeColorA);
 
@@ -106,6 +109,8 @@ public class PlayerScript : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
+
+        animator.SetTrigger("isTakeDamage");
 
         if (EnemyScript.isFlipped == false)
             rigid.AddForce(takeDamageVelocity, ForceMode2D.Impulse);
