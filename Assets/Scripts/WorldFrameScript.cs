@@ -34,7 +34,7 @@ public class WorldFrameScript : MonoBehaviour
     private void LateUpdate()
     {
         if (nextScene == true)
-            SceneManager.LoadScene("SecondScene");
+            Debug.Log("map is changing..");
     }
 
 

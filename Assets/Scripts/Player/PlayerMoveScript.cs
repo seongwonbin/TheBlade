@@ -25,6 +25,9 @@ public class PlayerMoveScript : MonoBehaviour
     public Vector2 rightDashVelocity = new Vector2(20, 0);
     public Vector3 moveVelocity = Vector3.zero;
 
+    public bool rotateLog = false;
+
+
     void Start()
     {
         rigid = gameObject.GetComponent<Rigidbody2D>();
@@ -58,22 +61,41 @@ public class PlayerMoveScript : MonoBehaviour
 
     public void Move()
     {
+
         // Vector3.zero == Vector3(0,0,0) // .zero는 0,0,0과 같음
         Vector3 moveVelocity = Vector3.zero;
 
         //유니티 내부 Input Horizontal 반영된 값
         if (Input.GetAxisRaw("Horizontal") < 0)
-        { 
+        {
+        
+
             moveVelocity = Vector3.left;
             spr.flipX = true;
+           
+            
         }
 
         else if (Input.GetAxisRaw("Horizontal") > 0)
-        { 
+        {
+       
+
             moveVelocity = Vector3.right;
             spr.flipX = false;
+            
+           
         }
         transform.position += moveVelocity * movePower * Time.deltaTime;
+
+        RotateChecker();
+
+
+    }
+
+    public void RotateChecker()
+    {
+       // if (rotateLog == )
+            
     }
 
     public void Jump()

@@ -22,6 +22,7 @@ public class PlayerScript : MonoBehaviour
     public bool isUnBeatTime = false;
 
     public static bool startBool = false;
+    public static bool map1 = true;
 
     public GameObject obj;
     public GameObject obj2;
@@ -31,7 +32,8 @@ public class PlayerScript : MonoBehaviour
     public LayerMask enemyLayers;
     public Vector2 takeDamageVelocity = new Vector2(-18.1f, 4);
     public Vector2 takeDamageVelocity2 = new Vector2(18.1f, 4);
-    
+    public Vector2 leftAttackPoint = new Vector2(-3.8f, 0);
+    public Vector2 rightAttackPoint = new Vector2(3.8f, 0);
 
 
     void Start()
@@ -113,11 +115,19 @@ public class PlayerScript : MonoBehaviour
         CameraShakeScript.VibrateForTime(0.3f);
         BlinkRoutine();
 
+
+
+        if (currentHealth == 2)
+            Heart3Script.heartBreak = true;
+        if (currentHealth == 1)
+            Heart2Script.heartBreak = true;
         if (currentHealth <= 0)
         {
+            Heart1Script.heartBreak = true;
             MainSceneManager.playerdied = true;
             Destroy(gameObject);
         }
+
     }
 
     public void BlinkRoutine()

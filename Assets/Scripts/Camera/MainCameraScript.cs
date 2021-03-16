@@ -18,6 +18,8 @@ public class MainCameraScript : MonoBehaviour
     {
         titleCam = GetComponent<Camera>();
         player = GameObject.FindGameObjectWithTag("Player");
+
+        transform.position = new Vector3(-0.1f, 100f, -10f); // 메인필드 진입 시 카메라포지션
     }
 
     // Update is called once per frame

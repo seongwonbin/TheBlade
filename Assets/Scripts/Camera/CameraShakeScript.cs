@@ -19,7 +19,9 @@ public class CameraShakeScript : MonoBehaviour
 
     void Start()
     {
-        initialPosition = new Vector3(-0.1f, -0.1f, -5f);
+        initialPosition = new Vector3(MainCameraScript.posX, MainCameraScript.posY, -5f);
+        
+
     }
 
     void Update()
@@ -28,7 +30,7 @@ public class CameraShakeScript : MonoBehaviour
         FirstShaking();
     }
 
-
+    // 메인필드 진입시에 카메라 조정
     private void FirstShaking()
     {
         if (shakeTime > 0)
@@ -39,7 +41,7 @@ public class CameraShakeScript : MonoBehaviour
         else
             shakeTime = 0.0f;
 
-        if (timer >= 5.0f && introInit == false)
+        if (timer >= 6.0f && introInit == false)
         {
             shakeAmount = 3f;
             Instantiate(obj, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
@@ -47,13 +49,13 @@ public class CameraShakeScript : MonoBehaviour
             introInit = true;
         }
 
-        if (timer >= 2.0f && introInit == false)
+        if (timer >= 3.0f && introInit == false)
         {
             shakeAmount = 0.2f;
             VibrateForTime(0.6f);
         }
 
-        if (timer >= 7.5f)
+        if (timer >= 8.5f)
         {
             initialPosition = new Vector3(MainCameraScript.posX, MainCameraScript.posY + 0.05f, transform.position.z);
             shakeAmount = 0.2f;
