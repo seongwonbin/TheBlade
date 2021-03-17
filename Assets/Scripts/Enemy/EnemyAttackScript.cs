@@ -10,6 +10,7 @@ public class EnemyAttackScript : MonoBehaviour
     public Transform attackPoint;
     public LayerMask enemyLayers;
 
+    //public static bool skill1Active = false;
    
     void OnDrawGizmosSelected()
     {
@@ -23,10 +24,9 @@ public class EnemyAttackScript : MonoBehaviour
     {
         Collider2D[] hitPlayer = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 
-        foreach (Collider2D enemy in hitPlayer)
-        {
-            enemy.GetComponent<PlayerScript>().TakeDamage(attackDamage);
-        }
+
+            foreach (Collider2D enemy in hitPlayer)
+                enemy.GetComponent<PlayerScript>().TakeDamage(attackDamage);
 
     }
 }

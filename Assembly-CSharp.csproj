@@ -93,6 +93,7 @@
     <Compile Include="Assets\Scripts\PortalScript.cs" />
     <Compile Include="Assets\Scripts\ShootingMetLeftSc.cs" />
     <Compile Include="Assets\Scripts\ShootingMetSc.cs" />
+    <Compile Include="Assets\Scripts\Skill1ActiveSc.cs" />
     <Compile Include="Assets\Scripts\TitleButtonScript.cs" />
     <Compile Include="Assets\Scripts\TitleScript.cs" />
     <Compile Include="Assets\Scripts\TitleTextScript.cs" />

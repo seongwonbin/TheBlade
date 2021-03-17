@@ -31565,8 +31565,8 @@ MonoBehaviour:
   attackDamage: 40
   maxHealth: 3
   currentHealth: 0
-  obj: {fileID: 5477332469077078688, guid: ba83eecb60283ed448005f0412d3581c, type: 3}
-  obj2: {fileID: 2903356181703716627, guid: f1d83072eb1e6404ab22a3e117e04fb4, type: 3}
+  obj: {fileID: 8193325928120968301, guid: eb4ce670119a98d4fa0cf5ce9fc51f45, type: 3}
+  obj2: {fileID: 4672515956156011789, guid: b3ccbdc59ccb1ea45b1192763aef88ea, type: 3}
   pos: {fileID: 490315387}
   boxSize: {x: 5.46, y: 2.62}
   attackPoint: {fileID: 490315387}
@@ -31577,6 +31577,7 @@ MonoBehaviour:
   takeDamageVelocity2: {x: 18.1, y: 4}
   leftAttackPoint: {x: -3.8, y: 0}
   rightAttackPoint: {x: 3.8, y: 0}
+  test: {x: 30, y: 0}
 --- !u!114 &1366530062
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31596,8 +31597,11 @@ MonoBehaviour:
   mytext: {fileID: 0}
   isJumping: 0
   leftDashVelocity: {x: -20, y: 0}
+  leftSkill1Velocity: {x: -30, y: 0}
   rightDashVelocity: {x: 20, y: 0}
+  rightSkill1Velocity: {x: 40, y: 0}
   moveVelocity: {x: 0, y: 0, z: 0}
+  swap: {x: 0, y: 0, z: 0}
 --- !u!95 &1366530063
 Animator:
   serializedVersion: 3

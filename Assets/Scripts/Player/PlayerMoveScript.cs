@@ -24,9 +24,13 @@ public class PlayerMoveScript : MonoBehaviour
     //public static Vector3 playerTracker;
 
     public Vector2 leftDashVelocity = new Vector2(-20, 0);
+    public Vector2 leftSkill1Velocity = new Vector2(-22, 0);
     public Vector2 rightDashVelocity = new Vector2(20, 0);
+    public Vector2 rightSkill1Velocity = new Vector2(22, 0);
     public Vector3 moveVelocity = Vector3.zero;
 
+    public Vector3 swap;
+    
 
     void Start()
     {
@@ -34,7 +38,7 @@ public class PlayerMoveScript : MonoBehaviour
         spr = gameObject.GetComponent<SpriteRenderer>();
         animator = gameObject.GetComponent<Animator>();
         mytext = GameObject.Find("Dash Cooltime Text").GetComponent<Text>();
-       
+
     }
 
     void Update()
@@ -43,13 +47,17 @@ public class PlayerMoveScript : MonoBehaviour
         JumpTask();
         DashCoolTimeTask();
 
+        Skill1();
+
+      
+
     }
 
     
     private void FixedUpdate()
     {
 
-        if(PlayerAttack1Script.playerAttack1 == false && PlayerAttack2Script.playerAttack2 == false)
+        if(PlayerAttack1Script.playerAttack1 == false && PlayerAttack2Script.playerAttack2 == false )
             Move();
 
         Jump();
@@ -162,5 +170,25 @@ public class PlayerMoveScript : MonoBehaviour
             rigid.velocity = new Vector2(0, 0);
         if (rigid.velocity.x < 0 && rigid.velocity.x >= -limitVelocity)
             rigid.velocity = new Vector2(0, 0);
+    }
+
+    public void Skill1()
+    {
+        if(PlayerScript.setPlayerSkill1)
+        {
+            gameObject.transform.Translate(new Vector3(10, 0, 0));
+            CameraShakeScript.VibrateForTime(0.3f);
+
+            PlayerScript.setPlayerSkill1 = false;
+
+
+        }
+
+    }
+
+    public void test()
+    {
+        movePower = 7f;
+
     }
 }
