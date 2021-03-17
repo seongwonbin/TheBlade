@@ -66,6 +66,8 @@
     <Compile Include="Assets\Scripts\Background\BackgroundGrass4thScript.cs" />
     <Compile Include="Assets\Scripts\Background\BackgroundScript.cs" />
     <Compile Include="Assets\Scripts\Background\BackgroundTileScript.cs" />
+    <Compile Include="Assets\Scripts\Background\ForestBackgroundScript.cs" />
+    <Compile Include="Assets\Scripts\Background\ForestTreeScript.cs" />
     <Compile Include="Assets\Scripts\Background\RiverScript.cs" />
     <Compile Include="Assets\Scripts\Background\TowerScript.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraScript.cs" />
@@ -74,6 +76,7 @@
     <Compile Include="Assets\Scripts\Enemy\EnemyAttackScript.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyRun.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyScript.cs" />
+    <Compile Include="Assets\Scripts\ForestEnterScript.cs" />
     <Compile Include="Assets\Scripts\FrameObjectScript.cs" />
     <Compile Include="Assets\Scripts\Heart\Heart1Script.cs" />
     <Compile Include="Assets\Scripts\Heart\Heart2Script.cs" />
@@ -84,6 +87,7 @@
     <Compile Include="Assets\Scripts\Player\PlayerAttack1Script.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerAttack2Script.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerDashScript.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerInForestScript.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMoveScript.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerScript.cs" />
     <Compile Include="Assets\Scripts\PortalScript.cs" />

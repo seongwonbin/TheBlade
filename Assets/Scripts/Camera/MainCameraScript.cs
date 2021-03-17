@@ -10,9 +10,12 @@ public class MainCameraScript : MonoBehaviour
     public static float posX, posY;
     public float smoothTimeX, smoothTimeY;
 
+    public static Vector3 playerTracker;
+
     public GameObject player;
     public Vector2 minPos, maxPos;
     public Vector2 velocity;
+
 
     void Start()
     {
@@ -25,7 +28,7 @@ public class MainCameraScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        map2();
     }
 
     void FixedUpdate()
@@ -34,7 +37,8 @@ public class MainCameraScript : MonoBehaviour
         posY = Mathf.SmoothDamp(transform.position.y, player.transform.position.y, ref velocity.y, smoothTimeY);
 
         transform.position = new Vector3(posX, posY, transform.position.z);
-
+        playerTracker = transform.position;
+        
         if (bound)
         {
             //Mathf.Clamp(현재값, 최대값, 최소값);  현재값이 최대값까지만 반환해주고 최소값보다 작으면 그 최소값까지만 반환합니다.
@@ -42,6 +46,16 @@ public class MainCameraScript : MonoBehaviour
                                              Mathf.Clamp(transform.position.y, minPos.y, maxPos.y),
                                              Mathf.Clamp(transform.position.z, transform.position.z, transform.position.z)
             );
-        }   
+        } 
+        
+    }
+
+    void map2()
+    {
+        if (PlayerInForestScript.playerLocation == true)
+        { 
+            minPos.x = 310f;
+            maxPos.x = 403f;
+        }
     }
 }

@@ -21,6 +21,8 @@ public class PlayerMoveScript : MonoBehaviour
     public static bool dashCoolTime = false;
     public static SpriteRenderer spr;
 
+    //public static Vector3 playerTracker;
+
     public Vector2 leftDashVelocity = new Vector2(-20, 0);
     public Vector2 rightDashVelocity = new Vector2(20, 0);
     public Vector3 moveVelocity = Vector3.zero;
@@ -83,8 +85,9 @@ public class PlayerMoveScript : MonoBehaviour
             transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
 
         }
-        transform.position += moveVelocity * movePower * Time.deltaTime;
 
+        transform.position += moveVelocity * movePower * Time.deltaTime;
+        //playerTracker = transform.position;
 
     }
 

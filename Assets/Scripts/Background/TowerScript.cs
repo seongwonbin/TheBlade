@@ -16,10 +16,12 @@ public class TowerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        towerPosX = (MainCameraScript.posX + 15) - (MainCameraScript.posX / 50f);
+        if (PlayerScript.map1 == true)
+        {
+            towerPosX = (MainCameraScript.posX + 15) - (MainCameraScript.posX / 50f);
 
-        transform.position = new Vector2(towerPosX, towerPosY);
-
+            transform.position = new Vector2(towerPosX, towerPosY);
+        }
             
     }
 }

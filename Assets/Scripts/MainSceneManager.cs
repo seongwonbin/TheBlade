@@ -34,5 +34,8 @@ public class MainSceneManager : MonoBehaviour
             changeColor += 0.01f;
             mytext.text = "You Died";
         }
+        
+
+
     }
 }

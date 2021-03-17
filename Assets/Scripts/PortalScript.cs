@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class PortalScript : MonoBehaviour
 {
+    public static bool portalChecker = false;
 
     public GameObject obj;
 
@@ -26,6 +27,7 @@ public class PortalScript : MonoBehaviour
         if (col.gameObject.tag == "Player")
         {
             Instantiate(obj, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+            portalChecker = true;
         }
     }
 }

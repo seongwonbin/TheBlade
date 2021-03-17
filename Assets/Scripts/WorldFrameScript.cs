@@ -5,10 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class WorldFrameScript : MonoBehaviour
 {
-    private bool nextScene = false;
+    public static bool nextScene = false;
 
     public SpriteRenderer spr;
     public Color color;
+
 
 
     void Start()
@@ -18,6 +19,7 @@ public class WorldFrameScript : MonoBehaviour
 
         color.a = 0f;
         spr.color = color;
+
     }
 
     void FixedUpdate()
@@ -29,12 +31,13 @@ public class WorldFrameScript : MonoBehaviour
         }
         else if (color.a > 2.0f)
             nextScene = true;
+
+
     }
 
     private void LateUpdate()
     {
-        if (nextScene == true)
-            Debug.Log("map is changing..");
+
     }
 
 
