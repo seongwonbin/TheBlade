@@ -52,7 +52,7 @@ public class FrameObjectScript : MonoBehaviour
 
         if (fps < worstFps)  //새로운 최저 fps가 나왔다면 worstFps 바꿔줌.
             worstFps = fps;
-        text = msec.ToString("F1") + "ms (" + fps.ToString("F1") + ") //worst : " + worstFps.ToString("F1");
+        //text = msec.ToString("F1") + "ms (" + fps.ToString("F1") + ") //worst : " + worstFps.ToString("F1");
         GUI.Label(rect, text, style);
     }
 }

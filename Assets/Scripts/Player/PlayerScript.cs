@@ -109,6 +109,8 @@ public class PlayerScript : MonoBehaviour
         foreach (Collider2D enemy in hitEnemies)
         {
             enemy.GetComponent<EnemyScript>().TakeDamage(attackDamage);
+            CameraShakeScript.VibrateForTime(0.1f);
+            ComboScript.enemyHit();
         }
 
     }
@@ -120,7 +122,7 @@ public class PlayerScript : MonoBehaviour
 
         animator.SetTrigger("isTakeDamage");
 
-
+        ComboScript.comboSystem = 0;
 
         if (EnemyScript.isFlipped == false)
             rigid.AddForce(takeDamageVelocity, ForceMode2D.Impulse);
@@ -201,7 +203,6 @@ public class PlayerScript : MonoBehaviour
             setPlayerSkill1 = true;
 
 
-
         }
         else if(Input.GetKey(KeyCode.RightArrow) && Input.GetKeyDown(KeyCode.V))
         {
@@ -213,7 +214,7 @@ public class PlayerScript : MonoBehaviour
 
         }
 
-
+        
     }
 
     

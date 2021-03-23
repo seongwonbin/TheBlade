@@ -16,6 +16,7 @@ public class PlayerMoveScript : MonoBehaviour
     public GameObject obj; // Dash CoolTimer
     public Text mytext;
 
+
     public bool isJumping = false;
 
     public static bool dashCoolTime = false;
@@ -30,7 +31,8 @@ public class PlayerMoveScript : MonoBehaviour
     public Vector3 moveVelocity = Vector3.zero;
 
     public Vector3 swap;
-    
+
+
 
     void Start()
     {
@@ -38,7 +40,7 @@ public class PlayerMoveScript : MonoBehaviour
         spr = gameObject.GetComponent<SpriteRenderer>();
         animator = gameObject.GetComponent<Animator>();
         mytext = GameObject.Find("Dash Cooltime Text").GetComponent<Text>();
-
+        
     }
 
     void Update()
@@ -49,7 +51,7 @@ public class PlayerMoveScript : MonoBehaviour
 
         Skill1();
 
-      
+
 
     }
 
@@ -57,7 +59,7 @@ public class PlayerMoveScript : MonoBehaviour
     private void FixedUpdate()
     {
 
-        if(PlayerAttack1Script.playerAttack1 == false && PlayerAttack2Script.playerAttack2 == false )
+        if(PlayerAttack1Script.playerAttack1 == false && PlayerAttack2Script.playerAttack2 == false)
             Move();
 
         Jump();
@@ -186,9 +188,6 @@ public class PlayerMoveScript : MonoBehaviour
 
     }
 
-    public void test()
-    {
-        movePower = 7f;
 
-    }
+
 }
