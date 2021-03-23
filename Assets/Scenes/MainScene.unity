@@ -5600,7 +5600,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   introInit: 0
   initialPosition: {x: 0, y: 50, z: 0}
-  shakeAmount: 0
   obj: {fileID: 4392823398681765595, guid: ef23555318892a6439bc42f5754d955f, type: 3}
 --- !u!1 &520400778
 GameObject:
@@ -31579,6 +31578,10 @@ MonoBehaviour:
   leftAttackPoint: {x: -3.8, y: 0}
   rightAttackPoint: {x: 3.8, y: 0}
   test: {x: 30, y: 0}
+  playerRage1: {fileID: 5908182744291443284, guid: 32c2d91d862bce949981dab94f23bb45,
+    type: 3}
+  playerRage2: {fileID: 5908182744291443284, guid: 32c2d91d862bce949981dab94f23bb45,
+    type: 3}
 --- !u!114 &1366530062
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37624,13 +37627,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1676346987}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 325220468}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -851.1, y: 430}

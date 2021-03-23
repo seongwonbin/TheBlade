@@ -10,7 +10,7 @@ public class CameraShakeScript : MonoBehaviour
     public bool introInit = false;
     public Vector3 initialPosition;
 
-    public float shakeAmount;
+    public static float shakeAmount;
     public static float shakeTime;
     public static float timer = 0.0f;
 

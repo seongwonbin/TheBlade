@@ -32,7 +32,7 @@ public class PlayerMoveScript : MonoBehaviour
 
     public Vector3 swap;
 
-
+    public static bool flipController = false;
 
     void Start()
     {
@@ -84,7 +84,7 @@ public class PlayerMoveScript : MonoBehaviour
             moveVelocity = Vector3.left;
             //spr.flipX = true;
             transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
-
+            flipController = true;
         }
 
 
@@ -93,7 +93,7 @@ public class PlayerMoveScript : MonoBehaviour
 
             moveVelocity = Vector3.right;
             transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
-
+            flipController = false;
         }
 
         transform.position += moveVelocity * movePower * Time.deltaTime;

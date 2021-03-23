@@ -39,6 +39,10 @@ public class PlayerScript : MonoBehaviour
 
     public Vector2 test = new Vector2(30, 0);
 
+    public GameObject playerRage1;
+    public GameObject playerRage2;
+
+
     void Start()
     {
         animator = gameObject.GetComponent<Animator>();
@@ -64,6 +68,7 @@ public class PlayerScript : MonoBehaviour
 
         PlayerSkill1();
         PlayerSkill1Active();
+
     }
 
     void BasicAttack1()
@@ -79,6 +84,10 @@ public class PlayerScript : MonoBehaviour
         else
             animator.SetBool("isAttack", false);
 
+        if (ComboScript.rageMode == true)
+            PlayerRage();
+
+
     }
 
     void BasicAttack2()
@@ -90,6 +99,9 @@ public class PlayerScript : MonoBehaviour
         }
         else
             animator.SetBool("isAttack2", false);
+
+        if (ComboScript.rageMode == true)
+            PlayerRage2();
 
     }
 
@@ -109,7 +121,10 @@ public class PlayerScript : MonoBehaviour
         foreach (Collider2D enemy in hitEnemies)
         {
             enemy.GetComponent<EnemyScript>().TakeDamage(attackDamage);
-            CameraShakeScript.VibrateForTime(0.1f);
+
+            if(ComboScript.rageMode == false)
+                CameraShakeScript.VibrateForTime(0.1f);
+
             ComboScript.enemyHit();
         }
 
@@ -217,7 +232,24 @@ public class PlayerScript : MonoBehaviour
         
     }
 
-    
+    void PlayerRage()
+    {
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            Instantiate(playerRage1, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+            
+        }
+
+    }
+
+    void PlayerRage2()
+    {
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            Instantiate(playerRage1, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+
+        }
+    }
 
 
 }
