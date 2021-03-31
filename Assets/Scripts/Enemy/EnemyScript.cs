@@ -35,12 +35,16 @@ public class EnemyScript : MonoBehaviour
         spr = GetComponent<SpriteRenderer>();
         col = GetComponent<BoxCollider2D>();
         rigid = GetComponent<Rigidbody2D>();
+
+        //Instantiate(hpBar, new Vector3(transform.position.x, transform.position.y - 0.1f, transform.position.z), Quaternion.identity);
     }
 
     private void Update()
     {
         if (currentHealth <= 0)
             Die();
+
+        
     }
 
     public void TakeDamage(int damage)
@@ -52,7 +56,7 @@ public class EnemyScript : MonoBehaviour
             enemy.SetBool("Died", true);
 
 
-        //Instantiate(hpBar, new Vector3(transform.position.x, transform.position.y+5, transform.position.z), Quaternion.identity);
+        
         //Instantiate(hpBarBg, new Vector3(transform.position.x, transform.position.y+5, transform.position.z), Quaternion.identity);
     }
 

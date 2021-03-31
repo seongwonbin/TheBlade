@@ -74,6 +74,8 @@
     <Compile Include="Assets\Scripts\Camera\CameraShakeScript.cs" />
     <Compile Include="Assets\Scripts\Camera\MainCameraScript.cs" />
     <Compile Include="Assets\Scripts\ComboScript.cs" />
+    <Compile Include="Assets\Scripts\DashCoolTimeImgScript.cs" />
+    <Compile Include="Assets\Scripts\DCThelperScript.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyAttackScript.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyRun.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyScript.cs" />

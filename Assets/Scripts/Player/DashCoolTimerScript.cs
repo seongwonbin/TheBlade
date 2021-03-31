@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class DashCoolTimerScript : MonoBehaviour
 {
@@ -8,10 +10,13 @@ public class DashCoolTimerScript : MonoBehaviour
     private float coolTime = 1.0f;
     private Animator animator;
 
+
+
     
     void Start()
     {
         animator = gameObject.GetComponent<Animator>();
+
     }
 
     
@@ -32,5 +37,7 @@ public class DashCoolTimerScript : MonoBehaviour
         }
     }
         
+
+
 
 }
