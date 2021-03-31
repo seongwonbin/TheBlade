@@ -42,6 +42,12 @@ public class PlayerScript : MonoBehaviour
     public GameObject playerRage1;
     public GameObject playerRage2;
 
+    public GameObject enemyDmgSp1;
+    public GameObject enemyDmgSp2;
+    public GameObject enemyDmgSp3;
+    public GameObject enemyDmgSp4;
+
+    private int randomX = 0;
 
     void Start()
     {
@@ -126,9 +132,25 @@ public class PlayerScript : MonoBehaviour
                 CameraShakeScript.VibrateForTime(0.1f);
 
             ComboScript.enemyHit();
+
+            randomAttackSprite();
         }
 
     }
+
+    void randomAttackSprite()
+    {
+        randomX = Random.Range(0, 4);
+
+        if (randomX == 0)
+            Instantiate(enemyDmgSp1, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+        else if (randomX == 1)
+            Instantiate(enemyDmgSp2, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+        else if (randomX == 2)
+            Instantiate(enemyDmgSp3, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+        else if (randomX == 3)
+            Instantiate(enemyDmgSp4, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+    }   
 
 
     public void TakeDamage(int damage)

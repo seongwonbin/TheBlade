@@ -82,6 +82,7 @@
     <Compile Include="Assets\Scripts\Heart\Heart1Script.cs" />
     <Compile Include="Assets\Scripts\Heart\Heart2Script.cs" />
     <Compile Include="Assets\Scripts\Heart\Heart3Script.cs" />
+    <Compile Include="Assets\Scripts\HPSliderScript.cs" />
     <Compile Include="Assets\Scripts\IntroScript.cs" />
     <Compile Include="Assets\Scripts\MainSceneManager.cs" />
     <Compile Include="Assets\Scripts\Player\DashCoolTimerScript.cs" />
@@ -95,6 +96,7 @@
     <Compile Include="Assets\Scripts\ShootingMetLeftSc.cs" />
     <Compile Include="Assets\Scripts\ShootingMetSc.cs" />
     <Compile Include="Assets\Scripts\Skill1ActiveSc.cs" />
+    <Compile Include="Assets\Scripts\TDSscript.cs" />
     <Compile Include="Assets\Scripts\TitleButtonScript.cs" />
     <Compile Include="Assets\Scripts\TitleScript.cs" />
     <Compile Include="Assets\Scripts\TitleTextScript.cs" />

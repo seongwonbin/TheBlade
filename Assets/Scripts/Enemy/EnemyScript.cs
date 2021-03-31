@@ -25,6 +25,9 @@ public class EnemyScript : MonoBehaviour
 
     public Transform player;
 
+    public GameObject hpBar;
+    public GameObject hpBarBg;
+
     void Start()
     {
         currentHealth = maxHealth;
@@ -48,6 +51,9 @@ public class EnemyScript : MonoBehaviour
         if (currentHealth <= 0)
             enemy.SetBool("Died", true);
 
+
+        //Instantiate(hpBar, new Vector3(transform.position.x, transform.position.y+5, transform.position.z), Quaternion.identity);
+        //Instantiate(hpBarBg, new Vector3(transform.position.x, transform.position.y+5, transform.position.z), Quaternion.identity);
     }
 
     IEnumerator BeatTime()

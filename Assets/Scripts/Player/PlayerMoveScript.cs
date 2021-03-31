@@ -31,6 +31,7 @@ public class PlayerMoveScript : MonoBehaviour
     public Vector3 moveVelocity = Vector3.zero;
 
     public Vector3 swap;
+    public static Vector3 playerTracker;
 
     public static bool flipController = false;
 
@@ -97,7 +98,7 @@ public class PlayerMoveScript : MonoBehaviour
         }
 
         transform.position += moveVelocity * movePower * Time.deltaTime;
-        //playerTracker = transform.position;
+        playerTracker = transform.position;
 
     }
 

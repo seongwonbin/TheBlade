@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ComboScript : MonoBehaviour
 {
     public Text comboText;
-    public static int comboSystem = 0;
+    public static float comboSystem = 0;
 
     public GameObject obj;
 
@@ -43,7 +43,7 @@ public class ComboScript : MonoBehaviour
 
         if (comboSystem != 0)
         {
-            comboText.text = comboSystem + " combo";
+            comboText.text = (int)comboSystem + " combo";
 
             if (comboMover >= 1750)
                 comboMover -= 5;
@@ -51,7 +51,7 @@ public class ComboScript : MonoBehaviour
         else
             comboText.text = "";
 
-        if (comboSystem >= 10)
+        if (comboSystem >= 30)
         {
             BlinkRoutine();
             rageMode = true;
@@ -65,7 +65,11 @@ public class ComboScript : MonoBehaviour
 
     public static void enemyHit()
     {
-        comboSystem += 1;
+
+        if (rageMode == false)
+            comboSystem += 1;
+        else
+            comboSystem += 0.2f;
 
         comboMover = 1800f;
 

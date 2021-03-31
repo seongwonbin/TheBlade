@@ -10555,6 +10555,8 @@ MonoBehaviour:
   currentHealth: 0
   timer: 0
   player: {fileID: 1366530060}
+  hpBar: {fileID: 0}
+  hpBarBg: {fileID: 0}
 --- !u!212 &1038603864
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10613,7 +10615,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1038603861}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 25.8, y: 1.3, z: 0}
+  m_LocalPosition: {x: 25.3, y: -0.8, z: 0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children:
   - {fileID: 154619007}
@@ -31563,7 +31565,7 @@ MonoBehaviour:
   attackRange: 1.26
   damagedTimer: 0
   attackDamage: 40
-  maxHealth: 3
+  maxHealth: 30
   currentHealth: 0
   obj: {fileID: 8193325928120968301, guid: eb4ce670119a98d4fa0cf5ce9fc51f45, type: 3}
   obj2: {fileID: 4672515956156011789, guid: b3ccbdc59ccb1ea45b1192763aef88ea, type: 3}
@@ -31581,6 +31583,14 @@ MonoBehaviour:
   playerRage1: {fileID: 5908182744291443284, guid: 32c2d91d862bce949981dab94f23bb45,
     type: 3}
   playerRage2: {fileID: 5908182744291443284, guid: 32c2d91d862bce949981dab94f23bb45,
+    type: 3}
+  enemyDmgSp1: {fileID: 4051726684107777064, guid: 33fc27faf9bd4484a9a2a1f83368ca1b,
+    type: 3}
+  enemyDmgSp2: {fileID: 3335618836884599559, guid: 797b6944fa8e9e14392a3cec4ef93692,
+    type: 3}
+  enemyDmgSp3: {fileID: 707036444782973910, guid: c1f3dfe70c18c6c43b8ba7a3a2a059eb,
+    type: 3}
+  enemyDmgSp4: {fileID: 5837534003266390586, guid: 7cd1ed37944c97d4983f042158e87a6a,
     type: 3}
 --- !u!114 &1366530062
 MonoBehaviour:
