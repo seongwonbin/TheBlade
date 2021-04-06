@@ -50,7 +50,9 @@ public class PlayerMoveScript : MonoBehaviour
 
     void Update()
     {
-        Dash();
+        if(PlayerScript.skill1Trigger == false)
+            Dash();
+
         JumpTask();
         DashCoolTimeTask();
 

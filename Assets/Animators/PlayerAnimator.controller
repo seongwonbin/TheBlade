@@ -35,7 +35,7 @@ AnimatorStateMachine:
     m_Position: {x: 100, y: -130, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 4629949378448714502}
-    m_Position: {x: 550, y: -140, z: 0}
+    m_Position: {x: 460, y: -130, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -1921247825017322972}
     m_Position: {x: 410, y: 270, z: 0}
@@ -115,6 +115,7 @@ AnimatorState:
   - {fileID: 5325416265289402953}
   - {fileID: 8544087948611432785}
   - {fileID: -8385117345399502141}
+  - {fileID: 4366898342226722006}
   m_StateMachineBehaviours:
   - {fileID: 1105605089435906878}
   m_Position: {x: 50, y: 50, z: 0}
@@ -595,6 +596,7 @@ AnimatorState:
   - {fileID: 1832940132416415150}
   - {fileID: -2450303889716881440}
   - {fileID: 8075651392748052273}
+  - {fileID: 1197613488068887268}
   m_StateMachineBehaviours:
   - {fileID: 7374674513818614162}
   m_Position: {x: 50, y: 50, z: 0}
@@ -758,6 +760,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5f350daae405d343afff2070172644b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1101 &1197613488068887268
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: isSkill1
+    m_EventTreshold: 0
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: 4629949378448714502}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0
+  m_TransitionOffset: 0
+  m_ExitTime: 1.0000001
+  m_HasExitTime: 0
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
 --- !u!1101 &1832940132416415150
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -1029,6 +1056,31 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+--- !u!1101 &4366898342226722006
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: isSkill1
+    m_EventTreshold: 0
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: 4629949378448714502}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0
+  m_TransitionOffset: 0
+  m_ExitTime: 0.9824102
+  m_HasExitTime: 0
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
 --- !u!1102 &4629949378448714502
 AnimatorState:
   serializedVersion: 5

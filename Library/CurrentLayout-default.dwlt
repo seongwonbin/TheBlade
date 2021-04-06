@@ -73,7 +73,7 @@ MonoBehaviour:
   m_MinSize: {x: 277, y: 194}
   m_MaxSize: {x: 4002, y: 8044}
   vertical: 1
-  controlID: 133
+  controlID: 4835
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 344}
   m_MaxSize: {x: 12008, y: 8044}
   vertical: 0
-  controlID: 132
+  controlID: 61
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -323,7 +323,7 @@ MonoBehaviour:
   - {fileID: 16}
   - {fileID: 15}
   m_Selected: 0
-  m_LastSelected: 2
+  m_LastSelected: 3
 --- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -445,14 +445,14 @@ MonoBehaviour:
     - {fileID: -4663750451177402983, guid: c5ef72b6593b4334bb46154d9ab85f56, type: 2}
     - {fileID: 7415774066171058383, guid: a90632884c98e574ab1359b38ee44507, type: 2}
     m_ValueSerializationHelper:
-    - e00: 0.72583115
+    - e00: 0.70096153
       e01: 0
       e02: 0
-      e03: 39.508057
+      e03: 29.019226
       e10: 0
-      e11: 0.72583115
+      e11: 0.70096153
       e12: 0
-      e13: 168.75961
+      e13: 278.02405
       e20: 0
       e21: 0
       e22: 1
@@ -541,14 +541,14 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
-    - e00: 0.789011
+    - e00: 0.8010989
       e01: 0
       e02: 0
-      e03: -24.450531
+      e03: -25.054932
       e10: 0
-      e11: 0.789011
+      e11: 0.8010989
       e12: 0
-      e13: 193.32857
+      e13: 192.80714
       e20: 0
       e21: 0
       e22: 1
@@ -557,14 +557,14 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
-    - e00: 0.75578946
+    - e00: 0.76736844
       e01: 0
       e02: 0
-      e03: -22.78946
+      e03: -23.368439
       e10: 0
-      e11: 0.75578946
+      e11: 0.76736844
       e12: 0
-      e13: 188.70001
+      e13: 187.6
       e20: 0
       e21: 0
       e22: 1
@@ -733,19 +733,19 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/Player
+    - Assets/Prefab
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts/Player
+  - Assets/Prefab
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\UnityProject\FinalProject\FinalProject
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 26390000
-    m_LastClickedID: 14630
+    m_SelectedIDs: f4360000
+    m_LastClickedID: 14068
     m_ExpandedIDs: 0000000006340000b2350000fc360000723e000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -799,9 +799,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: e6490000
-    m_LastClickedInstanceID: 18918
-    m_HadKeyboardFocusLastEvent: 0
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000c64a00007243000062360000d2350000d4350000b4470000403e00000e400000c04e0000683c00005a350000e63e000000000000f83b0000163c0000fa3b0000703f00004a9c0000e03a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -959,9 +959,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 3.231815, y: -0.9924404, z: -1.8632812}
+    m_Target: {x: 24.851988, y: -3.2388878, z: -3.0234375}
     speed: 2
-    m_Value: {x: 3.231815, y: -0.9924404, z: -1.8632812}
+    m_Value: {x: 24.851988, y: -3.2388878, z: -3.0234375}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -994,9 +994,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 19.817656
+    m_Target: 35.448235
     speed: 2
-    m_Value: 19.817656
+    m_Value: 35.448235
   m_Ortho:
     m_Target: 1
     speed: 2

@@ -49,6 +49,9 @@ public class PlayerScript : MonoBehaviour
 
     private int randomX = 0;
 
+    public static bool skill1Trigger = false;
+    public static bool skill1Trigger_2 = false;
+
     //public static bool readySkill1 = false;
 
     void Start()
@@ -63,7 +66,7 @@ public class PlayerScript : MonoBehaviour
 
     void Update()
     {
-        if (isUnBeatTime == false )
+        if (isUnBeatTime == false && skill1Trigger == false)
         {
             BasicAttack1();
             BasicAttack2();
@@ -158,33 +161,39 @@ public class PlayerScript : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        currentHealth -= damage;
-
-        animator.SetTrigger("isTakeDamage");
-
-        ComboScript.comboSystem = 0;
-
-        if (EnemyScript.isFlipped == false)
-            rigid.AddForce(takeDamageVelocity, ForceMode2D.Impulse);
-        else
-            rigid.AddForce(takeDamageVelocity2, ForceMode2D.Impulse);
-
-        CameraShakeScript.VibrateForTime(0.3f);
-        BlinkRoutine();
-
-
-
-        if (currentHealth == 2)
-            Heart3Script.heartBreak = true;
-        if (currentHealth == 1)
-            Heart2Script.heartBreak = true;
-        if (currentHealth <= 0)
+        if (skill1Trigger == false)
         {
-            Heart1Script.heartBreak = true;
-            MainSceneManager.playerdied = true;
-            Destroy(gameObject);
-        }
+            currentHealth -= damage;
 
+            animator.SetTrigger("isTakeDamage");
+
+            ComboScript.comboSystem = 0;
+
+            if (EnemyScript.isFlipped == false)
+                rigid.AddForce(takeDamageVelocity, ForceMode2D.Impulse);
+            else
+                rigid.AddForce(takeDamageVelocity2, ForceMode2D.Impulse);
+
+            CameraShakeScript.VibrateForTime(0.3f);
+            BlinkRoutine();
+
+
+
+            if (currentHealth == 2)
+                Heart3Script.heartBreak = true;
+            if (currentHealth == 1)
+                Heart2Script.heartBreak = true;
+            if (currentHealth <= 0)
+            {
+                Heart1Script.heartBreak = true;
+                MainSceneManager.playerdied = true;
+                Destroy(gameObject);
+            }
+        }
+        else
+        { 
+            skill1Trigger_2 = true;
+        }
     }
 
     public void BlinkRoutine()
@@ -236,23 +245,31 @@ public class PlayerScript : MonoBehaviour
 
     void PlayerSkill1Active()
     {
-        if (Input.GetKey(KeyCode.LeftArrow) && Input.GetKeyDown(KeyCode.V))
+        if (Input.GetKey(KeyCode.LeftArrow) && skill1Trigger_2 == true)
         {
-
+            
             animator.SetTrigger("Skill1Active");
             Instantiate(obj2, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
             setPlayerSkill1 = true;
-
+            skill1Trigger_2 = false;
+            
 
         }
-        else if(Input.GetKey(KeyCode.RightArrow) && Input.GetKeyDown(KeyCode.V))
+        else if(Input.GetKey(KeyCode.RightArrow) && skill1Trigger_2 == true)
         {
-
+            
             animator.SetTrigger("Skill1Active");
             Instantiate(obj, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
             setPlayerSkill1 = true;
-
-
+            skill1Trigger_2 = false;
+            
+        }
+        else if(skill1Trigger_2 == true)
+        {
+            animator.SetTrigger("Skill1Active");
+            Instantiate(obj, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+            setPlayerSkill1 = true;
+            skill1Trigger_2 = false;
         }
 
         
@@ -280,14 +297,16 @@ public class PlayerScript : MonoBehaviour
 
     void changeMovePower()
     {
+        skill1Trigger = true;
         PlayerMoveScript.movePower = 0.01f;
-        //Debug.Log("i changed!!");
+       
     }
 
     void returnMovePower()
     {
         PlayerMoveScript.movePower = 7.0f;
-        //Debug.Log("i returned!!");
+        skill1Trigger = false;
+      
     }
 
 }

@@ -28,6 +28,8 @@ public class CameraShakeScript : MonoBehaviour
     {
         timer += Time.deltaTime;
         FirstShaking();
+
+        Debug.Log(shakeAmount);
     }
 
     // 메인필드 진입시에 카메라 조정
@@ -59,7 +61,10 @@ public class CameraShakeScript : MonoBehaviour
         {
             initialPosition = new Vector3(MainCameraScript.posX, MainCameraScript.posY + 0.05f, transform.position.z);
             shakeAmount = 0.2f;
+            
         }
+        else if (timer >= 10.0f)
+            initialPosition = new Vector3(MainCameraScript.posX, MainCameraScript.posY + 0.05f, transform.position.z);
 
     }
 
