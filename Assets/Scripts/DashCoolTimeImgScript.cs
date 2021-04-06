@@ -8,6 +8,8 @@ public class DashCoolTimeImgScript : MonoBehaviour
 
     private Image img;
 
+    private float temp = 1f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,19 +18,23 @@ public class DashCoolTimeImgScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         Color color = img.color;
 
         if (PlayerMoveScript.dashCoolTime == false)
         {
+            
             color.a = 0f;
             img.color = color;
+            temp = 1f;
         }
         else
         {
-            color.a = 0.81f;
+
+            color.a = temp;
             img.color = color;
+            temp -= 0.02f;
         }
     }
 }

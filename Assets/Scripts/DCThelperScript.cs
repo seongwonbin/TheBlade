@@ -29,7 +29,7 @@ public class DCThelperScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         Color color = img.color;
 
@@ -40,21 +40,18 @@ public class DCThelperScript : MonoBehaviour
             color.a = 0f;
             heightCtrl = 0;
             posYCtrl = 0;
-            //timer = 0f;
+
         }
         else
         { 
             color.a = 0.8117f;
-            posYCtrl = posYCtrl + 0.45f;
-            //timer += Time.deltaTime;
+            posYCtrl = posYCtrl + 0.9f;
 
-            //if (posYCtrl >= 43.34)
-            //    PlayerMoveScript.dashCoolTime = false;
         }
         rectTransform.sizeDelta = new Vector2(84.5f, 85.22f - heightCtrl);
         rectTransform.anchoredPosition = new Vector2(-850.25f, -419.03f - posYCtrl);
         img.color = color;
 
-        //Debug.Log(timer);
+
     }
 }

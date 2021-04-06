@@ -19,10 +19,10 @@ AnimationClip:
   m_FloatCurves: []
   m_PPtrCurves:
   - curve:
-    - time: 0
+    - time: 0.016666668
       value: {fileID: -274769445843045768, guid: 743f7fb7d958d8d4ea91fcdf3a19ce98,
         type: 3}
-    - time: 0.083333336
+    - time: 0.1
       value: {fileID: 913523636760228432, guid: 743f7fb7d958d8d4ea91fcdf3a19ce98,
         type: 3}
     - time: 0.18333334
@@ -31,11 +31,20 @@ AnimationClip:
     - time: 0.26666668
       value: {fileID: -5228286424242086374, guid: 743f7fb7d958d8d4ea91fcdf3a19ce98,
         type: 3}
-    - time: 0.31666666
+    - time: 0.28333333
       value: {fileID: 187500141237431569, guid: 743f7fb7d958d8d4ea91fcdf3a19ce98,
+        type: 3}
+    - time: 0.33333334
+      value: {fileID: 187500141237431569, guid: 743f7fb7d958d8d4ea91fcdf3a19ce98,
+        type: 3}
+    - time: 0.36666667
+      value: {fileID: -866006736205525823, guid: 743f7fb7d958d8d4ea91fcdf3a19ce98,
         type: 3}
     - time: 0.41666666
       value: {fileID: -1525746130892209911, guid: 743f7fb7d958d8d4ea91fcdf3a19ce98,
+        type: 3}
+    - time: 0.45
+      value: {fileID: -274769445843045768, guid: 743f7fb7d958d8d4ea91fcdf3a19ce98,
         type: 3}
     - time: 0.5
       value: {fileID: -2692265990543866993, guid: 743f7fb7d958d8d4ea91fcdf3a19ce98,
@@ -67,7 +76,10 @@ AnimationClip:
     - {fileID: -866006736205525823, guid: 743f7fb7d958d8d4ea91fcdf3a19ce98, type: 3}
     - {fileID: -5228286424242086374, guid: 743f7fb7d958d8d4ea91fcdf3a19ce98, type: 3}
     - {fileID: 187500141237431569, guid: 743f7fb7d958d8d4ea91fcdf3a19ce98, type: 3}
+    - {fileID: 187500141237431569, guid: 743f7fb7d958d8d4ea91fcdf3a19ce98, type: 3}
+    - {fileID: -866006736205525823, guid: 743f7fb7d958d8d4ea91fcdf3a19ce98, type: 3}
     - {fileID: -1525746130892209911, guid: 743f7fb7d958d8d4ea91fcdf3a19ce98, type: 3}
+    - {fileID: -274769445843045768, guid: 743f7fb7d958d8d4ea91fcdf3a19ce98, type: 3}
     - {fileID: -2692265990543866993, guid: 743f7fb7d958d8d4ea91fcdf3a19ce98, type: 3}
     - {fileID: 793121639362817295, guid: 743f7fb7d958d8d4ea91fcdf3a19ce98, type: 3}
   m_AnimationClipSettings:
