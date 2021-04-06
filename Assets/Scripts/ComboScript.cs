@@ -12,7 +12,7 @@ public class ComboScript : MonoBehaviour
 
     public static RectTransform textPos;
 
-    private float timer = 0;
+    //private float timer = 0;
 
     public static float comboMover = 1790f;
 

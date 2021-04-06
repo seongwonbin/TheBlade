@@ -35,6 +35,10 @@ public class PlayerMoveScript : MonoBehaviour
 
     public static bool flipController = false;
 
+    public static bool playerVanish = false;
+
+    private float vanishTimer = 0f;
+
     void Start()
     {
         rigid = gameObject.GetComponent<Rigidbody2D>();
@@ -52,6 +56,7 @@ public class PlayerMoveScript : MonoBehaviour
 
         Skill1();
 
+        Vanish();
 
 
     }
@@ -69,6 +74,9 @@ public class PlayerMoveScript : MonoBehaviour
             animator.SetBool("isMoving", true);
         else
             animator.SetBool("isMoving", false);
+
+        if (playerVanish == true)
+            vanishTimer += Time.deltaTime;
     }
 
     public void Move()
@@ -150,21 +158,26 @@ public class PlayerMoveScript : MonoBehaviour
         { 
             if (Input.GetKey(KeyCode.LeftArrow) && Input.GetKeyDown(KeyCode.X))
             {
+
                 PlayerDashScript.playerDash = true;
                 animator.SetBool("isDash", true);
                 moveVelocity = Vector3.left;
                 rigid.AddForce(leftDashVelocity, ForceMode2D.Impulse);
+                playerVanish = true;
             }
             else if (Input.GetKey(KeyCode.RightArrow) && Input.GetKeyDown(KeyCode.X))
             {
+
                 PlayerDashScript.playerDash = true;
                 animator.SetBool("isDash", true);
                 moveVelocity = Vector3.right;
                 rigid.AddForce(rightDashVelocity, ForceMode2D.Impulse);
+                playerVanish = true;
             }
         }
         else
         {
+
             animator.SetBool("isDash", false);
             PlayerDashScript.playerDash = false;
         }
@@ -173,6 +186,8 @@ public class PlayerMoveScript : MonoBehaviour
             rigid.velocity = new Vector2(0, 0);
         if (rigid.velocity.x < 0 && rigid.velocity.x >= -limitVelocity)
             rigid.velocity = new Vector2(0, 0);
+
+
     }
 
     public void Skill1()
@@ -189,6 +204,19 @@ public class PlayerMoveScript : MonoBehaviour
 
     }
 
+    public void Vanish()
+    {
+        if (playerVanish == true)
+            this.gameObject.layer = 10;
+        else
+        { 
+            this.gameObject.layer = 9;
+            vanishTimer = 0f;
+        }
 
+        if (vanishTimer >= 0.5f)
+            playerVanish = false;
+
+    }
 
 }
