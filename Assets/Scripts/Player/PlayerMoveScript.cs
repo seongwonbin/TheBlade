@@ -9,7 +9,7 @@ public class PlayerMoveScript : MonoBehaviour
     private Rigidbody2D rigid;
     private Vector3 movement;
 
-    public float movePower = 1f;
+    public static float movePower = 7f;
     public float jumpPower = 1f;
     public float limitVelocity = 18;
 
@@ -58,7 +58,7 @@ public class PlayerMoveScript : MonoBehaviour
 
         Vanish();
 
-
+        
     }
 
     
@@ -81,6 +81,7 @@ public class PlayerMoveScript : MonoBehaviour
 
     public void Move()
     {
+        
 
         // Vector3.zero == Vector3(0,0,0) // .zero는 0,0,0과 같음
         Vector3 moveVelocity = Vector3.zero;

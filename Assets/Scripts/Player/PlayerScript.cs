@@ -49,6 +49,8 @@ public class PlayerScript : MonoBehaviour
 
     private int randomX = 0;
 
+    //public static bool readySkill1 = false;
+
     void Start()
     {
         animator = gameObject.GetComponent<Animator>();
@@ -76,6 +78,7 @@ public class PlayerScript : MonoBehaviour
         PlayerSkill1Active();
 
     }
+
 
     void BasicAttack1()
     {
@@ -224,6 +227,7 @@ public class PlayerScript : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.F))
         {
             animator.SetTrigger("isSkill1");
+            
         }
 
 
@@ -233,8 +237,8 @@ public class PlayerScript : MonoBehaviour
     void PlayerSkill1Active()
     {
         if (Input.GetKey(KeyCode.LeftArrow) && Input.GetKeyDown(KeyCode.V))
-        { 
-            
+        {
+
             animator.SetTrigger("Skill1Active");
             Instantiate(obj2, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
             setPlayerSkill1 = true;
@@ -273,5 +277,17 @@ public class PlayerScript : MonoBehaviour
         }
     }
 
+
+    void changeMovePower()
+    {
+        PlayerMoveScript.movePower = 0.01f;
+        //Debug.Log("i changed!!");
+    }
+
+    void returnMovePower()
+    {
+        PlayerMoveScript.movePower = 7.0f;
+        //Debug.Log("i returned!!");
+    }
 
 }
