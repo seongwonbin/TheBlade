@@ -16,6 +16,7 @@ public class MainCameraScript : MonoBehaviour
     public Vector2 minPos, maxPos;
     public Vector2 velocity;
 
+    public static float orthoSize = 11;
 
     void Start()
     {
@@ -29,6 +30,16 @@ public class MainCameraScript : MonoBehaviour
     void Update()
     {
         map2();
+
+        titleCam.orthographicSize = orthoSize;
+
+        if(orthoSize != 11)
+        {
+            if (orthoSize <= 11)
+                orthoSize += 0.04f;
+        }
+
+        
     }
 
     void FixedUpdate()
@@ -46,7 +57,10 @@ public class MainCameraScript : MonoBehaviour
                                              Mathf.Clamp(transform.position.y, minPos.y, maxPos.y),
                                              Mathf.Clamp(transform.position.z, transform.position.z, transform.position.z)
             );
-        } 
+        }
+
+
+        
         
     }
 

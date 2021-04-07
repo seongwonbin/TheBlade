@@ -52,6 +52,8 @@ public class PlayerScript : MonoBehaviour
     public static bool skill1Trigger = false;
     public static bool skill1Trigger_2 = false;
 
+    public static bool skill1CoolDown = false;
+    
     //public static bool readySkill1 = false;
 
     void Start()
@@ -77,7 +79,10 @@ public class PlayerScript : MonoBehaviour
         if (startBool == true)
             changeColorA = 1.0f;
 
-        PlayerSkill1();
+        
+        if(skill1CoolDown == false)
+            PlayerSkill1();
+
         PlayerSkill1Active();
 
     }
@@ -236,7 +241,8 @@ public class PlayerScript : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.F))
         {
             animator.SetTrigger("isSkill1");
-            
+            skill1CoolDown = true;
+
         }
 
 
@@ -253,6 +259,7 @@ public class PlayerScript : MonoBehaviour
             setPlayerSkill1 = true;
             skill1Trigger_2 = false;
             
+            MainCameraScript.orthoSize = 7;
 
         }
         else if(Input.GetKey(KeyCode.RightArrow) && skill1Trigger_2 == true)
@@ -263,13 +270,27 @@ public class PlayerScript : MonoBehaviour
             setPlayerSkill1 = true;
             skill1Trigger_2 = false;
             
+            MainCameraScript.orthoSize = 7;
         }
         else if(skill1Trigger_2 == true)
         {
             animator.SetTrigger("Skill1Active");
-            Instantiate(obj, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+
+            if(PlayerMoveScript.flipController == false)
+            { 
+                Instantiate(obj, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+                
+            }
+            else
+            { 
+                Instantiate(obj2, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+                
+            }
+
             setPlayerSkill1 = true;
             skill1Trigger_2 = false;
+            
+            MainCameraScript.orthoSize = 7;
         }
 
         
@@ -299,14 +320,14 @@ public class PlayerScript : MonoBehaviour
     {
         skill1Trigger = true;
         PlayerMoveScript.movePower = 0.01f;
-       
+        
     }
 
     void returnMovePower()
     {
         PlayerMoveScript.movePower = 7.0f;
         skill1Trigger = false;
-      
+        
     }
 
 }

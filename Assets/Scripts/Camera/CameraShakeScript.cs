@@ -43,6 +43,14 @@ public class CameraShakeScript : MonoBehaviour
         else
             shakeTime = 0.0f;
 
+
+
+        if (timer >= 3.0f && introInit == false)
+        {
+            shakeAmount = 0.2f;
+            VibrateForTime(0.6f);
+        }
+
         if (timer >= 6.0f && introInit == false)
         {
             shakeAmount = 3f;
@@ -51,20 +59,16 @@ public class CameraShakeScript : MonoBehaviour
             introInit = true;
         }
 
-        if (timer >= 3.0f && introInit == false)
-        {
-            shakeAmount = 0.2f;
-            VibrateForTime(0.6f);
-        }
-
         if (timer >= 8.5f)
         {
             initialPosition = new Vector3(MainCameraScript.posX, MainCameraScript.posY + 0.05f, transform.position.z);
-            shakeAmount = 0.2f;
+
+           
+                shakeAmount = 0.2f;
             
         }
-        else if (timer >= 10.0f)
-            initialPosition = new Vector3(MainCameraScript.posX, MainCameraScript.posY + 0.05f, transform.position.z);
+        
+
 
     }
 

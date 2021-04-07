@@ -62,6 +62,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\S1CThelperScript.cs" />
     <Compile Include="Assets\Scripts\Background\BackgroundGrass3rdScript.cs" />
     <Compile Include="Assets\Scripts\Background\BackgroundGrass4thScript.cs" />
     <Compile Include="Assets\Scripts\Background\BackgroundScript.cs" />
@@ -104,6 +105,7 @@
     <Compile Include="Assets\Scripts\TitleTextScript.cs" />
     <Compile Include="Assets\Scripts\WorldFrameExitScript.cs" />
     <Compile Include="Assets\Scripts\WorldFrameScript.cs" />
+    <Compile Include="Assets\Skill1CoolTimeImgScript.cs" />
     <Compile Include="Assets\StarNestSkybox\Scripts\CameraScroll.cs" />
     <Compile Include="Assets\StarNestSkybox\Scripts\SkyboxSwitcher.cs" />
     <None Include="Assets\StarNestSkybox\StarNestSkyboxReadme.txt" />

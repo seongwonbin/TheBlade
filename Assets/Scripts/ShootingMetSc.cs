@@ -23,6 +23,7 @@ public class ShootingMetSc : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        transform.position = new Vector3(PlayerMoveScript.playerTracker.x, PlayerMoveScript.playerTracker.y, 20f);
         transform.rotation = Quaternion.Euler(new Vector3(74.07f, 0f, 0));
         transform.localScale = new Vector3(0.4f, 0.4f, 0f);
     }

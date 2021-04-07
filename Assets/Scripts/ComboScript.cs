@@ -66,15 +66,17 @@ public class ComboScript : MonoBehaviour
     public static void enemyHit()
     {
 
-        if (rageMode == false)
-            comboSystem += 1;
-        else
+        if (PlayerScript.skill1Trigger == true)
             comboSystem += 0.2f;
+        else
+        {
+            if (rageMode == false)
+                comboSystem += 1f;
+            else if (rageMode == true)
+                comboSystem += 0.2f;
+        }
 
         comboMover = 1800f;
-
-       
-
     }
 
     public void BlinkRoutine()
