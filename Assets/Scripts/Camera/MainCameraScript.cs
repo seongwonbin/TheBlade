@@ -18,6 +18,8 @@ public class MainCameraScript : MonoBehaviour
 
     public static float orthoSize = 11;
 
+    private float timer = 0f;
+
     void Start()
     {
         titleCam = GetComponent<Camera>();
@@ -33,13 +35,6 @@ public class MainCameraScript : MonoBehaviour
 
         titleCam.orthographicSize = orthoSize;
 
-        if(orthoSize != 11)
-        {
-            if (orthoSize <= 11)
-                orthoSize += 0.04f;
-        }
-
-        
     }
 
     void FixedUpdate()
@@ -47,7 +42,7 @@ public class MainCameraScript : MonoBehaviour
         posX = Mathf.SmoothDamp(transform.position.x, player.transform.position.x, ref velocity.x, smoothTimeX);
         posY = Mathf.SmoothDamp(transform.position.y, player.transform.position.y, ref velocity.y, smoothTimeY);
 
-        transform.position = new Vector3(posX, posY, transform.position.z);
+        transform.position = new Vector3(posX, posY, -50.0f);
         playerTracker = transform.position;
         
         if (bound)
@@ -60,8 +55,15 @@ public class MainCameraScript : MonoBehaviour
         }
 
 
-        
-        
+        if (orthoSize != 11f)
+            timer += Time.deltaTime;
+
+        if (timer >= 0.5f)
+        {
+            orthoSize = 11f;
+            timer = 0f;
+        }
+
     }
 
     void map2()
