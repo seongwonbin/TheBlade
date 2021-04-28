@@ -28,6 +28,8 @@ public class EnemyScript : MonoBehaviour
     public GameObject hpBar;
     public GameObject hpBarBg;
 
+    public static Vector3 myPos;
+
     void Start()
     {
         currentHealth = maxHealth;
@@ -39,10 +41,13 @@ public class EnemyScript : MonoBehaviour
         //Instantiate(hpBar, new Vector3(transform.position.x, transform.position.y - 0.1f, transform.position.z), Quaternion.identity);
     }
 
-    private void Update()
+    public void Update()
     {
         if (currentHealth <= 0)
             Die();
+
+
+       
 
         
     }

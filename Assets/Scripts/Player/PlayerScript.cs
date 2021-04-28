@@ -47,7 +47,11 @@ public class PlayerScript : MonoBehaviour
     public GameObject enemyDmgSp3;
     public GameObject enemyDmgSp4;
 
-    private int randomX = 0;
+    public GameObject atkParticle;
+    public GameObject swingParticle;
+
+    public static int randomX = 0;
+    public static int randomY = 0;
 
     public static bool skill1Trigger = false;
     public static bool skill1Trigger_2 = false;
@@ -84,6 +88,9 @@ public class PlayerScript : MonoBehaviour
             PlayerSkill1();
 
         PlayerSkill1Active();
+
+       
+
 
     }
 
@@ -145,6 +152,10 @@ public class PlayerScript : MonoBehaviour
             ComboScript.enemyHit();
 
             randomAttackSprite();
+
+            Instantiate(atkParticle, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+
+            Instantiate(swingParticle, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
         }
 
     }
@@ -152,6 +163,7 @@ public class PlayerScript : MonoBehaviour
     void randomAttackSprite()
     {
         randomX = Random.Range(0, 4);
+        randomY = Random.Range(1, 4);
 
         if (randomX == 0)
             Instantiate(enemyDmgSp1, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
@@ -261,6 +273,10 @@ public class PlayerScript : MonoBehaviour
             
             MainCameraScript.orthoSize = 8.5f;
 
+            Instantiate(swingParticle, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+            Instantiate(swingParticle, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+            Instantiate(swingParticle, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+
         }
         else if(Input.GetKey(KeyCode.RightArrow) && skill1Trigger_2 == true)
         {
@@ -271,6 +287,10 @@ public class PlayerScript : MonoBehaviour
             skill1Trigger_2 = false;
             
             MainCameraScript.orthoSize = 8.5f;
+
+            Instantiate(swingParticle, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+            Instantiate(swingParticle, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+            Instantiate(swingParticle, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
         }
         else if(skill1Trigger_2 == true)
         {
@@ -291,9 +311,14 @@ public class PlayerScript : MonoBehaviour
             skill1Trigger_2 = false;
             
             MainCameraScript.orthoSize = 8.5f;
+
+            Instantiate(swingParticle, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+            Instantiate(swingParticle, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+            Instantiate(swingParticle, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
         }
 
         
+
     }
 
     void PlayerRage()

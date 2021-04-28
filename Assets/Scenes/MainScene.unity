@@ -32041,6 +32041,10 @@ MonoBehaviour:
     type: 3}
   enemyDmgSp4: {fileID: 5837534003266390586, guid: 7cd1ed37944c97d4983f042158e87a6a,
     type: 3}
+  atkParticle: {fileID: 8318500055994282373, guid: 777eddfb1eb1fd14ab94a19b0d8992d7,
+    type: 3}
+  swingParticle: {fileID: 7151045130563947907, guid: 4318fa6cf0595b14b9fce24573c6c926,
+    type: 3}
 --- !u!114 &1366530062
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\S1CThelperScript.cs" />
+    <Compile Include="Assets\Scripts\AttackParticleScript.cs" />
     <Compile Include="Assets\Scripts\Background\BackgroundGrass3rdScript.cs" />
     <Compile Include="Assets\Scripts\Background\BackgroundGrass4thScript.cs" />
     <Compile Include="Assets\Scripts\Background\BackgroundScript.cs" />
@@ -88,6 +89,7 @@
     <Compile Include="Assets\Scripts\HPSliderScript.cs" />
     <Compile Include="Assets\Scripts\IntroScript.cs" />
     <Compile Include="Assets\Scripts\MainSceneManager.cs" />
+    <Compile Include="Assets\Scripts\ParticleSysScript.cs" />
     <Compile Include="Assets\Scripts\Player\DashCoolTimerScript.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerAttack1Script.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerAttack2Script.cs" />
