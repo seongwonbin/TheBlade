@@ -62,6 +62,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\DgerRun.cs" />
     <Compile Include="Assets\S1CThelperScript.cs" />
     <Compile Include="Assets\Scripts\AttackParticleScript.cs" />
     <Compile Include="Assets\Scripts\Background\BackgroundGrass3rdScript.cs" />
@@ -78,6 +79,8 @@
     <Compile Include="Assets\Scripts\ComboScript.cs" />
     <Compile Include="Assets\Scripts\DashCoolTimeImgScript.cs" />
     <Compile Include="Assets\Scripts\DCThelperScript.cs" />
+    <Compile Include="Assets\Scripts\DgerAttackScript.cs" />
+    <Compile Include="Assets\Scripts\DgerScript.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyAttackScript.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyRun.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyScript.cs" />

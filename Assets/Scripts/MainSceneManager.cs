@@ -20,6 +20,9 @@ public class MainSceneManager : MonoBehaviour
     void Update()
     {
         MainBlackScreen();
+
+        if (Input.GetKeyDown(KeyCode.Q))
+            Debug.Log("spawn Dger");
     }
 
     private void MainBlackScreen()

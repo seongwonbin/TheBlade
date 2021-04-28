@@ -6,22 +6,21 @@ public class ParticleSysScript : MonoBehaviour
 {
     float timer = 0f;
 
+    public static float angleCtrl = 90f;
+
     // Start is called before the first frame update
     void Start()
     {
         if(PlayerMoveScript.flipController == false)
         { 
             transform.position = new Vector2(PlayerMoveScript.playerTracker.x+3.3f, PlayerMoveScript.playerTracker.y);
-            transform.rotation = Quaternion.Euler(197f, -90, -90);
+            transform.rotation = Quaternion.Euler(197f, -angleCtrl, -90);
         }
         else
         { 
             transform.position = new Vector2(PlayerMoveScript.playerTracker.x - 3.3f, PlayerMoveScript.playerTracker.y);
-            transform.rotation = Quaternion.Euler(197f, 90, -90);
+            transform.rotation = Quaternion.Euler(197f, angleCtrl, -90);
         }
-
-        
-
     }
 
     // Update is called once per frame

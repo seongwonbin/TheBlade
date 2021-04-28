@@ -89,9 +89,6 @@ public class PlayerScript : MonoBehaviour
 
         PlayerSkill1Active();
 
-       
-
-
     }
 
 
@@ -141,6 +138,7 @@ public class PlayerScript : MonoBehaviour
     void AttackTask()
     {
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+       
 
         foreach (Collider2D enemy in hitEnemies)
         {
@@ -157,6 +155,7 @@ public class PlayerScript : MonoBehaviour
 
             Instantiate(swingParticle, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
         }
+
 
     }
 
@@ -206,6 +205,10 @@ public class PlayerScript : MonoBehaviour
                 MainSceneManager.playerdied = true;
                 Destroy(gameObject);
             }
+
+
+            DgerAttackScript.timer = 0f;
+
         }
         else
         { 
@@ -273,9 +276,7 @@ public class PlayerScript : MonoBehaviour
             
             MainCameraScript.orthoSize = 8.5f;
 
-            Instantiate(swingParticle, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
-            Instantiate(swingParticle, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
-            Instantiate(swingParticle, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+            activateParticle();
 
         }
         else if(Input.GetKey(KeyCode.RightArrow) && skill1Trigger_2 == true)
@@ -288,9 +289,7 @@ public class PlayerScript : MonoBehaviour
             
             MainCameraScript.orthoSize = 8.5f;
 
-            Instantiate(swingParticle, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
-            Instantiate(swingParticle, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
-            Instantiate(swingParticle, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+            activateParticle();
         }
         else if(skill1Trigger_2 == true)
         {
@@ -312,9 +311,7 @@ public class PlayerScript : MonoBehaviour
             
             MainCameraScript.orthoSize = 8.5f;
 
-            Instantiate(swingParticle, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
-            Instantiate(swingParticle, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
-            Instantiate(swingParticle, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+            activateParticle();
         }
 
         
@@ -353,6 +350,13 @@ public class PlayerScript : MonoBehaviour
         PlayerMoveScript.movePower = 7.0f;
         skill1Trigger = false;
         
+    }
+
+    void activateParticle()
+    {
+        Instantiate(swingParticle, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+        Instantiate(swingParticle, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+        Instantiate(swingParticle, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
     }
 
 }
