@@ -142,7 +142,8 @@ public class PlayerScript : MonoBehaviour
 
         foreach (Collider2D enemy in hitEnemies)
         {
-            enemy.GetComponent<EnemyScript>().TakeDamage(attackDamage);
+            //enemy.GetComponent<EnemyScript>().TakeDamage(attackDamage);
+            enemy.GetComponent<DgerScript>().TakeDamage(attackDamage);
 
             if(ComboScript.rageMode == false)
                 CameraShakeScript.VibrateForTime(0.1f);

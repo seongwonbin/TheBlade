@@ -10990,7 +10990,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &1038603862
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11744,7 +11744,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!50 &1098550905
 Rigidbody2D:
   serializedVersion: 4
@@ -11800,7 +11800,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1098550904}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 2737b02555fb3934d87d91fadc141873, type: 2}
   m_CullingMode: 0
@@ -11869,7 +11869,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1098550904}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 328.88, y: -8.1, z: 1}
+  m_LocalPosition: {x: 325.49, y: -2.22, z: 1}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 821263793}
@@ -11892,6 +11892,7 @@ MonoBehaviour:
   timer: 0
   currentHealth: 0
   maxHealth: 100
+  moveVelocity: {x: 0, y: 0, z: 0}
 --- !u!114 &1098550911
 MonoBehaviour:
   m_ObjectHideFlags: 0

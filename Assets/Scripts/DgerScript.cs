@@ -23,6 +23,9 @@ public class DgerScript : MonoBehaviour
 
     public static bool isFlipped = false;
 
+    private float movePower = 7f;
+    public Vector3 moveVelocity = Vector3.zero;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +35,8 @@ public class DgerScript : MonoBehaviour
         spr = GetComponent<SpriteRenderer>();
         col = GetComponent<BoxCollider2D>();
         rigid = GetComponent<Rigidbody2D>();
+
+        //player = GameObject.Find("Dummy_Character").transform;
     }
 
     // Update is called once per frame
@@ -39,6 +44,12 @@ public class DgerScript : MonoBehaviour
     {
         if (currentHealth <= 0)
             Die();
+
+        LookAtPlayer();
+
+        if(PlayerInForestScript.playerLocation == true)
+            moveDger();
+
 
     }
 
@@ -48,7 +59,10 @@ public class DgerScript : MonoBehaviour
         StartCoroutine("BeatTime");
 
         if (currentHealth <= 0)
+        { 
             enemy.SetBool("Died", true);
+            moveVelocity = Vector3.zero;
+        }
 
 
 
@@ -114,5 +128,20 @@ public class DgerScript : MonoBehaviour
             transform.Rotate(0f, 180f, 0f);
             isFlipped = true;
         }
+    }
+
+    public void moveDger()
+    {
+        if (transform.position.x > player.position.x)
+        {
+            moveVelocity = Vector2.left;
+        }
+        else if (transform.position.x < player.position.x)
+        {
+            moveVelocity = Vector2.right;
+        }
+
+        transform.position += moveVelocity * movePower * Time.deltaTime;
+
     }
 }
