@@ -177,6 +177,16 @@ public class PlayerMoveScript : MonoBehaviour
                 rigid.AddForce(rightDashVelocity, ForceMode2D.Impulse);
                 playerVanish = true;
             }
+            // Debugging command
+            else if (Input.GetKey(KeyCode.RightArrow) && Input.GetKeyDown(KeyCode.Q))
+            {
+                PlayerDashScript.playerDash = true;
+                animator.SetBool("isDash", true);
+                moveVelocity = Vector3.right;
+                rigid.AddForce(rightDashVelocity*10, ForceMode2D.Impulse);
+                playerVanish = true;
+
+            }
         }
         else
         {
@@ -190,6 +200,8 @@ public class PlayerMoveScript : MonoBehaviour
         if (rigid.velocity.x < 0 && rigid.velocity.x >= -limitVelocity)
             rigid.velocity = new Vector2(0, 0);
 
+
+        
 
     }
 

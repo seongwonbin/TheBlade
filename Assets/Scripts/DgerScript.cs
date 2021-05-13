@@ -13,17 +13,22 @@ public class DgerScript : MonoBehaviour
 
     private Vector2 diedVelocity = new Vector2(6f, 5f);
     private Vector2 diedVelocity2 = new Vector2(-6f, 5f);
+    private Vector2 accelVelocity = new Vector2(10f, 5f);
 
     public float timer = 0.0f;
+    public float timer2 = 0.0f;
+    public float flipTimer = 0.1f;
 
     public int currentHealth;
     public int maxHealth = 100;
 
     private bool enemyDiedChecker = false;
 
-    public static bool isFlipped = false;
+    private bool jumping = false;
 
-    private float movePower = 7f;
+    //public static bool isFlipped = false;
+
+    private float movePower = 10f;
     public Vector3 moveVelocity = Vector3.zero;
 
     // Start is called before the first frame update
@@ -45,16 +50,31 @@ public class DgerScript : MonoBehaviour
         if (currentHealth <= 0)
             Die();
 
-        LookAtPlayer();
+        
 
-        if(PlayerInForestScript.playerLocation == true)
+        if(PlayerInForestScript.playerLocation == true && jumping == false)
+        { 
             moveDger();
+            LookAtPlayer();
+        }
 
 
     }
 
     public void TakeDamage(int damage)
     {
+        if (transform.position.x < player.position.x && enemyDiedChecker == false)
+        {
+            rigid.AddForce(diedVelocity2, ForceMode2D.Impulse);
+            rigid.AddForce(diedVelocity2, ForceMode2D.Impulse);
+        }
+
+        if (transform.position.x > player.position.x && enemyDiedChecker == false)
+        {
+            rigid.AddForce(diedVelocity, ForceMode2D.Impulse);
+            rigid.AddForce(diedVelocity, ForceMode2D.Impulse);
+        }
+
         currentHealth -= damage;
         StartCoroutine("BeatTime");
 
@@ -107,27 +127,38 @@ public class DgerScript : MonoBehaviour
             countTime++;
         }
         spr.color = new Color(255, 255, 255, 255);
-
+        
         yield return null;
     }
 
     public void LookAtPlayer()
     {
-        Vector3 flipped = transform.localScale;
-        flipped.z *= -1f;
 
-        if (transform.position.x > player.position.x && isFlipped)
+
+        if (transform.position.x > player.position.x)
         {
-            transform.localScale = flipped;
-            transform.Rotate(0f, 180f, 0f);
-            isFlipped = false;
+            accelVelocity = new Vector2(-15f, 7f);
+            
+            //flipTimer += Time.deltaTime;
+
+
+            spr.flipX = false;
+
+
+              
         }
-        else if (transform.position.x < player.position.x && !isFlipped)
+        else if (transform.position.x < player.position.x)
         {
-            transform.localScale = flipped;
-            transform.Rotate(0f, 180f, 0f);
-            isFlipped = true;
+            accelVelocity = new Vector2(15f, 7f);
+
+            spr.flipX = true;
+
         }
+
+
+        
+
+        
     }
 
     public void moveDger()
@@ -143,5 +174,36 @@ public class DgerScript : MonoBehaviour
 
         transform.position += moveVelocity * movePower * Time.deltaTime;
 
+        transform.rotation = Quaternion.Euler(new Vector3(transform.position.x, transform.position.y, 0));
+
+
+        jumpDger();
+    }
+
+    public void jumpDger()
+    {
+        if (Mathf.Abs(Mathf.Abs(transform.position.x) - Mathf.Abs(player.position.x)) < 5)
+        {
+            jumping = true;
+
+            flipTimer += Time.deltaTime;
+            timer2 += Time.deltaTime;
+
+
+            if(flipTimer >= 0.5f)
+            { 
+                rigid.AddForce(accelVelocity, ForceMode2D.Impulse);
+                flipTimer = 0;
+                
+            }
+
+            if (timer2 >= 1f)
+            {
+                jumping = false;
+                timer2 = 0f;
+            }
+
+        }
+        
     }
 }
