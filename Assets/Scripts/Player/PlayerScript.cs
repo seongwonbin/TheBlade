@@ -158,6 +158,7 @@ public class PlayerScript : MonoBehaviour
         }
 
 
+
     }
 
     void randomAttackSprite()

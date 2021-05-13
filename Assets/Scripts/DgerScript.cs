@@ -28,7 +28,7 @@ public class DgerScript : MonoBehaviour
 
     //public static bool isFlipped = false;
 
-    private float movePower = 10f;
+    private float movePower = 8f;
     public Vector3 moveVelocity = Vector3.zero;
 
     // Start is called before the first frame update
@@ -52,10 +52,14 @@ public class DgerScript : MonoBehaviour
 
         
 
-        if(PlayerInForestScript.playerLocation == true && jumping == false)
-        { 
-            moveDger();
+        if(PlayerInForestScript.playerLocation == true)
+        {
             LookAtPlayer();
+
+            if(jumping == false)
+                moveDger();
+
+            jumpDger();
         }
 
 
@@ -65,14 +69,30 @@ public class DgerScript : MonoBehaviour
     {
         if (transform.position.x < player.position.x && enemyDiedChecker == false)
         {
-            rigid.AddForce(diedVelocity2, ForceMode2D.Impulse);
-            rigid.AddForce(diedVelocity2, ForceMode2D.Impulse);
+            if(jumping == true)
+            { 
+                rigid.AddForce(new Vector2(-12, 5), ForceMode2D.Impulse);
+                rigid.AddForce(new Vector2(-12, 5), ForceMode2D.Impulse);
+            }
+            else
+            {  
+                rigid.AddForce(diedVelocity2, ForceMode2D.Impulse);
+                rigid.AddForce(diedVelocity2, ForceMode2D.Impulse);
+            }
         }
 
         if (transform.position.x > player.position.x && enemyDiedChecker == false)
         {
-            rigid.AddForce(diedVelocity, ForceMode2D.Impulse);
-            rigid.AddForce(diedVelocity, ForceMode2D.Impulse);
+            if(jumping == true)
+            {
+                rigid.AddForce(new Vector2(12, 5), ForceMode2D.Impulse);
+                rigid.AddForce(new Vector2(12, 5), ForceMode2D.Impulse);
+            }
+            else
+            { 
+                rigid.AddForce(diedVelocity, ForceMode2D.Impulse);
+                rigid.AddForce(diedVelocity, ForceMode2D.Impulse);
+            }
         }
 
         currentHealth -= damage;
@@ -172,38 +192,35 @@ public class DgerScript : MonoBehaviour
             moveVelocity = Vector2.right;
         }
 
+
         transform.position += moveVelocity * movePower * Time.deltaTime;
 
         transform.rotation = Quaternion.Euler(new Vector3(transform.position.x, transform.position.y, 0));
 
 
-        jumpDger();
+        
     }
 
     public void jumpDger()
     {
-        if (Mathf.Abs(Mathf.Abs(transform.position.x) - Mathf.Abs(player.position.x)) < 5)
+        if (Mathf.Abs(Mathf.Abs(transform.position.x) - Mathf.Abs(player.position.x)) < 5 && jumping == false)
         {
             jumping = true;
 
-            flipTimer += Time.deltaTime;
+            
+            rigid.AddForce(accelVelocity, ForceMode2D.Impulse);
+            
+            
+        }
+
+        if(jumping == true)
             timer2 += Time.deltaTime;
 
-
-            if(flipTimer >= 0.5f)
-            { 
-                rigid.AddForce(accelVelocity, ForceMode2D.Impulse);
-                flipTimer = 0;
-                
-            }
-
-            if (timer2 >= 1f)
-            {
-                jumping = false;
-                timer2 = 0f;
-            }
-
+        if (timer2 >= 1.5f)
+        { 
+            jumping = false;
+            timer2 = 0f;
         }
-        
+
     }
 }
