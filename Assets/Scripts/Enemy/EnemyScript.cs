@@ -19,7 +19,7 @@ public class EnemyScript : MonoBehaviour
 
     public int maxHealth = 100;
     public int currentHealth;
-    
+
     public float timer = 0.0f;
 
 
@@ -47,9 +47,9 @@ public class EnemyScript : MonoBehaviour
             Die();
 
 
-       
 
-        
+
+
     }
 
     public void TakeDamage(int damage)
@@ -61,7 +61,7 @@ public class EnemyScript : MonoBehaviour
             enemy.SetBool("Died", true);
 
 
-        
+
         //Instantiate(hpBarBg, new Vector3(transform.position.x, transform.position.y+5, transform.position.z), Quaternion.identity);
     }
 
@@ -87,13 +87,13 @@ public class EnemyScript : MonoBehaviour
     void Die()
     {
         if (transform.position.x < player.position.x && enemyDiedChecker == false)
-        { 
+        {
             rigid.AddForce(diedVelocity2, ForceMode2D.Impulse);
             rigid.AddForce(diedVelocity2, ForceMode2D.Impulse);
         }
 
         if (transform.position.x > player.position.x && enemyDiedChecker == false)
-        { 
+        {
             rigid.AddForce(diedVelocity, ForceMode2D.Impulse);
             rigid.AddForce(diedVelocity, ForceMode2D.Impulse);
         }

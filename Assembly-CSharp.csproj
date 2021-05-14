@@ -108,6 +108,7 @@
     <Compile Include="Assets\Scripts\TitleButtonScript.cs" />
     <Compile Include="Assets\Scripts\TitleScript.cs" />
     <Compile Include="Assets\Scripts\TitleTextScript.cs" />
+    <Compile Include="Assets\Scripts\uiDgerScript.cs" />
     <Compile Include="Assets\Scripts\WorldFrameExitScript.cs" />
     <Compile Include="Assets\Scripts\WorldFrameScript.cs" />
     <Compile Include="Assets\Skill1CoolTimeImgScript.cs" />

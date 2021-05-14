@@ -187,7 +187,7 @@ public class PlayerScript : MonoBehaviour
 
             ComboScript.comboSystem = 0;
 
-            if (EnemyScript.isFlipped == false)
+            if (DgerScript.isFlipped == false)
                 rigid.AddForce(takeDamageVelocity, ForceMode2D.Impulse);
             else
                 rigid.AddForce(takeDamageVelocity2, ForceMode2D.Impulse);

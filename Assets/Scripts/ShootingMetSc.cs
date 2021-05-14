@@ -72,7 +72,8 @@ public class ShootingMetSc : MonoBehaviour
 
         foreach (Collider2D enemy in hitEnemies)
         {
-            enemy.GetComponent<EnemyScript>().TakeDamage(attackDamage);
+            enemy.GetComponent<DgerScript>().TakeDamage(attackDamage);
+            //enemy.GetComponent<EnemyScript>().TakeDamage(attackDamage);
 
             if(ComboScript.rageMode == true)
                 CameraShakeScript.VibrateForTime(0.1f);

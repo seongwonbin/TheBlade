@@ -26,9 +26,15 @@ public class DgerScript : MonoBehaviour
 
     private bool jumping = false;
 
+    public bool dummyCtrl = false;
+    public static bool isFlipped = false;
+
+    private float eulerCtrl = 0f;
+    
+
     //public static bool isFlipped = false;
 
-    private float movePower = 8f;
+    private float movePower = 9f;
     public Vector3 moveVelocity = Vector3.zero;
 
     // Start is called before the first frame update
@@ -41,41 +47,61 @@ public class DgerScript : MonoBehaviour
         col = GetComponent<BoxCollider2D>();
         rigid = GetComponent<Rigidbody2D>();
 
-        //player = GameObject.Find("Dummy_Character").transform;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        player = GameObject.Find("Dummy Character").transform;
+
         if (currentHealth <= 0)
             Die();
 
-        
+        if(dummyCtrl == false)
+        { 
 
-        if(PlayerInForestScript.playerLocation == true)
+
+
+        if (PlayerInForestScript.playerLocation == true && enemyDiedChecker == false)
         {
+          
+
+
             LookAtPlayer();
 
-            if(jumping == false)
+            if (jumping == false)
                 moveDger();
 
             jumpDger();
+
+               
+            }
+
         }
 
+        if (enemyDiedChecker == false)
+            transform.rotation = Quaternion.Euler(new Vector3(transform.rotation.x, transform.rotation.y, eulerCtrl));
 
+        if (eulerCtrl != 0)
+            eulerCtrl = 0;
     }
 
     public void TakeDamage(int damage)
     {
+        if(dummyCtrl == false)
+        { 
+
+
         if (transform.position.x < player.position.x && enemyDiedChecker == false)
         {
-            if(jumping == true)
-            { 
-                rigid.AddForce(new Vector2(-12, 5), ForceMode2D.Impulse);
-                rigid.AddForce(new Vector2(-12, 5), ForceMode2D.Impulse);
+            if (jumping == true)
+            {
+                rigid.AddForce(new Vector2(-12, 3), ForceMode2D.Impulse);
+                rigid.AddForce(new Vector2(-12, 3), ForceMode2D.Impulse);
             }
             else
-            {  
+            {
                 rigid.AddForce(diedVelocity2, ForceMode2D.Impulse);
                 rigid.AddForce(diedVelocity2, ForceMode2D.Impulse);
             }
@@ -83,24 +109,26 @@ public class DgerScript : MonoBehaviour
 
         if (transform.position.x > player.position.x && enemyDiedChecker == false)
         {
-            if(jumping == true)
+            if (jumping == true)
             {
-                rigid.AddForce(new Vector2(12, 5), ForceMode2D.Impulse);
-                rigid.AddForce(new Vector2(12, 5), ForceMode2D.Impulse);
+                rigid.AddForce(new Vector2(12, 3), ForceMode2D.Impulse);
+                rigid.AddForce(new Vector2(12, 3), ForceMode2D.Impulse);
             }
             else
-            { 
+            {
                 rigid.AddForce(diedVelocity, ForceMode2D.Impulse);
                 rigid.AddForce(diedVelocity, ForceMode2D.Impulse);
             }
         }
 
+
+        }
         currentHealth -= damage;
         StartCoroutine("BeatTime");
 
         if (currentHealth <= 0)
-        { 
-            enemy.SetBool("Died", true);
+        {
+            //enemy.SetBool("Died", true);
             moveVelocity = Vector3.zero;
         }
 
@@ -113,14 +141,14 @@ public class DgerScript : MonoBehaviour
     {
         if (transform.position.x < player.position.x && enemyDiedChecker == false)
         {
-            rigid.AddForce(diedVelocity2, ForceMode2D.Impulse);
-            rigid.AddForce(diedVelocity2, ForceMode2D.Impulse);
+            rigid.AddForce(new Vector2(0,6), ForceMode2D.Impulse);
+            rigid.AddForce(new Vector2(0,6), ForceMode2D.Impulse);
         }
 
         if (transform.position.x > player.position.x && enemyDiedChecker == false)
         {
-            rigid.AddForce(diedVelocity, ForceMode2D.Impulse);
-            rigid.AddForce(diedVelocity, ForceMode2D.Impulse);
+            rigid.AddForce(new Vector2(0, 6), ForceMode2D.Impulse);
+            rigid.AddForce(new Vector2(0, 6), ForceMode2D.Impulse);
         }
 
         enemyDiedChecker = true;
@@ -130,6 +158,12 @@ public class DgerScript : MonoBehaviour
 
         if (timer >= 5.0f)
             Destroy(gameObject);
+
+        if (enemyDiedChecker == true)
+            transform.rotation = Quaternion.Euler(new Vector3(0, 0, timer * 500f));
+            
+
+        MainSceneManager.existDger = false;
     }
 
     IEnumerator BeatTime()
@@ -147,7 +181,7 @@ public class DgerScript : MonoBehaviour
             countTime++;
         }
         spr.color = new Color(255, 255, 255, 255);
-        
+
         yield return null;
     }
 
@@ -158,27 +192,27 @@ public class DgerScript : MonoBehaviour
         if (transform.position.x > player.position.x)
         {
             accelVelocity = new Vector2(-15f, 7f);
-            
+
             //flipTimer += Time.deltaTime;
 
 
             spr.flipX = false;
+            isFlipped = false;
 
 
-              
         }
         else if (transform.position.x < player.position.x)
         {
             accelVelocity = new Vector2(15f, 7f);
 
             spr.flipX = true;
-
+            isFlipped = true;
         }
 
 
-        
 
-        
+
+
     }
 
     public void moveDger()
@@ -195,10 +229,8 @@ public class DgerScript : MonoBehaviour
 
         transform.position += moveVelocity * movePower * Time.deltaTime;
 
-        transform.rotation = Quaternion.Euler(new Vector3(transform.position.x, transform.position.y, 0));
-
-
         
+
     }
 
     public void jumpDger()
@@ -207,17 +239,17 @@ public class DgerScript : MonoBehaviour
         {
             jumping = true;
 
-            
+
             rigid.AddForce(accelVelocity, ForceMode2D.Impulse);
-            
-            
+
+
         }
 
-        if(jumping == true)
+        if (jumping == true)
             timer2 += Time.deltaTime;
 
-        if (timer2 >= 1.5f)
-        { 
+        if (timer2 >= 1.0f)
+        {
             jumping = false;
             timer2 = 0f;
         }
