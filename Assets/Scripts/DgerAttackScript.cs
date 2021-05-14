@@ -11,6 +11,7 @@ public class DgerAttackScript : MonoBehaviour
     public LayerMask enemyLayers;
 
     public static float timer = 0f;
+    private float attackTimer = 0f;
 
     // Start is called before the first frame update
     void Start()

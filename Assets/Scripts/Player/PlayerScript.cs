@@ -57,8 +57,9 @@ public class PlayerScript : MonoBehaviour
     public static bool skill1Trigger_2 = false;
 
     public static bool skill1CoolDown = false;
-    
-    //public static bool readySkill1 = false;
+
+    private float timer = 0f;
+
 
     void Start()
     {
@@ -88,6 +89,8 @@ public class PlayerScript : MonoBehaviour
             PlayerSkill1();
 
         PlayerSkill1Active();
+
+        timer += Time.deltaTime;
 
     }
 
@@ -213,8 +216,17 @@ public class PlayerScript : MonoBehaviour
 
         }
         else
-        { 
-            skill1Trigger_2 = true;
+        {
+            
+
+            if(timer > 0.5f)
+            {
+                timer = 0f;
+                skill1Trigger_2 = true;
+                
+                Debug.Log("버그 잡는중!");
+            }
+
         }
     }
 
