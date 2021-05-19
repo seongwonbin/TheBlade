@@ -45,6 +45,6 @@ public class TitleButtonScript : MonoBehaviour
             changeColor += 0.01f;
 
         if (TitleScript.eventTrigger == true && changeColor >= 1.0f)
-            SceneManager.LoadScene("MainScene");
+            SceneManager.LoadScene("TitleScene2");
     }
 }

@@ -29,7 +29,7 @@ public class CameraShakeScript : MonoBehaviour
         timer += Time.deltaTime;
         FirstShaking();
 
-        Debug.Log(shakeAmount);
+        //Debug.Log(shakeAmount);
     }
 
     // 메인필드 진입시에 카메라 조정
