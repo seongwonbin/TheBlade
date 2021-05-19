@@ -143,12 +143,31 @@ public class PlayerScript : MonoBehaviour
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
        
 
+        // Dger 판정검사
         foreach (Collider2D enemy in hitEnemies)
         {
             //enemy.GetComponent<EnemyScript>().TakeDamage(attackDamage);
             enemy.GetComponent<DgerScript>().TakeDamage(attackDamage);
 
             if(ComboScript.rageMode == false)
+                CameraShakeScript.VibrateForTime(0.1f);
+
+            ComboScript.enemyHit();
+
+            randomAttackSprite();
+
+            Instantiate(atkParticle, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+
+            Instantiate(swingParticle, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+        }
+
+        // 두번째 몬스터 판정검사
+        foreach (Collider2D enemy2 in hitEnemies)
+        {
+            enemy2.GetComponent<EnemyScript>().TakeDamage(attackDamage);
+            //enemy.GetComponent<DgerScript>().TakeDamage(attackDamage);
+
+            if (ComboScript.rageMode == false)
                 CameraShakeScript.VibrateForTime(0.1f);
 
             ComboScript.enemyHit();

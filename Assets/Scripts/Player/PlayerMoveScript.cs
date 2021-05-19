@@ -68,7 +68,10 @@ public class PlayerMoveScript : MonoBehaviour
     {
 
         if(PlayerAttack1Script.playerAttack1 == false && PlayerAttack2Script.playerAttack2 == false)
+        { 
             Move();
+
+        }
 
         Jump();
 
