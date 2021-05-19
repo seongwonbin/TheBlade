@@ -83,6 +83,7 @@
     <Compile Include="Assets\Scripts\Enemy\EnemyAttackScript.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyRun.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyScript.cs" />
+    <Compile Include="Assets\Scripts\EscScreenScript.cs" />
     <Compile Include="Assets\Scripts\ForestEnterScript.cs" />
     <Compile Include="Assets\Scripts\FrameObjectScript.cs" />
     <Compile Include="Assets\Scripts\Heart\Heart1Script.cs" />
