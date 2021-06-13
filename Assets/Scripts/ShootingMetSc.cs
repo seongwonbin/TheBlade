@@ -20,15 +20,20 @@ public class ShootingMetSc : MonoBehaviour
 
     public float mmSpeed = 1f;
 
-    
-
     public float rotCtrl = 60f;
+
+    public bool isOne = true;
 
     // Start is called before the first frame update
     void Start()
     {
         spr = GetComponent<SpriteRenderer>();
-        transform.position = new Vector3(PlayerMoveScript.playerTracker.x, PlayerMoveScript.playerTracker.y, 20f);
+
+        if (isOne)
+            transform.position = new Vector3(PlayerMoveScript.playerTracker.x, PlayerMoveScript.playerTracker.y + 0.5f, 20f);
+        else
+            transform.position = new Vector3(PlayerMoveScript.playerTracker.x, PlayerMoveScript.playerTracker.y - 0.5f, 20f);
+
         transform.rotation = Quaternion.Euler(new Vector3(rotCtrl, 0f, 0));
         transform.localScale = new Vector3(0.4f, 0.4f, 0f);
 

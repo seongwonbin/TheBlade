@@ -165,13 +165,13 @@ public class PlayerScript : MonoBehaviour
             if (ComboScript.rageMode == false)
                 CameraShakeScript.VibrateForTime(0.1f);
 
-            ComboScript.enemyHit();
+            //ComboScript.enemyHit();
 
             randomAttackSprite();
 
         }
 
-
+        
 
     }
 
@@ -356,7 +356,7 @@ public class PlayerScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.C))
         {
-            Instantiate(playerRage1, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+            Instantiate(playerRage2, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
 
         }
     }

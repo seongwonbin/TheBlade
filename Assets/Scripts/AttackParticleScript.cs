@@ -15,7 +15,7 @@ public class AttackParticleScript : MonoBehaviour
 
         initPosY = Random.Range(-2.0f, 3.0f);
 
-        transform.position = new Vector3(transform.position.x + initPosX, transform.position.y + initPosY, 0f);
+        transform.position = new Vector3(transform.position.x + initPosX*0.7f, transform.position.y + initPosY*0.7f, 0f);
 
     }
 
