@@ -11,21 +11,31 @@ public class DCThelperScript : MonoBehaviour
     private float heightCtrl = 0;
     private float posYCtrl = 0;
 
-    //private float timer = 0.0f;
+    public bool isWhiteFrame = false;
+
+    public static bool temp = false;
+    private float whiteCtrl = 0f;
 
     // Start is called before the first frame update
     void Start()
     {
+        
         img = GetComponent<Image>();
         rectTransform = GetComponent<RectTransform>();
 
         Color color = img.color;
 
 
-
+        if(isWhiteFrame == false)
+        { 
         heightCtrl = 0;
         posYCtrl = 0;
-
+        }
+        else
+        {
+            color.a = 0f;
+            heightCtrl = 85f;
+        }
     }
 
     // Update is called once per frame
@@ -33,25 +43,54 @@ public class DCThelperScript : MonoBehaviour
     {
         Color color = img.color;
 
-        heightCtrl = posYCtrl * 2;
-
-        if (PlayerMoveScript.dashCoolTime == false)
+        if(isWhiteFrame == false)
         { 
-            color.a = 0f;
-            heightCtrl = 0;
-            posYCtrl = 0;
+            heightCtrl = posYCtrl * 2;
 
+            if (PlayerMoveScript.dashCoolTime == false)
+            { 
+                color.a = 0f;
+                heightCtrl = 0;
+                posYCtrl = 0;
+
+            }
+            else
+            { 
+                color.a = 0.8117f;
+                posYCtrl = posYCtrl + 0.9f;
+
+
+            }
+            rectTransform.sizeDelta = new Vector2(85f, 85f - heightCtrl);
+            rectTransform.anchoredPosition = new Vector2(-850f, -419f - posYCtrl);
+            img.color = color;
         }
         else
-        { 
-            color.a = 0.8117f;
-            posYCtrl = posYCtrl + 0.9f;
+        {
+            rectTransform.sizeDelta = new Vector2(85f, heightCtrl);
+            rectTransform.anchoredPosition = new Vector2(-850f, -419f - posYCtrl);
+
+
+            img.color = new Color(255, 255, 255, whiteCtrl);
+            
+            //img.color = color;
+
+            if (temp == true)
+            {
+                
+                whiteCtrl += 0.1f;
+            }
+
+            if (whiteCtrl >= 1.0f)
+                temp = false;
+
+            if (temp == false && whiteCtrl >= 0)
+                whiteCtrl -= 0.1f;
+
+
+            
 
         }
-        rectTransform.sizeDelta = new Vector2(84.5f, 85.22f - heightCtrl);
-        rectTransform.anchoredPosition = new Vector2(-850.25f, -419.03f - posYCtrl);
-        img.color = color;
-
 
     }
 }

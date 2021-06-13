@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 public class Skill1CoolTimeImgScript : MonoBehaviour
 {
-
+    private Animator anim;
     private Image img;
 
-    private float temp = 1f;
+    private float temp = 0f;
 
     public static float skill1CoolTime = 0f;
 
@@ -16,6 +16,7 @@ public class Skill1CoolTimeImgScript : MonoBehaviour
     void Start()
     {
         img = GetComponent<Image>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -26,21 +27,24 @@ public class Skill1CoolTimeImgScript : MonoBehaviour
         if (PlayerScript.skill1CoolDown == false)
         {
 
-            color.a = 0f;
+            color.a = 1f;
             img.color = color;
-            temp = 1f;
+            temp = 0f;
         }
         else
         {
 
             color.a = temp;
             img.color = color;
-            temp -= 0.005f;
+            temp += 0.005f;
         }
 
 
         if (PlayerScript.skill1CoolDown == true)
+        { 
             skill1CoolTime += 1.0f;
+
+        }
 
         if (skill1CoolTime >= 200f)
         { 
@@ -53,6 +57,12 @@ public class Skill1CoolTimeImgScript : MonoBehaviour
 
     private void Update()
     {
-        
+        if (PlayerScript.skill1CoolDown == true)
+            anim.SetBool("isCoolDown", true);
+        else
+            anim.SetBool("isCoolDown", false);
+
+        if (temp >= 0.8f)
+            S1CThelperScript.SC1temp = true;
     }
 }

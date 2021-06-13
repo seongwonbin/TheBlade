@@ -90,6 +90,7 @@ public class PlayerScript : MonoBehaviour
 
         timer += Time.deltaTime;
 
+
     }
 
 

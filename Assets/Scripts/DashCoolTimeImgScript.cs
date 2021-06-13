@@ -5,16 +5,17 @@ using UnityEngine.UI;
 
 public class DashCoolTimeImgScript : MonoBehaviour
 {
+    private Animator anim;
 
     private Image img;
 
-    private float temp = 1f;
+    private float temp = 0f;
 
     // Start is called before the first frame update
     void Start()
     {
         img = GetComponent<Image>();
-
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -25,16 +26,27 @@ public class DashCoolTimeImgScript : MonoBehaviour
         if (PlayerMoveScript.dashCoolTime == false)
         {
             
-            color.a = 0f;
+            color.a = 1f;
             img.color = color;
-            temp = 1f;
+            temp = 0f;
         }
         else
         {
 
             color.a = temp;
             img.color = color;
-            temp -= 0.02f;
+            temp += 0.02f;
         }
+    }
+
+    private void Update()
+    {
+        if (PlayerMoveScript.dashCoolTime == true)
+            anim.SetBool("isCoolDown", true);
+        else
+            anim.SetBool("isCoolDown", false);
+
+        if (temp >= 0.8f)
+            DCThelperScript.temp = true;
     }
 }
