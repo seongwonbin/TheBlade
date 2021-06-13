@@ -98,6 +98,7 @@
     <Compile Include="Assets\Scripts\Player\PlayerAttack2Script.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerDashScript.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerInForestScript.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerLightScript.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMoveScript.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerScript.cs" />
     <Compile Include="Assets\Scripts\PortalScript.cs" />

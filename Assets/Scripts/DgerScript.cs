@@ -173,7 +173,7 @@ public class DgerScript : MonoBehaviour
         while (countTime < 8)
         {
             if (countTime % 2 == 0)
-                spr.color = new Color(90, 90, 90, 1f);
+                spr.color = new Color(90, 90, 90, 1f); 
             else
                 spr.color = new Color(0, 0, 0, 1f);
 

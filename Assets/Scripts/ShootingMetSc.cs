@@ -16,45 +16,77 @@ public class ShootingMetSc : MonoBehaviour
 
     private float timer = 0f;
 
-    public float mmSpeed = 0.05f;
+    public float mmSpeed = 1f;
 
+    private SpriteRenderer spr;
 
+    public float rotCtrl = 60f;
 
     // Start is called before the first frame update
     void Start()
     {
+        spr = GetComponent<SpriteRenderer>();
         transform.position = new Vector3(PlayerMoveScript.playerTracker.x, PlayerMoveScript.playerTracker.y, 20f);
-        transform.rotation = Quaternion.Euler(new Vector3(74.07f, 0f, 0));
+        transform.rotation = Quaternion.Euler(new Vector3(rotCtrl, 0f, 0));
         transform.localScale = new Vector3(0.4f, 0.4f, 0f);
+
+    }
+
+    void FixedUpdate()
+    {
+        timer += Time.deltaTime;
+
+        if (timer >= 0.22)
+            Destroy(gameObject);
+
+
+
+        if (PlayerMoveScript.flipController == false)
+        {
+
+            movingMet += mmSpeed;
+        }
+        else
+        {
+
+            movingMet -= mmSpeed;
+        }
+
+        if (rotCtrl <= 90f)
+            rotCtrl += 0.8f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        timer += Time.deltaTime;
+        
 
         if (PlayerMoveScript.flipController == false)
         {
-            transform.rotation = Quaternion.Euler(new Vector3(74.07f, 0f, 0));
+            transform.rotation = Quaternion.Euler(new Vector3(rotCtrl, 0f, 0));
             transform.localScale = new Vector3(0.4f, 0.4f, 0f);
-            transform.Translate(movingMet, 0, 0);
 
-            movingMet += mmSpeed;
-
+            
         }
         else
         {
-            transform.rotation = Quaternion.Euler(new Vector3(74.07f, 180, 0));
+            transform.rotation = Quaternion.Euler(new Vector3(rotCtrl, 180f, 0));
             transform.localScale = new Vector3(0.4f, 0.4f, 0f);
-            transform.Translate(-movingMet, 0, 0);
-            movingMet -= mmSpeed;
+
         }
 
+        spr.color = new Color(255f, 255f, 255f, 1f - timer*1.5f);
 
-        if (timer >= 0.22)
-            Destroy(gameObject);
+        transform.Translate(movingMet, 0, 0, Space.World);
+
+        if (timer >= 0.1)
+            movingMet = 0;
+
+        
 
         AttackTask();
+
+        Debug.Log(mmSpeed);
     }
 
     void OnDrawGizmosSelected()

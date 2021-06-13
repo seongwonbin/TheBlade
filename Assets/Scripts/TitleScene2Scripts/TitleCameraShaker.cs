@@ -13,7 +13,7 @@ public class TitleCameraShaker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = Random.insideUnitSphere * 0.1f + new Vector3(0,0,0);
+        transform.position = Random.insideUnitSphere * 0.35f + new Vector3(0,0,0);
     }
 
 
