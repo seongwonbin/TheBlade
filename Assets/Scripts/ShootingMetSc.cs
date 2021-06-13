@@ -41,6 +41,7 @@ public class ShootingMetSc : MonoBehaviour
 
 
 
+
         if (PlayerMoveScript.flipController == false)
         {
 
@@ -75,18 +76,21 @@ public class ShootingMetSc : MonoBehaviour
 
         }
 
-        spr.color = new Color(255f, 255f, 255f, 1f - timer*1.5f);
+        
 
         transform.Translate(movingMet, 0, 0, Space.World);
 
         if (timer >= 0.1)
+        { 
+            spr.color = new Color(255f, 255f, 255f, 1f - timer);
             movingMet = 0;
+        }
 
-        
+
 
         AttackTask();
 
-        Debug.Log(mmSpeed);
+        
     }
 
     void OnDrawGizmosSelected()

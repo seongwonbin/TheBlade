@@ -60,7 +60,6 @@ public class PlayerMoveScript : MonoBehaviour
 
         Vanish();
 
-        
     }
 
     
@@ -161,7 +160,9 @@ public class PlayerMoveScript : MonoBehaviour
     public void Dash()
     {
         if (dashCoolTime == false && PlayerScript.isUnBeatTime == false)
-        { 
+        {
+            
+
             if (Input.GetKey(KeyCode.LeftArrow) && Input.GetKeyDown(KeyCode.X))
             {
 
@@ -177,6 +178,7 @@ public class PlayerMoveScript : MonoBehaviour
                 PlayerDashScript.playerDash = true;
                 animator.SetBool("isDash", true);
                 moveVelocity = Vector3.right;
+
                 rigid.AddForce(rightDashVelocity, ForceMode2D.Impulse);
                 playerVanish = true;
             }

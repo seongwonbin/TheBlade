@@ -252,6 +252,7 @@ public class PlayerScript : MonoBehaviour
     public void BlinkRoutine()
     {
         isUnBeatTime = true;
+        PlayerMoveScript.playerVanish = true;
         StartCoroutine("UnBeatTime");
 
     }
@@ -279,6 +280,7 @@ public class PlayerScript : MonoBehaviour
 
         spr.color = new Color(255, 255, 255, 255);
 
+        PlayerMoveScript.playerVanish = false;
         isUnBeatTime = false;
 
         yield return null;
