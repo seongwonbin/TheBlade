@@ -168,7 +168,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 15894656}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 15c11b44866bcaf48bfc11a80d8fd1f7, type: 3}
   m_Name: 
@@ -180,6 +180,10 @@ MonoBehaviour:
   currentHealth: 0
   maxHealth: 10000
   dummyCtrl: 1
+  atkParticle: {fileID: 8318500055994282373, guid: 777eddfb1eb1fd14ab94a19b0d8992d7,
+    type: 3}
+  swingParticle: {fileID: 7151045130563947907, guid: 4318fa6cf0595b14b9fce24573c6c926,
+    type: 3}
   moveVelocity: {x: 0, y: 0, z: 0}
 --- !u!50 &15894659
 Rigidbody2D:

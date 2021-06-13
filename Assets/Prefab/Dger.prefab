@@ -172,6 +172,10 @@ MonoBehaviour:
   currentHealth: 0
   maxHealth: 100
   dummyCtrl: 0
+  atkParticle: {fileID: 8318500055994282373, guid: 777eddfb1eb1fd14ab94a19b0d8992d7,
+    type: 3}
+  swingParticle: {fileID: 7151045130563947907, guid: 4318fa6cf0595b14b9fce24573c6c926,
+    type: 3}
   moveVelocity: {x: 0, y: 0, z: 0}
 --- !u!114 &8051554367348084854
 MonoBehaviour:

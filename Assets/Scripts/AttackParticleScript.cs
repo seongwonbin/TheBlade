@@ -4,21 +4,18 @@ using UnityEngine;
 
 public class AttackParticleScript : MonoBehaviour
 {
-    private float initPosX, initPosY;
+    private float initPosX, initPosY = 0;
 
 
 
     // Start is called before the first frame update
     void Start()
     {
-        initPosY = PlayerMoveScript.playerTracker.y -0.5f + PlayerScript.randomY/2f;
+        initPosX = Random.Range(-2.0f, 3.0f);
 
-        if (PlayerMoveScript.flipController == false)
-            initPosX = PlayerMoveScript.playerTracker.x + PlayerScript.randomX/2f + 2f;
-        else
-            initPosX = PlayerMoveScript.playerTracker.x - PlayerScript.randomX/2f - 2f;
+        initPosY = Random.Range(-2.0f, 3.0f);
 
-        transform.position = new Vector3(initPosX, initPosY, 0f);
+        transform.position = new Vector3(transform.position.x + initPosX, transform.position.y + initPosY, 0f);
 
     }
 

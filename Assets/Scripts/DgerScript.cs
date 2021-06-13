@@ -30,7 +30,9 @@ public class DgerScript : MonoBehaviour
     public static bool isFlipped = false;
 
     private float eulerCtrl = 0f;
-    
+
+    public GameObject atkParticle;
+    public GameObject swingParticle;
 
     //public static bool isFlipped = false;
 
@@ -132,7 +134,9 @@ public class DgerScript : MonoBehaviour
             moveVelocity = Vector3.zero;
         }
 
+        Instantiate(atkParticle, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
 
+        Instantiate(swingParticle, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
 
         //Instantiate(hpBarBg, new Vector3(transform.position.x, transform.position.y+5, transform.position.z), Quaternion.identity);
     }

@@ -14,14 +14,16 @@ public class ParticleSysScript : MonoBehaviour
     {
         if(PlayerMoveScript.flipController == false)
         { 
-            transform.position = new Vector2(PlayerMoveScript.playerTracker.x+3.3f, PlayerMoveScript.playerTracker.y);
+            
             transform.rotation = Quaternion.Euler(197.887f, -angleCtrl, -angleCtrlZ);
         }
         else
         { 
-            transform.position = new Vector2(PlayerMoveScript.playerTracker.x - 3.3f, PlayerMoveScript.playerTracker.y);
+            //transform.position = new Vector2(PlayerMoveScript.playerTracker.x - 3.3f, PlayerMoveScript.playerTracker.y);
             transform.rotation = Quaternion.Euler(197.887f, angleCtrl, angleCtrlZ);
         }
+
+        transform.position = new Vector2(transform.position.x, transform.position.y);
     }
 
     // Update is called once per frame
@@ -29,7 +31,7 @@ public class ParticleSysScript : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if (timer >= 3)
+        if (timer >= 2)
             Destroy(gameObject);
 
     }

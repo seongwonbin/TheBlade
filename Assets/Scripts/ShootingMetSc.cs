@@ -12,7 +12,7 @@ public class ShootingMetSc : MonoBehaviour
 
     private float attackRange = 0.5f;
 
-    private int attackDamage = 5;
+    private int attackDamage = 1;
 
     private float timer = 0f;
 
