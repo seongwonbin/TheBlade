@@ -80,9 +80,11 @@
     <Compile Include="Assets\Scripts\DgerAttackScript.cs" />
     <Compile Include="Assets\Scripts\DgerRun.cs" />
     <Compile Include="Assets\Scripts\DgerScript.cs" />
+    <Compile Include="Assets\Scripts\DummySceneScript.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyAttackScript.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyRun.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyScript.cs" />
+    <Compile Include="Assets\Scripts\EscButtonScript.cs" />
     <Compile Include="Assets\Scripts\EscScreenScript.cs" />
     <Compile Include="Assets\Scripts\ForestEnterScript.cs" />
     <Compile Include="Assets\Scripts\FrameObjectScript.cs" />
@@ -93,6 +95,7 @@
     <Compile Include="Assets\Scripts\IntroScript.cs" />
     <Compile Include="Assets\Scripts\MainSceneManager.cs" />
     <Compile Include="Assets\Scripts\MovingBackgroundScript.cs" />
+    <Compile Include="Assets\Scripts\MovingParticleScript.cs" />
     <Compile Include="Assets\Scripts\ParticleSysScript.cs" />
     <Compile Include="Assets\Scripts\Player\DashCoolTimerScript.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerAttack1Script.cs" />

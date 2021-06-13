@@ -7,7 +7,7 @@ using UnityEngine;
 public class CameraShakeScript : MonoBehaviour
 {
 
-    public bool introInit = false;
+    public static bool introInit = false;
     public Vector3 initialPosition;
 
     public static float shakeAmount;

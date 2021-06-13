@@ -35,16 +35,37 @@ public class MainCameraScript : MonoBehaviour
 
         titleCam.orthographicSize = orthoSize;
 
+        if (CameraShakeScript.introInit == true)
+        { 
+            smoothTimeX = 0.5f;
+            smoothTimeY = 0.5f;
+        }
+        else
+        {
+            smoothTimeX = 1f;
+            smoothTimeY = 1f;
+        }
+
+
+        //  transform.position = new Vector3(transform.position.x + escapeCameraMove, transform.position.y, -50.0f);
+
     }
 
     void FixedUpdate()
     {
+
         posX = Mathf.SmoothDamp(transform.position.x, player.transform.position.x, ref velocity.x, smoothTimeX);
+
         posY = Mathf.SmoothDamp(transform.position.y, player.transform.position.y, ref velocity.y, smoothTimeY);
 
-        transform.position = new Vector3(posX, posY, -50.0f);
         playerTracker = transform.position;
-        
+
+        if (EscScreenScript.isKeyDown == false)
+            transform.position = new Vector3(posX, posY, -50.0f);
+        else
+            transform.position = new Vector3(posX + 0.3f, posY, -50.0f);
+
+
         if (bound)
         {
             //Mathf.Clamp(현재값, 최대값, 최소값);  현재값이 최대값까지만 반환해주고 최소값보다 작으면 그 최소값까지만 반환합니다.
@@ -53,6 +74,10 @@ public class MainCameraScript : MonoBehaviour
                                              Mathf.Clamp(transform.position.z, transform.position.z, transform.position.z)
             );
         }
+        
+
+
+
 
 
         if (orthoSize != 11f)
