@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//using System;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -47,9 +48,6 @@ public class PlayerScript : MonoBehaviour
     public GameObject enemyDmgSp3;
     public GameObject enemyDmgSp4;
 
-    //public GameObject atkParticle;
-    //public GameObject swingParticle;
-
     public static int randomX = 0;
     public static int randomY = 0;
 
@@ -83,7 +81,7 @@ public class PlayerScript : MonoBehaviour
 
         if (startBool == true)
             changeColorA = 1.0f;
-
+        
         
         if(skill1CoolDown == false)
             PlayerSkill1();
@@ -146,7 +144,7 @@ public class PlayerScript : MonoBehaviour
         // Dger 판정검사
         foreach (Collider2D enemy in hitEnemies)
         {
-            //enemy.GetComponent<EnemyScript>().TakeDamage(attackDamage);
+            
             enemy.GetComponent<DgerScript>().TakeDamage(attackDamage);
 
             if(ComboScript.rageMode == false)
@@ -156,16 +154,13 @@ public class PlayerScript : MonoBehaviour
 
             randomAttackSprite();
 
-            //Instantiate(atkParticle, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
-
-            //Instantiate(swingParticle, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
         }
 
         // 두번째 몬스터 판정검사
         foreach (Collider2D enemy2 in hitEnemies)
         {
             enemy2.GetComponent<EnemyScript>().TakeDamage(attackDamage);
-            //enemy.GetComponent<DgerScript>().TakeDamage(attackDamage);
+            
 
             if (ComboScript.rageMode == false)
                 CameraShakeScript.VibrateForTime(0.1f);
@@ -174,9 +169,6 @@ public class PlayerScript : MonoBehaviour
 
             randomAttackSprite();
 
-            //Instantiate(atkParticle, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
-
-            //Instantiate(swingParticle, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
         }
 
 
@@ -311,7 +303,6 @@ public class PlayerScript : MonoBehaviour
             
             MainCameraScript.orthoSize = 8.5f;
 
-            //activateParticle();
 
         }
         else if(Input.GetKey(KeyCode.RightArrow) && skill1Trigger_2 == true)
@@ -324,7 +315,6 @@ public class PlayerScript : MonoBehaviour
             
             MainCameraScript.orthoSize = 8.5f;
 
-           // activateParticle();
         }
         else if(skill1Trigger_2 == true)
         {
@@ -346,7 +336,6 @@ public class PlayerScript : MonoBehaviour
             
             MainCameraScript.orthoSize = 8.5f;
 
-            //activateParticle();
         }
 
         
@@ -386,11 +375,4 @@ public class PlayerScript : MonoBehaviour
         skill1Trigger = false;
         
     }
-    /*    void activateParticle()
-    {
-        Instantiate(swingParticle, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
-        Instantiate(swingParticle, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
-        Instantiate(swingParticle, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
-    }
-    */
 }

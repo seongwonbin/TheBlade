@@ -7,6 +7,9 @@ public class PlayerLightScript : MonoBehaviour
 {
     private UnityEngine.Experimental.Rendering.LWRP.Light2D playerLight;
     
+    private float lightDistance = 30f;
+
+    private float lightComponent = 0.05f;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +24,14 @@ public class PlayerLightScript : MonoBehaviour
         if(PlayerInForestScript.playerLocation == true)
         { 
             playerLight.pointLightInnerRadius = 0f;
-            playerLight.pointLightOuterRadius = 30f;
+            playerLight.pointLightOuterRadius = lightDistance;
         }
+
+        if (lightDistance >= 35)
+            lightComponent *= -1f;
+        else if (lightDistance <= 25)
+            lightComponent *= -1f;
+
+        lightDistance += lightComponent;
     }
 }

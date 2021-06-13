@@ -39,6 +39,8 @@ public class DgerScript : MonoBehaviour
     private float movePower = 9f;
     public Vector3 moveVelocity = Vector3.zero;
 
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -134,11 +136,18 @@ public class DgerScript : MonoBehaviour
             moveVelocity = Vector3.zero;
         }
 
+
+        createParticle();
+        
+
+        //Instantiate(hpBarBg, new Vector3(transform.position.x, transform.position.y+5, transform.position.z), Quaternion.identity);
+    }
+
+    void createParticle()
+    {
         Instantiate(atkParticle, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
 
         Instantiate(swingParticle, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
-
-        //Instantiate(hpBarBg, new Vector3(transform.position.x, transform.position.y+5, transform.position.z), Quaternion.identity);
     }
 
     void Die()

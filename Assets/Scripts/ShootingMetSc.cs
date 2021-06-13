@@ -1,16 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class ShootingMetSc : MonoBehaviour
 {
 
     private float movingMet = 0.0f;
 
+    private SpriteRenderer spr;
     public Transform attackPoint;
     public LayerMask enemyLayers;
 
-    private float attackRange = 0.5f;
+    private float attackRange = 0;
 
     private int attackDamage = 1;
 
@@ -18,7 +20,7 @@ public class ShootingMetSc : MonoBehaviour
 
     public float mmSpeed = 1f;
 
-    private SpriteRenderer spr;
+    
 
     public float rotCtrl = 60f;
 
@@ -81,14 +83,24 @@ public class ShootingMetSc : MonoBehaviour
         transform.Translate(movingMet, 0, 0, Space.World);
 
         if (timer >= 0.1)
-        { 
+        {
+            
             spr.color = new Color(255f, 255f, 255f, 1f - timer);
             movingMet = 0;
         }
+        if (timer >= 0.13)
+            attackPoint = null;
 
 
 
-        AttackTask();
+        try
+        {
+            AttackTask();
+        }
+        catch (NullReferenceException e)
+        {
+            Debug.Log(e);
+        }
 
         
     }
