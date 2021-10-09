@@ -107,10 +107,10 @@
     <Compile Include="Assets\Scripts\Player\PlayerScript.cs" />
     <Compile Include="Assets\Scripts\PortalScript.cs" />
     <Compile Include="Assets\Scripts\S1CThelperScript.cs" />
-    <Compile Include="Assets\Scripts\ShootingMetLeftSc.cs" />
     <Compile Include="Assets\Scripts\ShootingMetSc.cs" />
     <Compile Include="Assets\Scripts\Skill1ActiveSc.cs" />
     <Compile Include="Assets\Scripts\Skill1CoolTimeImgScript.cs" />
+    <Compile Include="Assets\Scripts\StageNameScript.cs" />
     <Compile Include="Assets\Scripts\TDSscript.cs" />
     <Compile Include="Assets\Scripts\TitleButtonScript.cs" />
     <Compile Include="Assets\Scripts\TitleScene2Scripts\logoScript.cs" />

@@ -24,6 +24,8 @@ public class ShootingMetSc : MonoBehaviour
 
     public bool isOne = true;
 
+    public bool attackDelay = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -96,11 +98,14 @@ public class ShootingMetSc : MonoBehaviour
         if (timer >= 0.13)
             attackPoint = null;
 
-
+       
 
         try
         {
-            AttackTask();
+            if (attackDelay == false)
+                AttackTask();
+            else
+                attackDelay = false;
         }
         catch (NullReferenceException e)
         {
@@ -134,5 +139,6 @@ public class ShootingMetSc : MonoBehaviour
             ComboScript.enemyHit();
         }
 
+        attackDelay = true;
     }
 }

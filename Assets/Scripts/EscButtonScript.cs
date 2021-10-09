@@ -39,6 +39,7 @@ public class EscButtonScript : MonoBehaviour
     {
         ComboScript.comboSystem = 0f;
 
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
 

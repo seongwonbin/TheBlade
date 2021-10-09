@@ -19,6 +19,7 @@ public class DgerScript : MonoBehaviour
     public float timer2 = 0.0f;
     public float flipTimer = 0.1f;
 
+
     public int currentHealth;
     public int maxHealth = 100;
 
@@ -62,6 +63,8 @@ public class DgerScript : MonoBehaviour
         if (currentHealth <= 0)
             Die();
 
+
+
         if(dummyCtrl == false)
         { 
 
@@ -89,43 +92,44 @@ public class DgerScript : MonoBehaviour
 
         if (eulerCtrl != 0)
             eulerCtrl = 0;
+
     }
 
     public void TakeDamage(int damage)
     {
-        if(dummyCtrl == false)
-        { 
-
-
-        if (transform.position.x < player.position.x && enemyDiedChecker == false)
+        if (dummyCtrl == false)
         {
-            if (jumping == true)
-            {
-                rigid.AddForce(new Vector2(-12, 3), ForceMode2D.Impulse);
-                rigid.AddForce(new Vector2(-12, 3), ForceMode2D.Impulse);
-            }
-            else
-            {
-                rigid.AddForce(diedVelocity2, ForceMode2D.Impulse);
-                rigid.AddForce(diedVelocity2, ForceMode2D.Impulse);
-            }
-        }
+            
 
-        if (transform.position.x > player.position.x && enemyDiedChecker == false)
-        {
-            if (jumping == true)
+            if (transform.position.x < player.position.x && enemyDiedChecker == false)
             {
-                rigid.AddForce(new Vector2(12, 3), ForceMode2D.Impulse);
-                rigid.AddForce(new Vector2(12, 3), ForceMode2D.Impulse);
+                if (jumping == true)
+                {
+                    rigid.AddForce(new Vector2(-12, 3), ForceMode2D.Impulse);
+                    rigid.AddForce(new Vector2(-12, 3), ForceMode2D.Impulse);
+                }
+                else
+                {
+                    rigid.AddForce(diedVelocity2, ForceMode2D.Impulse);
+                    rigid.AddForce(diedVelocity2, ForceMode2D.Impulse);
+                }
             }
-            else
+
+            if (transform.position.x > player.position.x && enemyDiedChecker == false)
             {
-                rigid.AddForce(diedVelocity, ForceMode2D.Impulse);
-                rigid.AddForce(diedVelocity, ForceMode2D.Impulse);
+                if (jumping == true)
+                {
+                    rigid.AddForce(new Vector2(12, 3), ForceMode2D.Impulse);
+                    rigid.AddForce(new Vector2(12, 3), ForceMode2D.Impulse);
+                }
+                else
+                {
+                    rigid.AddForce(diedVelocity, ForceMode2D.Impulse);
+                    rigid.AddForce(diedVelocity, ForceMode2D.Impulse);
+                }
             }
-        }
 
-
+            
         }
         currentHealth -= damage;
         StartCoroutine("BeatTime");

@@ -16,7 +16,6 @@ public class PlayerScript : MonoBehaviour
 
     public float coolTime = 0.5f;
     public float attackRange = 0.5f;
-    public float damagedTimer = 0f;
     public int attackDamage = 40;
     public int maxHealth = 100;
     public int currentHealth;
@@ -90,7 +89,6 @@ public class PlayerScript : MonoBehaviour
 
         timer += Time.deltaTime;
 
-
     }
 
 
@@ -140,7 +138,8 @@ public class PlayerScript : MonoBehaviour
     void AttackTask()
     {
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
-       
+
+
 
         // Dger 판정검사
         foreach (Collider2D enemy in hitEnemies)
@@ -172,8 +171,8 @@ public class PlayerScript : MonoBehaviour
 
         }
 
-        
 
+        
     }
 
     void randomAttackSprite()
