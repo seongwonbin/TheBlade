@@ -5,13 +5,14 @@ using UnityEngine.UI;
 public class MainSceneManager : MonoBehaviour
 {
 
+
     public static float changeColor = 1.0f;
     public static bool playerdied = false;
 
     public Image mainScreen;
     public Text mytext;
 
-    private int randSpawnDger;
+    //private int randSpawnDger;
 
     public GameObject createDger;
 
@@ -20,6 +21,9 @@ public class MainSceneManager : MonoBehaviour
     public static bool existDger = false;
 
     public Transform _parent;
+
+  
+
 
     void Start()
     {
@@ -35,7 +39,7 @@ public class MainSceneManager : MonoBehaviour
     {
         MainBlackScreen();
 
-        // spawnDger();
+        
 
         if (PlayerInForestScript.playerLocation == true && existDger == false)
             dgerTimer += Time.deltaTime;
@@ -47,7 +51,7 @@ public class MainSceneManager : MonoBehaviour
 
             existDger = true;
             dgerTimer = 0;
-            Debug.Log("spawn Dger");
+            Debug.Log("spawn  UI Dger");
         }
 
         

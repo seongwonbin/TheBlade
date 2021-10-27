@@ -88,6 +88,7 @@
     <Compile Include="Assets\Scripts\EscScreenScript.cs" />
     <Compile Include="Assets\Scripts\ForestEnterScript.cs" />
     <Compile Include="Assets\Scripts\FrameObjectScript.cs" />
+    <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Heart\Heart1Script.cs" />
     <Compile Include="Assets\Scripts\Heart\Heart2Script.cs" />
     <Compile Include="Assets\Scripts\Heart\Heart3Script.cs" />

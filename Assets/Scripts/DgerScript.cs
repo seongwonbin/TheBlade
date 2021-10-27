@@ -66,23 +66,23 @@ public class DgerScript : MonoBehaviour
 
 
         if(dummyCtrl == false)
-        { 
-
-
-
-        if (PlayerInForestScript.playerLocation == true && enemyDiedChecker == false)
         {
-          
 
 
-            LookAtPlayer();
 
-            if (jumping == false)
-                moveDger();
+            if (PlayerInForestScript.playerLocation == true && enemyDiedChecker == false)
+            {
 
-            jumpDger();
 
-               
+
+                LookAtPlayer();
+
+                if (jumping == false)
+                    moveDger();
+
+                jumpDger();
+
+
             }
 
         }

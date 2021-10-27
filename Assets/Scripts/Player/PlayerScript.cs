@@ -89,6 +89,8 @@ public class PlayerScript : MonoBehaviour
 
         timer += Time.deltaTime;
 
+        GameManager.Instance.TestFunc();
+
     }
 
 

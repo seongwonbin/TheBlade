@@ -89,7 +89,7 @@ public class S1CThelperScript : MonoBehaviour
                 whiteCtrl -= 0.1f;
 
 
-            Debug.Log(whiteCtrl);
+            //Debug.Log(whiteCtrl);
         }
     }
 }

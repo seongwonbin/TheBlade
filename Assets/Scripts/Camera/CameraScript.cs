@@ -25,6 +25,7 @@ public class CameraScript : MonoBehaviour
     private void Update()
     {
         TitleTrigger();
+        
     }
 
     private void TitleTrigger()
