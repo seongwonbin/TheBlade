@@ -147,7 +147,7 @@ public class DgerScript : MonoBehaviour
         //Instantiate(hpBarBg, new Vector3(transform.position.x, transform.position.y+5, transform.position.z), Quaternion.identity);
     }
 
-    void createParticle()
+    public void createParticle()
     {
         Instantiate(atkParticle, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
 

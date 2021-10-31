@@ -56,7 +56,7 @@ public class PlayerScript : MonoBehaviour
     public static bool skill1CoolDown = false;
 
     private float timer = 0f;
-
+    //
 
     void Start()
     {
@@ -66,8 +66,12 @@ public class PlayerScript : MonoBehaviour
 
         currentHealth = maxHealth;
 
-    }
+        //
 
+        
+
+    }
+    
     void Update()
     {
         if (isUnBeatTime == false && skill1Trigger == false)
@@ -89,7 +93,9 @@ public class PlayerScript : MonoBehaviour
 
         timer += Time.deltaTime;
 
-        GameManager.Instance.TestFunc();
+        //GameManager.Instance.TestFunc(); 케르릉.. 나불렀어??
+
+
 
     }
 
@@ -220,7 +226,7 @@ public class PlayerScript : MonoBehaviour
             if (currentHealth <= 0)
             {
                 Heart1Script.heartBreak = true;
-                MainSceneManager.playerdied = true;
+                GameManager.playerdied = true;
                 Destroy(gameObject);
             }
 

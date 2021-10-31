@@ -6,11 +6,10 @@ public class MainSceneManager : MonoBehaviour
 {
 
 
-    public static float changeColor = 1.0f;
-    public static bool playerdied = false;
+
 
     public Image mainScreen;
-    public Text mytext;
+
 
     //private int randSpawnDger;
 
@@ -28,8 +27,8 @@ public class MainSceneManager : MonoBehaviour
     void Start()
     {
         mainScreen = GameObject.Find("Image").GetComponent<Image>();
-        mytext = GameObject.Find("Died Text").GetComponent<Text>();
 
+        
         
 
         
@@ -37,9 +36,9 @@ public class MainSceneManager : MonoBehaviour
 
     void Update()
     {
-        MainBlackScreen();
+        GameManager.Instance.MainBlackScreen();
 
-        
+        mainScreen.color = new Color(mainScreen.color.r, mainScreen.color.g, mainScreen.color.b, GameManager.changeColor);
 
         if (PlayerInForestScript.playerLocation == true && existDger == false)
             dgerTimer += Time.deltaTime;
@@ -57,22 +56,7 @@ public class MainSceneManager : MonoBehaviour
         
     }
 
-    private void MainBlackScreen()
-    {
-        mainScreen.color = new Color(mainScreen.color.r, mainScreen.color.g, mainScreen.color.b, changeColor);
 
-        if (changeColor >= 0.0f && playerdied == false)
-            changeColor -= 0.003f;
-
-        if (changeColor <= 1.0f && playerdied == true)
-        {
-            changeColor += 0.01f;
-            mytext.text = "You Died";
-        }
-        
-
-
-    }
 
 
 }
