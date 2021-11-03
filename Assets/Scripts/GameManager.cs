@@ -64,4 +64,11 @@ public class GameManager : MonoBehaviour
             mytext.text = "You Died";
         }
     }
+
+    void CatchAttackError()
+    {
+     //   try
+
+
+    }
 }

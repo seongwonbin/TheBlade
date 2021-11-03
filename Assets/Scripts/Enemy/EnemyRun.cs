@@ -5,30 +5,27 @@ using UnityEngine;
 public class EnemyRun : StateMachineBehaviour
 {
 
-    public float speed = 15.0f;
-    public float attackRange = 3f;
 
 
-    public Transform player;
-    public Rigidbody2D rb;
-    public EnemyScript enemy;
+
+
 
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
-        rb = animator.GetComponent<Rigidbody2D>();
-        enemy = animator.GetComponent<EnemyScript>();
+        FKnightMgr.player = GameObject.FindGameObjectWithTag("Player").transform;
+        FKnightMgr.rb = animator.GetComponent<Rigidbody2D>();
+        FKnightMgr.enemy = animator.GetComponent<EnemyScript>();
     }
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        enemy.LookAtPlayer();
+        FKnightMgr.enemy.LookAtPlayer();
 
 
-        Vector2 target = new Vector2(player.position.x, rb.position.y);
-        Vector2 newPos = Vector2.MoveTowards(rb.position, target, speed * Time.fixedDeltaTime);
-        rb.MovePosition(newPos);
+        Vector2 target = new Vector2(FKnightMgr.player.position.x, FKnightMgr.rb.position.y);
+        Vector2 newPos = Vector2.MoveTowards(FKnightMgr.rb.position, target, FKnightMgr.speed * Time.fixedDeltaTime);
+        FKnightMgr.rb.MovePosition(newPos);
 
-        if(Vector2.Distance(player.position, rb.position) <= attackRange)
+        if(Vector2.Distance(FKnightMgr.player.position, FKnightMgr.rb.position) <= FKnightMgr.attackRange)
         {
             animator.SetTrigger("Attack");
         }

@@ -183,6 +183,7 @@ public class DgerScript : MonoBehaviour
         MainSceneManager.existDger = false;
     }
 
+    
     IEnumerator BeatTime()
     {
         int countTime = 0;
@@ -201,7 +202,9 @@ public class DgerScript : MonoBehaviour
 
         yield return null;
     }
+    
 
+    
     public void LookAtPlayer()
     {
 
@@ -231,6 +234,8 @@ public class DgerScript : MonoBehaviour
 
 
     }
+    
+
 
     public void moveDger()
     {
