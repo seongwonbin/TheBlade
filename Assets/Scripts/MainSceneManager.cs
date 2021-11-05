@@ -40,7 +40,7 @@ public class MainSceneManager : MonoBehaviour
 
         mainScreen.color = new Color(mainScreen.color.r, mainScreen.color.g, mainScreen.color.b, GameManager.changeColor);
 
-        if (PlayerInForestScript.playerLocation == true && existDger == false)
+        if (GameManager.playerLocation == true && existDger == false)
             dgerTimer += Time.deltaTime;
 
         if (dgerTimer >= 3.0f)

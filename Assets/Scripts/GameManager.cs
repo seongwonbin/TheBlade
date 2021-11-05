@@ -13,6 +13,10 @@ public class GameManager : MonoBehaviour
 
     public Text mytext;
 
+    public static bool playerLocation = false;
+
+    public Transform player;
+
     private void Awake()
     {
         if (null == instance)
@@ -40,18 +44,17 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         mytext = GameObject.Find("Died Text").GetComponent<Text>();
+        player = GameObject.Find("Dummy Character").GetComponent<Transform>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Tab))
+            DebugCommand();
+
     }
 
-    public void TestFunc()
-    {
-        Debug.Log("케르릉.. 나불렀어??");
-    }
 
     public void MainBlackScreen()
     {
@@ -65,10 +68,14 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void CatchAttackError()
+    private void DebugCommand()
     {
-     //   try
-
+        playerLocation = true;
+        PlayerScript.map1 = false;
+        PortalScript.portalChecker = true;
+        MainSceneManager.existDger = true;
+        player.position = new Vector2(380f, -3.28957f);
+        
 
     }
 }

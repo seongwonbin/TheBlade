@@ -28,10 +28,11 @@ public class EnemyRun : StateMachineBehaviour
         if(Vector2.Distance(FKnightMgr.player.position, FKnightMgr.rb.position) <= FKnightMgr.attackRange)
         {
             animator.SetTrigger("Attack");
+            
         }
     }
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.ResetTrigger("Attack");
+        //animator.ResetTrigger("Attack");
     }
 }

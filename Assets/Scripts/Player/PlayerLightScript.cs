@@ -21,7 +21,7 @@ public class PlayerLightScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(PlayerInForestScript.playerLocation == true)
+        if(GameManager.playerLocation == true)
         { 
             playerLight.pointLightInnerRadius = 0f;
             playerLight.pointLightOuterRadius = lightDistance;

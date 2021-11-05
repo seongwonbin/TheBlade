@@ -32,11 +32,13 @@ public class MainCameraScript : MonoBehaviour
     void Update()
     {
         map2();
+       
+
 
         titleCam.orthographicSize = orthoSize;
 
         if (CameraShakeScript.introInit == true)
-        { 
+        {
             smoothTimeX = 0.5f;
             smoothTimeY = 0.5f;
         }
@@ -74,7 +76,7 @@ public class MainCameraScript : MonoBehaviour
                                              Mathf.Clamp(transform.position.z, transform.position.z, transform.position.z)
             );
         }
-        
+
 
 
 
@@ -93,10 +95,16 @@ public class MainCameraScript : MonoBehaviour
 
     void map2()
     {
-        if (PlayerInForestScript.playerLocation == true)
-        { 
+        if (GameManager.playerLocation == true && PortalScript.portal2Checker == false)
+        {
             minPos.x = 310f;
             maxPos.x = 403f;
         }
+        else if (GameManager.playerLocation == true && PortalScript.portal2Checker == true)
+        {
+            minPos.x = 403f;
+            maxPos.x = 500f;
+        }
     }
+
 }

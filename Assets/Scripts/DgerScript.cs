@@ -70,7 +70,7 @@ public class DgerScript : MonoBehaviour
 
 
 
-            if (PlayerInForestScript.playerLocation == true && enemyDiedChecker == false)
+            if (GameManager.playerLocation == true && enemyDiedChecker == false)
             {
 
 

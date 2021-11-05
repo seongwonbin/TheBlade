@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerInForestScript : MonoBehaviour
 {
-    public static bool playerLocation = false;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -29,12 +29,12 @@ public class PlayerInForestScript : MonoBehaviour
         { 
             PlayerScript.map1 = false;
 
-            if(playerLocation == false)
+            if(GameManager.playerLocation == false)
             { 
                 transform.position = new Vector2(333f, 0);
 
 
-                playerLocation = true;
+                GameManager.playerLocation = true;
             }
 
         }

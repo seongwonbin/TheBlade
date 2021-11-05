@@ -27,7 +27,7 @@ public class ForestEnterScript : MonoBehaviour
     {
         mainScreen.color = new Color(mainScreen.color.r, mainScreen.color.g, mainScreen.color.b, changeColor);
 
-        if (PlayerInForestScript.playerLocation == true)
+        if (GameManager.playerLocation == true)
         {
             
             

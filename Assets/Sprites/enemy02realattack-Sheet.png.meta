@@ -1,31 +1,19 @@
 fileFormatVersion: 2
-guid: 3670c16dd1900df41b6ae4419dc24b32
+guid: 7a523f71065118d459cc7d7b2444e7d3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 788614965492492887
-    second: enemy02save-Sheet_0
+      213: -1666671485430942507
+    second: enemy02realattack-Sheet_0
   - first:
-      213: -7296215948996762840
-    second: enemy02save-Sheet_1
+      213: -3702873881306794479
+    second: enemy02realattack-Sheet_1
   - first:
-      213: 282116174823612475
-    second: enemy02save-Sheet_2
+      213: 1432928376575563140
+    second: enemy02realattack-Sheet_2
   - first:
-      213: 8275589876333367328
-    second: enemy02save-Sheet_3
-  - first:
-      213: 2863588946654022135
-    second: enemy02save-Sheet_4
-  - first:
-      213: -2698904238445436472
-    second: enemy02save-Sheet_5
-  - first:
-      213: -4816385843040939882
-    second: enemy02save-Sheet_6
-  - first:
-      213: -7899925037988579631
-    second: enemy02save-Sheet_7
+      213: 8845769347301473974
+    second: enemy02realattack-Sheet_3
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -134,169 +122,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: enemy02save-Sheet_0
+      name: enemy02realattack-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1000
-        height: 1000
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 170, z: 0, w: 0}
+        width: 1960
+        height: 1150
+      alignment: 9
+      pivot: {x: 0.75, y: 0.45}
+      border: {x: 1000, y: 180, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a2194b0691aa22042880b128a35d5850
-      internalID: 788614965492492887
+      spriteID: 1233933b35590d844b4c4db8e85ab03c
+      internalID: -1666671485430942507
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy02save-Sheet_1
+      name: enemy02realattack-Sheet_1
       rect:
         serializedVersion: 2
-        x: 1000
+        x: 1960
         y: 0
-        width: 1000
-        height: 1000
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 170, z: 0, w: 0}
+        width: 1960
+        height: 1150
+      alignment: 9
+      pivot: {x: 0.75, y: 0.45}
+      border: {x: 1000, y: 180, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 75e659af6ca11a24b8f34f053c12f316
-      internalID: -7296215948996762840
+      spriteID: 3fafa4b12d6f9c741977c424d1e2dcbf
+      internalID: -3702873881306794479
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy02save-Sheet_2
+      name: enemy02realattack-Sheet_2
       rect:
         serializedVersion: 2
-        x: 2000
+        x: 3920
         y: 0
-        width: 1000
-        height: 1000
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 170, z: 0, w: 0}
+        width: 1960
+        height: 1150
+      alignment: 9
+      pivot: {x: 0.75, y: 0.45}
+      border: {x: 1000, y: 180, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 37983c652e2a3dd428693b8d142036d6
-      internalID: 282116174823612475
+      spriteID: ca384edb2c82d2541837a53c47b7bee9
+      internalID: 1432928376575563140
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy02save-Sheet_3
+      name: enemy02realattack-Sheet_3
       rect:
         serializedVersion: 2
-        x: 3000
+        x: 5880
         y: 0
-        width: 1000
-        height: 1000
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 170, z: 0, w: 0}
+        width: 1960
+        height: 1150
+      alignment: 9
+      pivot: {x: 0.75, y: 0.45}
+      border: {x: 1000, y: 180, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 98e9a1077dfeee24f8d109bca8018b36
-      internalID: 8275589876333367328
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enemy02save-Sheet_4
-      rect:
-        serializedVersion: 2
-        x: 4000
-        y: 0
-        width: 1000
-        height: 1000
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 170, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1f31b5c53c5754b4eb25cd4496d2a265
-      internalID: 2863588946654022135
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enemy02save-Sheet_5
-      rect:
-        serializedVersion: 2
-        x: 5000
-        y: 0
-        width: 1000
-        height: 1000
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 170, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8b807a3de02aaab49a8d6f1c6e2931ec
-      internalID: -2698904238445436472
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enemy02save-Sheet_6
-      rect:
-        serializedVersion: 2
-        x: 6000
-        y: 0
-        width: 1000
-        height: 1000
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 170, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 258708bc467481049a4b9528ac71af5d
-      internalID: -4816385843040939882
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enemy02save-Sheet_7
-      rect:
-        serializedVersion: 2
-        x: 7000
-        y: 0
-        width: 1000
-        height: 1000
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 170, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3d6dd7d71633f8d4ba6be3b1e1333bf6
-      internalID: -7899925037988579631
+      spriteID: 835a4c925e697be4681d4d25c74407da
+      internalID: 8845769347301473974
       vertices: []
       indices: 
       edges: []
