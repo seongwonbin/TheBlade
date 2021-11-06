@@ -93,7 +93,7 @@ public class PlayerScript : MonoBehaviour
 
         timer += Time.deltaTime;
 
-        //GameManager.Instance.TestFunc(); 케르릉.. 나불렀어??
+        
 
 
 
@@ -176,7 +176,7 @@ public class PlayerScript : MonoBehaviour
     {
         randomX = Random.Range(0, 4);
         randomY = Random.Range(1, 4);
-
+        Debug.Log("케르릉.. 나불렀어??");
         if (randomX == 0)
             Instantiate(enemyDmgSp1, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
         else if (randomX == 1)

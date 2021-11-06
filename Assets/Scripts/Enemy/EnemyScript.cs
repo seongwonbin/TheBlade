@@ -30,6 +30,9 @@ public class EnemyScript : MonoBehaviour
 
     public static Vector3 myPos;
 
+    public GameObject atkParticle;
+    public GameObject swingParticle;
+
     void Start()
     {
         currentHealth = maxHealth;
@@ -37,6 +40,8 @@ public class EnemyScript : MonoBehaviour
         spr = GetComponent<SpriteRenderer>();
         col = GetComponent<BoxCollider2D>();
         rigid = GetComponent<Rigidbody2D>();
+
+        player = GameObject.Find("Dummy Character").GetComponent<Transform>();
 
         //Instantiate(hpBar, new Vector3(transform.position.x, transform.position.y - 0.1f, transform.position.z), Quaternion.identity);
     }
@@ -60,7 +65,7 @@ public class EnemyScript : MonoBehaviour
         if (currentHealth <= 0)
             enemy.SetBool("Died", true);
 
-
+        createParticle();
 
         //Instantiate(hpBarBg, new Vector3(transform.position.x, transform.position.y+5, transform.position.z), Quaternion.identity);
     }
@@ -124,5 +129,12 @@ public class EnemyScript : MonoBehaviour
             transform.Rotate(0f, 180f, 0f);
             isFlipped = true;
         }
+    }
+
+    public void createParticle()
+    {
+        Instantiate(atkParticle, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+
+        Instantiate(swingParticle, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
     }
 }

@@ -98,11 +98,11 @@ public class MainCameraScript : MonoBehaviour
         if (GameManager.playerLocation == true && PortalScript.portal2Checker == false)
         {
             minPos.x = 310f;
-            maxPos.x = 403f;
+            maxPos.x = 380f;
         }
-        else if (GameManager.playerLocation == true && PortalScript.portal2Checker == true)
+        else if (GameManager.playerLocation == true && GameManager.isReady == true)
         {
-            minPos.x = 403f;
+            minPos.x = 420f;
             maxPos.x = 500f;
         }
     }

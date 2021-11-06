@@ -71,6 +71,7 @@
     <Compile Include="Assets\Scripts\Background\ForestTreeScript.cs" />
     <Compile Include="Assets\Scripts\Background\RiverScript.cs" />
     <Compile Include="Assets\Scripts\Background\TowerScript.cs" />
+    <Compile Include="Assets\Scripts\BlackScale.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraScript.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraShakeScript.cs" />
     <Compile Include="Assets\Scripts\Camera\MainCameraScript.cs" />
@@ -88,6 +89,7 @@
     <Compile Include="Assets\Scripts\EscScreenScript.cs" />
     <Compile Include="Assets\Scripts\FKnightMgr.cs" />
     <Compile Include="Assets\Scripts\ForestEnterScript.cs" />
+    <Compile Include="Assets\Scripts\ForestLight.cs" />
     <Compile Include="Assets\Scripts\FrameObjectScript.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Heart\Heart1Script.cs" />
@@ -108,6 +110,8 @@
     <Compile Include="Assets\Scripts\Player\PlayerMoveScript.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerScript.cs" />
     <Compile Include="Assets\Scripts\PortalScript.cs" />
+    <Compile Include="Assets\Scripts\RiverLight.cs" />
+    <Compile Include="Assets\Scripts\RiverLight1.cs" />
     <Compile Include="Assets\Scripts\S1CThelperScript.cs" />
     <Compile Include="Assets\Scripts\ShootingMetSc.cs" />
     <Compile Include="Assets\Scripts\Skill1ActiveSc.cs" />

@@ -12,7 +12,7 @@ public class EnemyRun : StateMachineBehaviour
 
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        FKnightMgr.player = GameObject.FindGameObjectWithTag("Player").transform;
+        //FKnightMgr.player = GameObject.FindGameObjectWithTag("Player").transform;
         FKnightMgr.rb = animator.GetComponent<Rigidbody2D>();
         FKnightMgr.enemy = animator.GetComponent<EnemyScript>();
     }

@@ -17,6 +17,15 @@ public class GameManager : MonoBehaviour
 
     public Transform player;
 
+    public static bool isReady = false;
+
+    public GameObject forestLightObject;
+
+    public bool isSpawn = false;
+
+    public GameObject fknight;
+
+
     private void Awake()
     {
         if (null == instance)
@@ -53,6 +62,12 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Tab))
             DebugCommand();
 
+        if (isReady == true)
+            forestLightObject.gameObject.SetActive(true);
+
+        if (isReady == true && isSpawn == false)
+            SpawnFKnight();
+
     }
 
 
@@ -73,9 +88,17 @@ public class GameManager : MonoBehaviour
         playerLocation = true;
         PlayerScript.map1 = false;
         PortalScript.portalChecker = true;
+        //PortalScript.portal2Checker = false;
         MainSceneManager.existDger = true;
-        player.position = new Vector2(380f, -3.28957f);
+        player.position = new Vector2(350f, -3.28957f);
         
+
+    }
+
+    void SpawnFKnight()
+    {
+        Instantiate(fknight, new Vector3(445f, -3.1f, 0), Quaternion.identity);
+        isSpawn = true;
 
     }
 }
