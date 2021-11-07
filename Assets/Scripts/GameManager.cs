@@ -97,7 +97,7 @@ public class GameManager : MonoBehaviour
 
     void SpawnFKnight()
     {
-        Instantiate(fknight, new Vector3(445f, -3.1f, 0), Quaternion.identity);
+        Instantiate(fknight, new Vector3(445f, -1.65f, 0), Quaternion.identity);
         isSpawn = true;
 
     }

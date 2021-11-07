@@ -4,37 +4,47 @@ using UnityEngine;
 
 public class FKnightMgr : MonoBehaviour
 {
-    public static float speed = 1.0f;
-    public static float attackRange = 3f;
+    public static float speed = 1.5f;
+   // public static float attackRange = 3f;
     public static float searchRange = 10f;
 
     public static Transform player;
     public static Rigidbody2D rb;
     public static EnemyScript enemy;
+    public static Transform fk;
+    public static Animator anim;
 
-    private Animator anim;
-    
+    //public Transform attackPoint;
+    public LayerMask enemyLayers;
+
 
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        player = GameObject.Find("Dummy Character").transform;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
         //x position 445, 475?
 
-        if (Vector2.Distance(player.position, transform.position) <= searchRange)
-            anim.SetBool("isActive", true);
+        if(FKnightStanding.enter)
+            if (Vector2.Distance(FKnightMgr.player.position, transform.position) <= FKnightMgr.searchRange)
+                FKnightMgr.anim.SetBool("isActive", true);
+
+
 
 
     }
 
+    void EearthQuake()
+    {
+        CameraShakeScript.VibrateForTime(0.2f);
 
+    }
 
 
 }

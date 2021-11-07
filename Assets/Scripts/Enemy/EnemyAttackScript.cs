@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyAttackScript : MonoBehaviour
 {
     public int attackDamage = 40;
-    public float attackRange = 0.5f;
+    public static float attackRange = 3f;
 
     public Transform attackPoint;
     public LayerMask enemyLayers;
