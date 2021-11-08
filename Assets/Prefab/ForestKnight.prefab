@@ -175,6 +175,7 @@ MonoBehaviour:
     type: 3}
   swingParticle: {fileID: 7151045130563947907, guid: 4318fa6cf0595b14b9fce24573c6c926,
     type: 3}
+  isFKnight: 0
 --- !u!114 &459020469075907975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,6 +208,7 @@ MonoBehaviour:
   enemyLayers:
     serializedVersion: 2
     m_Bits: 512
+  head: {fileID: 3548432892441953899, guid: 901be11310b839c43a7f21a2af95aea8, type: 3}
 --- !u!1 &6013898412096078970
 GameObject:
   m_ObjectHideFlags: 0
@@ -231,7 +233,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6013898412096078970}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.7, y: 0, z: 0}
+  m_LocalPosition: {x: -5.19, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8117448181144708666}

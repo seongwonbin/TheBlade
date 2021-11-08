@@ -578,6 +578,7 @@ MonoBehaviour:
   hpBarBg: {fileID: 0}
   atkParticle: {fileID: 0}
   swingParticle: {fileID: 0}
+  isFKnight: 0
 --- !u!1 &17506993
 GameObject:
   m_ObjectHideFlags: 0
@@ -3698,6 +3699,90 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9866fb2f80123e74e8c5f91e98dc8424, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &186114125
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 776784370336229487, guid: 72e97a8239b8f6c4da1e3e0a3925b41b,
+        type: 3}
+      propertyPath: isFKnight
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 776784370336229487, guid: 72e97a8239b8f6c4da1e3e0a3925b41b,
+        type: 3}
+      propertyPath: maxHealth
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1683095735101025695, guid: 72e97a8239b8f6c4da1e3e0a3925b41b,
+        type: 3}
+      propertyPath: m_Name
+      value: ForestKnight
+      objectReference: {fileID: 0}
+    - target: {fileID: 1683095735101025695, guid: 72e97a8239b8f6c4da1e3e0a3925b41b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8117448181144708666, guid: 72e97a8239b8f6c4da1e3e0a3925b41b,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 15.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 8117448181144708666, guid: 72e97a8239b8f6c4da1e3e0a3925b41b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.52
+      objectReference: {fileID: 0}
+    - target: {fileID: 8117448181144708666, guid: 72e97a8239b8f6c4da1e3e0a3925b41b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -7.6445312
+      objectReference: {fileID: 0}
+    - target: {fileID: 8117448181144708666, guid: 72e97a8239b8f6c4da1e3e0a3925b41b,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8117448181144708666, guid: 72e97a8239b8f6c4da1e3e0a3925b41b,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8117448181144708666, guid: 72e97a8239b8f6c4da1e3e0a3925b41b,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8117448181144708666, guid: 72e97a8239b8f6c4da1e3e0a3925b41b,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8117448181144708666, guid: 72e97a8239b8f6c4da1e3e0a3925b41b,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8117448181144708666, guid: 72e97a8239b8f6c4da1e3e0a3925b41b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8117448181144708666, guid: 72e97a8239b8f6c4da1e3e0a3925b41b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8117448181144708666, guid: 72e97a8239b8f6c4da1e3e0a3925b41b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 72e97a8239b8f6c4da1e3e0a3925b41b, type: 3}
 --- !u!1 &187923943
 GameObject:
   m_ObjectHideFlags: 0
@@ -41715,6 +41800,7 @@ MonoBehaviour:
   hpBarBg: {fileID: 2308527231402398136, guid: 6afe9bf38754cec4686588e9b92001d6, type: 3}
   atkParticle: {fileID: 0}
   swingParticle: {fileID: 0}
+  isFKnight: 0
 --- !u!212 &1038603864
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -47496,7 +47582,7 @@ GameObject:
   - component: {fileID: 1343707407}
   m_Layer: 0
   m_Name: Tilemap
-  m_TagString: Untagged
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

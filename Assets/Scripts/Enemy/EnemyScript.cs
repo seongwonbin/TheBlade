@@ -33,6 +33,8 @@ public class EnemyScript : MonoBehaviour
     public GameObject atkParticle;
     public GameObject swingParticle;
 
+    public bool isFKnight = false;
+
     void Start()
     {
         currentHealth = maxHealth;
@@ -49,12 +51,11 @@ public class EnemyScript : MonoBehaviour
     public void Update()
     {
         if (currentHealth <= 0)
+        {
+            enemy.SetBool("Died", true);
             Die();
 
-
-
-
-
+        }
     }
 
     public void TakeDamage(int damage)
@@ -91,6 +92,12 @@ public class EnemyScript : MonoBehaviour
 
     void Die()
     {
+        if (isFKnight)
+        { 
+            rigid.constraints = RigidbodyConstraints2D.None;
+            rigid.constraints = RigidbodyConstraints2D.FreezePositionX;
+        }
+
         if (transform.position.x < player.position.x && enemyDiedChecker == false)
         {
             rigid.AddForce(diedVelocity2, ForceMode2D.Impulse);
@@ -110,6 +117,8 @@ public class EnemyScript : MonoBehaviour
 
         if (timer >= 5.0f)
             Destroy(gameObject);
+
+        
     }
 
     public void LookAtPlayer()

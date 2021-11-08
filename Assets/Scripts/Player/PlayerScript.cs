@@ -74,10 +74,15 @@ public class PlayerScript : MonoBehaviour
     
     void Update()
     {
-        if (isUnBeatTime == false && skill1Trigger == false)
-        {
-            BasicAttack1();
-            BasicAttack2();
+        if(PlayerMoveScript.dontDisturb == false)
+        { 
+            if (isUnBeatTime == false && skill1Trigger == false)
+            {
+                BasicAttack1();
+                BasicAttack2();
+            }
+            if (skill1CoolDown == false)
+                PlayerSkill1();
         }
 
         spr.color = new Color(spr.color.r, spr.color.g, spr.color.b, changeColorA);
@@ -86,8 +91,7 @@ public class PlayerScript : MonoBehaviour
             changeColorA = 1.0f;
         
         
-        if(skill1CoolDown == false)
-            PlayerSkill1();
+        
 
         PlayerSkill1Active();
 
@@ -176,7 +180,7 @@ public class PlayerScript : MonoBehaviour
     {
         randomX = Random.Range(0, 4);
         randomY = Random.Range(1, 4);
-        Debug.Log("케르릉.. 나불렀어??");
+
         if (randomX == 0)
             Instantiate(enemyDmgSp1, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
         else if (randomX == 1)
@@ -198,7 +202,7 @@ public class PlayerScript : MonoBehaviour
 
             ComboScript.comboSystem = 0;
 
-            if (DgerScript.isFlipped == false)
+            if (EnemyScript.isFlipped == false)
                 rigid.AddForce(takeDamageVelocity, ForceMode2D.Impulse);
             else
                 rigid.AddForce(takeDamageVelocity2, ForceMode2D.Impulse);
@@ -232,7 +236,7 @@ public class PlayerScript : MonoBehaviour
                 timer = 0f;
                 skill1Trigger_2 = true;
                 
-                Debug.Log("버그 잡는중!");
+               // Debug.Log("버그 잡는중!");
             }
 
         }

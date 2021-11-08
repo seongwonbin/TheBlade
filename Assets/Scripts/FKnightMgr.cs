@@ -17,6 +17,10 @@ public class FKnightMgr : MonoBehaviour
     //public Transform attackPoint;
     public LayerMask enemyLayers;
 
+    public GameObject head;
+
+    private bool isCreated = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -44,6 +48,16 @@ public class FKnightMgr : MonoBehaviour
     {
         CameraShakeScript.VibrateForTime(0.2f);
 
+    }
+
+    void Died()
+    {
+        if(isCreated == false)
+        {
+            isCreated = true;
+            Instantiate(head, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+
+        }
     }
 
 

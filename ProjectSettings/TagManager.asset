@@ -7,6 +7,7 @@ TagManager:
   - WorldFrame
   - Portal
   - Enemy
+  - Tile
   layers:
   - Default
   - TransparentFX

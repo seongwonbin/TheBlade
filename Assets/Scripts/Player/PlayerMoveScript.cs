@@ -10,7 +10,7 @@ public class PlayerMoveScript : MonoBehaviour
     private Vector3 movement;
 
     public static float movePower = 7f;
-    public float jumpPower = 1f;
+    public float jumpPower = 1.0f;
     public float limitVelocity = 18;
 
     public GameObject obj; // Dash CoolTimer
@@ -39,18 +39,24 @@ public class PlayerMoveScript : MonoBehaviour
 
     private float vanishTimer = 0f;
 
+    public static bool dontDisturb = false;
+
+    // private BoxCollider2D bCol;
+    
+
     void Start()
     {
         rigid = gameObject.GetComponent<Rigidbody2D>();
         spr = gameObject.GetComponent<SpriteRenderer>();
         animator = gameObject.GetComponent<Animator>();
         mytext = GameObject.Find("Dash Cooltime Text").GetComponent<Text>();
-        
+        //bCol = gameObject.GetComponent<BoxCollider2D>();
+
     }
 
     void Update()
     {
-        if(PlayerScript.skill1Trigger == false)
+        if(PlayerScript.skill1Trigger == false && dontDisturb == false)
             Dash();
 
         JumpTask();
@@ -59,6 +65,8 @@ public class PlayerMoveScript : MonoBehaviour
         Skill1();
 
         Vanish();
+
+        
 
     }
 
@@ -72,7 +80,7 @@ public class PlayerMoveScript : MonoBehaviour
 
         }
 
-        Jump();
+        //Jump();
 
         if (Input.GetAxisRaw("Horizontal") != 0)
             animator.SetBool("isMoving", true);
@@ -117,26 +125,27 @@ public class PlayerMoveScript : MonoBehaviour
 
     public void Jump()
     {
-        if (!isJumping)
-            return;
+            
 
-        rigid.velocity = Vector2.zero;
+            if (isJumping == false)
+                return;
 
-        Vector2 jumpVelocity = new Vector2(0, jumpPower);
+            rigid.velocity = Vector2.zero;
 
-        // AddForce 일정량 힘을 가하는 함수
-        // ForceMode  // .Force 연속적인 힘 .Impulse 순간적인 힘 (질량적용)
-        rigid.AddForce(jumpVelocity, ForceMode2D.Impulse);
+            Vector2 jumpVelocity = new Vector2(0, jumpPower);
 
-        isJumping = false;
-        animator.SetBool("isJumping", false);
-      
+            // AddForce 일정량 힘을 가하는 함수
+            // ForceMode  // .Force 연속적인 힘 .Impulse 순간적인 힘 (질량적용)
+            rigid.AddForce(jumpVelocity, ForceMode2D.Impulse);
+
+            isJumping = false;
 
     }
     public void JumpTask()
     {
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && dontDisturb == false)
         {
+            dontDisturb = true;
             isJumping = true;
             animator.SetBool("isJumping", true);
         }
@@ -237,6 +246,12 @@ public class PlayerMoveScript : MonoBehaviour
         if (vanishTimer >= 0.5f)
             playerVanish = false;
 
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        animator.SetBool("isJumping", false);
+        dontDisturb = false;
     }
 
 }

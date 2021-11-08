@@ -19,7 +19,6 @@ public class ParticleSysScript : MonoBehaviour
         }
         else
         { 
-            //transform.position = new Vector2(PlayerMoveScript.playerTracker.x - 3.3f, PlayerMoveScript.playerTracker.y);
             transform.rotation = Quaternion.Euler(197.887f, angleCtrl, angleCtrlZ);
         }
 
