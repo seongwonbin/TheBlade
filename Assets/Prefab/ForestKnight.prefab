@@ -175,7 +175,7 @@ MonoBehaviour:
     type: 3}
   swingParticle: {fileID: 7151045130563947907, guid: 4318fa6cf0595b14b9fce24573c6c926,
     type: 3}
-  isFKnight: 0
+  isFKnight: 1
 --- !u!114 &459020469075907975
 MonoBehaviour:
   m_ObjectHideFlags: 0

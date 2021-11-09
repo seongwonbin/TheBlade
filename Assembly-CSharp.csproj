@@ -64,6 +64,7 @@
   <ItemGroup>
     <Compile Include="Assets\FKnightAttack.cs" />
     <Compile Include="Assets\FKnightStanding.cs" />
+    <Compile Include="Assets\knightAttackReady.cs" />
     <Compile Include="Assets\Scripts\AttackParticleScript.cs" />
     <Compile Include="Assets\Scripts\Background\BackgroundGrass3rdScript.cs" />
     <Compile Include="Assets\Scripts\Background\BackgroundGrass4thScript.cs" />

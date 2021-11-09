@@ -21,6 +21,8 @@ public class FKnightMgr : MonoBehaviour
 
     private bool isCreated = false;
 
+    public static bool blockLookAt = false;
+
 
     // Start is called before the first frame update
     void Start()

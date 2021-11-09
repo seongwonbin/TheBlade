@@ -19,7 +19,8 @@ public class EnemyRun : StateMachineBehaviour
     }
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        FKnightMgr.enemy.LookAtPlayer();
+        if(FKnightMgr.blockLookAt == false)
+            FKnightMgr.enemy.LookAtPlayer();
 
 
         Vector2 target = new Vector2(FKnightMgr.player.position.x, FKnightMgr.rb.position.y);
