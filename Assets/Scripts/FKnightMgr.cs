@@ -15,7 +15,7 @@ public class FKnightMgr : MonoBehaviour
     public static Animator anim;
 
     //public Transform attackPoint;
-    public LayerMask enemyLayers;
+    //public LayerMask enemyLayers;
 
     public GameObject head;
 

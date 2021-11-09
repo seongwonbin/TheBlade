@@ -34,6 +34,7 @@ public class EnemyScript : MonoBehaviour
     public GameObject swingParticle;
 
     public bool isFKnight = false;
+    public static bool isDger = false;
 
     void Start()
     {
@@ -60,6 +61,7 @@ public class EnemyScript : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+
         currentHealth -= damage;
         StartCoroutine("BeatTime");
 
@@ -68,7 +70,6 @@ public class EnemyScript : MonoBehaviour
 
         createParticle();
 
-        //Instantiate(hpBarBg, new Vector3(transform.position.x, transform.position.y+5, transform.position.z), Quaternion.identity);
     }
 
     IEnumerator BeatTime()

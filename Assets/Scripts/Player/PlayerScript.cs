@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using System;
+using System;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -151,15 +151,20 @@ public class PlayerScript : MonoBehaviour
     {
 
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
-
-
-        // Dger 판정검사
+        
+        
         foreach (Collider2D enemy in hitEnemies)
         {
+           try
+            { 
             enemy.GetComponent<EnemyScript>().TakeDamage(attackDamage);
-            //enemy.GetComponent<DgerScript>().TakeDamage(attackDamage);
+            }
+            catch(NullReferenceException error)
+            {
+                Debug.Log(error);
+            }
 
-            if(ComboScript.rageMode == false)
+            if (ComboScript.rageMode == false)
                 CameraShakeScript.VibrateForTime(0.1f);
 
             ComboScript.enemyHit();
@@ -167,19 +172,40 @@ public class PlayerScript : MonoBehaviour
             randomAttackSprite();
 
         }
-        
-        
 
-        
+    }
 
-        
+    void AttackTask2()
+    {
+      
+            Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+
+            foreach (Collider2D enemy in hitEnemies)
+            {
+
+            try
+            {
+                enemy.GetComponent<DgerScript>().TakeDamage(attackDamage);
+            }
+            catch (NullReferenceException error)
+            {
+                Debug.Log(error);
+            }
+
+            if (ComboScript.rageMode == false)
+                    CameraShakeScript.VibrateForTime(0.1f);
+
+                ComboScript.enemyHit();
+
+                randomAttackSprite();
+            }
     }
 
 
     void randomAttackSprite()
     {
-        randomX = Random.Range(0, 4);
-        randomY = Random.Range(1, 4);
+        randomX = UnityEngine.Random.Range(0, 4);
+        randomY = UnityEngine.Random.Range(1, 4);
 
         if (randomX == 0)
             Instantiate(enemyDmgSp1, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);

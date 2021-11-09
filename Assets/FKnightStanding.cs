@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class FKnightStanding : StateMachineBehaviour
 {
-    public static bool enter = false;
+  //  public static bool enter = false;
     
 
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        enter = true;
+        //enter = true;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

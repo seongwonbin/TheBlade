@@ -26,6 +26,9 @@ public class FKnightHead : MonoBehaviour
         timer += Time.deltaTime;
 
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, timer*150f));
+
+        if (timer >= 5.0f)
+            Destroy(gameObject);
     }
 
     void Head()

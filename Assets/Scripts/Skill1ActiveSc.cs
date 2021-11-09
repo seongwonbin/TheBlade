@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Skill1ActiveSc : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class Skill1ActiveSc : MonoBehaviour
     {
        
             AttackTask();
+            AttackTask2();
 
     }
 
@@ -45,15 +47,42 @@ public class Skill1ActiveSc : MonoBehaviour
 
         foreach (Collider2D enemy in hitEnemies)
         {
-            //enemy.GetComponent<DgerScript>().TakeDamage(attackDamage);
+            try
+            { 
             enemy.GetComponent<EnemyScript>().TakeDamage(attackDamage);
-
+            }
+            catch(NullReferenceException error)
+            {
+                Debug.Log(error);
+            }
             if (ComboScript.rageMode == true)
                 CameraShakeScript.VibrateForTime(0.1f);
 
             ComboScript.enemyHit();
         }
 
+
+
+    }
+    void AttackTask2()
+    {
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+
+        foreach (Collider2D enemy in hitEnemies)
+        {
+            try
+            {
+                enemy.GetComponent<DgerScript>().TakeDamage(attackDamage);
+            }
+            catch (NullReferenceException error)
+            {
+                Debug.Log(error);
+            }
+            if (ComboScript.rageMode == true)
+                CameraShakeScript.VibrateForTime(0.1f);
+
+            ComboScript.enemyHit();
+        }
 
 
     }
