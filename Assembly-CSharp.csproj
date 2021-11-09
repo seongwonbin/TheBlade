@@ -90,6 +90,7 @@
     <Compile Include="Assets\Scripts\Enemy\EnemyScript.cs" />
     <Compile Include="Assets\Scripts\EscButtonScript.cs" />
     <Compile Include="Assets\Scripts\EscScreenScript.cs" />
+    <Compile Include="Assets\Scripts\FindRange.cs" />
     <Compile Include="Assets\Scripts\FKnightHead.cs" />
     <Compile Include="Assets\Scripts\FKnightMgr.cs" />
     <Compile Include="Assets\Scripts\ForestEnterScript.cs" />

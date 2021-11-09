@@ -5,6 +5,8 @@ using UnityEngine;
 public class FKnightStanding : StateMachineBehaviour
 {
     public static bool enter = false;
+    
+
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -15,6 +17,9 @@ public class FKnightStanding : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        //if (Vector2.Distance(FKnightMgr.player.position, FKnightMgr.fk.transform.position) <= FKnightMgr.searchRange)
+        //  FKnightMgr.anim.SetBool("isActive", true);
+
 
     }
 

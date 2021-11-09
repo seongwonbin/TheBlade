@@ -29,6 +29,7 @@ public class FKnightMgr : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         player = GameObject.Find("Dummy Character").transform;
+        fk = GetComponent<Transform>();
     }
 
     // Update is called once per frame
@@ -37,9 +38,12 @@ public class FKnightMgr : MonoBehaviour
 
         //x position 445, 475?
 
-        if(FKnightStanding.enter)
-            if (Vector2.Distance(FKnightMgr.player.position, transform.position) <= FKnightMgr.searchRange)
-                FKnightMgr.anim.SetBool("isActive", true);
+        //if(FKnightStanding.enter)
+        //    if (Vector2.Distance(FKnightMgr.player.position, transform.position) <= FKnightMgr.searchRange)
+        //    { 
+        //        FKnightMgr.anim.SetBool("isActive", true);
+
+        //    }
 
 
 
