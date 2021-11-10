@@ -8,7 +8,7 @@ using UnityEngine;
 public class CameraScript : MonoBehaviour
 {
 
-    private GameObject player;
+   // private GameObject player;
     private Camera titleCam;
     //private bool bound;
 
@@ -19,12 +19,12 @@ public class CameraScript : MonoBehaviour
     void Start()
     {
         titleCam = GetComponent<Camera>();
-        player = GameObject.FindGameObjectWithTag("Player");
+        //player = GameObject.FindGameObjectWithTag("Player");
     }
 
     private void Update()
     {
-        TitleTrigger();
+    //    TitleTrigger();
         
     }
 
@@ -45,11 +45,11 @@ public class CameraScript : MonoBehaviour
     void FixedUpdate()
     {
         // Mathf.SmoothDamp는 천천히 값을 증가시키는 메소드
-        float posX = Mathf.SmoothDamp(transform.position.x, player.transform.position.x, ref velocity.x, smoothTimeX);
-        float posY = Mathf.SmoothDamp(transform.position.y, player.transform.position.y, ref velocity.y, smoothTimeY);
+      //  float posX = Mathf.SmoothDamp(transform.position.x, player.transform.position.x, ref velocity.x, smoothTimeX);
+        //float posY = Mathf.SmoothDamp(transform.position.y, player.transform.position.y, ref velocity.y, smoothTimeY);
 
         // 카메라 이동
-        transform.position = new Vector3(posX, posY, transform.position.z);
+        //transform.position = new Vector3(posX, posY, transform.position.z);
 
         /*
         if (bound)

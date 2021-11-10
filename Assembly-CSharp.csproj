@@ -123,7 +123,10 @@
     <Compile Include="Assets\Scripts\Skill1CoolTimeImgScript.cs" />
     <Compile Include="Assets\Scripts\StageNameScript.cs" />
     <Compile Include="Assets\Scripts\TDSscript.cs" />
+    <Compile Include="Assets\Scripts\TitleBlackScale.cs" />
     <Compile Include="Assets\Scripts\TitleButtonScript.cs" />
+    <Compile Include="Assets\Scripts\TitleLight.cs" />
+    <Compile Include="Assets\Scripts\TitlePlayer.cs" />
     <Compile Include="Assets\Scripts\TitleScene2Scripts\logoScript.cs" />
     <Compile Include="Assets\Scripts\TitleScene2Scripts\Title_2IntroScript.cs" />
     <Compile Include="Assets\Scripts\TitleScene2Scripts\TitleBlackScreen.cs" />

@@ -27,10 +27,10 @@ public class TitleTextScript : MonoBehaviour
     {
         changeColor += pivot;
 
-        if (changeColor >= 0.25f)
-            pivot = -0.001f;
+        if (changeColor >= 0.5f)
+            pivot = -0.002f;
         if (changeColor <= 0.0f)
-            pivot = 0.001f;
+            pivot = 0.002f;
     }
 
     public void TitleTextManager()

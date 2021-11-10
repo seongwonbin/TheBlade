@@ -28,6 +28,7 @@ public class TitleButtonScript : MonoBehaviour
     public void TitlebuttonClick()
     {
         TitleScript.eventTrigger = true;
+        
     }
 
     public void TitleEventTrigger()
@@ -38,13 +39,6 @@ public class TitleButtonScript : MonoBehaviour
             changeColor -= 0.002f;
 
 
-        if (TitleScript.eventTrigger == true)
-            timer += Time.deltaTime;
-
-        if (timer >= 6.0f)
-            changeColor += 0.01f;
-
-        if (TitleScript.eventTrigger == true && changeColor >= 1.0f)
-            SceneManager.LoadScene("TitleScene2");
+        
     }
 }

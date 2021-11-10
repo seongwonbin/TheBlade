@@ -22,7 +22,7 @@ public class TitleScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        transform.position = new Vector2(posX, posY);
+        transform.position = new Vector2(0, 0);
     }
 
     // Update is called once per frame
@@ -30,18 +30,11 @@ public class TitleScript : MonoBehaviour
     {
         TitleScriptManager();
 
-        transform.position = new Vector2(posX, posY);
+        
     }
 
     public void TitleScriptManager()
     {
-        if (eventTrigger == false)
-            CameraMove();
-        else
-        {
-            posX = 25f;
-            posY = -2f;
-        }
 
         if (eventTrigger == true)
             eventTimer += Time.deltaTime;
@@ -60,8 +53,8 @@ public class TitleScript : MonoBehaviour
 
         if (timer >= waitingTime)
         {
-            posX = Random.Range(19, 23);
-            posY = Random.Range(-2, 4);
+            posX = Random.Range(-4, 4);
+            posY = Random.Range(-4, 4);
             timer = 0.0f;
         }
     }
