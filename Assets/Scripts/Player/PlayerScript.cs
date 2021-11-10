@@ -159,9 +159,9 @@ public class PlayerScript : MonoBehaviour
             { 
             enemy.GetComponent<EnemyScript>().TakeDamage(attackDamage);
             }
-            catch(NullReferenceException error)
+            catch(NullReferenceException)
             {
-                Debug.Log(error);
+                //Debug.Log(error);
             }
 
             if (ComboScript.rageMode == false)
@@ -187,9 +187,9 @@ public class PlayerScript : MonoBehaviour
             {
                 enemy.GetComponent<DgerScript>().TakeDamage(attackDamage);
             }
-            catch (NullReferenceException error)
+            catch (NullReferenceException)
             {
-                Debug.Log(error);
+                //Debug.Log(error);
             }
 
             if (ComboScript.rageMode == false)

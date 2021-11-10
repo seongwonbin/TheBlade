@@ -16,7 +16,7 @@ public class ComboScript : MonoBehaviour
 
     public static float comboMover = 1790f;
 
-    private bool isUnBeatTime = false;
+    public bool isUnBeatTime = false;
 
     public static bool rageMode = false;
 

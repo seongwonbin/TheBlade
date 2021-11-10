@@ -23,6 +23,7 @@ public class FKnightMgr : MonoBehaviour
 
     public static bool blockLookAt = false;
 
+    
 
     // Start is called before the first frame update
     void Start()
@@ -60,6 +61,7 @@ public class FKnightMgr : MonoBehaviour
     {
         if(isCreated == false)
         {
+            GameManager.isSpawn = false;
             isCreated = true;
             Instantiate(head, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
 

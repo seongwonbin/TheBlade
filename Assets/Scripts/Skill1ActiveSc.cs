@@ -51,9 +51,9 @@ public class Skill1ActiveSc : MonoBehaviour
             { 
             enemy.GetComponent<EnemyScript>().TakeDamage(attackDamage);
             }
-            catch(NullReferenceException error)
+            catch(NullReferenceException)
             {
-                Debug.Log(error);
+                //Debug.Log(error);
             }
             if (ComboScript.rageMode == true)
                 CameraShakeScript.VibrateForTime(0.1f);
@@ -74,9 +74,9 @@ public class Skill1ActiveSc : MonoBehaviour
             {
                 enemy.GetComponent<DgerScript>().TakeDamage(attackDamage);
             }
-            catch (NullReferenceException error)
+            catch (NullReferenceException)
             {
-                Debug.Log(error);
+                //Debug.Log(error);
             }
             if (ComboScript.rageMode == true)
                 CameraShakeScript.VibrateForTime(0.1f);

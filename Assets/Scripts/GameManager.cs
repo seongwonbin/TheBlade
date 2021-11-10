@@ -21,11 +21,11 @@ public class GameManager : MonoBehaviour
 
     public GameObject forestLightObject;
 
-    public bool isSpawn = false;
+    public static bool isSpawn = false;
 
     public GameObject fknight;
-    
 
+    public static float fKnightTimer = 0f;
 
     private void Awake()
     {
@@ -98,9 +98,18 @@ public class GameManager : MonoBehaviour
 
     void SpawnFKnight()
     {
-        Instantiate(fknight, new Vector3(445f, -1.65f, 0), Quaternion.identity);
-        //Instantiate(fknight2, new Vector3(480f, -1.65f, 0), Quaternion.identity);
-        isSpawn = true;
+
+        fKnightTimer += Time.deltaTime;
+
+        if (fKnightTimer >= 6.0f)
+        {
+            Instantiate(fknight, new Vector3(player.transform.position.x + 30f, -1.65f, 0), Quaternion.identity);
+            fKnightTimer = 0;
+            isSpawn = true;
+        }
+
+
+
 
     }
 }
