@@ -55,8 +55,8 @@ public class Skill1ActiveSc : MonoBehaviour
             {
                 //Debug.Log(error);
             }
-            if (ComboScript.rageMode == true)
-                CameraShakeScript.VibrateForTime(0.1f);
+           // if (ComboScript.rageMode == true)
+          //      CameraShakeScript.VibrateForTime(0.1f);
 
             ComboScript.enemyHit();
         }
@@ -78,8 +78,8 @@ public class Skill1ActiveSc : MonoBehaviour
             {
                 //Debug.Log(error);
             }
-            if (ComboScript.rageMode == true)
-                CameraShakeScript.VibrateForTime(0.1f);
+         //   if (ComboScript.rageMode == true)
+          //      CameraShakeScript.VibrateForTime(0.1f);
 
             ComboScript.enemyHit();
         }

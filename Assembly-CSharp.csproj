@@ -119,6 +119,7 @@
     <Compile Include="Assets\Scripts\RiverLight1.cs" />
     <Compile Include="Assets\Scripts\S1CThelperScript.cs" />
     <Compile Include="Assets\Scripts\ShootingMetSc.cs" />
+    <Compile Include="Assets\Scripts\Skill1ActiveRatio.cs" />
     <Compile Include="Assets\Scripts\Skill1ActiveSc.cs" />
     <Compile Include="Assets\Scripts\Skill1CoolTimeImgScript.cs" />
     <Compile Include="Assets\Scripts\StageNameScript.cs" />

@@ -23,6 +23,7 @@ public class MainCameraScript : MonoBehaviour
     void Start()
     {
         titleCam = GetComponent<Camera>();
+        
         player = GameObject.FindGameObjectWithTag("Player");
 
         transform.position = new Vector3(-0.1f, 100f, -10f); // 메인필드 진입 시 카메라포지션
@@ -50,6 +51,11 @@ public class MainCameraScript : MonoBehaviour
 
 
         //  transform.position = new Vector3(transform.position.x + escapeCameraMove, transform.position.y, -50.0f);
+
+        if (Skill1ActiveRatio.active == false)
+            player = GameObject.FindGameObjectWithTag("Player");
+        else if (Skill1ActiveRatio.active == true)
+            player = this.gameObject;
 
     }
 
@@ -85,7 +91,7 @@ public class MainCameraScript : MonoBehaviour
         if (orthoSize != 11f)
             timer += Time.deltaTime;
 
-        if (timer >= 0.5f)
+        if (timer >= 1.0f)
         {
             orthoSize = 11f;
             timer = 0f;

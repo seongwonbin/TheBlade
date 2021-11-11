@@ -24,7 +24,7 @@ public class PlayerScript : MonoBehaviour
     public static bool isUnBeatTime = false;
     public static bool startBool = false;
     public static bool map1 = true;
-    public static bool setPlayerSkill1 = false;
+    public static bool setPlayerSkill1 = false; // 대쉬스킬 플래그
 
     public GameObject obj;
     public GameObject obj2;
@@ -50,8 +50,8 @@ public class PlayerScript : MonoBehaviour
     public static int randomX = 0;
     public static int randomY = 0;
 
-    public static bool skill1Trigger = false;
-    public static bool skill1Trigger_2 = false;
+    public static bool skill1Trigger = false;  // F 눌렀을 때 플레이어 패링상태
+    public static bool skill1Trigger_2 = false; // 패링상태에서 공격받았을 때 발동
 
     public static bool skill1CoolDown = false;
 
@@ -97,9 +97,8 @@ public class PlayerScript : MonoBehaviour
 
         timer += Time.deltaTime;
 
+
         
-
-
 
     }
 
@@ -401,5 +400,10 @@ public class PlayerScript : MonoBehaviour
         PlayerMoveScript.movePower = 7.0f;
         skill1Trigger = false;
         
+    }
+
+    void returnRatio()
+    {
+        Skill1ActiveRatio.active = false;
     }
 }
