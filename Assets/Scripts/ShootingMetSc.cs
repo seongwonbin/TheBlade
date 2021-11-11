@@ -105,17 +105,26 @@ public class ShootingMetSc : MonoBehaviour
             if (attackDelay == false)
             { 
                 AttackTask();
-
             }
             else
                 attackDelay = false;
         }
-        catch (NullReferenceException e)
-        {
-            Debug.Log(e);
-        }
+        catch (NullReferenceException)
+        { }
 
-        
+        try
+        {
+            if (attackDelay == false)
+            {
+                AttackTask2();
+            }
+            else
+                attackDelay = false;
+        }
+        catch (NullReferenceException)
+        { }
+
+
     }
 
     void OnDrawGizmosSelected()
@@ -143,6 +152,28 @@ public class ShootingMetSc : MonoBehaviour
         }
 
         attackDelay = true;
+    }
+    void AttackTask2()
+    {
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+
+        foreach (Collider2D enemy in hitEnemies)
+        {
+            enemy.GetComponent<DgerScript>().TakeDamage(attackDamage);
+            //enemy.GetComponent<EnemyScript>().TakeDamage(attackDamage);
+
+            if (ComboScript.rageMode == true)
+                CameraShakeScript.VibrateForTime(0.1f);
+
+            ComboScript.enemyHit();
+        }
+
+        attackDelay = true;
+
+
+
+
+
     }
 
 }

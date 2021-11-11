@@ -24,34 +24,46 @@ public class PlayerLightScript : MonoBehaviour
         if (GameManager.playerLocation == true)
         { 
             if(PortalScript.portal2Checker == false)
-            { 
-                playerLight.pointLightInnerRadius = 0f;
-                
+            {
+
+                Blink();
+
             }
             else if(GameManager.isReady == true)
             {
-                playerLight.pointLightInnerRadius = 1f;
-                
+                playerLight.pointLightOuterRadius = 40f;
+                playerLight.pointLightInnerRadius = 0f;
+
+
+
             }
 
-            playerLight.pointLightOuterRadius = lightDistance;
+
+
+
         }
         
         
-        Blink();
+        
 
-        lightDistance += lightComponent;
+        
 
-       // if (PortalScript.portal2Checker == true)
-         // gameObject.SetActive(false);
+        //if (PortalScript.portal2Checker == true)
+          //gameObject.SetActive(false);
     }
 
     void Blink()
     {
+
+        playerLight.pointLightInnerRadius = 0f;
+        playerLight.pointLightOuterRadius = lightDistance;
+        lightDistance += lightComponent;
+
         if (lightDistance >= 35)
             lightComponent *= -1f;
         else if (lightDistance <= 25)
             lightComponent *= -1f;
+
 
 
     }
