@@ -7969,7 +7969,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.92, z: -50}
+  m_LocalPosition: {x: 0, y: 2.2, z: -50}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -8355,12 +8355,12 @@ PrefabInstance:
     - target: {fileID: 9174642386161040289, guid: 72e97a8239b8f6c4da1e3e0a3925b41b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 15.39
+      value: 34.77
       objectReference: {fileID: 0}
     - target: {fileID: 9174642386161040289, guid: 72e97a8239b8f6c4da1e3e0a3925b41b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.52
+      value: -1.61
       objectReference: {fileID: 0}
     - target: {fileID: 9174642386161040289, guid: 72e97a8239b8f6c4da1e3e0a3925b41b,
         type: 3}
@@ -8415,7 +8415,12 @@ PrefabInstance:
     - target: {fileID: 9174642386161040290, guid: 72e97a8239b8f6c4da1e3e0a3925b41b,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9174642386161040293, guid: 72e97a8239b8f6c4da1e3e0a3925b41b,
+        type: 3}
+      propertyPath: maxHealth
+      value: 10000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72e97a8239b8f6c4da1e3e0a3925b41b, type: 3}

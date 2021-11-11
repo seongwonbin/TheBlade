@@ -18,7 +18,7 @@ public class MainCameraScript : MonoBehaviour
 
     public static float orthoSize = 11;
 
-    private float timer = 0f;
+    //private float timer = 0f;
 
     void Start()
     {
@@ -53,9 +53,17 @@ public class MainCameraScript : MonoBehaviour
         //  transform.position = new Vector3(transform.position.x + escapeCameraMove, transform.position.y, -50.0f);
 
         if (Skill1ActiveRatio.active == false)
+        { 
             player = GameObject.FindGameObjectWithTag("Player");
+            minPos.y = 0.05f;
+        }
         else if (Skill1ActiveRatio.active == true)
+        {
+            minPos.y = -2f;
             player = this.gameObject;
+            posY = -2f;
+
+        }
 
     }
 
@@ -83,20 +91,12 @@ public class MainCameraScript : MonoBehaviour
             );
         }
 
+        if (Skill1ActiveRatio.active == true && orthoSize > 8.5f)
+                orthoSize -= 0.3f;
+        else if (Skill1ActiveRatio.active == false && orthoSize < 11f)
+                orthoSize += 0.3f;
 
-
-
-
-
-        if (orthoSize != 11f)
-            timer += Time.deltaTime;
-
-        if (timer >= 1.0f)
-        {
-            orthoSize = 11f;
-            timer = 0f;
-        }
-
+        
     }
 
     void map2()

@@ -327,9 +327,6 @@ public class PlayerScript : MonoBehaviour
             setPlayerSkill1 = true;
             skill1Trigger_2 = false;
             
-            MainCameraScript.orthoSize = 8.5f;
-
-
         }
         else if(Input.GetKey(KeyCode.RightArrow) && skill1Trigger_2 == true)
         {
@@ -338,8 +335,6 @@ public class PlayerScript : MonoBehaviour
             Instantiate(obj, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
             setPlayerSkill1 = true;
             skill1Trigger_2 = false;
-            
-            MainCameraScript.orthoSize = 8.5f;
 
         }
         else if(skill1Trigger_2 == true)
@@ -360,11 +355,7 @@ public class PlayerScript : MonoBehaviour
             setPlayerSkill1 = true;
             skill1Trigger_2 = false;
             
-            MainCameraScript.orthoSize = 8.5f;
-
         }
-
-        
 
     }
 
