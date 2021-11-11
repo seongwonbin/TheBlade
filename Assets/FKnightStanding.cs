@@ -19,7 +19,7 @@ public class FKnightStanding : StateMachineBehaviour
     {
         //if (Vector2.Distance(FKnightMgr.player.position, FKnightMgr.fk.transform.position) <= FKnightMgr.searchRange)
         //  FKnightMgr.anim.SetBool("isActive", true);
-
+        
 
     }
 

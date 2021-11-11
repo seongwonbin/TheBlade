@@ -35,6 +35,11 @@ public class ComboScript : MonoBehaviour
         showComboText();
 
         textPos.position = new Vector3(comboMover, 730, 0);
+
+        //디버그용
+
+        if (Input.GetKeyDown(KeyCode.W))
+            comboSystem += 30f;
     }
 
     public void showComboText()

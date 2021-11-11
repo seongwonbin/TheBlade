@@ -57,6 +57,9 @@ public class EnemyScript : MonoBehaviour
             Die();
 
         }
+
+        if (currentHealth != maxHealth)
+            enemy.SetTrigger("isActive");
     }
 
     public void TakeDamage(int damage)
