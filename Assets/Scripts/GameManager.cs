@@ -70,7 +70,7 @@ public class GameManager : MonoBehaviour
             SpawnFKnight();
 
 
-        Debug.Log(PortalScript.portal2Checker);
+        //Debug.Log(PortalScript.portal2Checker);
     }
 
 

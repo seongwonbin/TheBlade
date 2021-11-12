@@ -44,5 +44,6 @@ public class Skill1ActiveRatio : MonoBehaviour
                 rectCtrlY += 30f;
 
 
+
     }
 }

@@ -12,6 +12,8 @@ public class Skill1ActiveSc : MonoBehaviour
 
     private int attackDamage = 20;
 
+    public static float movePos = -2f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +27,10 @@ public class Skill1ActiveSc : MonoBehaviour
             AttackTask();
             AttackTask2();
 
+
+        
+
+        
     }
 
     void myDestroy()
@@ -48,15 +54,12 @@ public class Skill1ActiveSc : MonoBehaviour
         foreach (Collider2D enemy in hitEnemies)
         {
             try
-            { 
-            enemy.GetComponent<EnemyScript>().TakeDamage(attackDamage);
-            }
-            catch(NullReferenceException)
             {
-                //Debug.Log(error);
+                enemy.GetComponent<EnemyScript>().TakeDamage(attackDamage);
             }
-           // if (ComboScript.rageMode == true)
-          //      CameraShakeScript.VibrateForTime(0.1f);
+            catch (NullReferenceException)
+            { }
+                
 
             ComboScript.enemyHit();
         }
@@ -75,12 +78,7 @@ public class Skill1ActiveSc : MonoBehaviour
                 enemy.GetComponent<DgerScript>().TakeDamage(attackDamage);
             }
             catch (NullReferenceException)
-            {
-                //Debug.Log(error);
-            }
-         //   if (ComboScript.rageMode == true)
-          //      CameraShakeScript.VibrateForTime(0.1f);
-
+            { }
             ComboScript.enemyHit();
         }
 

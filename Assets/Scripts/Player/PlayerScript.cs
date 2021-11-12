@@ -56,6 +56,9 @@ public class PlayerScript : MonoBehaviour
     public static bool skill1CoolDown = false;
 
     private float timer = 0f;
+
+    public static int ctrlQuantity = 0;
+
     //
 
     void Start()
@@ -97,8 +100,12 @@ public class PlayerScript : MonoBehaviour
 
         timer += Time.deltaTime;
 
+        if (Skill1ActiveRatio.active == false)
+            Skill1ActiveSc.movePos = -10f;
 
-        
+        if (ctrlQuantity >= 4)
+            ctrlQuantity = 0;
+
 
     }
 
