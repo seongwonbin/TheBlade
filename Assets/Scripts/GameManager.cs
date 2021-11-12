@@ -69,8 +69,10 @@ public class GameManager : MonoBehaviour
         if (isReady == true && isSpawn == false)
             SpawnFKnight();
 
-       // ChangeRatio();
+
+        Debug.Log(PortalScript.portal2Checker);
     }
+
 
 
     public void MainBlackScreen()
@@ -92,7 +94,7 @@ public class GameManager : MonoBehaviour
         PortalScript.portalChecker = true;
         //PortalScript.portal2Checker = false;
         MainSceneManager.existDger = true;
-        player.position = new Vector2(350f, -3.28957f);
+        player.position = new Vector2(450f, -3.28957f);
     }
 
     void SpawnFKnight()

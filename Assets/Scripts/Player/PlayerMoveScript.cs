@@ -243,7 +243,7 @@ public class PlayerMoveScript : MonoBehaviour
             vanishTimer = 0f;
         }
 
-        if (vanishTimer >= 0.5f)
+        if (vanishTimer >= 0.65f)
             playerVanish = false;
 
     }

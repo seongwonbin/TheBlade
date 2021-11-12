@@ -41,6 +41,18 @@ public class BlackScale : MonoBehaviour
                 GameManager.isReady = false;
 
         }
+        //else if (PortalScript.portal2Checker == false)
+        //{
+        //    if (moveScreen <= 275f)
+        //        moveScreen += 7f;
+
+        //    if (moveScreen >= 100f)
+        //        GameManager.isReady = false;
+        //    else
+        //        GameManager.isReady = true;
+
+
+        //}
 
 
 

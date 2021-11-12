@@ -39,6 +39,8 @@ public class PortalScript : MonoBehaviour
         {
             portal2Checker = true;
         }
+        else if (portal2Checker == true && col.gameObject.tag == "Player")
+            portal2Checker = false;
 
 
     }
