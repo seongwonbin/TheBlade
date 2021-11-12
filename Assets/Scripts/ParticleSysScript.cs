@@ -12,6 +12,9 @@ public class ParticleSysScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (PlayerScript.changeRot == true && Skill1ActiveRatio.active == true)
+            return;
+
         if(PlayerMoveScript.flipController == false)
         { 
             

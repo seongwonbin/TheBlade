@@ -6,7 +6,7 @@ public class AttackParticleScript : MonoBehaviour
 {
     private float initPosX, initPosY = 0;
 
-    private float temp = 1f;
+    private float temp = 0.3f;
 
     public bool isVariant = false;
 
@@ -15,10 +15,15 @@ public class AttackParticleScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PlayerScript.ctrlQuantity++;
-
-        if (PlayerScript.ctrlQuantity < 3)
+        if (Skill1ActiveSc.movePos >= 8f)
             return;
+
+        PlayerScript.changeRot = !PlayerScript.changeRot;
+
+        if (PlayerScript.changeRot == true)
+            transform.rotation = Quaternion.Euler(new Vector3(transform.rotation.x, transform.rotation.y, 45));
+        else
+            transform.rotation = Quaternion.Euler(new Vector3(transform.rotation.x, transform.rotation.y, -45));
 
         if (Skill1ActiveRatio.active == false)
                 initPosX = Random.Range(-3.0f, 3.0f);

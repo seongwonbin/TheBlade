@@ -57,9 +57,7 @@ public class PlayerScript : MonoBehaviour
 
     private float timer = 0f;
 
-    public static int ctrlQuantity = 0;
-
-    //
+    public static bool changeRot = false;
 
     void Start()
     {
@@ -102,10 +100,6 @@ public class PlayerScript : MonoBehaviour
 
         if (Skill1ActiveRatio.active == false)
             Skill1ActiveSc.movePos = -10f;
-
-        if (ctrlQuantity >= 4)
-            ctrlQuantity = 0;
-
 
     }
 
