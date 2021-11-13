@@ -32,7 +32,7 @@ public class PlayerLightScript : MonoBehaviour
             else if(GameManager.isReady == true)
             {
                 playerLight.pointLightOuterRadius = 40f;
-                playerLight.pointLightInnerRadius = 0f;
+                playerLight.pointLightInnerRadius = 10f;
 
 
 

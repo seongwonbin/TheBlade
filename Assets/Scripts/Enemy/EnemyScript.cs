@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class EnemyScript : MonoBehaviour
 {
-    public static bool isFlipped = false;
+    public static bool isFlipped;
 
     private SpriteRenderer spr;
     private Animator enemy;
@@ -130,21 +130,15 @@ public class EnemyScript : MonoBehaviour
 
     public void LookAtPlayer()
     {
-        Vector3 flipped = transform.localScale;
-        flipped.z *= -1f;
-
         if (transform.position.x > player.position.x && isFlipped)
-        {
-            transform.localScale = flipped;
-            transform.Rotate(0f, 180f, 0f);
             isFlipped = false;
-        }
-        else if (transform.position.x < player.position.x && !isFlipped)
-        {
-            transform.localScale = flipped;
-            transform.Rotate(0f, 180f, 0f);
+        else if (transform.position.x <= player.position.x && !isFlipped)
             isFlipped = true;
-        }
+
+        if (isFlipped == false)
+            transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+        else
+            transform.rotation = Quaternion.Euler(new Vector3(0, 180f, 0));
     }
 
     public void createParticle()

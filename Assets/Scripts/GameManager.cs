@@ -103,7 +103,7 @@ public class GameManager : MonoBehaviour
 
         if (fKnightTimer >= 6.0f)
         {
-            Instantiate(fknight, new Vector3(player.transform.position.x + 30f, -1.65f, 0), Quaternion.identity);
+            Instantiate(fknight, new Vector3(player.transform.position.x + 30f, -1.84f, 0), Quaternion.identity);
             fKnightTimer = 0;
             isSpawn = true;
         }

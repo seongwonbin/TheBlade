@@ -35,8 +35,6 @@ public class DgerScript : MonoBehaviour
     public GameObject atkParticle;
     public GameObject swingParticle;
 
-    //public static bool isFlipped = false;
-
     private float movePower = 9f;
     public Vector3 moveVelocity = Vector3.zero;
 

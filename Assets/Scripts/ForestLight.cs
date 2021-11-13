@@ -8,7 +8,7 @@ public class ForestLight : MonoBehaviour
 
     public bool firstLight, secondLight, thirdLight, forthLight = false;
 
-    private float temp = -0.03f;
+    private float temp = -0.015f;
 
     // Start is called before the first frame update
     void Start()
