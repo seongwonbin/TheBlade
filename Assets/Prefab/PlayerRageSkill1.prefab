@@ -100,6 +100,8 @@ MonoBehaviour:
     m_Bits: 256
   mmSpeed: 0.25
   rotCtrl: 74.07
+  isOne: 1
+  attackDelay: 0
 --- !u!1 &5908182744320820079
 GameObject:
   m_ObjectHideFlags: 0

@@ -99,7 +99,7 @@ public class ShootingMetSc : MonoBehaviour
             attackPoint = null;
 
        
-
+        
         try
         {
             if (attackDelay == false)

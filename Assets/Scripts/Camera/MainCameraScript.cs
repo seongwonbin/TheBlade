@@ -6,7 +6,7 @@ public class MainCameraScript : MonoBehaviour
 {
     private Camera titleCam;
 
-    public bool bound;
+    private bool bound = true;
     public static float posX, posY;
     public float smoothTimeX, smoothTimeY;
 
@@ -104,12 +104,12 @@ public class MainCameraScript : MonoBehaviour
         if (GameManager.playerLocation == true && PortalScript.portal2Checker == false)
         {
             minPos.x = 310f;
-            maxPos.x = 490f;
+            maxPos.x = 470f;
         }
         else if (GameManager.playerLocation == true && GameManager.isReady == true)
         {
-            minPos.x = 420f;
-            maxPos.x = 600f;
+            minPos.x = 503f;
+            maxPos.x = 700f;
         }
 
                

@@ -60,6 +60,9 @@ public class EnemyScript : MonoBehaviour
 
         if (currentHealth != maxHealth)
             enemy.SetTrigger("isActive");
+
+        LostPlayer();
+        
     }
 
     public void TakeDamage(int damage)
@@ -149,5 +152,13 @@ public class EnemyScript : MonoBehaviour
         Instantiate(atkParticle, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
 
         Instantiate(swingParticle, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+    }
+
+    void LostPlayer()
+    {
+        if (Vector3.Distance(player.position, transform.position) > 20f)
+            enemy.SetBool("isActive", false);
+
+
     }
 }

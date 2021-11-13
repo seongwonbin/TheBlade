@@ -45,12 +45,16 @@ public class MainSceneManager : MonoBehaviour
 
         if (dgerTimer >= 3.0f)
         {
-            GameObject go = Instantiate(createDger, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
-            go.transform.SetParent(GameObject.Find("UI Canvas").transform);
+            if (PortalScript.portal2Checker == false)
+            {
+                GameObject go = Instantiate(createDger, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+                go.transform.SetParent(GameObject.Find("UI Canvas").transform);
+            }
+            else
+                return;
 
             existDger = true;
             dgerTimer = 0;
-            Debug.Log("spawn  UI Dger");
         }
 
         

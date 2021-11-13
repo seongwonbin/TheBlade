@@ -6,7 +6,7 @@ public class AttackParticleScript : MonoBehaviour
 {
     private float initPosX, initPosY = 0;
 
-    private float temp = 0.3f;
+    private float temp = 0.3f; // 순차적 이펙트 생성 간격
 
     public bool isVariant = false;
 
@@ -15,7 +15,7 @@ public class AttackParticleScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (Skill1ActiveSc.movePos >= 8f)
+        if (Skill1ActiveSc.movePos >= 8f) // 과도한 이펙트 발생 억제 (플레이어 넘어서까지)
             return;
 
         PlayerScript.changeRot = !PlayerScript.changeRot;
@@ -26,7 +26,10 @@ public class AttackParticleScript : MonoBehaviour
             transform.rotation = Quaternion.Euler(new Vector3(transform.rotation.x, transform.rotation.y, -45));
 
         if (Skill1ActiveRatio.active == false)
-                initPosX = Random.Range(-3.0f, 3.0f);
+        { 
+            initPosX = Random.Range(-3.0f, 3.0f);
+           
+        }
         else if (Skill1ActiveRatio.active == true)
         {
             if (PlayerMoveScript.flipController == false)
@@ -36,17 +39,9 @@ public class AttackParticleScript : MonoBehaviour
 
             Skill1ActiveSc.movePos += temp;
         }
-        
-        
-
-
 
         initPosY = Random.Range(-3.0f, 2.0f);
-
-        transform.position = new Vector3(transform.position.x + initPosX*0.7f, transform.position.y + initPosY*0.7f, 0f);
-
-
-        
+        transform.position = new Vector3(transform.position.x + initPosX*0.7f, transform.position.y + initPosY*0.7f, 0f); // 0.7f
                 
     }
 

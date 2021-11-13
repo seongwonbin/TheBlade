@@ -67,8 +67,6 @@ public class PlayerScript : MonoBehaviour
 
         currentHealth = maxHealth;
 
-        //
-
         
 
     }

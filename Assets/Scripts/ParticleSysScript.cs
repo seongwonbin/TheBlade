@@ -33,7 +33,7 @@ public class ParticleSysScript : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if (timer >= 2)
+        if (timer >= 1)
             Destroy(gameObject);
 
     }

@@ -76,7 +76,7 @@ public class ComboScript : MonoBehaviour
         else
         {
             if (rageMode == false)
-                comboSystem += 1f;
+                comboSystem += 0.5f;
             else if (rageMode == true)
                 comboSystem += 0.2f;
         }

@@ -26,8 +26,9 @@ public class FindRange : MonoBehaviour
         Collider2D[] findPlayer = Physics2D.OverlapCircleAll(findPoint.position, findRange, enemyLayers);
 
         foreach(Collider2D enemy in findPlayer)
-            FKnightMgr.anim.SetTrigger("isActive");
+            FKnightMgr.anim.SetBool("isActive", true);
 
     }
+
 
 }

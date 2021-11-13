@@ -131,3 +131,4 @@ MonoBehaviour:
   mmSpeed: 0.25
   rotCtrl: 74.07
   isOne: 0
+  attackDelay: 0

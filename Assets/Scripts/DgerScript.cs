@@ -93,6 +93,9 @@ public class DgerScript : MonoBehaviour
         if (eulerCtrl != 0)
             eulerCtrl = 0;
 
+        if (PortalScript.portal2Checker == true)
+            Destroy(gameObject);
+
     }
 
     public void TakeDamage(int damage)
