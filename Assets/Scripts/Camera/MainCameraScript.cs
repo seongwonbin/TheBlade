@@ -52,17 +52,27 @@ public class MainCameraScript : MonoBehaviour
 
         //  transform.position = new Vector3(transform.position.x + escapeCameraMove, transform.position.y, -50.0f);
 
-        if (Skill1ActiveRatio.active == false)
+        if (InvisibleTilemap.isEnter == false)
         { 
-            player = GameObject.FindGameObjectWithTag("Player");
-            minPos.y = 0.05f;
-        }
-        else if (Skill1ActiveRatio.active == true)
-        {
-            minPos.y = -2f;
-            player = this.gameObject;
-            posY = -2f;
 
+            if (Skill1ActiveRatio.active == false)
+            { 
+                player = GameObject.FindGameObjectWithTag("Player");
+                minPos.y = 0.05f;
+            }
+            else if (Skill1ActiveRatio.active == true)
+            {
+                minPos.y = -2f;
+                player = this.gameObject;
+                posY = -2f;
+
+            }
+
+        }
+        else if (InvisibleTilemap.isEnter)
+        { 
+            player = GameObject.Find("CenterofCave");
+           // orthoSize = 20f;
         }
 
     }
@@ -108,11 +118,18 @@ public class MainCameraScript : MonoBehaviour
         }
         else if (GameManager.playerLocation == true && GameManager.isReady == true)
         {
-            minPos.x = 503f;
-            maxPos.x = 700f;
+            if(GameManager.isReady2 == false)
+            { 
+                minPos.x = 503f;
+                maxPos.x = 686f;
+            }
+            else if (GameManager.isReady2 == true)
+            {
+                minPos.x = 716f;
+                maxPos.x = 1000f;
+               // minPos.y = -13f; 보스전투시 minPos;
+            }
         }
-
-               
 
     }
 

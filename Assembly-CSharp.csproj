@@ -103,6 +103,7 @@
     <Compile Include="Assets\Scripts\Heart\Heart3Script.cs" />
     <Compile Include="Assets\Scripts\HPSliderScript.cs" />
     <Compile Include="Assets\Scripts\IntroScript.cs" />
+    <Compile Include="Assets\Scripts\InvisibleTilemap.cs" />
     <Compile Include="Assets\Scripts\MainSceneManager.cs" />
     <Compile Include="Assets\Scripts\MovingBackgroundScript.cs" />
     <Compile Include="Assets\Scripts\MovingParticleScript.cs" />
@@ -125,6 +126,7 @@
     <Compile Include="Assets\Scripts\Skill1CoolTimeImgScript.cs" />
     <Compile Include="Assets\Scripts\StageNameScript.cs" />
     <Compile Include="Assets\Scripts\TDSscript.cs" />
+    <Compile Include="Assets\Scripts\TilemapScript.cs" />
     <Compile Include="Assets\Scripts\TitleBlackScale.cs" />
     <Compile Include="Assets\Scripts\TitleButtonScript.cs" />
     <Compile Include="Assets\Scripts\TitleLight.cs" />

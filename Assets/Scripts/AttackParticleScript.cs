@@ -10,13 +10,21 @@ public class AttackParticleScript : MonoBehaviour
 
     public bool isVariant = false;
 
-    
+    SpriteRenderer spr;
 
     // Start is called before the first frame update
     void Start()
     {
         if (Skill1ActiveSc.movePos >= 8f) // 과도한 이펙트 발생 억제 (플레이어 넘어서까지)
             return;
+
+        if(isVariant)
+        {
+            spr = GetComponent<SpriteRenderer>();
+
+            spr.color = new Color(255, 255, 255, 1);
+        }
+
 
         PlayerScript.changeRot = !PlayerScript.changeRot;
 

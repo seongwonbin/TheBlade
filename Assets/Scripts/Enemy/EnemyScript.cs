@@ -17,7 +17,7 @@ public class EnemyScript : MonoBehaviour
 
     private bool enemyDiedChecker = false;
 
-    public int maxHealth = 100;
+    public int maxHealth = 200;
     public int currentHealth;
 
     public float timer = 0.0f;
@@ -32,6 +32,7 @@ public class EnemyScript : MonoBehaviour
 
     public GameObject atkParticle;
     public GameObject swingParticle;
+    public GameObject atkParticle2;
 
     public bool isFKnight = false;
     public static bool isDger = false;
@@ -73,8 +74,10 @@ public class EnemyScript : MonoBehaviour
 
         if (currentHealth <= 0)
             enemy.SetBool("Died", true);
-
-        createParticle();
+        if (damage >= 10f)
+            createParticle();
+        else
+            createParticle2();
 
     }
 
@@ -145,6 +148,13 @@ public class EnemyScript : MonoBehaviour
     {
         Instantiate(atkParticle, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
 
+        Instantiate(swingParticle, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+        
+    }
+
+    public void createParticle2()
+    {
+        Instantiate(atkParticle2, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
         Instantiate(swingParticle, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
     }
 

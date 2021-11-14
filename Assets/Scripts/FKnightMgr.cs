@@ -35,15 +35,9 @@ public class FKnightMgr : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        //x position 445, 475?
-
-        //if(FKnightStanding.enter)
-        //    if (Vector2.Distance(FKnightMgr.player.position, transform.position) <= FKnightMgr.searchRange)
-        //    { 
-        //        FKnightMgr.anim.SetBool("isActive", true);
-
-        //    }
+        if (PortalScript.portal3Checker == true)
+            Destroy(gameObject);
+        
 
 
 

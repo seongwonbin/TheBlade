@@ -26,7 +26,7 @@ public class PlayerMoveScript : MonoBehaviour
 
     public Vector2 leftDashVelocity = new Vector2(-20, 0);
     public Vector2 leftSkill1Velocity = new Vector2(-22, 0);
-    public Vector2 rightDashVelocity = new Vector2(20, 0);
+    public Vector2 rightDashVelocity = new Vector2(20, 0.3f);
     public Vector2 rightSkill1Velocity = new Vector2(22, 0);
     public Vector3 moveVelocity = Vector3.zero;
 
@@ -197,7 +197,7 @@ public class PlayerMoveScript : MonoBehaviour
                 PlayerDashScript.playerDash = true;
                 animator.SetBool("isDash", true);
                 moveVelocity = Vector3.right;
-                rigid.AddForce(rightDashVelocity*10, ForceMode2D.Impulse);
+                rigid.AddForce(rightDashVelocity*3, ForceMode2D.Impulse);
                 playerVanish = true;
 
             }

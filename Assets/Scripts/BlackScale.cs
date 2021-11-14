@@ -8,7 +8,7 @@ public class BlackScale : MonoBehaviour
 
     private float moveScreen = 275f;
 
-    
+    public bool isBlackScale2 = false;
 
 
     // Start is called before the first frame update
@@ -22,7 +22,11 @@ public class BlackScale : MonoBehaviour
     {
         transform.position = new Vector2(player.transform.position.x + moveScreen, 13.1f);
 
-        MoveBlackScale();
+
+        if(isBlackScale2 == false)
+            MoveBlackScale();
+        else if(isBlackScale2 == true)
+            MoveBlackScale2();
     }
 
     void MoveBlackScale()
@@ -41,19 +45,26 @@ public class BlackScale : MonoBehaviour
                 GameManager.isReady = false;
 
         }
-        //else if (PortalScript.portal2Checker == false)
-        //{
-        //    if (moveScreen <= 275f)
-        //        moveScreen += 7f;
+        
 
-        //    if (moveScreen >= 100f)
-        //        GameManager.isReady = false;
-        //    else
-        //        GameManager.isReady = true;
+    }
 
+    void MoveBlackScale2()
+    {
+        if (PortalScript.portal3Checker == true)
+        {
+            if (moveScreen >= -300f)
+            {
+                moveScreen -= 7f;
 
-        //}
+            }
 
+            if (moveScreen <= 100f)
+                GameManager.isReady2 = true;
+            else
+                GameManager.isReady2 = false;
+
+        }
 
 
     }

@@ -20,7 +20,7 @@ public class ForestTreeScript : MonoBehaviour
         if (PlayerScript.map1 == false)
         {
             towerPosX = (MainCameraScript.posX+200) - (MainCameraScript.posX / 2f);
-
+            towerPosY = MainCameraScript.posY;
             transform.position = new Vector2(towerPosX, towerPosY);
         }
     }
