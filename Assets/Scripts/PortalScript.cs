@@ -36,7 +36,7 @@ public class PortalScript : MonoBehaviour
         {
             Instantiate(obj, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
             portalChecker = true;
-            Debug.Log("케릉~");
+            
         }
 
         else if (portalChecker == true && col.gameObject.tag == "Player")

@@ -27,19 +27,22 @@ public class InvisibleTilemap : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-       // MainCameraScript.orthoSize = 20f;
-        isEnter = true;   
+        isEnter = true;
+
     }
 
 
     private void OnTriggerStay2D(Collider2D collision)
     {
+        if (MainCameraScript.orthoSize < 15f)
+            MainCameraScript.orthoSize += 0.2f;
         temp -= 0.03f;
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        //MainCameraScript.orthoSize = 11f;
+        MainCameraScript.orthoSize = 11f;
+            
         isEnter = false;
         temp = 1f;
     }

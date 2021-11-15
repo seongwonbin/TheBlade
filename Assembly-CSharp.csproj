@@ -76,6 +76,7 @@
     <Compile Include="Assets\Scripts\Background\RiverScript.cs" />
     <Compile Include="Assets\Scripts\Background\TowerScript.cs" />
     <Compile Include="Assets\Scripts\BlackScale.cs" />
+    <Compile Include="Assets\Scripts\BossMgr.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraScript.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraShakeScript.cs" />
     <Compile Include="Assets\Scripts\Camera\MainCameraScript.cs" />
@@ -107,6 +108,8 @@
     <Compile Include="Assets\Scripts\MainSceneManager.cs" />
     <Compile Include="Assets\Scripts\MovingBackgroundScript.cs" />
     <Compile Include="Assets\Scripts\MovingParticleScript.cs" />
+    <Compile Include="Assets\Scripts\MovingTile.cs" />
+    <Compile Include="Assets\Scripts\MovingTile2.cs" />
     <Compile Include="Assets\Scripts\ParticleSysScript.cs" />
     <Compile Include="Assets\Scripts\Player\DashCoolTimerScript.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerAttack1Script.cs" />
@@ -126,6 +129,7 @@
     <Compile Include="Assets\Scripts\Skill1CoolTimeImgScript.cs" />
     <Compile Include="Assets\Scripts\StageNameScript.cs" />
     <Compile Include="Assets\Scripts\TDSscript.cs" />
+    <Compile Include="Assets\Scripts\Thorn.cs" />
     <Compile Include="Assets\Scripts\TilemapScript.cs" />
     <Compile Include="Assets\Scripts\TitleBlackScale.cs" />
     <Compile Include="Assets\Scripts\TitleButtonScript.cs" />

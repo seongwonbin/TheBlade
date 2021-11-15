@@ -396,4 +396,5 @@ public class PlayerScript : MonoBehaviour
     {
         Skill1ActiveRatio.active = false;
     }
+
 }

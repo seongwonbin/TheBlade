@@ -20,6 +20,8 @@ public class MainCameraScript : MonoBehaviour
 
     //private float timer = 0f;
 
+    public static float posYBoss = 0f;
+
     void Start()
     {
         titleCam = GetComponent<Camera>();
@@ -27,6 +29,8 @@ public class MainCameraScript : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
 
         transform.position = new Vector3(-0.1f, 100f, -10f); // 메인필드 진입 시 카메라포지션
+
+        titleCam.clearFlags = CameraClearFlags.SolidColor;
     }
 
     // Update is called once per frame
@@ -58,11 +62,11 @@ public class MainCameraScript : MonoBehaviour
             if (Skill1ActiveRatio.active == false)
             { 
                 player = GameObject.FindGameObjectWithTag("Player");
-                minPos.y = 0.05f;
+                minPos.y = 0.05f+posYBoss;
             }
             else if (Skill1ActiveRatio.active == true)
             {
-                minPos.y = -2f;
+                minPos.y = -2f + posYBoss;
                 player = this.gameObject;
                 posY = -2f;
 
@@ -72,7 +76,7 @@ public class MainCameraScript : MonoBehaviour
         else if (InvisibleTilemap.isEnter)
         { 
             player = GameObject.Find("CenterofCave");
-           // orthoSize = 20f;
+            
         }
 
     }
@@ -127,9 +131,16 @@ public class MainCameraScript : MonoBehaviour
             {
                 minPos.x = 716f;
                 maxPos.x = 1000f;
-               // minPos.y = -13f; 보스전투시 minPos;
+                
             }
         }
+
+    }
+
+    void ChangeBGColor()
+    {
+      //  float t = Mathf.PingPong(Time.time, duration)
+
 
     }
 
