@@ -1057,6 +1057,9 @@ MonoBehaviour:
   myVal: 5.95
   isHead: 1
   timer: 0
+  titleEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1111356851
 GameObject:
   m_ObjectHideFlags: 0
@@ -2414,7 +2417,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1743063692}
   - component: {fileID: 1743063691}
-  - component: {fileID: 1743063690}
   - component: {fileID: 1743063693}
   m_Layer: 0
   m_Name: Main Camera
@@ -2423,14 +2425,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1743063690
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1743063689}
-  m_Enabled: 1
 --- !u!20 &1743063691
 Camera:
   m_ObjectHideFlags: 0
@@ -3108,6 +3102,9 @@ MonoBehaviour:
   myVal: 5.95
   isHead: 0
   timer: 0
+  titleEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2035933913
 GameObject:
   m_ObjectHideFlags: 0

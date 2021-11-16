@@ -14,7 +14,7 @@ public class PlayerMoveScript : MonoBehaviour
     public float limitVelocity = 18;
 
     public GameObject obj; // Dash CoolTimer
-    public Text mytext;
+    //public Text mytext;
 
 
     public bool isJumping = false;
@@ -49,7 +49,7 @@ public class PlayerMoveScript : MonoBehaviour
         rigid = gameObject.GetComponent<Rigidbody2D>();
         spr = gameObject.GetComponent<SpriteRenderer>();
         animator = gameObject.GetComponent<Animator>();
-        mytext = GameObject.Find("Dash Cooltime Text").GetComponent<Text>();
+        //mytext = GameObject.Find("Dash Cooltime Text").GetComponent<Text>();
         //bCol = gameObject.GetComponent<BoxCollider2D>();
 
     }
@@ -159,10 +159,10 @@ public class PlayerMoveScript : MonoBehaviour
             dashCoolTime = true;
         }
 
-        if (dashCoolTime == false)
-            mytext.text = " ";
-        else
-            mytext.text = "Dash Cooldown";
+        //if (dashCoolTime == false)
+        //    mytext.text = " ";
+        //else
+        //    mytext.text = "Dash Cooldown";
     }
 
 

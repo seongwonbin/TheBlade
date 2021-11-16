@@ -13,7 +13,7 @@ public class TitleButtonScript : MonoBehaviour
     public float changeColor = 1.0f;
     public float timer = 0.0f;
 
-   
+    
     void Start()
     {
         titleScreen = GameObject.Find("Button").GetComponent<Image>();

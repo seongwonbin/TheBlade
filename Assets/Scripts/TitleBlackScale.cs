@@ -28,7 +28,11 @@ public class TitleBlackScale : MonoBehaviour
         if (posY < 37f)
             transform.position = new Vector2(transform.position.x, transform.position.y + moveScreen);
         else
+        {
+            TitleCameraShaker.shakerReady = false;
             SceneManager.LoadScene("TitleScene2");
+
+        }
 
 
     }

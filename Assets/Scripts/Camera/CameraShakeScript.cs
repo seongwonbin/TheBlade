@@ -15,6 +15,8 @@ public class CameraShakeScript : MonoBehaviour
     public static float timer = 0.0f;
 
     public GameObject obj;
+
+    
     
 
     void Start()
@@ -47,6 +49,7 @@ public class CameraShakeScript : MonoBehaviour
 
         if (timer >= 3.0f && introInit == false)
         {
+            AudioManager.isReadyEQ = true;
             shakeAmount = 0.2f;
             VibrateForTime(0.6f);
         }

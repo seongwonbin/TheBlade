@@ -5,13 +5,15 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    private AudioSource gameManagerAudio;
+
     private static GameManager instance = null;
 
     public static float changeColor = 1.0f;
 
     public static bool playerdied = false;
 
-    public Text mytext;
+    //public Text mytext;
 
     public static bool playerLocation = false;
 
@@ -21,10 +23,6 @@ public class GameManager : MonoBehaviour
     public static bool isReady2 = false;
 
     
-
-
-
-
 
     private void Awake()
     {
@@ -53,7 +51,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
 
-        mytext = GameObject.Find("Died Text").GetComponent<Text>();
+        //mytext = GameObject.Find("Died Text").GetComponent<Text>();
         player = GameObject.Find("Dummy Character").GetComponent<Transform>();
     }
 
@@ -63,7 +61,7 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Tab))
             DebugCommand();
 
-
+        
 
     }
 
@@ -77,7 +75,7 @@ public class GameManager : MonoBehaviour
         if (changeColor <= 1.0f && playerdied == true)
         {
             changeColor += 0.01f;
-            mytext.text = "You Died";
+            //mytext.text = "You Died";
         }
     }
 
@@ -94,8 +92,6 @@ public class GameManager : MonoBehaviour
         PortalScript.portal3Checker = true;
         player.position = new Vector2(722f, 22f);
     }
-
-
 
     
 }
