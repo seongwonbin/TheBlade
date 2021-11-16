@@ -99,6 +99,8 @@ public class PlayerScript : MonoBehaviour
         if (Skill1ActiveRatio.active == false)
             Skill1ActiveSc.movePos = -10f;
 
+        
+
     }
 
 
@@ -396,5 +398,6 @@ public class PlayerScript : MonoBehaviour
     {
         Skill1ActiveRatio.active = false;
     }
+
 
 }

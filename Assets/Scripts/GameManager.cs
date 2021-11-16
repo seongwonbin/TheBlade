@@ -20,13 +20,11 @@ public class GameManager : MonoBehaviour
     public static bool isReady = false;
     public static bool isReady2 = false;
 
-    public GameObject forestLightObject;
+    
 
-    public static bool isSpawn = false;
 
-    public GameObject fknight;
 
-    public static float fKnightTimer = 0f;
+
 
     private void Awake()
     {
@@ -54,6 +52,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         mytext = GameObject.Find("Died Text").GetComponent<Text>();
         player = GameObject.Find("Dummy Character").GetComponent<Transform>();
     }
@@ -64,11 +63,7 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Tab))
             DebugCommand();
 
-        if (isReady == true)
-            forestLightObject.gameObject.SetActive(true);
 
-        if (isReady == true && isSpawn == false)
-            SpawnFKnight();
 
     }
 
@@ -100,17 +95,7 @@ public class GameManager : MonoBehaviour
         player.position = new Vector2(722f, 22f);
     }
 
-    void SpawnFKnight()
-    {
-        fKnightTimer += Time.deltaTime;
 
-        if (fKnightTimer >= 6.0f)
-        {
-            Instantiate(fknight, new Vector3(player.transform.position.x + 30f, -1.84f, 0), Quaternion.identity);
-            fKnightTimer = 0;
-            isSpawn = true;
-        }
-    }
 
     
 }

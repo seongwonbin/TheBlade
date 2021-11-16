@@ -13,6 +13,9 @@ public class MovingTile2 : MonoBehaviour
     private float temp = 0.1f;
     private float posX2 = 750f;
 
+    GameObject obj;
+
+
     // Start is called before the first frame update
     void Start()
     {

@@ -120,6 +120,7 @@
     <Compile Include="Assets\Scripts\Player\PlayerMoveScript.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerScript.cs" />
     <Compile Include="Assets\Scripts\PortalScript.cs" />
+    <Compile Include="Assets\Scripts\RageEffect.cs" />
     <Compile Include="Assets\Scripts\RiverLight.cs" />
     <Compile Include="Assets\Scripts\RiverLight1.cs" />
     <Compile Include="Assets\Scripts\S1CThelperScript.cs" />
@@ -127,6 +128,7 @@
     <Compile Include="Assets\Scripts\Skill1ActiveRatio.cs" />
     <Compile Include="Assets\Scripts\Skill1ActiveSc.cs" />
     <Compile Include="Assets\Scripts\Skill1CoolTimeImgScript.cs" />
+    <Compile Include="Assets\Scripts\SpawnFK.cs" />
     <Compile Include="Assets\Scripts\StageNameScript.cs" />
     <Compile Include="Assets\Scripts\TDSscript.cs" />
     <Compile Include="Assets\Scripts\Thorn.cs" />

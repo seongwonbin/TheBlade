@@ -12,6 +12,8 @@ public class ForestBackgroundScript : MonoBehaviour
     Vector3 pos1 = new Vector3(0.94f, 0.6217f, 1f);
     Vector3 pos2 = new Vector3(0.7f, 0.463f, 1f);
 
+    public GameObject forestLights;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +21,7 @@ public class ForestBackgroundScript : MonoBehaviour
         spr = GetComponent<SpriteRenderer>();
         mr = GameObject.Find("mirror").GetComponent<SpriteRenderer>();
         form = GetComponent<Transform>();
+        forestLights = GameObject.Find("FL").GetComponent<GameObject>();
     }
 
     // Update is called once per frame
@@ -38,4 +41,15 @@ public class ForestBackgroundScript : MonoBehaviour
 
         //form.localScale = Vector3.Lerp(pos1, pos2, Time.deltaTime);
     }
+
+    void setForestLights()
+    {
+
+        if (GameManager.isReady == true && PortalScript.portal2Checker == true)
+            forestLights.gameObject.SetActive(true);
+        else
+            forestLights.gameObject.SetActive(false);
+
+    }
+
 }

@@ -40,6 +40,7 @@ public class ComboScript : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.W))
             comboSystem += 30f;
+
     }
 
     public void showComboText()
