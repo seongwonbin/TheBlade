@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
+
+    public AudioListener myAL;
     private AudioSource mainBGM;
     private AudioSource titleAudio;
     public static AudioSource earthQuake;
@@ -17,9 +19,11 @@ public class AudioManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        myAL = GetComponent<AudioListener>();
         mainBGM = GameObject.Find("MainBGM").GetComponent<AudioSource>();
         titleAudio = GameObject.Find("TitleAudio").GetComponent<AudioSource>();
         earthQuake = GameObject.Find("EarthQuake").GetComponent<AudioSource>();
+        
     }
 
     // Update is called once per frame
@@ -33,7 +37,7 @@ public class AudioManager : MonoBehaviour
         //}
 
         if (TitleCameraShaker.shakerReady == true && Title_2IntroScript.temp == false)
-            earthQuake.volume = 0.3f;
+            earthQuake.volume = 0.15f;
 
 
         //if(CameraShakeScript.introAudio == true)
@@ -67,7 +71,7 @@ public class AudioManager : MonoBehaviour
     public void setMainEQ()
     {
         
-        earthQuake.volume = 0.08f;
+        earthQuake.volume = 0.04f;
         earthQuake.Play();
         isStart = true;
         

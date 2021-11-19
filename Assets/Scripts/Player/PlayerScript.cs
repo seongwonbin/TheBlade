@@ -73,7 +73,7 @@ public class PlayerScript : MonoBehaviour
     
     void Update()
     {
-        if(PlayerMoveScript.dontDisturb == false)
+        if(PlayerMoveScript.dontDisturb == false && MessageSc.messageBool == false)
         { 
             if (isUnBeatTime == false && skill1Trigger == false)
             {
@@ -189,7 +189,7 @@ public class PlayerScript : MonoBehaviour
             }
             catch (NullReferenceException)
             {
-                //Debug.Log(error);
+                //Debug.Log("디거못때림");
             }
 
             if (ComboScript.rageMode == false)

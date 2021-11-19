@@ -13,7 +13,7 @@ public class EQ : MonoBehaviour
     {
         explosion = GameObject.Find("Explosion").GetComponent<AudioSource>();
         aud = GetComponent<AudioSource>();
-        aud.volume = 0.1f;
+        aud.volume = 0.05f;
     }
 
     // Update is called once per frame

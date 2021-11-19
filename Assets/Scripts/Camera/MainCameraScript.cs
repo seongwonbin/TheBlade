@@ -79,6 +79,10 @@ public class MainCameraScript : MonoBehaviour
             
         }
 
+
+
+        
+
     }
 
     void FixedUpdate()

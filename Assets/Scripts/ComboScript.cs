@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class ComboScript : MonoBehaviour
 {
@@ -17,6 +18,9 @@ public class ComboScript : MonoBehaviour
     public static float comboMover = 1790f;
 
     public bool isUnBeatTime = false;
+
+    public UnityEvent modeRage;
+    public UnityEvent returnRage;
 
     public static bool rageMode = false;
 
@@ -59,12 +63,12 @@ public class ComboScript : MonoBehaviour
 
         if (comboSystem >= 30)
         {
-            BlinkRoutine();
-            rageMode = true;
+            modeRage.Invoke();
+
 
         }
         else
-            rageMode = false;
+            returnRage.Invoke();
 
 
     }
@@ -118,5 +122,20 @@ public class ComboScript : MonoBehaviour
         isUnBeatTime = false;
 
         yield return null;
+    }
+
+    public void eventRage()
+    {
+        BlinkRoutine();
+        rageMode = true;
+        
+
+    }
+
+    public void notRage()
+    {
+        rageMode = false;
+
+
     }
 }

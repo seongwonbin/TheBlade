@@ -15,6 +15,8 @@ public class DgerScript : MonoBehaviour
     private Vector2 diedVelocity2 = new Vector2(-6f, 5f);
     private Vector2 accelVelocity = new Vector2(10f, 5f);
 
+    private float takeDamageVelo = 8f;
+
     public float timer = 0.0f;
     public float timer2 = 0.0f;
     public float flipTimer = 0.1f;
@@ -253,8 +255,8 @@ public class DgerScript : MonoBehaviour
         {
             if (jumping == true)
             {
-                rigid.AddForce(new Vector2(-12, 3), ForceMode2D.Impulse);
-                rigid.AddForce(new Vector2(-12, 3), ForceMode2D.Impulse);
+                rigid.AddForce(new Vector2(-takeDamageVelo, 1), ForceMode2D.Impulse);
+                rigid.AddForce(new Vector2(-takeDamageVelo, 1), ForceMode2D.Impulse);
             }
             else
             {
@@ -267,8 +269,8 @@ public class DgerScript : MonoBehaviour
         {
             if (jumping == true)
             {
-                rigid.AddForce(new Vector2(12, 3), ForceMode2D.Impulse);
-                rigid.AddForce(new Vector2(12, 3), ForceMode2D.Impulse);
+                rigid.AddForce(new Vector2(takeDamageVelo, 1), ForceMode2D.Impulse);
+                rigid.AddForce(new Vector2(takeDamageVelo, 1), ForceMode2D.Impulse);
             }
             else
             {

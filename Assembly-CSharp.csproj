@@ -108,6 +108,8 @@
     <Compile Include="Assets\Scripts\IntroScript.cs" />
     <Compile Include="Assets\Scripts\InvisibleTilemap.cs" />
     <Compile Include="Assets\Scripts\MainSceneManager.cs" />
+    <Compile Include="Assets\Scripts\MessageSc.cs" />
+    <Compile Include="Assets\Scripts\MessageText.cs" />
     <Compile Include="Assets\Scripts\MovingBackgroundScript.cs" />
     <Compile Include="Assets\Scripts\MovingParticleScript.cs" />
     <Compile Include="Assets\Scripts\MovingTile.cs" />
@@ -132,6 +134,7 @@
     <Compile Include="Assets\Scripts\Skill1CoolTimeImgScript.cs" />
     <Compile Include="Assets\Scripts\SpawnFK.cs" />
     <Compile Include="Assets\Scripts\StageNameScript.cs" />
+    <Compile Include="Assets\Scripts\SwordSwap.cs" />
     <Compile Include="Assets\Scripts\TDSscript.cs" />
     <Compile Include="Assets\Scripts\Thorn.cs" />
     <Compile Include="Assets\Scripts\TilemapScript.cs" />

@@ -21,6 +21,7 @@ public class IntroScript : MonoBehaviour
 
     void introFunction()
     {
+        MessageSc.messageBool = true;
         AudioManager.startBGM = true;
         PlayerScript.startBool = true;
         Destroy(gameObject);

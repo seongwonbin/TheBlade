@@ -56,39 +56,45 @@ public class PlayerMoveScript : MonoBehaviour
 
     void Update()
     {
-        if(PlayerScript.skill1Trigger == false && dontDisturb == false)
-            Dash();
+        if(MessageSc.messageBool == false)
+        { 
+            if(PlayerScript.skill1Trigger == false && dontDisturb == false)
+                Dash();
 
-        JumpTask();
-        DashCoolTimeTask();
+            JumpTask();
+            DashCoolTimeTask();
 
-        Skill1();
+            Skill1();
 
-        Vanish();
+            Vanish();
 
-        
+        }
 
     }
 
     
     private void FixedUpdate()
     {
-
-        if(PlayerAttack1Script.playerAttack1 == false && PlayerAttack2Script.playerAttack2 == false)
+        if (MessageSc.messageBool == false)
         { 
-            Move();
+
+            if(PlayerAttack1Script.playerAttack1 == false && PlayerAttack2Script.playerAttack2 == false)
+            { 
+                Move();
+
+            }
+
+            //Jump();
+
+            if (Input.GetAxisRaw("Horizontal") != 0)
+                animator.SetBool("isMoving", true);
+            else
+                animator.SetBool("isMoving", false);
+
+            if (playerVanish == true)
+                vanishTimer += Time.deltaTime;
 
         }
-
-        //Jump();
-
-        if (Input.GetAxisRaw("Horizontal") != 0)
-            animator.SetBool("isMoving", true);
-        else
-            animator.SetBool("isMoving", false);
-
-        if (playerVanish == true)
-            vanishTimer += Time.deltaTime;
     }
 
     public void Move()
