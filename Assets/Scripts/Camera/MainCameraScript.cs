@@ -58,34 +58,15 @@ public class MainCameraScript : MonoBehaviour
 
         //  transform.position = new Vector3(transform.position.x + escapeCameraMove, transform.position.y, -50.0f);
 
+       
+
         if (InvisibleTilemap.isEnter == false)
-        { 
+        {
+            if (FindforPlayer.isBoss == true && BossEvent.finishBoss == false)
+                player = GameObject.FindGameObjectWithTag("Boss");
+            else
+                setPlayer();
 
-            if (Skill1ActiveRatio.active == false)
-            { 
-                player = GameObject.FindGameObjectWithTag("Player");
-                minPos.y = 0.05f+posYBoss;
-                
-            }
-            else if (Skill1ActiveRatio.active == true)
-            {
-                if(BossMgr.bossChecker == false)
-                { 
-                    minPos.y = -2f + posYBoss;
-                    player = this.gameObject;
-                    posY = -2f;
-                   // Debug.Log(minPos.y);
-                }
-                else
-                {
-                    minPos.y = -2f + posYBoss;
-                    player = this.gameObject;
-                    posY = -17f;
-
-
-
-                }
-            }
 
         }
         else if (InvisibleTilemap.isEnter)
@@ -162,6 +143,38 @@ public class MainCameraScript : MonoBehaviour
     void ChangeBGColor()
     {
       //  float t = Mathf.PingPong(Time.time, duration)
+
+
+    }
+
+    void setPlayer()
+    {
+        if (Skill1ActiveRatio.active == false)
+        {
+            player = GameObject.FindGameObjectWithTag("Player");
+            minPos.y = 0.05f + posYBoss;
+
+        }
+        else if (Skill1ActiveRatio.active == true)
+        {
+            if (BossMgr.bossChecker == false)
+            {
+                minPos.y = -2f + posYBoss;
+                player = this.gameObject;
+                posY = -2f;
+                // Debug.Log(minPos.y);
+            }
+            else
+            {
+                minPos.y = -2f + posYBoss;
+                player = this.gameObject;
+                posY = -17f;
+
+
+
+            }
+        }
+
 
 
     }

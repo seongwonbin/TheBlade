@@ -249,7 +249,7 @@ public class PlayerMoveScript : MonoBehaviour
             vanishTimer = 0f;
         }
 
-        if (vanishTimer >= 0.25f) // 원래 0.65f
+        if (vanishTimer >= 0.10f) // 원래 0.65f
             playerVanish = false;
 
     }

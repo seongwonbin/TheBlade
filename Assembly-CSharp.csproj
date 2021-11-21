@@ -83,6 +83,8 @@
     <Compile Include="Assets\Scripts\Boss\BossMgr.cs" />
     <Compile Include="Assets\Scripts\Boss\BossRun.cs" />
     <Compile Include="Assets\Scripts\Boss\BossScript.cs" />
+    <Compile Include="Assets\Scripts\BossEvent.cs" />
+    <Compile Include="Assets\Scripts\BossRatio.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraScript.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraShakeScript.cs" />
     <Compile Include="Assets\Scripts\Camera\MainCameraScript.cs" />
@@ -99,6 +101,7 @@
     <Compile Include="Assets\Scripts\EQ.cs" />
     <Compile Include="Assets\Scripts\EscButtonScript.cs" />
     <Compile Include="Assets\Scripts\EscScreenScript.cs" />
+    <Compile Include="Assets\Scripts\FindforPlayer.cs" />
     <Compile Include="Assets\Scripts\FindRange.cs" />
     <Compile Include="Assets\Scripts\FKnightHead.cs" />
     <Compile Include="Assets\Scripts\FKnightMgr.cs" />
@@ -155,6 +158,7 @@
     <Compile Include="Assets\Scripts\TitleScene2Scripts\TitleCloudSpr.cs" />
     <Compile Include="Assets\Scripts\TitleScript.cs" />
     <Compile Include="Assets\Scripts\TitleTextScript.cs" />
+    <Compile Include="Assets\Scripts\TutorialMgr.cs" />
     <Compile Include="Assets\Scripts\uiDgerScript.cs" />
     <Compile Include="Assets\Scripts\WorldFrameExitScript.cs" />
     <Compile Include="Assets\Scripts\WorldFrameScript.cs" />

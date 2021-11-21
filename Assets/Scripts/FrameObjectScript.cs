@@ -14,6 +14,8 @@ public class FrameObjectScript : MonoBehaviour
     private GUIStyle style;
     private Rect rect;
 
+    private bool isKeyDown = false;
+
     void Awake()
     {
         Application.targetFrameRate = 40; // 프레임레이트 고정 // +Vsync 사용하지말아야 적용됨
@@ -43,6 +45,9 @@ public class FrameObjectScript : MonoBehaviour
     void Update()
     {
         deltaTime += (Time.deltaTime - deltaTime) * 0.1f;
+
+        if (Input.GetKeyDown(KeyCode.P))
+            isKeyDown = !isKeyDown;
     }
 
     void OnGUI()//소스로 GUI 표시.
@@ -53,6 +58,7 @@ public class FrameObjectScript : MonoBehaviour
         if (fps < worstFps)  //새로운 최저 fps가 나왔다면 worstFps 바꿔줌.
             worstFps = fps;
         text = msec.ToString("F1") + "ms (" + fps.ToString("F1") + ") //worst : " + worstFps.ToString("F1");
-        GUI.Label(rect, text, style);
+        if (isKeyDown)
+            GUI.Label(rect, text, style);
     }
 }

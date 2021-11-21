@@ -10,6 +10,7 @@ public class FindRange : MonoBehaviour
 
     public bool isBoss = false;
 
+
     private void Update()
     {
         FindPlayer();

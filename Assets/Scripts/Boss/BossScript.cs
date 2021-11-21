@@ -26,6 +26,8 @@ public class BossScript : MonoBehaviour
 
     public static Rigidbody2D rig;
 
+    public static float bossHP;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +40,10 @@ public class BossScript : MonoBehaviour
     void Update()
     {
         SetPatternReady();
+
+        
+        bossHP = GetComponent<EnemyScript>().currentHealth;
+        
     }
 
     private void FixedUpdate()
@@ -64,14 +70,14 @@ public class BossScript : MonoBehaviour
 
     public void PickPattern()
     {
-        temp = UnityEngine.Random.Range(0, 3);
+        temp = UnityEngine.Random.Range(0, 2);
 
         if (temp == 0)
             SpawnBossDger();
         else if (temp == 1)
             Attack3Times();
-        else if (temp == 2)
-            Assault();
+        //else if (temp == 2)
+          //  Assault();
     }
 
     public void SpawnBossDger()
@@ -113,12 +119,24 @@ public class BossScript : MonoBehaviour
         isRot *= -1;
         //EnemyScript.temp += 180f;
         rig.AddForce(new Vector2(isRot * -100f, 0), ForceMode2D.Impulse);
+        EnemyAttackScript.attackRange = 8f;
+
+    }
+    public void ActiveAttack4()
+    {
+        GetComponent<EnemyScript>().LookAtPlayer();
+        //rig.velocity = Vector3.zero;
+        isRot *= -1;
+        //EnemyScript.temp += 180f;
+        rig.AddForce(new Vector2(isRot * -200f, 0), ForceMode2D.Impulse);
 
 
     }
 
+
     public void ReturnAttack3()
     {
+        EnemyAttackScript.attackRange = 4f;
         anim.SetBool("isAttack3", false);
     }
 
@@ -128,4 +146,5 @@ public class BossScript : MonoBehaviour
         rig.velocity = Vector3.zero;
         
     }
+
 }

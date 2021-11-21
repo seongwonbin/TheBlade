@@ -23,7 +23,16 @@ public class Skill1ActiveRatio : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(isDown == true)
+
+            SetRatio();
+
+    }
+
+
+
+    public void SetRatio()
+    {
+        if (isDown == true)
             rectTransform.anchoredPosition = new Vector2(rectTransform.anchoredPosition.x, -rectCtrlY);
         else
             rectTransform.anchoredPosition = new Vector2(rectTransform.anchoredPosition.x, rectCtrlY);
@@ -42,7 +51,6 @@ public class Skill1ActiveRatio : MonoBehaviour
         if (active == false)
             if (rectCtrlY < 700)
                 rectCtrlY += 30f;
-
 
 
     }

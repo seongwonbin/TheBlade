@@ -8,6 +8,8 @@ TagManager:
   - Portal
   - Enemy
   - Tile
+  - Boss
+  - Dger
   layers:
   - Default
   - TransparentFX
