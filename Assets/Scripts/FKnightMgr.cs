@@ -46,7 +46,7 @@ public class FKnightMgr : MonoBehaviour
 
     void EearthQuake()
     {
-        CameraShakeScript.VibrateForTime(0.2f);
+        CameraShakeScript.VibrateForTime(0.1f);
 
     }
 

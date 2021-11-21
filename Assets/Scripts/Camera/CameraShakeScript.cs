@@ -64,10 +64,10 @@ public class CameraShakeScript : MonoBehaviour
 
         if (timer >= 8.5f)
         {
-            initialPosition = new Vector3(MainCameraScript.posX, MainCameraScript.posY + 0.05f, transform.position.z);
+            //initialPosition = new Vector3(MainCameraScript.posX, MainCameraScript.posY + 0.05f, -50f);
+            initialPosition = new Vector3(MainCameraScript.posX, MainCameraScript.posY + 0.2f, -50f);
 
-           
-                shakeAmount = 0.2f;
+            shakeAmount = 0.2f;
             
         }
         

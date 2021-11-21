@@ -61,7 +61,9 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Tab))
             DebugCommand();
 
-        
+
+        if (Input.GetKeyDown(KeyCode.KeypadEnter))
+            BossScript.readyPattern = 1000;
 
     }
 
@@ -85,13 +87,15 @@ public class GameManager : MonoBehaviour
         PlayerScript.map1 = false;
         PortalScript.portalChecker = true;
         //PortalScript.portal2Checker = false;
-        MainSceneManager.existDger = true;
+        //MainSceneManager.existDger = true;
         //player.position = new Vector2(450f, -3.28957f);
         PortalScript.portal2Checker = true;
         isReady2 = true;
         PortalScript.portal3Checker = true;
-        player.position = new Vector2(722f, 22f);
+        player.position = new Vector2(769f, -3f);
     }
+
+
 
     
 }

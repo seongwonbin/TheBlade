@@ -45,7 +45,7 @@ public class DgerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        
         currentHealth = maxHealth;
         enemy = GetComponent<Animator>();
         spr = GetComponent<SpriteRenderer>();
@@ -63,9 +63,9 @@ public class DgerScript : MonoBehaviour
         if (currentHealth <= 0)
             Die();
 
+        Debug.Log("소환");
 
-
-        if(dummyCtrl == false)
+        if (dummyCtrl == false)
         {
 
 
@@ -93,7 +93,7 @@ public class DgerScript : MonoBehaviour
         if (eulerCtrl != 0)
             eulerCtrl = 0;
 
-        if (PortalScript.portal2Checker == true)
+        if (PortalScript.portal2Checker == true && BossMgr.bossChecker == false)
             Destroy(gameObject);
 
     }

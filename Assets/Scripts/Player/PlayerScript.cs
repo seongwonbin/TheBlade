@@ -80,7 +80,7 @@ public class PlayerScript : MonoBehaviour
                 BasicAttack1();
                 BasicAttack2();
             }
-            if (skill1CoolDown == false)
+            if (skill1CoolDown == false && isUnBeatTime == false)
                 PlayerSkill1();
         }
 
@@ -282,7 +282,7 @@ public class PlayerScript : MonoBehaviour
 
 
 
-        while (countTime < 10)
+        while (countTime < 10) // 원래 10
         {
             if (countTime % 2 == 0)
                 spr.color = new Color(90, 90, 90, 1f);
@@ -291,7 +291,7 @@ public class PlayerScript : MonoBehaviour
                 spr.color = new Color(0, 0, 0, 1f);
 
 
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSeconds(0.05f); // 원래 0.05
 
             countTime++;
 

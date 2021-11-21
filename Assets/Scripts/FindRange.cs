@@ -8,6 +8,8 @@ public class FindRange : MonoBehaviour
     public Transform findPoint;
     public LayerMask enemyLayers;
 
+    public bool isBoss = false;
+
     private void Update()
     {
         FindPlayer();
@@ -26,9 +28,15 @@ public class FindRange : MonoBehaviour
         Collider2D[] findPlayer = Physics2D.OverlapCircleAll(findPoint.position, findRange, enemyLayers);
 
         foreach(Collider2D enemy in findPlayer)
-            FKnightMgr.anim.SetBool("isActive", true);
+        {
+            if (isBoss == false)
+                FKnightMgr.anim.SetBool("isActive", true);
+            else
+                BossScript.anim.SetBool("isActive", true);
+        }
 
     }
+
 
 
 }

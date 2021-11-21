@@ -75,6 +75,6 @@ public class uiDgerScript : MonoBehaviour
             Destroy(gameObject);
         }
 
-
+        
     }
 }

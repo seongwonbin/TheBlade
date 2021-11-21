@@ -31,6 +31,8 @@ public class MainCameraScript : MonoBehaviour
         transform.position = new Vector3(-0.1f, 100f, -10f); // 메인필드 진입 시 카메라포지션
 
         titleCam.clearFlags = CameraClearFlags.SolidColor;
+
+        //posZ = -50f;
     }
 
     // Update is called once per frame
@@ -63,13 +65,26 @@ public class MainCameraScript : MonoBehaviour
             { 
                 player = GameObject.FindGameObjectWithTag("Player");
                 minPos.y = 0.05f+posYBoss;
+                
             }
             else if (Skill1ActiveRatio.active == true)
             {
-                minPos.y = -2f + posYBoss;
-                player = this.gameObject;
-                posY = -2f;
+                if(BossMgr.bossChecker == false)
+                { 
+                    minPos.y = -2f + posYBoss;
+                    player = this.gameObject;
+                    posY = -2f;
+                   // Debug.Log(minPos.y);
+                }
+                else
+                {
+                    minPos.y = -2f + posYBoss;
+                    player = this.gameObject;
+                    posY = -17f;
 
+
+
+                }
             }
 
         }
@@ -92,10 +107,13 @@ public class MainCameraScript : MonoBehaviour
 
         posY = Mathf.SmoothDamp(transform.position.y, player.transform.position.y, ref velocity.y, smoothTimeY);
 
+       // posZ = Mathf.SmoothDamp(transform.position.y, player.transform.position.y, ref velocity.y, smoothTimeY);
+
         playerTracker = transform.position;
 
         if (EscScreenScript.isKeyDown == false)
-            transform.position = new Vector3(posX, posY, -50.0f);
+      //      transform.position = new Vector3(posX, posY, posZ);
+        transform.position = new Vector3(posX, posY, -50.0f);
         else
             transform.position = new Vector3(posX + 0.3f, posY, -50.0f);
 

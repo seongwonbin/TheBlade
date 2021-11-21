@@ -37,6 +37,8 @@ public class EnemyScript : MonoBehaviour
     public bool isFKnight = false;
     public static bool isDger = false;
 
+    public static float temp = 180f;
+
     void Start()
     {
         currentHealth = maxHealth;
@@ -134,14 +136,20 @@ public class EnemyScript : MonoBehaviour
     public void LookAtPlayer()
     {
         if (transform.position.x > player.position.x && isFlipped)
+        { 
             isFlipped = false;
+            BossScript.isRot = -1;
+        }
         else if (transform.position.x <= player.position.x && !isFlipped)
+        { 
             isFlipped = true;
+            BossScript.isRot = 1;
+        }
 
         if (isFlipped == false)
-            transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+            transform.rotation = Quaternion.Euler(new Vector3(0, 180f+temp, 0));
         else
-            transform.rotation = Quaternion.Euler(new Vector3(0, 180f, 0));
+            transform.rotation = Quaternion.Euler(new Vector3(0, 0+temp, 0));
     }
 
     public void createParticle()
