@@ -113,6 +113,10 @@ public class PlayerScript : MonoBehaviour
 
         SetPlayerDied();
 
+
+        if (Input.GetKeyDown(KeyCode.I))
+            attackDamage = 5000;
+
     }
 
 

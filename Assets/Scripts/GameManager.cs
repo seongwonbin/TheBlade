@@ -69,8 +69,8 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.KeypadEnter))
             BossScript.readyPattern = 1000;
 
+
         
-            
 
     }
 

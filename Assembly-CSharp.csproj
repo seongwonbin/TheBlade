@@ -69,6 +69,8 @@
     <Compile Include="Assets\FKnightAttack.cs" />
     <Compile Include="Assets\FKnightStanding.cs" />
     <Compile Include="Assets\knightAttackReady.cs" />
+    <Compile Include="Assets\MessageSc2.cs" />
+    <Compile Include="Assets\MessageText2.cs" />
     <Compile Include="Assets\PlayerHP.cs" />
     <Compile Include="Assets\RestartButton.cs" />
     <Compile Include="Assets\Scripts\AttackParticleScript.cs" />

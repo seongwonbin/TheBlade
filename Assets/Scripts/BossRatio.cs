@@ -20,17 +20,23 @@ public class BossRatio : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ActBossRatio();
+        if (isDown == true)
+            rectTransform.anchoredPosition = new Vector2(rectTransform.anchoredPosition.x, -rectCtrlY);
+        else
+            rectTransform.anchoredPosition = new Vector2(rectTransform.anchoredPosition.x, rectCtrlY);
+
+
+        if (BossScript.dieBoss == false)
+            ActBossRatio();
+        else
+            EndBoss();
 
 
     }
 
     public void ActBossRatio()
     {
-        if (isDown == true)
-            rectTransform.anchoredPosition = new Vector2(rectTransform.anchoredPosition.x, -rectCtrlY);
-        else
-            rectTransform.anchoredPosition = new Vector2(rectTransform.anchoredPosition.x, rectCtrlY);
+
 
         if (FindforPlayer.isBoss == true && BossEvent.finishBoss == false && rectCtrlY >= 400) // 450
                 rectCtrlY -= 15f;
@@ -38,6 +44,15 @@ public class BossRatio : MonoBehaviour
                   rectCtrlY += 15f;
 
 
+
+    }
+
+    public void EndBoss()
+    {
+        if (rectCtrlY >= 400) // 700
+            rectCtrlY -= 5f;
+
+        MessageSc2.messageBool = true;
 
     }
 }

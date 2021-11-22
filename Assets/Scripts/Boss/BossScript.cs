@@ -6,6 +6,8 @@ public class BossScript : MonoBehaviour
 {
     public static float speed = 1.5f;
 
+
+    
     public static Transform player;
     public static Rigidbody2D rb;
     public static EnemyScript enemy;
@@ -28,6 +30,8 @@ public class BossScript : MonoBehaviour
 
     public static float bossHP;
 
+    public static bool dieBoss = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,8 +51,27 @@ public class BossScript : MonoBehaviour
 
         if (PlayerLose.playerLose == true && bossHP >= 0f)
             Destroy(gameObject);
+
+        if(PlayerLose.playerLose == false && bossHP <= 0f)
+        {
+            
+            Die();
+
+        }
+            
         
         
+    }
+
+    public void Die()
+    {
+        anim.SetBool("Died", true);
+        dieBoss = true;
+
+        rb.constraints = RigidbodyConstraints2D.None;
+        rb.constraints = RigidbodyConstraints2D.FreezePositionX;
+
+
     }
 
     private void FixedUpdate()

@@ -23,6 +23,12 @@ public class BossEvent : MonoBehaviour
             bossEvent.Invoke();
 
         }
+
+
+
+        
+
+
     }
 
     public void SetBossEvent()
