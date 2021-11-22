@@ -21,35 +21,14 @@ public class PlayerLightScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameManager.playerLocation == true)
-        { 
-            if(PortalScript.portal2Checker == false)
-            {
-
-                Blink();
-
-            }
-            else if(GameManager.isReady == true)
-            {
-                playerLight.pointLightOuterRadius = 40f;
-                playerLight.pointLightInnerRadius = 10f;
 
 
-
-            }
-
+        SetLight();
 
 
-
-        }
-        
-        
-        
-
-        
 
         //if (PortalScript.portal2Checker == true)
-          //gameObject.SetActive(false);
+        //gameObject.SetActive(false);
     }
 
     void Blink()
@@ -68,5 +47,32 @@ public class PlayerLightScript : MonoBehaviour
 
     }
 
+    void SetLight()
+    {
+        if (GameManager.playerLocation == true)
+        {
+            if (PortalScript.portal2Checker == false)
+            {
+
+                Blink();
+
+            }
+            else if (GameManager.isReady == true)
+            {
+                playerLight.pointLightOuterRadius = 40f;
+                playerLight.pointLightInnerRadius = 10f;
+
+
+
+            }
+
+
+
+
+        }
+
+
+
+    }
 
 }

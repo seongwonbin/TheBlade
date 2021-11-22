@@ -69,6 +69,7 @@
     <Compile Include="Assets\FKnightAttack.cs" />
     <Compile Include="Assets\FKnightStanding.cs" />
     <Compile Include="Assets\knightAttackReady.cs" />
+    <Compile Include="Assets\RestartButton.cs" />
     <Compile Include="Assets\Scripts\AttackParticleScript.cs" />
     <Compile Include="Assets\Scripts\AudioManager.cs" />
     <Compile Include="Assets\Scripts\Background\BackgroundGrass3rdScript.cs" />
@@ -131,6 +132,7 @@
     <Compile Include="Assets\Scripts\Player\PlayerLightScript.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMoveScript.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerScript.cs" />
+    <Compile Include="Assets\Scripts\PlayerLose.cs" />
     <Compile Include="Assets\Scripts\PortalScript.cs" />
     <Compile Include="Assets\Scripts\RageEffect.cs" />
     <Compile Include="Assets\Scripts\RiverLight.cs" />

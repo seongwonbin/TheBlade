@@ -6,7 +6,7 @@ public class Heart2Script : MonoBehaviour
 {
     public static bool heartBreak = false;
 
-    protected Animator animator;
+    public static Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +25,7 @@ public class Heart2Script : MonoBehaviour
 
     private void HeartDestroy()
     {
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
 
 

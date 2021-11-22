@@ -21,7 +21,7 @@ public class ForestBackgroundScript : MonoBehaviour
         spr = GetComponent<SpriteRenderer>();
         mr = GameObject.Find("mirror").GetComponent<SpriteRenderer>();
         form = GetComponent<Transform>();
-        forestLights = GameObject.Find("FL").GetComponent<GameObject>();
+        forestLights = GameObject.Find("FL");
     }
 
     // Update is called once per frame
@@ -40,13 +40,21 @@ public class ForestBackgroundScript : MonoBehaviour
 
 
         //form.localScale = Vector3.Lerp(pos1, pos2, Time.deltaTime);
+
+        SetForestLights();
     }
 
-    void setForestLights()
+    void SetForestLights()
     {
+        if (PlayerLose.playerLose == false)
+        {
 
-        if (GameManager.isReady == true && PortalScript.portal2Checker == true)
-            forestLights.gameObject.SetActive(true);
+
+            if (GameManager.isReady == true && PortalScript.portal2Checker == true)
+                forestLights.gameObject.SetActive(true);
+            else
+                forestLights.gameObject.SetActive(false);
+        }
         else
             forestLights.gameObject.SetActive(false);
 

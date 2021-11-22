@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+
 
 public class GameManager : MonoBehaviour
 {
@@ -13,7 +15,7 @@ public class GameManager : MonoBehaviour
 
     public static bool playerdied = false;
 
-    //public Text mytext;
+    public TextMeshProUGUI mytext;
 
     public static bool playerLocation = false;
 
@@ -50,9 +52,11 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-        //mytext = GameObject.Find("Died Text").GetComponent<Text>();
+        
+        mytext = GameObject.Find("Died Text").GetComponent<TextMeshProUGUI>();
         player = GameObject.Find("Dummy Character").GetComponent<Transform>();
+
+        
     }
 
     // Update is called once per frame
@@ -65,6 +69,9 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.KeypadEnter))
             BossScript.readyPattern = 1000;
 
+        
+            
+
     }
 
 
@@ -72,17 +79,36 @@ public class GameManager : MonoBehaviour
     public void MainBlackScreen()
     {
         if (changeColor >= 0.0f && playerdied == false)
+        { 
             changeColor -= 0.003f;
+            mytext.text = "";
+        }
 
         if (changeColor <= 1.0f && playerdied == true)
         {
             changeColor += 0.01f;
-            //mytext.text = "You Died";
+            mytext.text = "당신은 이 행성을 빠져나가지 못했습니다.";
+            
         }
     }
 
-    private void DebugCommand()
+    public void DebugCommand()
     {
+        //GetComponent<PlayerScript>().currentHealth = GetComponent<PlayerScript>().maxHealth;
+        PlayerScript.currentHealth = 3;
+
+        playerdied = false;
+        PlayerLose.playerLose = false;
+
+        MainSceneManager.obj.gameObject.SetActive(false);
+        MainSceneManager.obj2.gameObject.SetActive(false);
+
+        Heart1Script.animator.SetTrigger("Revive");
+        Heart2Script.animator.SetTrigger("Revive");
+        Heart3Script.animator.SetTrigger("Revive");
+
+
+
         playerLocation = true;
         PlayerScript.map1 = false;
         PortalScript.portalChecker = true;

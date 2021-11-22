@@ -5,7 +5,8 @@ using UnityEngine.UI;
 public class MainSceneManager : MonoBehaviour
 {
 
-
+    public static GameObject obj;
+    public static GameObject obj2;
 
 
     public Image mainScreen;
@@ -28,10 +29,13 @@ public class MainSceneManager : MonoBehaviour
     {
         mainScreen = GameObject.Find("Image").GetComponent<Image>();
 
-        
-        
 
-        
+        obj = GameObject.Find("ReButton").gameObject;
+        obj.gameObject.SetActive(false);
+
+        obj2 = GameObject.Find("ExitButton").gameObject;
+        obj2.gameObject.SetActive(false);
+
     }
 
     void Update()
@@ -57,7 +61,20 @@ public class MainSceneManager : MonoBehaviour
             dgerTimer = 0;
         }
 
-        
+        if(PlayerLose.playerLose == true)
+        { 
+            obj.gameObject.SetActive(true);
+            obj2.gameObject.SetActive(true);
+
+        }
+        else if (PlayerLose.playerLose == false)
+        {
+            obj.gameObject.SetActive(false);
+            obj2.gameObject.SetActive(false);
+
+        }
+
+
     }
 
 

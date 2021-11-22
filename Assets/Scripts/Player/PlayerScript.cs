@@ -6,7 +6,7 @@ using System;
 public class PlayerScript : MonoBehaviour
 {
 
-    protected Animator animator;
+    public static Animator animator;
     protected SpriteRenderer spr;
 
     private float curTime;
@@ -18,7 +18,7 @@ public class PlayerScript : MonoBehaviour
     public float attackRange = 0.5f;
     public int attackDamage = 40;
     public int maxHealth = 100;
-    public int currentHealth;
+    public static int currentHealth;
 
 
     public static bool isUnBeatTime = false;
@@ -86,11 +86,18 @@ public class PlayerScript : MonoBehaviour
 
         spr.color = new Color(spr.color.r, spr.color.g, spr.color.b, changeColorA);
 
+        if(PlayerLose.playerLose == false)
+        { 
+
         if (startBool == true)
             changeColorA = 1.0f;
-        
-        
-        
+        }
+        else if(PlayerLose.playerLose == true)
+        {
+            changeColorA = 0f;
+        }
+
+
 
         PlayerSkill1Active();
 
@@ -99,7 +106,12 @@ public class PlayerScript : MonoBehaviour
         if (Skill1ActiveRatio.active == false)
             Skill1ActiveSc.movePos = -10f;
 
-        
+
+
+        if (Input.GetKeyDown(KeyCode.O))
+            currentHealth = 0;
+
+        SetPlayerDied();
 
     }
 
@@ -238,16 +250,7 @@ public class PlayerScript : MonoBehaviour
 
 
 
-            if (currentHealth == 2)
-                Heart3Script.heartBreak = true;
-            if (currentHealth == 1)
-                Heart2Script.heartBreak = true;
-            if (currentHealth <= 0)
-            {
-                Heart1Script.heartBreak = true;
-                GameManager.playerdied = true;
-                Destroy(gameObject);
-            }
+
 
 
             DgerAttackScript.timer = 0f;
@@ -397,6 +400,22 @@ public class PlayerScript : MonoBehaviour
     void returnRatio()
     {
         Skill1ActiveRatio.active = false;
+    }
+
+    void SetPlayerDied()
+    {
+        if (currentHealth == 2)
+            Heart3Script.heartBreak = true;
+        if (currentHealth == 1)
+            Heart2Script.heartBreak = true;
+        if (currentHealth <= 0)
+        {
+            Heart1Script.heartBreak = true;
+            GameManager.playerdied = true;
+            //Destroy(gameObject);
+        }
+
+
     }
 
 
