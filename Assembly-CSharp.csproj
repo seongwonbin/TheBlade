@@ -74,6 +74,7 @@
     <Compile Include="Assets\MessageText2.cs" />
     <Compile Include="Assets\PlayerAudio.cs" />
     <Compile Include="Assets\PlayerHP.cs" />
+    <Compile Include="Assets\Quest.cs" />
     <Compile Include="Assets\RestartButton.cs" />
     <Compile Include="Assets\Scripts\AttackParticleScript.cs" />
     <Compile Include="Assets\Scripts\AudioManager.cs" />

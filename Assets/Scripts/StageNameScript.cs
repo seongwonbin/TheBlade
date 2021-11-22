@@ -49,27 +49,7 @@ public class StageNameScript : MonoBehaviour
     {
 
 
-        clr = new Color(255, 255, 255, myWhite);
 
-        tmp.color = clr;
-
-        if (isHelper == false)
-        {
-            tmp.color = new Color(255, 255, 255, 0);
-
-            if (CameraShakeScript.introInit == true)
-            {
-                timer += Time.deltaTime;
-                myWhite += 0.02f;
-            }
-
-
-        }
-        else
-        {
-
-
-        }
 
 
 
