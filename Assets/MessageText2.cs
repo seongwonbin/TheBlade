@@ -104,12 +104,12 @@ public class MessageText2 : MonoBehaviour
                 yield return new WaitForSeconds(delay);
             }
             //탈출시 모든 문자출력
-            Debug.Log("Typing 종료");
+         //   Debug.Log("Typing 종료");
             this.GetComponent<TextMeshProUGUI>().text = _fullText[cnt];
             yield return new WaitForSeconds(Skip_delay);
 
             //스킵_지연후 종료
-            Debug.Log("Enter 대기");
+         //   Debug.Log("Enter 대기");
             text_full = true;
         }
     }
