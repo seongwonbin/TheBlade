@@ -10,6 +10,7 @@ TagManager:
   - Tile
   - Boss
   - Dger
+  - FK
   layers:
   - Default
   - TransparentFX

@@ -149,6 +149,7 @@ public class PlayerMoveScript : MonoBehaviour
     }
     public void JumpTask()
     {
+        //if (Input.GetButtonDown("Jump") && dontDisturb == false)
         if (Input.GetButtonDown("Jump") && dontDisturb == false)
         {
             dontDisturb = true;

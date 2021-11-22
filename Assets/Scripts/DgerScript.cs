@@ -63,7 +63,7 @@ public class DgerScript : MonoBehaviour
         if (currentHealth <= 0)
             Die();
 
-        Debug.Log("소환");
+        //Debug.Log("소환");
 
         if (dummyCtrl == false)
         {

@@ -35,9 +35,21 @@ public class FindforPlayer : MonoBehaviour
         foreach (Collider2D enemy in findPlayer)
         {
             if (enemy.tag == "Dger")
+            {
+                Tuto.isDger = true;
                 isDger = true;
 
+            }
+
+            if (enemy.tag == "FK")
+            {
+                Tuto.isFK = true;
+
+            }
+
+
             if (enemy.tag == "Boss")
+
                 isBoss = true;
 
         }

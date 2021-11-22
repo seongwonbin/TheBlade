@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 9174642386161040288}
   m_Layer: 8
   m_Name: ForestKnight
-  m_TagString: Untagged
+  m_TagString: FK
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -226,6 +226,7 @@ MonoBehaviour:
   enemyLayers:
     serializedVersion: 2
     m_Bits: 512
+  isBoss: 0
 --- !u!1 &9174642386289372163
 GameObject:
   m_ObjectHideFlags: 0
