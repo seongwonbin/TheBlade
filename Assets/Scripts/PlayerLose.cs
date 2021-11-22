@@ -32,7 +32,7 @@ public class PlayerLose : MonoBehaviour
 
 
 
-        if(playerLose == true)
+        else if(playerLose == true)
         {
             //GetComponent<GameManager>().MainBlackScreen();
             

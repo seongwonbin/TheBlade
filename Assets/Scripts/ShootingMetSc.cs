@@ -144,7 +144,7 @@ public class ShootingMetSc : MonoBehaviour
         {
             //enemy.GetComponent<DgerScript>().TakeDamage(attackDamage);
             enemy.GetComponent<EnemyScript>().TakeDamage(attackDamage);
-
+            PlayerAudio.sHit.Play();
             if(ComboScript.rageMode == true)
                 CameraShakeScript.VibrateForTime(0.1f);
 
@@ -161,7 +161,7 @@ public class ShootingMetSc : MonoBehaviour
         {
             enemy.GetComponent<DgerScript>().TakeDamage(attackDamage);
             //enemy.GetComponent<EnemyScript>().TakeDamage(attackDamage);
-
+            PlayerAudio.sHit.Play();
             if (ComboScript.rageMode == true)
                 CameraShakeScript.VibrateForTime(0.1f);
 

@@ -45,7 +45,6 @@ public class MessageSc2 : MonoBehaviour
         }
         else if (messageBool2 == false)
         {
-            Debug.Log("asdasdasd");
             if (temp > 0)
                 temp -= 0.05f;
         }

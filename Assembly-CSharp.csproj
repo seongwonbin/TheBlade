@@ -71,6 +71,7 @@
     <Compile Include="Assets\knightAttackReady.cs" />
     <Compile Include="Assets\MessageSc2.cs" />
     <Compile Include="Assets\MessageText2.cs" />
+    <Compile Include="Assets\PlayerAudio.cs" />
     <Compile Include="Assets\PlayerHP.cs" />
     <Compile Include="Assets\RestartButton.cs" />
     <Compile Include="Assets\Scripts\AttackParticleScript.cs" />

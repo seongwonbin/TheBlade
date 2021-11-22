@@ -60,7 +60,7 @@ public class Title_2IntroScript : MonoBehaviour
 
         if (timer >= 5.0f)
         { 
-            TitleBlackScreen.changeColor += 0.01f;
+            TitleBlackScreen.changeColor += 0.04f;
 
             if (TitleBlackScreen.changeColor >= 1.0f)
                 SceneManager.LoadScene("MainScene");

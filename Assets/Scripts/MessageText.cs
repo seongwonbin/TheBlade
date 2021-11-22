@@ -46,6 +46,8 @@ public class MessageText : MonoBehaviour
         //다음 텍스트 호출
         if (text_full == true)
         {
+            //PlayerAudio.message.Play();
+
             cnt++;
             text_full = false;
             text_cut = false;
@@ -91,6 +93,8 @@ public class MessageText : MonoBehaviour
             //타이핑 시작
             for (int i = 0; i < _fullText[cnt].Length; i++)
             {
+                
+
                 //타이핑중도탈출
                 if (text_cut == true)
                 {
@@ -108,6 +112,7 @@ public class MessageText : MonoBehaviour
 
             //스킵_지연후 종료
             Debug.Log("Enter 대기");
+            
             text_full = true;
         }
     }

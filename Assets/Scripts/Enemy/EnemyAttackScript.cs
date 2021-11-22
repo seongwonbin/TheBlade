@@ -24,7 +24,7 @@ public class EnemyAttackScript : MonoBehaviour
     {
         Collider2D[] hitPlayer = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 
-
+        PlayerAudio.eSwing.Play();
             foreach (Collider2D enemy in hitPlayer)
                 enemy.GetComponent<PlayerScript>().TakeDamage(attackDamage);
 

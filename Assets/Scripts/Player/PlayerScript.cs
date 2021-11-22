@@ -50,6 +50,7 @@ public class PlayerScript : MonoBehaviour
     public GameObject bossLight;
     public GameObject endScreen;
 
+
     public static int randomX = 0;
     public static int randomY = 0;
 
@@ -179,7 +180,8 @@ public class PlayerScript : MonoBehaviour
         foreach (Collider2D enemy in hitEnemies)
         {
            try
-            { 
+            {
+                PlayerAudio.hit.Play();
             enemy.GetComponent<EnemyScript>().TakeDamage(attackDamage);
             }
             catch(NullReferenceException)
@@ -208,6 +210,7 @@ public class PlayerScript : MonoBehaviour
 
             try
             {
+                PlayerAudio.hit.Play();
                 enemy.GetComponent<DgerScript>().TakeDamage(attackDamage);
             }
             catch (NullReferenceException)
@@ -274,6 +277,7 @@ public class PlayerScript : MonoBehaviour
             if(timer > 0.5f)
             {
                 timer = 0f;
+                PlayerAudio.skill.Play();
                 skill1Trigger_2 = true;
                 
                // Debug.Log("버그 잡는중!");
@@ -440,6 +444,17 @@ public class PlayerScript : MonoBehaviour
             endScreen.gameObject.SetActive(true);
 
 
+
+    }
+
+    public void SwingSword1()
+    {
+        PlayerAudio.aud1.Play();
+
+    }
+    public void SwingSword2()
+    {
+        PlayerAudio.aud2.Play();
 
     }
 
