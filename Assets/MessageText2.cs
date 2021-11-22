@@ -20,6 +20,7 @@ public class MessageText2 : MonoBehaviour
     public bool text_full;
     public bool text_cut;
 
+    public static bool isEnd = false;
 
     //시작과 동시에 타이핑시작
     void Start()
@@ -33,7 +34,8 @@ public class MessageText2 : MonoBehaviour
     {
         if (text_exit == true)
         {
-            MessageSc2.messageBool = false;
+            MessageSc2.messageBool2 = false;
+            isEnd = true;
             gameObject.SetActive(false);
 
         }

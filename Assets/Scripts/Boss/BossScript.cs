@@ -32,6 +32,10 @@ public class BossScript : MonoBehaviour
 
     public static bool dieBoss = false;
 
+    public float timer = 0;
+
+    public static bool isDied = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -54,7 +58,7 @@ public class BossScript : MonoBehaviour
 
         if(PlayerLose.playerLose == false && bossHP <= 0f)
         {
-            
+            timer += Time.deltaTime;
             Die();
 
         }
@@ -70,6 +74,18 @@ public class BossScript : MonoBehaviour
 
         rb.constraints = RigidbodyConstraints2D.None;
         rb.constraints = RigidbodyConstraints2D.FreezePositionX;
+
+
+        if (timer > 3.0f)
+        {
+            MessageSc2.messageBool2 = true;
+            
+            isDied = true;
+
+            Destroy(gameObject);
+        }
+
+
 
 
     }

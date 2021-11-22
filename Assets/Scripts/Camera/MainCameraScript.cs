@@ -62,12 +62,21 @@ public class MainCameraScript : MonoBehaviour
 
         if (InvisibleTilemap.isEnter == false)
         {
-            if (FindforPlayer.isBoss == true && BossEvent.finishBoss == false)
-                player = GameObject.FindGameObjectWithTag("Boss");
+            if (MessageText2.isEnd == false)
+            {
+
+
+                if (FindforPlayer.isBoss == true && BossEvent.finishBoss == false)
+                    player = GameObject.FindGameObjectWithTag("Boss");
+                else
+                    setPlayer();
+
+
+
+
+            }
             else
-                setPlayer();
-
-
+                player = this.gameObject;
         }
         else if (InvisibleTilemap.isEnter)
         { 

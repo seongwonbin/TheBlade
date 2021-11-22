@@ -47,6 +47,9 @@ public class PlayerScript : MonoBehaviour
     public GameObject enemyDmgSp3;
     public GameObject enemyDmgSp4;
 
+    public GameObject bossLight;
+    public GameObject endScreen;
+
     public static int randomX = 0;
     public static int randomY = 0;
 
@@ -56,6 +59,7 @@ public class PlayerScript : MonoBehaviour
     public static bool skill1CoolDown = false;
 
     private float timer = 0f;
+    private float endTimer = 0f;
 
     public static bool changeRot = false;
 
@@ -116,6 +120,9 @@ public class PlayerScript : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.I))
             attackDamage = 5000;
+
+        if(MessageText2.isEnd)
+            IsEnd();
 
     }
 
@@ -418,6 +425,20 @@ public class PlayerScript : MonoBehaviour
             GameManager.playerdied = true;
             //Destroy(gameObject);
         }
+
+
+    }
+
+    void IsEnd()
+    {
+        bossLight.gameObject.SetActive(false);
+        animator.SetBool("isJumping", true);
+        rigid.AddForce(new Vector2(20f, 800f));
+        endTimer += Time.deltaTime;
+
+        if (endTimer >= 1.5f)
+            endScreen.gameObject.SetActive(true);
+
 
 
     }

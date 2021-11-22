@@ -29,7 +29,11 @@ public class BossRatio : MonoBehaviour
         if (BossScript.dieBoss == false)
             ActBossRatio();
         else
-            EndBoss();
+        { 
+            if(BossScript.isDied == true)
+                EndBoss();
+
+        }
 
 
     }
@@ -38,9 +42,9 @@ public class BossRatio : MonoBehaviour
     {
 
 
-        if (FindforPlayer.isBoss == true && BossEvent.finishBoss == false && rectCtrlY >= 400) // 450
+        if (FindforPlayer.isBoss == true && BossEvent.finishBoss == false && rectCtrlY >= 450) // 450
                 rectCtrlY -= 15f;
-        else if (FindforPlayer.isBoss == true && BossEvent.finishBoss == true && rectCtrlY < 750) // 700
+        else if (FindforPlayer.isBoss == true && BossEvent.finishBoss == true && rectCtrlY < 700) // 700
                   rectCtrlY += 15f;
 
 
@@ -49,10 +53,10 @@ public class BossRatio : MonoBehaviour
 
     public void EndBoss()
     {
-        if (rectCtrlY >= 400) // 700
+        if (rectCtrlY >= 450) // 
             rectCtrlY -= 5f;
 
-        MessageSc2.messageBool = true;
+        //MessageSc2.messageBool2 = true;
 
     }
 }

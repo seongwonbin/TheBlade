@@ -46,7 +46,7 @@ public class ForestBackgroundScript : MonoBehaviour
 
     void SetForestLights()
     {
-        if (PlayerLose.playerLose == false)
+        if (PlayerLose.playerLose == false && BossScript.isDied == false)
         {
 
 
