@@ -33,6 +33,10 @@ public class HPSliderScript : MonoBehaviour
     {
         if (FindforPlayer.isBoss == true && BossEvent.finishBoss == true && rectCtrlY <= -441)
             rectCtrlY += 5f;
+        else if (FindforPlayer.isBoss == false)
+            rectCtrlY = -653f;
+
+
 
 
     }

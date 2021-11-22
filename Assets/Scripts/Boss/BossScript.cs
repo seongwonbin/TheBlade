@@ -43,6 +43,11 @@ public class BossScript : MonoBehaviour
 
         
         bossHP = GetComponent<EnemyScript>().currentHealth;
+
+
+        if (PlayerLose.playerLose == true && bossHP >= 0f)
+            Destroy(gameObject);
+        
         
     }
 
@@ -146,5 +151,7 @@ public class BossScript : MonoBehaviour
         rig.velocity = Vector3.zero;
         
     }
+
+
 
 }

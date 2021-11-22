@@ -8,12 +8,12 @@ public class EscScreenScript : MonoBehaviour
     private Image img;
     private RectTransform rectTransform;
     private Color color;
-    private float rectCtrlX = 1700f;
+    private float rectCtrlX = 1160f;
     private float rectCtrlY = 0f;
     public bool isBlackScreen = false;
     public static bool isKeyDown = false;
     private float whiteCtrl = 0f;
-    private bool isEscClick = false;
+    //private bool isEscClick = false;
     public bool isButton = false;
 
     // Start is called before the first frame update
@@ -40,20 +40,24 @@ public class EscScreenScript : MonoBehaviour
 
         if(isBlackScreen == false)
         { 
+
+
             if(isButton == false)
                 rectTransform.anchoredPosition = new Vector2(rectCtrlX, rectCtrlY);
             else
                 rectTransform.anchoredPosition = new Vector2(rectTransform.anchoredPosition.x, rectTransform.anchoredPosition.y);
 
-            if (isKeyDown == true)
-                if (rectCtrlX > 1200)
-                    rectCtrlX -= 40;
+            if (isKeyDown == true && rectCtrlX >= 790f)
+                rectCtrlX -= 40f;
+            else if (isKeyDown == false && rectCtrlX <= 1170f)
+                rectCtrlX += 20f;
+            
 
 
-            if (isEscClick == true && rectCtrlX < 1700)
-                    rectCtrlX += 20;
-            else
-                isEscClick = false;
+         //   if (isEscClick == true && rectCtrlX <= 1170)
+             //       rectCtrlX += 20;
+     //       else
+    //            isEscClick = false;
 
 
         }
@@ -75,7 +79,7 @@ public class EscScreenScript : MonoBehaviour
         else if (isKeyDown == true && Input.GetKeyDown(KeyCode.Escape))
         { 
            isKeyDown = false;
-           isEscClick = true;
+       //    isEscClick = true;
         }
 
 

@@ -95,19 +95,13 @@ public class GameManager : MonoBehaviour
     public void DebugCommand()
     {
         //GetComponent<PlayerScript>().currentHealth = GetComponent<PlayerScript>().maxHealth;
-        PlayerScript.currentHealth = 3;
+        PlayerScript.currentHealth = 300;
 
         playerdied = false;
         PlayerLose.playerLose = false;
 
         MainSceneManager.obj.gameObject.SetActive(false);
         MainSceneManager.obj2.gameObject.SetActive(false);
-
-        Heart1Script.animator.SetTrigger("Revive");
-        Heart2Script.animator.SetTrigger("Revive");
-        Heart3Script.animator.SetTrigger("Revive");
-
-
 
         playerLocation = true;
         PlayerScript.map1 = false;
@@ -119,6 +113,10 @@ public class GameManager : MonoBehaviour
         isReady2 = true;
         PortalScript.portal3Checker = true;
         player.position = new Vector2(769f, -3f);
+
+
+        BossEvent.finishBoss = false;
+        FindforPlayer.isBoss = false;
     }
 
 

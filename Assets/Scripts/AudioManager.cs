@@ -10,6 +10,8 @@ public class AudioManager : MonoBehaviour
     private AudioSource titleAudio;
     public static AudioSource earthQuake;
 
+    public static float masterVol = 0.15f;
+
     public static bool isReadyEQ = false;
 
     private static bool isStart = false;
@@ -54,11 +56,16 @@ public class AudioManager : MonoBehaviour
             titleAudio.volume -= 0.01f;
 
         if (startBGM == true)
-        { 
+        {
+            
             mainBGM.Play();
             startBGM = false;
         }
 
+        //Debug.Log(mainBGM.volume);
+
+
+        mainBGM.volume = masterVol;
 
     }
 
@@ -70,8 +77,8 @@ public class AudioManager : MonoBehaviour
 
     public void setMainEQ()
     {
-        
-        earthQuake.volume = 0.04f;
+
+        earthQuake.volume = 0.04f * masterVol;
         earthQuake.Play();
         isStart = true;
         

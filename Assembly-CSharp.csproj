@@ -69,6 +69,7 @@
     <Compile Include="Assets\FKnightAttack.cs" />
     <Compile Include="Assets\FKnightStanding.cs" />
     <Compile Include="Assets\knightAttackReady.cs" />
+    <Compile Include="Assets\PlayerHP.cs" />
     <Compile Include="Assets\RestartButton.cs" />
     <Compile Include="Assets\Scripts\AttackParticleScript.cs" />
     <Compile Include="Assets\Scripts\AudioManager.cs" />
@@ -164,6 +165,8 @@
     <Compile Include="Assets\Scripts\uiDgerScript.cs" />
     <Compile Include="Assets\Scripts\WorldFrameExitScript.cs" />
     <Compile Include="Assets\Scripts\WorldFrameScript.cs" />
+    <Compile Include="Assets\VolButton.cs" />
+    <Compile Include="Assets\VolCtrl.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />

@@ -26,7 +26,7 @@ public class PlayerLose : MonoBehaviour
 
         if (hp <= 0 && playerLose == false)
         { 
-            PlayerScript.animator.SetBool("isDied", true);
+            //PlayerScript.animator.SetBool("isDied", true);
             playerLose = true;
         }
 
