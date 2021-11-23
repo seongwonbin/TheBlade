@@ -8,6 +8,12 @@ TextureImporter:
   - first:
       213: -1530154431478954594
     second: slider-Sheet_1
+  - first:
+      213: -1900025815900636819
+    second: slider-Sheet_2
+  - first:
+      213: -4054899775600665566
+    second: slider-Sheet_3
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -119,10 +125,10 @@ TextureImporter:
       name: slider-Sheet_0
       rect:
         serializedVersion: 2
-        x: 190
-        y: 250
-        width: 530
-        height: 30
+        x: 180
+        y: 240
+        width: 550
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,7 +136,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d50290aa6852d954e8f1f742c527f0a0
+      spriteID: f5486caeb28a91f4689b732796387938
       internalID: 1301925280886090055
       vertices: []
       indices: 
@@ -141,9 +147,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1600
-        y: 220
+        y: 210
         width: 40
-        height: 90
+        height: 110
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -151,8 +157,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2d5124a33cd044a49b589f8117c6a9ce
+      spriteID: b90f0abb4b717df4886652a72410ac62
       internalID: -1530154431478954594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slider-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 2350
+        y: 120
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 495f7587b8847e44bba3ceaffaa246a6
+      internalID: -1900025815900636819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slider-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 3490
+        y: 120
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47c97e781c077e148905fa8832b15d9e
+      internalID: -4054899775600665566
       vertices: []
       indices: 
       edges: []

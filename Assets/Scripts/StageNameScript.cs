@@ -11,9 +11,9 @@ public class StageNameScript : MonoBehaviour
 
     private TextMeshProUGUI tmp;
 
-    private float myWhite = 0;
+    //private float myWhite = 0;
 
-    private float timer = 0f;
+    //private float timer = 0f;
 
     private Color clr;
 

@@ -8,7 +8,7 @@ public class EscScreenScript : MonoBehaviour
     private Image img;
     private RectTransform rectTransform;
     private Color color;
-    private float rectCtrlX = 1160f;
+    public static float rectCtrlX = 1162f; // 1162f
     private float rectCtrlY = 0f;
     public bool isBlackScreen = false;
     public static bool isKeyDown = false;
@@ -36,7 +36,7 @@ public class EscScreenScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //Debug.Log(rectCtrlX);
 
         if(isBlackScreen == false)
         { 
@@ -49,15 +49,18 @@ public class EscScreenScript : MonoBehaviour
 
             if (isKeyDown == true && rectCtrlX >= 790f)
                 rectCtrlX -= 40f;
-            else if (isKeyDown == false && rectCtrlX <= 1170f)
+            else if (isKeyDown == false && rectCtrlX < 1162f)
+            { 
                 rectCtrlX += 20f;
-            
+
+            }
 
 
-         //   if (isEscClick == true && rectCtrlX <= 1170)
-             //       rectCtrlX += 20;
-     //       else
-    //            isEscClick = false;
+
+            //   if (isEscClick == true && rectCtrlX <= 1170)
+            //       rectCtrlX += 20;
+            //       else
+            //            isEscClick = false;
 
 
         }

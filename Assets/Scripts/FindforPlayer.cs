@@ -11,7 +11,8 @@ public class FindforPlayer : MonoBehaviour
     public static bool isDger = false;
     public static bool isBoss = false;
 
-    
+    private bool endDger = false;
+    private bool endFK = false;
 
 
     private void Update()
@@ -34,16 +35,18 @@ public class FindforPlayer : MonoBehaviour
 
         foreach (Collider2D enemy in findPlayer)
         {
-            if (enemy.tag == "Dger")
+            if (enemy.tag == "Dger" && endDger == false)
             {
                 Tuto.isDger = true;
                 isDger = true;
+                endDger = true;
 
             }
 
-            if (enemy.tag == "FK")
+            if (enemy.tag == "FK" && endFK == false)
             {
                 Tuto.isFK = true;
+                endFK = true;
 
             }
 

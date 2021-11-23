@@ -66,9 +66,11 @@
     <Compile Include="Assets\BossAttack3.cs" />
     <Compile Include="Assets\BossAttackReady.cs" />
     <Compile Include="Assets\DgerButton.cs" />
+    <Compile Include="Assets\DgerSideScreen.cs" />
     <Compile Include="Assets\FKDied.cs" />
     <Compile Include="Assets\FKnightAttack.cs" />
     <Compile Include="Assets\FKnightStanding.cs" />
+    <Compile Include="Assets\FKSideScreen.cs" />
     <Compile Include="Assets\knightAttackReady.cs" />
     <Compile Include="Assets\MessageSc2.cs" />
     <Compile Include="Assets\MessageText2.cs" />
@@ -171,6 +173,7 @@
     <Compile Include="Assets\Scripts\WorldFrameExitScript.cs" />
     <Compile Include="Assets\Scripts\WorldFrameScript.cs" />
     <Compile Include="Assets\Tuto.cs" />
+    <Compile Include="Assets\TutoSideScreen.cs" />
     <Compile Include="Assets\VolButton.cs" />
     <Compile Include="Assets\VolCtrl.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />

@@ -33,6 +33,7 @@ public class MessageText : MonoBehaviour
     {
         if (text_exit == true)
         {
+            Tuto.isFirst = true;
             MessageSc.messageBool = false;
             gameObject.SetActive(false);
             
