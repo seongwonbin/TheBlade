@@ -424,13 +424,19 @@ public class PlayerScript : MonoBehaviour
             Heart1Script.heartBreak = true;
             GameManager.playerdied = true;
         }
+        else
+        {
+            Heart1Script.heartBreak = false;
+            GameManager.playerdied = false;
+        }
+
     }
 
     void IsEnd()
     {
         bossLight.gameObject.SetActive(false);
         animator.SetBool("isJumping", true);
-        rigid.AddForce(new Vector2(20f, 800f));
+        rigid.AddForce(new Vector2(100f, 800f));
         endTimer += Time.deltaTime;
 
         if (endTimer >= 1.5f)

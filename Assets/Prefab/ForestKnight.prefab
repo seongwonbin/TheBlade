@@ -177,9 +177,12 @@ MonoBehaviour:
     type: 3}
   swingParticle: {fileID: 7151045130563947907, guid: 4318fa6cf0595b14b9fce24573c6c926,
     type: 3}
+  swingParticle2: {fileID: 2581566153069844019, guid: 02ab40f6274de3641ad3e12a7ad5a4c9,
+    type: 3}
   atkParticle2: {fileID: 7037283709301962509, guid: db40010c3a4f56c44bcaea6752f3a6d1,
     type: 3}
   isFKnight: 1
+  isBoss: 0
 --- !u!114 &9174642386161040294
 MonoBehaviour:
   m_ObjectHideFlags: 0

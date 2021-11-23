@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
 
     public static bool playerLocation = false;
 
-    public Transform player;
+    public static Transform player;
 
     public static bool isReady = false;
     public static bool isReady2 = false;
@@ -63,15 +63,16 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Tab))
-            DebugCommand();
-
+            RestartButton.DebugCommand();
 
         if (Input.GetKeyDown(KeyCode.KeypadEnter))
             BossScript.readyPattern = 1000;
 
 
-        
 
+        //Debug.Log(PlayerLose.playerLose);
+        //Debug.Log(PlayerScript.currentHealth);
+        //Debug.Log(playerdied);
     }
 
 
@@ -83,8 +84,7 @@ public class GameManager : MonoBehaviour
             changeColor -= 0.003f;
             mytext.text = "";
         }
-
-        if (changeColor <= 1.0f && playerdied == true)
+        else if (changeColor <= 1.0f && playerdied == true)
         {
             changeColor += 0.01f;
             mytext.text = "당신은 이 행성을 빠져나가지 못했습니다.";
@@ -92,32 +92,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void DebugCommand()
-    {
-        //GetComponent<PlayerScript>().currentHealth = GetComponent<PlayerScript>().maxHealth;
-        PlayerScript.currentHealth = 300;
 
-        playerdied = false;
-        PlayerLose.playerLose = false;
-
-        MainSceneManager.obj.gameObject.SetActive(false);
-        MainSceneManager.obj2.gameObject.SetActive(false);
-
-        playerLocation = true;
-        PlayerScript.map1 = false;
-        PortalScript.portalChecker = true;
-        //PortalScript.portal2Checker = false;
-        //MainSceneManager.existDger = true;
-        //player.position = new Vector2(450f, -3.28957f);
-        PortalScript.portal2Checker = true;
-        isReady2 = true;
-        PortalScript.portal3Checker = true;
-        player.position = new Vector2(769f, -3f);
-
-
-        BossEvent.finishBoss = false;
-        FindforPlayer.isBoss = false;
-    }
 
 
 

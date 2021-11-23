@@ -78,6 +78,7 @@ GameObject:
   - component: {fileID: 394139016743519281}
   - component: {fileID: 394139016743519280}
   - component: {fileID: 3280405732192964962}
+  - component: {fileID: -1351407098461182897}
   m_Layer: 8
   m_Name: Boss
   m_TagString: Boss
@@ -192,9 +193,12 @@ MonoBehaviour:
     type: 3}
   swingParticle: {fileID: 7151045130563947907, guid: 4318fa6cf0595b14b9fce24573c6c926,
     type: 3}
+  swingParticle2: {fileID: 2581566153069844019, guid: 02ab40f6274de3641ad3e12a7ad5a4c9,
+    type: 3}
   atkParticle2: {fileID: 7037283709301962509, guid: db40010c3a4f56c44bcaea6752f3a6d1,
     type: 3}
   isFKnight: 0
+  isBoss: 1
 --- !u!61 &394139016743519287
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -254,9 +258,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b970851dd1c93c4e8cb6da8f55f4f60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  head: {fileID: 3548432892441953899, guid: 901be11310b839c43a7f21a2af95aea8, type: 3}
   dger: {fileID: 8051554367348084855, guid: 52363be037205b54d91bd83f111b9d94, type: 3}
   createDger: {fileID: 6953347789765956571, guid: 15510b1005fb2ef458689217b99790e1,
     type: 3}
+  timer: 0
 --- !u!114 &394139016743519281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -317,3 +323,15 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &-1351407098461182897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 394139016743519289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33507e4031f31c94a8db35ec295e14f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

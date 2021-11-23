@@ -6,7 +6,7 @@ public class BossScript : MonoBehaviour
 {
     public static float speed = 1.5f;
 
-
+    public GameObject head;
     
     public static Transform player;
     public static Rigidbody2D rb;
@@ -35,6 +35,8 @@ public class BossScript : MonoBehaviour
     public float timer = 0;
 
     public static bool isDied = false;
+
+    private bool isCreated = false;
 
     // Start is called before the first frame update
     void Start()
@@ -86,6 +88,16 @@ public class BossScript : MonoBehaviour
         }
 
 
+        if (dieBoss == true)
+        {
+
+            if (isCreated == false)
+            {
+                
+                Instantiate(head, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+                isCreated = true;
+            }
+        }
 
 
     }

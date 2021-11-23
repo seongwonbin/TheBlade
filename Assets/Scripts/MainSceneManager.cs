@@ -8,11 +8,7 @@ public class MainSceneManager : MonoBehaviour
     public static GameObject obj;
     public static GameObject obj2;
 
-
     public Image mainScreen;
-
-
-    //private int randSpawnDger;
 
     public GameObject createDger;
 
@@ -27,15 +23,11 @@ public class MainSceneManager : MonoBehaviour
 
     void Start()
     {
-        mainScreen = GameObject.Find("Image").GetComponent<Image>();
-
+        mainScreen = GameObject.Find("BlackMainImage").GetComponent<Image>();
 
         obj = GameObject.Find("ReButton").gameObject;
-        obj.gameObject.SetActive(false);
 
         obj2 = GameObject.Find("ExitButton").gameObject;
-        obj2.gameObject.SetActive(false);
-
     }
 
     void Update()
@@ -61,20 +53,16 @@ public class MainSceneManager : MonoBehaviour
             dgerTimer = 0;
         }
 
-        if(PlayerLose.playerLose == true)
-        { 
-            obj.gameObject.SetActive(true);
-            obj2.gameObject.SetActive(true);
-
+        if (PlayerLose.playerLose == true)
+        {
+            obj.transform.position = new Vector2(660f, 440f);
+            obj2.transform.position = new Vector2(1260f, 440f);
         }
         else if (PlayerLose.playerLose == false)
         {
-            obj.gameObject.SetActive(false);
-            obj2.gameObject.SetActive(false);
-
+            obj.transform.position = new Vector2(4000f, 1080f);
+            obj2.transform.position = new Vector2(4000f, 1080f);
         }
-
-
     }
 
 

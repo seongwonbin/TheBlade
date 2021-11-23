@@ -37,6 +37,7 @@ public class DgerScript : MonoBehaviour
     public GameObject atkParticle;
     public GameObject atkParticle2;
     public GameObject swingParticle;
+    public GameObject swingParticle2;
 
     private float movePower = 9f;
     public Vector3 moveVelocity = Vector3.zero;
@@ -134,7 +135,7 @@ public class DgerScript : MonoBehaviour
     {
         Instantiate(atkParticle2, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
 
-        Instantiate(swingParticle, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+        Instantiate(swingParticle2, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
 
     }
 

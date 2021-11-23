@@ -32,12 +32,19 @@ public class EnemyScript : MonoBehaviour
 
     public GameObject atkParticle;
     public GameObject swingParticle;
+    public GameObject swingParticle2;
     public GameObject atkParticle2;
 
     public bool isFKnight = false;
     public static bool isDger = false;
 
     public static float temp = 180f;
+
+    public bool isBoss = false;
+
+    public static float stackDamage = 0;
+
+    public static Transform boss;
 
     void Start()
     {
@@ -46,6 +53,7 @@ public class EnemyScript : MonoBehaviour
         spr = GetComponent<SpriteRenderer>();
         col = GetComponent<BoxCollider2D>();
         rigid = GetComponent<Rigidbody2D>();
+        boss = GetComponent<Transform>();
 
         player = GameObject.Find("Dummy Character").GetComponent<Transform>();
 
@@ -65,17 +73,39 @@ public class EnemyScript : MonoBehaviour
             enemy.SetTrigger("isActive");
 
         LostPlayer();
-        
+
+        if (stackDamage >= 1000f)
+        {
+            stackDamage = 0f;
+            BossWeak.shield = 30f;
+            BossWeak.isWeak = false;
+            BossScript.anim.SetBool("isWeak", false);
+        }
+
+
     }
 
     public void TakeDamage(int damage)
     {
+        if(isBoss == true && damage >= 40f)
+        {
+            if(BossWeak.isWeak == false)
+                BossWeak.shield--;
+            else if (BossWeak.isWeak == true)
+            {
+                stackDamage += damage;
+
+                currentHealth -= damage * 4;
+            }
+        }
+
 
         currentHealth -= damage;
         StartCoroutine("BeatTime");
 
         if (currentHealth <= 0)
             enemy.SetBool("Died", true);
+
         if (damage >= 10f)
             createParticle();
         else
@@ -163,7 +193,7 @@ public class EnemyScript : MonoBehaviour
     public void createParticle2()
     {
         Instantiate(atkParticle2, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
-        Instantiate(swingParticle, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+        Instantiate(swingParticle2, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
     }
 
     void LostPlayer()
