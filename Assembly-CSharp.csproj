@@ -66,7 +66,9 @@
     <Compile Include="Assets\BossAttack3.cs" />
     <Compile Include="Assets\BossAttackReady.cs" />
     <Compile Include="Assets\DgerButton.cs" />
+    <Compile Include="Assets\DgerButtonText.cs" />
     <Compile Include="Assets\DgerSideScreen.cs" />
+    <Compile Include="Assets\FKButtonText.cs" />
     <Compile Include="Assets\FKDied.cs" />
     <Compile Include="Assets\FKnightAttack.cs" />
     <Compile Include="Assets\FKnightStanding.cs" />

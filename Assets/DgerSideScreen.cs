@@ -6,7 +6,7 @@ public class DgerSideScreen : MonoBehaviour
 {
     RectTransform rt;
 
-    private float temp = 500;
+    private float temp = 500f;
 
     private float changeValue = 20f;
 

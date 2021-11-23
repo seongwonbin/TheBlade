@@ -36,18 +36,10 @@ public class Tuto : MonoBehaviour
     public static bool firstDger = false;
     public static bool firstFK = false;
 
-    private bool setFirst = false;
-    private bool setDger = false;
-    private bool setFK = false;
+    public static bool setFirst = false;
+    public static bool setDger = false;
+    public static bool setFK = false;
 
-    //private bool 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-        
-    }
 
     // Update is called once per frame
     void FixedUpdate()

@@ -20,11 +20,13 @@ public class RestartButton : MonoBehaviour
         //img.color = new Color(255, 255, 255, 0);
     }
 
+    // 원래 포지션 -400, -425  //  400, -425
+
     public void Restart()
     {
         GameManager.Instance.DebugCommand();
 
-
+        
 
     }
 

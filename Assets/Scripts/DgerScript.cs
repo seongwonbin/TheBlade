@@ -35,6 +35,7 @@ public class DgerScript : MonoBehaviour
     private float eulerCtrl = 0f;
 
     public GameObject atkParticle;
+    public GameObject atkParticle2;
     public GameObject swingParticle;
 
     private float movePower = 9f;
@@ -100,7 +101,8 @@ public class DgerScript : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        DgerHit();
+        if(damage >= 10f)
+            DgerHit();
 
         currentHealth -= damage;
         StartCoroutine("BeatTime");
@@ -111,8 +113,11 @@ public class DgerScript : MonoBehaviour
             moveVelocity = Vector3.zero;
         }
 
-
-        createParticle();
+        if (damage >= 10f)
+            createParticle();
+        else
+            createParticle2();
+        //createParticle();
         
 
         //Instantiate(hpBarBg, new Vector3(transform.position.x, transform.position.y+5, transform.position.z), Quaternion.identity);
@@ -123,6 +128,14 @@ public class DgerScript : MonoBehaviour
         Instantiate(atkParticle, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
 
         Instantiate(swingParticle, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+    }
+
+    public void createParticle2()
+    {
+        Instantiate(atkParticle2, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+
+        Instantiate(swingParticle, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+
     }
 
     void Die()
