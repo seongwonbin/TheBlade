@@ -419,18 +419,11 @@ public class PlayerScript : MonoBehaviour
 
     void SetPlayerDied()
     {
-        if (currentHealth == 2)
-            Heart3Script.heartBreak = true;
-        if (currentHealth == 1)
-            Heart2Script.heartBreak = true;
         if (currentHealth <= 0)
         {
             Heart1Script.heartBreak = true;
             GameManager.playerdied = true;
-            //Destroy(gameObject);
         }
-
-
     }
 
     void IsEnd()

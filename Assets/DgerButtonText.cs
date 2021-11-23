@@ -17,9 +17,9 @@ public class DgerButtonText : MonoBehaviour
     void Update()
     {
         if (Tuto.setDger == false)
-            tmp.color = new Color(255f, 255f, 255f, 0);
+            tmp.color = new Color(tmp.color.r, tmp.color.g, tmp.color.b, 0);
         else
-            tmp.color = new Color(255f, 255f, 255f, 1f);
+            tmp.color = new Color(tmp.color.r, tmp.color.g, tmp.color.b, 1f);
 
 
     }

@@ -17,9 +17,9 @@ public class FKButtonText : MonoBehaviour
     void Update()
     {
         if (Tuto.setFK == false)
-            tmp.color = new Color(255f, 255f, 255f, 0);
+            tmp.color = new Color(tmp.color.r, tmp.color.g, tmp.color.b, 0);
         else
-            tmp.color = new Color(255f, 255f, 255f, 1f);
+            tmp.color = new Color(tmp.color.r, tmp.color.g, tmp.color.b, 1f);
 
 
     }
