@@ -25,6 +25,7 @@ public class AudioManager : MonoBehaviour
         mainBGM = GameObject.Find("MainBGM").GetComponent<AudioSource>();
         titleAudio = GameObject.Find("TitleAudio").GetComponent<AudioSource>();
         earthQuake = GameObject.Find("EarthQuake").GetComponent<AudioSource>();
+        //earthQuake2 = GameObject.Find("EarthQuake").GetComponent<AudioSource>();
         
     }
 
@@ -52,8 +53,8 @@ public class AudioManager : MonoBehaviour
             setMainEQ();
 
 
-        Debug.Log(isReadyEQ);
-        Debug.Log(isStart);
+        //Debug.Log(isReadyEQ);
+        //Debug.Log(isStart);
 
         if (isStart == true)
             titleAudio.volume -= 0.01f;
@@ -64,8 +65,6 @@ public class AudioManager : MonoBehaviour
             mainBGM.Play();
             startBGM = false;
         }
-
-        //Debug.Log(mainBGM.volume);
 
 
         mainBGM.volume = masterVol;
@@ -80,8 +79,8 @@ public class AudioManager : MonoBehaviour
 
     public void setMainEQ()
     {
-
-        earthQuake.volume = 0.04f * masterVol;
+        //Debug.Log("asdasdas");
+        earthQuake.volume = 0.04f * masterVol; // 0.04
         earthQuake.Play();
         isStart = true;
         

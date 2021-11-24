@@ -6,6 +6,8 @@ using System;
 
 public class PlayerMoveScript : MonoBehaviour
 {
+    public static Transform player;
+
     private Animator animator;
     private Rigidbody2D rigid;
     private Vector3 movement;
@@ -52,6 +54,7 @@ public class PlayerMoveScript : MonoBehaviour
         animator = gameObject.GetComponent<Animator>();
         //mytext = GameObject.Find("Dash Cooltime Text").GetComponent<Text>();
         //bCol = gameObject.GetComponent<BoxCollider2D>();
+        player = GetComponent<Transform>();
 
     }
 

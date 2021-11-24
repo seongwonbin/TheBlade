@@ -37,7 +37,7 @@ public class RestartButton : MonoBehaviour
         PortalScript.portal2Checker = true;
         GameManager.isReady2 = true;
         PortalScript.portal3Checker = true;
-        GameManager.player.position = new Vector2(769f, -3f);
+        PlayerMoveScript.player.position = new Vector2(769f, -3f);
 
 
         BossEvent.finishBoss = false;

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-
+using System;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
 
     public static bool playerdied = false;
 
-    public TextMeshProUGUI mytext;
+    public static TextMeshProUGUI mytext;
 
     public static bool playerLocation = false;
 
@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         
-        mytext = GameObject.Find("Died Text").GetComponent<TextMeshProUGUI>();
+        //mytext = GameObject.Find("Died Text").GetComponent<TextMeshProUGUI>();
         player = GameObject.Find("Dummy Character").GetComponent<Transform>();
 
         
@@ -68,8 +68,11 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.KeypadEnter))
             BossScript.readyPattern = 1000;
 
-
-
+        try
+        {
+            mytext = GameObject.Find("Died Text").GetComponent<TextMeshProUGUI>();
+        }
+        catch (NullReferenceException) { }
         //Debug.Log(PlayerLose.playerLose);
         //Debug.Log(PlayerScript.currentHealth);
         //Debug.Log(playerdied);
@@ -77,20 +80,20 @@ public class GameManager : MonoBehaviour
 
 
 
-    public void MainBlackScreen()
-    {
-        if (changeColor >= 0.0f && playerdied == false)
-        { 
-            changeColor -= 0.003f;
-            mytext.text = "";
-        }
-        else if (changeColor <= 1.0f && playerdied == true)
-        {
-            changeColor += 0.01f;
-            mytext.text = "당신은 이 행성을 빠져나가지 못했습니다.";
+    //public void MainBlackScreen()
+    //{
+    //    if (changeColor >= 0.0f && playerdied == false)
+    //    { 
+    //        changeColor -= 0.003f;
+    //        mytext.text = "";
+    //    }
+    //    else if (changeColor <= 1.0f && playerdied == true)
+    //    {
+    //        changeColor += 0.01f;
+    //        mytext.text = "당신은 이 행성을 빠져나가지 못했습니다.";
             
-        }
-    }
+    //    }
+    //}
 
 
 

@@ -32,7 +32,8 @@ public class MainSceneManager : MonoBehaviour
 
     void Update()
     {
-        GameManager.Instance.MainBlackScreen();
+        //GameManager.Instance.MainBlackScreen();
+        MainBlackScreen();
 
         mainScreen.color = new Color(mainScreen.color.r, mainScreen.color.g, mainScreen.color.b, GameManager.changeColor);
 
@@ -63,6 +64,21 @@ public class MainSceneManager : MonoBehaviour
         {
             obj.transform.position = new Vector2(4000f, 1080f);
             obj2.transform.position = new Vector2(4000f, 1080f);
+        }
+    }
+
+    public void MainBlackScreen()
+    {
+        if (GameManager.changeColor >= 0.0f && GameManager.playerdied == false)
+        {
+            GameManager.changeColor -= 0.003f;
+            GameManager.mytext.text = "";
+        }
+        else if (GameManager.changeColor <= 1.0f && GameManager.playerdied == true)
+        {
+            GameManager.changeColor += 0.01f;
+            GameManager.mytext.text = "당신은 이 행성을 빠져나가지 못했습니다.";
+
         }
     }
 

@@ -41,6 +41,7 @@ public class TitleScript : MonoBehaviour
 
         if (eventTrigger == true && createKeeper == false && eventTimer >= waitingTime * 3)
         {
+            AudioManager.earthQuake.Play();
             Instantiate(obj, new Vector3(25.39f, -0.24f, transform.position.z), Quaternion.identity);
             createKeeper = true;
             Instantiate(obj2, new Vector3(25.85f, -0.85f, transform.position.z), Quaternion.identity);
