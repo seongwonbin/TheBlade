@@ -5,48 +5,37 @@ using UnityEngine;
 
 public class EnemyScript : MonoBehaviour
 {
+    public static float temp = 180f;
+    public static float stackDamage = 0;
+    public static bool isGroggy = false;
     public static bool isFlipped;
+    public static bool isDger = false;
 
-    private SpriteRenderer spr;
-    private Animator enemy;
-    private BoxCollider2D col;
-    private Rigidbody2D rigid;
-
-    private Vector2 diedVelocity = new Vector2(6f, 5f);
-    private Vector2 diedVelocity2 = new Vector2(-6f, 5f);
-
-    private bool enemyDiedChecker = false;
+    public static Vector3 myPos;
+    public static Transform boss;
 
     public int maxHealth = 200;
     public int currentHealth;
-
     public float timer = 0.0f;
-
+    public bool isFKnight = false;
+    public bool isBoss = false;
 
     public Transform player;
-
     public GameObject hpBar;
     public GameObject hpBarBg;
-
-    public static Vector3 myPos;
-
     public GameObject atkParticle;
     public GameObject swingParticle;
     public GameObject swingParticle2;
     public GameObject atkParticle2;
 
-    public bool isFKnight = false;
-    public static bool isDger = false;
+    private bool enemyDiedChecker = false;
 
-    public static float temp = 180f;
-
-    public bool isBoss = false;
-
-    public static float stackDamage = 0;
-
-    public static Transform boss;
-
-    public static bool isGroggy = false;
+    private SpriteRenderer spr;
+    private Animator enemy;
+    private BoxCollider2D col;
+    private Rigidbody2D rigid;
+    private Vector2 diedVelocity = new Vector2(6f, 5f);
+    private Vector2 diedVelocity2 = new Vector2(-6f, 5f);
 
     void Start()
     {
@@ -58,8 +47,6 @@ public class EnemyScript : MonoBehaviour
         boss = GetComponent<Transform>();
 
         player = GameObject.Find("Dummy Character").GetComponent<Transform>();
-
-        //Instantiate(hpBar, new Vector3(transform.position.x, transform.position.y - 0.1f, transform.position.z), Quaternion.identity);
     }
 
     public void Update()
@@ -68,7 +55,6 @@ public class EnemyScript : MonoBehaviour
         {
             enemy.SetBool("Died", true);
             Die();
-
         }
 
         if (currentHealth != maxHealth)
@@ -83,10 +69,6 @@ public class EnemyScript : MonoBehaviour
             BossWeak.isWeak = false;
             BossScript.anim.SetBool("isWeak", false);
         }
-
-
-
-
     }
 
     public void TakeDamage(int damage)
@@ -98,12 +80,9 @@ public class EnemyScript : MonoBehaviour
             else if (BossWeak.isWeak == true)
             {
                 stackDamage += damage;
-
                 currentHealth -= damage * 4;
             }
         }
-
-
         currentHealth -= damage;
         StartCoroutine("BeatTime");
 
@@ -114,7 +93,6 @@ public class EnemyScript : MonoBehaviour
             createParticle();
         else
             createParticle2();
-
     }
 
     IEnumerator BeatTime()
@@ -134,37 +112,6 @@ public class EnemyScript : MonoBehaviour
         spr.color = new Color(255, 255, 255, 255);
 
         yield return null;
-    }
-
-    void Die()
-    {
-        if (isFKnight)
-        { 
-            rigid.constraints = RigidbodyConstraints2D.None;
-            rigid.constraints = RigidbodyConstraints2D.FreezePositionX;
-        }
-
-        if (transform.position.x < player.position.x && enemyDiedChecker == false)
-        {
-            rigid.AddForce(diedVelocity2, ForceMode2D.Impulse);
-            rigid.AddForce(diedVelocity2, ForceMode2D.Impulse);
-        }
-
-        if (transform.position.x > player.position.x && enemyDiedChecker == false)
-        {
-            rigid.AddForce(diedVelocity, ForceMode2D.Impulse);
-            rigid.AddForce(diedVelocity, ForceMode2D.Impulse);
-        }
-
-        enemyDiedChecker = true;
-
-        timer += Time.deltaTime;
-        col.isTrigger = true;
-
-        if (timer >= 5.0f)
-            Destroy(gameObject);
-
-        
     }
 
     public void LookAtPlayer()
@@ -200,14 +147,6 @@ public class EnemyScript : MonoBehaviour
         Instantiate(swingParticle2, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
     }
 
-    void LostPlayer()
-    {
-        if (Vector3.Distance(player.position, transform.position) > 20f)
-            enemy.SetBool("isActive", false);
-
-
-    }
-
     public void SetGroggyCam()
     {
         isGroggy = false;
@@ -216,6 +155,40 @@ public class EnemyScript : MonoBehaviour
     public void GetEnemyStep()
     {
         PlayerAudio.enemyStep.Play();
+    }
 
+    private void LostPlayer()
+    {
+        if (Vector3.Distance(player.position, transform.position) > 20f)
+            enemy.SetBool("isActive", false);
+    }
+
+    private void Die()
+    {
+        if (isFKnight)
+        {
+            rigid.constraints = RigidbodyConstraints2D.None;
+            rigid.constraints = RigidbodyConstraints2D.FreezePositionX;
+        }
+
+        if (transform.position.x < player.position.x && enemyDiedChecker == false)
+        {
+            rigid.AddForce(diedVelocity2, ForceMode2D.Impulse);
+            rigid.AddForce(diedVelocity2, ForceMode2D.Impulse);
+        }
+
+        if (transform.position.x > player.position.x && enemyDiedChecker == false)
+        {
+            rigid.AddForce(diedVelocity, ForceMode2D.Impulse);
+            rigid.AddForce(diedVelocity, ForceMode2D.Impulse);
+        }
+
+        enemyDiedChecker = true;
+
+        timer += Time.deltaTime;
+        col.isTrigger = true;
+
+        if (timer >= 5.0f)
+            Destroy(gameObject);
     }
 }

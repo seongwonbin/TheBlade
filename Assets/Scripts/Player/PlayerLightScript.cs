@@ -5,37 +5,25 @@ using UnityEngine;
 
 public class PlayerLightScript : MonoBehaviour
 {
-    private UnityEngine.Experimental.Rendering.LWRP.Light2D playerLight;
-    
     private float lightDistance = 30f;
-
     private float lightComponent = 0.05f;
 
-    
+    private UnityEngine.Experimental.Rendering.LWRP.Light2D playerLight;
 
     // Start is called before the first frame update
     void Start()
     {
         playerLight = GetComponent<UnityEngine.Experimental.Rendering.LWRP.Light2D>();
-        
     }
 
     // Update is called once per frame
     void Update()
     {
-
-
         SetLight();
-
-
-
-        //if (PortalScript.portal2Checker == true)
-        //gameObject.SetActive(false);
     }
 
-    void Blink()
+    private void Blink()
     {
-
         playerLight.pointLightInnerRadius = 0f;
         playerLight.pointLightOuterRadius = lightDistance;
         lightDistance += lightComponent;
@@ -44,37 +32,19 @@ public class PlayerLightScript : MonoBehaviour
             lightComponent *= -1f;
         else if (lightDistance <= 25)
             lightComponent *= -1f;
-
-
-
     }
 
-    void SetLight()
+    private void SetLight()
     {
         if (GameManager.playerLocation == true)
         {
             if (PortalScript.portal2Checker == false)
-            {
-
                 Blink();
-
-            }
             else if (GameManager.isReady == true)
             {
                 playerLight.pointLightOuterRadius = 40f;
                 playerLight.pointLightInnerRadius = 10f;
-
-
-
             }
-
-
-
-
         }
-
-
-
     }
-
 }

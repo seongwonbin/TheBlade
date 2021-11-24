@@ -172,28 +172,28 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 2
-    functionName: attackTask
+    functionName: AttackTask
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 2.2166667
-    functionName: attackTask
+    functionName: AttackTask
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 2.5833333
-    functionName: attackTask
+    functionName: AttackTask
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 2.8333333
-    functionName: attackTask
+    functionName: AttackTask
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

@@ -17,7 +17,6 @@ public class TitleCloudSpr : MonoBehaviour
     void FixedUpdate()
     {
         transform.position = new Vector2(transform.position.x, transform.position.y + cloudController);
-
         cloudReset = transform.position.y + cloudController;
 
         if (cloudReset >= 108.7)

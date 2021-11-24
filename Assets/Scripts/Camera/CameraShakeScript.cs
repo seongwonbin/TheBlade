@@ -3,35 +3,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class CameraShakeScript : MonoBehaviour
 {
-
-    public static bool introInit = false;
-    public Vector3 initialPosition;
-
     public static float shakeAmount;
     public static float shakeTime;
     public static float timer = 0.0f;
+    public static bool introInit = false;
 
+    public Vector3 initialPosition;
     public GameObject obj;
-
-    
-    
 
     void Start()
     {
         initialPosition = new Vector3(MainCameraScript.posX, MainCameraScript.posY, -5f);
-        
-
     }
 
     void Update()
     {
         timer += Time.deltaTime;
         FirstShaking();
+    }
 
-        //Debug.Log(shakeAmount);
+    public static void VibrateForTime(float time)
+    {
+        shakeTime = time;
     }
 
     // 메인필드 진입시에 카메라 조정
@@ -44,8 +39,6 @@ public class CameraShakeScript : MonoBehaviour
         }
         else
             shakeTime = 0.0f;
-
-
 
         if (timer >= 3.0f && introInit == false)
         {
@@ -64,19 +57,12 @@ public class CameraShakeScript : MonoBehaviour
 
         if (timer >= 8.5f)
         {
-            //initialPosition = new Vector3(MainCameraScript.posX, MainCameraScript.posY + 0.05f, -50f);
             initialPosition = new Vector3(MainCameraScript.posX, MainCameraScript.posY + 0.2f, -50f);
-
             shakeAmount = 0.2f;
             
         }
-        
-
 
     }
 
-    public static void VibrateForTime(float time)
-    {
-        shakeTime = time;
-    }
+
 }

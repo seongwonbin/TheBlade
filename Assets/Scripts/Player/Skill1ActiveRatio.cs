@@ -5,30 +5,25 @@ using UnityEngine.UI;
 
 public class Skill1ActiveRatio : MonoBehaviour
 {
-    private RectTransform rectTransform;
-
     public static bool active = false;
 
+    public bool isDown = false;
+    
     private float rectCtrlY = 700f;
 
-    public bool isDown = false;
+    private RectTransform rectTransform;
 
     // Start is called before the first frame update
     void Start()
     {
         rectTransform = gameObject.GetComponent<RectTransform>();
-
     }
 
     // Update is called once per frame
     void Update()
     {
-
             SetRatio();
-
     }
-
-
 
     public void SetRatio()
     {
@@ -51,7 +46,5 @@ public class Skill1ActiveRatio : MonoBehaviour
         if (active == false)
             if (rectCtrlY < 700)
                 rectCtrlY += 30f;
-
-
     }
 }

@@ -10,11 +10,6 @@ public class DummyEnemy : MonoBehaviour
     public Transform attackPoint;
     public LayerMask enemyLayers;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -22,7 +17,7 @@ public class DummyEnemy : MonoBehaviour
         AttackTask();
     }
 
-    void AttackTask()
+    public void AttackTask()
     {
         Collider2D[] hitPlayer = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 
@@ -32,7 +27,7 @@ public class DummyEnemy : MonoBehaviour
 
     }
 
-    void AttackTask2()
+    public void AttackTask2()
     {
         Collider2D[] hitPlayer = Physics2D.OverlapCircleAll(attackPoint.position, attackRange*6f, enemyLayers);
 

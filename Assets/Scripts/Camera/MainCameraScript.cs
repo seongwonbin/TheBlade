@@ -4,113 +4,54 @@ using UnityEngine;
 
 public class MainCameraScript : MonoBehaviour
 {
-    private Camera titleCam;
-
-    private bool bound = true;
     public static float posX, posY;
-    public float smoothTimeX, smoothTimeY;
+    public static float orthoSize = 11;
+    public static float posYBoss = 0f;
 
     public static Vector3 playerTracker;
+
+    public float smoothTimeX, smoothTimeY;
 
     public GameObject player;
     public Vector2 minPos, maxPos;
     public Vector2 velocity;
 
-    public static float orthoSize = 11;
+    private bool bound = true;
 
-    //private float timer = 0f;
-
-    public static float posYBoss = 0f;
+    private Camera titleCam;
 
     void Start()
     {
         titleCam = GetComponent<Camera>();
-        
         player = GameObject.FindGameObjectWithTag("Player");
-
         transform.position = new Vector3(-0.1f, 100f, -10f); // 메인필드 진입 시 카메라포지션
-
         titleCam.clearFlags = CameraClearFlags.SolidColor;
-
-        //posZ = -50f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        map2();
-       
-
-
+        SetMap2();
         titleCam.orthographicSize = orthoSize;
-
-        if (CameraShakeScript.introInit == true)
-        {
-            smoothTimeX = 0.5f;
-            smoothTimeY = 0.5f;
-        }
-        else
-        {
-            smoothTimeX = 1f;
-            smoothTimeY = 1f;
-        }
-
-
-        //  transform.position = new Vector3(transform.position.x + escapeCameraMove, transform.position.y, -50.0f);
-
-       
-
-        if (InvisibleTilemap.isEnter == false)
-        {
-            if (MessageText2.isEnd == false)
-            {
-
-                if (EnemyScript.isGroggy == false)
-                {
-
-                    if (FindforPlayer.isBoss == true && BossEvent.finishBoss == false)
-                        player = GameObject.FindGameObjectWithTag("Boss");
-                    else
-                        setPlayer();
-
-
-
-                }
-                else
-                    player = GameObject.FindGameObjectWithTag("Boss");
-            }
-            else
-                player = this.gameObject;
-        }
-        else if (InvisibleTilemap.isEnter)
-        { 
-            player = GameObject.Find("CenterofCave");
-            
-        }
-
-
-
-        
-
+        SetCameraTarget();
     }
 
     void FixedUpdate()
     {
+        SetCameraPos();
+    }
 
+    private void SetCameraPos()
+    {
         posX = Mathf.SmoothDamp(transform.position.x, player.transform.position.x, ref velocity.x, smoothTimeX);
-
         posY = Mathf.SmoothDamp(transform.position.y, player.transform.position.y, ref velocity.y, smoothTimeY);
-
-       // posZ = Mathf.SmoothDamp(transform.position.y, player.transform.position.y, ref velocity.y, smoothTimeY);
 
         playerTracker = transform.position;
 
         if (EscScreenScript.isKeyDown == false)
-      //      transform.position = new Vector3(posX, posY, posZ);
-        transform.position = new Vector3(posX, posY, -50.0f);
+            transform.position = new Vector3(posX, posY, -50.0f);
         else
             transform.position = new Vector3(posX + 0.3f, posY, -50.0f);
-
 
         if (bound)
         {
@@ -122,14 +63,48 @@ public class MainCameraScript : MonoBehaviour
         }
 
         if (Skill1ActiveRatio.active == true && orthoSize > 8.5f)
-                orthoSize -= 0.3f;
+            orthoSize -= 0.3f;
         else if (Skill1ActiveRatio.active == false && orthoSize < 11f)
-                orthoSize += 0.3f;
+            orthoSize += 0.3f;
 
-        
     }
 
-    void map2()
+    private void SetCameraTarget()
+    {
+        if (CameraShakeScript.introInit == true)
+        {
+            smoothTimeX = 0.5f;
+            smoothTimeY = 0.5f;
+        }
+        else
+        {
+            smoothTimeX = 1f;
+            smoothTimeY = 1f;
+        }
+
+        if (InvisibleTilemap.isEnter == false)
+        {
+            if (MessageText2.isEnd == false)
+            {
+                if (EnemyScript.isGroggy == false)
+                {
+                    if (FindforPlayer.isBoss == true && BossEvent.finishBoss == false)
+                        player = GameObject.FindGameObjectWithTag("Boss");
+                    else
+                        SetPlayer();
+                }
+                else
+                    player = GameObject.FindGameObjectWithTag("Boss");
+            }
+            else
+                player = this.gameObject;
+        }
+        else if (InvisibleTilemap.isEnter)
+            player = GameObject.Find("CenterofCave");
+
+    }
+
+    private void SetMap2()
     {
         if (GameManager.playerLocation == true && PortalScript.portal2Checker == false)
         {
@@ -147,20 +122,11 @@ public class MainCameraScript : MonoBehaviour
             {
                 minPos.x = 716f;
                 maxPos.x = 1000f;
-                
             }
         }
-
     }
 
-    void ChangeBGColor()
-    {
-      //  float t = Mathf.PingPong(Time.time, duration)
-
-
-    }
-
-    void setPlayer()
+    private void SetPlayer()
     {
         if (Skill1ActiveRatio.active == false)
         {
@@ -175,7 +141,6 @@ public class MainCameraScript : MonoBehaviour
                 minPos.y = -2f + posYBoss;
                 player = this.gameObject;
                 posY = -2f;
-                // Debug.Log(minPos.y);
             }
             else
             {
@@ -183,13 +148,7 @@ public class MainCameraScript : MonoBehaviour
                 player = this.gameObject;
                 posY = -17f;
 
-
-
             }
         }
-
-
-
     }
-
 }

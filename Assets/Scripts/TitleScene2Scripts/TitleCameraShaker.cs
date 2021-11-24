@@ -7,29 +7,22 @@ public class TitleCameraShaker : MonoBehaviour
 {
     public static bool shakerReady = false;
 
-    private float timer = 0f;
+    public bool title2Scene = false;
 
     public UnityEvent goNS;
 
-    public bool title2Scene = false;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private float timer = 0f;
 
     // Update is called once per frame
     void Update()
     {
-        shakeScreen();
+        ShakeScreen();
 
         if(title2Scene)
             transform.position = Random.insideUnitSphere * 0.2f + new Vector3(0, 0, 0);
-
     }
 
-    void shakeScreen()
+    private void ShakeScreen()
     {
         if (TitleScript.eventTrigger == true)
         {

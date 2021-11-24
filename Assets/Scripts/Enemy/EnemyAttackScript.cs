@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class EnemyAttackScript : MonoBehaviour
 {
-    public int attackDamage = 40;
     public static float attackRange = 4f;
+
+    public int attackDamage = 40;
 
     public Transform attackPoint;
     public LayerMask enemyLayers;
 
-    //public static bool skill1Active = false;
-   
     void OnDrawGizmosSelected()
     {
         if (attackPoint == null)
@@ -20,7 +19,7 @@ public class EnemyAttackScript : MonoBehaviour
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
 
-    void attackTask()
+    public void AttackTask()
     {
         Collider2D[] hitPlayer = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 

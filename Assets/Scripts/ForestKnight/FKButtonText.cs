@@ -20,7 +20,5 @@ public class FKButtonText : MonoBehaviour
             tmp.color = new Color(tmp.color.r, tmp.color.g, tmp.color.b, 0);
         else
             tmp.color = new Color(tmp.color.r, tmp.color.g, tmp.color.b, 1f);
-
-
     }
 }

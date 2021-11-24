@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class TowerScript : MonoBehaviour
 {
+    public bool isTower = false;
+
     private float towerPosX = 16.4f;
     private float towerPosY = 7.5f;
-    public bool isTower = false;
 
     // Start is called before the first frame update
     void Start()
@@ -21,33 +22,32 @@ public class TowerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(isTower == true)
-        { 
+        SetTower();
 
+    }
+
+    private void SetTower()
+    {
+        if (isTower == true)
+        {
             if (PlayerScript.map1 == true)
             {
                 towerPosX = (MainCameraScript.posX + 15) - (MainCameraScript.posX / 50f);
 
                 transform.position = new Vector2(towerPosX, towerPosY);
             }
-
         }
         else if (isTower == false)
         {
-
-
             if (PlayerScript.map1 == true)
             {
                 towerPosX = (MainCameraScript.posX + 450) - (MainCameraScript.posX * 6f);
 
                 transform.position = new Vector2(towerPosX, towerPosY);
             }
-
-
         }
 
         if (PlayerScript.map1 == false)
             transform.position = new Vector2(0, -300f);
-
     }
 }

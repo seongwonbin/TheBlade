@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Heart3Script : MonoBehaviour
+public class Heart1Script : MonoBehaviour
 {
     public static bool heartBreak = false;
 
@@ -22,11 +22,4 @@ public class Heart3Script : MonoBehaviour
             animator.SetTrigger("Break");
         }
     }
-
-    private void HeartDestroy()
-    {
-       // Destroy(gameObject);
-    }
-
-
 }

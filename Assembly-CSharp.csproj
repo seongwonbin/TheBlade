@@ -111,15 +111,12 @@
     <Compile Include="Assets\Scripts\ForestKnight\FKnightAttack.cs" />
     <Compile Include="Assets\Scripts\ForestKnight\FKnightHead.cs" />
     <Compile Include="Assets\Scripts\ForestKnight\FKnightMgr.cs" />
-    <Compile Include="Assets\Scripts\ForestKnight\FKnightStanding.cs" />
     <Compile Include="Assets\Scripts\ForestKnight\FKSideScreen.cs" />
     <Compile Include="Assets\Scripts\ForestKnight\knightAttackReady.cs" />
     <Compile Include="Assets\Scripts\ForestLight.cs" />
     <Compile Include="Assets\Scripts\FrameObjectScript.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
-    <Compile Include="Assets\Scripts\Heart\Heart1Script.cs" />
-    <Compile Include="Assets\Scripts\Heart\Heart2Script.cs" />
-    <Compile Include="Assets\Scripts\Heart\Heart3Script.cs" />
+    <Compile Include="Assets\Scripts\Heart1Script.cs" />
     <Compile Include="Assets\Scripts\HPVib.cs" />
     <Compile Include="Assets\Scripts\IntroScript.cs" />
     <Compile Include="Assets\Scripts\InvisibleTilemap.cs" />

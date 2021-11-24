@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class FKnightHead : MonoBehaviour
 {
-    private Rigidbody2D rigid;
     public Transform player;
 
-    private bool isActive = false;
     private float timer = 0f;
+    private bool isActive = false;
+
+    private Rigidbody2D rigid;
 
     // Start is called before the first frame update
     void Start()
@@ -31,7 +32,7 @@ public class FKnightHead : MonoBehaviour
             Destroy(gameObject);
     }
 
-    void Head()
+    private void Head()
     {
         isActive = true;
 
@@ -46,7 +47,5 @@ public class FKnightHead : MonoBehaviour
             rigid.AddForce(new Vector2(4, 9), ForceMode2D.Impulse);
             rigid.AddForce(new Vector2(4, 9), ForceMode2D.Impulse);
         }
-
-       
     }
 }

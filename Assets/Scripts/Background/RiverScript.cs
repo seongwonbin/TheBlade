@@ -7,12 +7,6 @@ public class RiverScript : MonoBehaviour
     private float towerPosX = 27.2f;
     private float towerPosY = -0.96f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {

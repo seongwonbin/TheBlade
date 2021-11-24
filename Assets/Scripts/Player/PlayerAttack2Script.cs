@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerAttack2Script : StateMachineBehaviour
 {
-
     public static bool playerAttack2 = false;
 
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

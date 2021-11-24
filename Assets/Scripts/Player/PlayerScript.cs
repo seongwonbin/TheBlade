@@ -6,26 +6,33 @@ using System;
 public class PlayerScript : MonoBehaviour
 {
 
+    public static int randomX = 0;
+    public static int randomY = 0;
+    public static int currentHealth;
+    public static bool isUnBeatTime = false;
+    public static bool startBool = false;
+    public static bool map1 = true;
+    public static bool setPlayerSkill1 = false; // 대쉬스킬 플래그
+    public static bool changeRot = false;
+    public static bool skill1Trigger = false;  // F 눌렀을 때 플레이어 패링상태
+    public static bool skill1Trigger_2 = false; // 패링상태에서 공격받았을 때 발동
+    public static bool skill1CoolDown = false;
+
     public static Animator animator;
-    protected SpriteRenderer spr;
-
-    private float curTime;
-    private float changeColorA = 0.0f;
-
-    private Rigidbody2D rigid;
 
     public float coolTime = 0.5f;
     public float attackRange = 0.5f;
     public int attackDamage = 40;
     public int maxHealth = 400;
-    public static int currentHealth;
 
-
-    public static bool isUnBeatTime = false;
-    public static bool startBool = false;
-    public static bool map1 = true;
-    public static bool setPlayerSkill1 = false; // 대쉬스킬 플래그
-
+    public GameObject playerRage1;
+    public GameObject playerRage2;
+    public GameObject enemyDmgSp1;
+    public GameObject enemyDmgSp2;
+    public GameObject enemyDmgSp3;
+    public GameObject enemyDmgSp4;
+    public GameObject bossLight;
+    public GameObject endScreen;
     public GameObject obj;
     public GameObject obj2;
     public Transform pos;
@@ -36,44 +43,23 @@ public class PlayerScript : MonoBehaviour
     public Vector2 takeDamageVelocity2 = new Vector2(18.1f, 4);
     public Vector2 leftAttackPoint = new Vector2(-3.8f, 0);
     public Vector2 rightAttackPoint = new Vector2(3.8f, 0);
-
     public Vector2 test = new Vector2(30, 0);
-
-    public GameObject playerRage1;
-    public GameObject playerRage2;
-
-    public GameObject enemyDmgSp1;
-    public GameObject enemyDmgSp2;
-    public GameObject enemyDmgSp3;
-    public GameObject enemyDmgSp4;
-
-    public GameObject bossLight;
-    public GameObject endScreen;
-
-
-    public static int randomX = 0;
-    public static int randomY = 0;
-
-    public static bool skill1Trigger = false;  // F 눌렀을 때 플레이어 패링상태
-    public static bool skill1Trigger_2 = false; // 패링상태에서 공격받았을 때 발동
-
-    public static bool skill1CoolDown = false;
-
+    
     private float timer = 0f;
     private float endTimer = 0f;
+    private float curTime;
+    private float changeColorA = 0.0f;
 
-    public static bool changeRot = false;
+    private Rigidbody2D rigid;
+
+    protected SpriteRenderer spr;
 
     void Start()
     {
         animator = gameObject.GetComponent<Animator>();
         spr = gameObject.GetComponent<SpriteRenderer>();
         rigid = gameObject.GetComponent<Rigidbody2D>();
-
         currentHealth = maxHealth;
-
-        
-
     }
     
     void Update()
@@ -102,8 +88,6 @@ public class PlayerScript : MonoBehaviour
             changeColorA = 0f;
         }
 
-
-
         PlayerSkill1Active();
 
         timer += Time.deltaTime;
@@ -111,56 +95,20 @@ public class PlayerScript : MonoBehaviour
         if (Skill1ActiveRatio.active == false)
             Skill1ActiveSc.movePos = -10f;
 
-
-
         if (Input.GetKeyDown(KeyCode.O))
             currentHealth = 0;
 
         SetPlayerDied();
-
 
         if (Input.GetKeyDown(KeyCode.I))
             attackDamage = 5000;
 
         if(MessageText2.isEnd)
             IsEnd();
-
     }
 
 
-    void BasicAttack1()
-    {
 
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            PlayerAttack1Script.playerAttack1 = true;
-            animator.SetBool("isAttack", true);
-
-        }
-
-        else
-            animator.SetBool("isAttack", false);
-
-        if (ComboScript.rageMode == true)
-            PlayerRage();
-
-
-    }
-
-    void BasicAttack2()
-    {
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            PlayerAttack2Script.playerAttack2 = true;
-            animator.SetBool("isAttack2", true);
-        }
-        else
-            animator.SetBool("isAttack2", false);
-
-        if (ComboScript.rageMode == true)
-            PlayerRage2();
-
-    }
 
     void OnDrawGizmosSelected()
     {
@@ -168,81 +116,61 @@ public class PlayerScript : MonoBehaviour
             return;
 
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
-
     }
 
-    void AttackTask()
+    public void AttackTask()
     {
-
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
-        
         
         foreach (Collider2D enemy in hitEnemies)
         {
-           try
+            try
             {
                 PlayerAudio.hit.Play();
-            enemy.GetComponent<EnemyScript>().TakeDamage(attackDamage);
+                enemy.GetComponent<EnemyScript>().TakeDamage(attackDamage);
             }
-            catch(NullReferenceException)
-            {
-                //Debug.Log(error);
-            }
+            catch (NullReferenceException) { }
 
             if (ComboScript.rageMode == false)
                 CameraShakeScript.VibrateForTime(0.1f);
 
-            ComboScript.enemyHit();
-
-            randomAttackSprite();
-
+            ComboScript.EnemyHit();
+            RandomAttackSprite();
         }
 
     }
 
-    void AttackTask2()
+    public void AttackTask2()
     {
-      
-            Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 
-            foreach (Collider2D enemy in hitEnemies)
-            {
+        foreach (Collider2D enemy in hitEnemies)
+        {
 
-            try
-            {
-                PlayerAudio.hit.Play();
-                enemy.GetComponent<DgerScript>().TakeDamage(attackDamage);
-            }
-            catch (NullReferenceException)
-            {
-                //Debug.Log("디거못때림");
-            }
+        try
+        {
+            PlayerAudio.hit.Play();
+            enemy.GetComponent<DgerScript>().TakeDamage(attackDamage);
+        }
+        catch (NullReferenceException) { }
 
-            if (ComboScript.rageMode == false)
-                    CameraShakeScript.VibrateForTime(0.1f);
+        if (ComboScript.rageMode == false)
+                CameraShakeScript.VibrateForTime(0.1f);
 
-                ComboScript.enemyHit();
-
-                randomAttackSprite();
-            }
+            ComboScript.EnemyHit();
+            RandomAttackSprite();
+        }
     }
 
-
-    void randomAttackSprite()
+    public void SwingSword1()
     {
-        randomX = UnityEngine.Random.Range(0, 4);
-        randomY = UnityEngine.Random.Range(1, 4);
+        PlayerAudio.aud1.Play();
+    }
 
-        if (randomX == 0)
-            Instantiate(enemyDmgSp1, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
-        else if (randomX == 1)
-            Instantiate(enemyDmgSp2, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
-        else if (randomX == 2)
-            Instantiate(enemyDmgSp3, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
-        else if (randomX == 3)
-            Instantiate(enemyDmgSp4, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
-    }   
-
+    public void SwingSword2()
+    {
+        PlayerAudio.aud2.Play();
+    }
 
     public void TakeDamage(int damage)
     {
@@ -261,28 +189,16 @@ public class PlayerScript : MonoBehaviour
 
             CameraShakeScript.VibrateForTime(0.3f);
             BlinkRoutine();
-
-
-
-
-
-
             DgerAttackScript.timer = 0f;
-
         }
         else
         {
-            
-
             if(timer > 0.5f)
             {
                 timer = 0f;
                 PlayerAudio.skill.Play();
                 skill1Trigger_2 = true;
-                
-               // Debug.Log("버그 잡는중!");
             }
-
         }
     }
 
@@ -323,7 +239,7 @@ public class PlayerScript : MonoBehaviour
         yield return null;
     }
 
-    void PlayerSkill1()
+    private void PlayerSkill1()
     {
         if(Input.GetKeyDown(KeyCode.F))
         {
@@ -337,88 +253,78 @@ public class PlayerScript : MonoBehaviour
        
     }
 
-    void PlayerSkill1Active()
+    private void PlayerSkill1Active()
     {
         if (Input.GetKey(KeyCode.LeftArrow) && skill1Trigger_2 == true)
         {
-            
             animator.SetTrigger("Skill1Active");
             Instantiate(obj2, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
             setPlayerSkill1 = true;
             skill1Trigger_2 = false;
-            
         }
         else if(Input.GetKey(KeyCode.RightArrow) && skill1Trigger_2 == true)
         {
-            
             animator.SetTrigger("Skill1Active");
             Instantiate(obj, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
             setPlayerSkill1 = true;
             skill1Trigger_2 = false;
-
         }
         else if(skill1Trigger_2 == true)
         {
             animator.SetTrigger("Skill1Active");
 
             if(PlayerMoveScript.flipController == false)
-            { 
                 Instantiate(obj, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
-                
-            }
             else
-            { 
                 Instantiate(obj2, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
-                
-            }
 
             setPlayerSkill1 = true;
             skill1Trigger_2 = false;
-            
         }
-
     }
 
-    void PlayerRage()
+    private void PlayerRage()
     {
         if (Input.GetKeyDown(KeyCode.Z))
-        {
             Instantiate(playerRage1, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
-            
-        }
-
     }
 
-    void PlayerRage2()
+    private void PlayerRage2()
     {
         if (Input.GetKeyDown(KeyCode.C))
-        {
             Instantiate(playerRage2, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
-
-        }
     }
 
+    private void IsEnd()
+    {
+        bossLight.gameObject.SetActive(false);
+        animator.SetBool("isJumping", true);
+        rigid.AddForce(new Vector2(100f, 800f));
+        endTimer += Time.deltaTime;
 
-    void changeMovePower()
+        if (endTimer >= 1.5f)
+            endScreen.gameObject.SetActive(true);
+    }
+
+    private void ChangeMovePower()
     {
         skill1Trigger = true;
         PlayerMoveScript.movePower = 0.01f;
-        
+
     }
 
-    void returnMovePower()
+    private void ReturnMovePower()
     {
         PlayerMoveScript.movePower = 7.0f;
         skill1Trigger = false;
-        
     }
 
-    void returnRatio()
+    private void ReturnRatio()
     {
         Skill1ActiveRatio.active = false;
     }
 
-    void SetPlayerDied()
+    private void SetPlayerDied()
     {
         if (currentHealth <= 0)
         {
@@ -430,32 +336,49 @@ public class PlayerScript : MonoBehaviour
             Heart1Script.heartBreak = false;
             GameManager.playerdied = false;
         }
-
     }
 
-    void IsEnd()
+    private void RandomAttackSprite()
     {
-        bossLight.gameObject.SetActive(false);
-        animator.SetBool("isJumping", true);
-        rigid.AddForce(new Vector2(100f, 800f));
-        endTimer += Time.deltaTime;
+        randomX = UnityEngine.Random.Range(0, 4);
+        randomY = UnityEngine.Random.Range(1, 4);
 
-        if (endTimer >= 1.5f)
-            endScreen.gameObject.SetActive(true);
-
-
-
+        if (randomX == 0)
+            Instantiate(enemyDmgSp1, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+        else if (randomX == 1)
+            Instantiate(enemyDmgSp2, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+        else if (randomX == 2)
+            Instantiate(enemyDmgSp3, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+        else if (randomX == 3)
+            Instantiate(enemyDmgSp4, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
     }
 
-    public void SwingSword1()
+    private void BasicAttack1()
     {
-        PlayerAudio.aud1.Play();
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            PlayerAttack1Script.playerAttack1 = true;
+            animator.SetBool("isAttack", true);
+        }
+        else
+            animator.SetBool("isAttack", false);
 
+        if (ComboScript.rageMode == true)
+            PlayerRage();
     }
-    public void SwingSword2()
-    {
-        PlayerAudio.aud2.Play();
 
+    private void BasicAttack2()
+    {
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            PlayerAttack2Script.playerAttack2 = true;
+            animator.SetBool("isAttack2", true);
+        }
+        else
+            animator.SetBool("isAttack2", false);
+
+        if (ComboScript.rageMode == true)
+            PlayerRage2();
     }
 
 

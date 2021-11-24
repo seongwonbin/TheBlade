@@ -5,37 +5,19 @@ using System;
 
 public class Skill1ActiveSc : MonoBehaviour
 {
+    public static float movePos = -2f;
+
     public Transform attackPoint;
     public LayerMask enemyLayers;
 
-    private float attackRange = 8;
-
     private int attackDamage = 20;
-
-    public static float movePos = -2f;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private float attackRange = 8;
 
     // Update is called once per frame
     void Update()
     {
-       
             AttackTask();
             AttackTask2();
-
-
-        
-
-        
-    }
-
-    void myDestroy()
-    {
-        Destroy(gameObject);
     }
 
     void OnDrawGizmosSelected()
@@ -44,10 +26,9 @@ public class Skill1ActiveSc : MonoBehaviour
             return;
 
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
-
     }
 
-    void AttackTask()
+    public void AttackTask()
     {
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 
@@ -57,17 +38,12 @@ public class Skill1ActiveSc : MonoBehaviour
             {
                 enemy.GetComponent<EnemyScript>().TakeDamage(attackDamage);
             }
-            catch (NullReferenceException)
-            { }
-                
+            catch (NullReferenceException) { }
 
-            ComboScript.enemyHit();
+            ComboScript.EnemyHit();
         }
-
-
-
     }
-    void AttackTask2()
+    public void AttackTask2()
     {
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 
@@ -77,12 +53,14 @@ public class Skill1ActiveSc : MonoBehaviour
             {
                 enemy.GetComponent<DgerScript>().TakeDamage(attackDamage);
             }
-            catch (NullReferenceException)
-            { }
-            ComboScript.enemyHit();
+            catch (NullReferenceException){ }
+
+            ComboScript.EnemyHit();
         }
-
-
     }
 
+    private void MyDestroy()
+    {
+        Destroy(gameObject);
+    }
 }

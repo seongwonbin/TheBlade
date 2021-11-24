@@ -4,17 +4,15 @@ using UnityEngine;
 
 public class DgerSideScreen : MonoBehaviour
 {
-    RectTransform rt;
-
     private float temp = 500f;
-
     private float changeValue = 20f;
+
+    private RectTransform rt;
 
     // Start is called before the first frame update
     void Start()
     {
         rt = GetComponent<RectTransform>();
-
         rt.anchoredPosition = new Vector2(1230f, 200f);
     }
 
@@ -27,6 +25,5 @@ public class DgerSideScreen : MonoBehaviour
             temp += changeValue;
         else if (temp >= 0f)
             temp -= changeValue;
-
     }
 }

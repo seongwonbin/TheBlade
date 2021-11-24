@@ -5,12 +5,12 @@ using UnityEngine.UI;
 
 public class Skill1CoolTimeImgScript : MonoBehaviour
 {
-    private Animator anim;
-    private Image img;
+    public static float skill1CoolTime = 0f;
 
     private float temp = 0f;
 
-    public static float skill1CoolTime = 0f;
+    private Animator anim;
+    private Image img;
 
     // Start is called before the first frame update
     void Start()
@@ -26,33 +26,25 @@ public class Skill1CoolTimeImgScript : MonoBehaviour
 
         if (PlayerScript.skill1CoolDown == false)
         {
-
             color.a = 1f;
             img.color = color;
             temp = 0f;
         }
         else
         {
-
             color.a = temp;
             img.color = color;
             temp += 0.005f;
         }
 
-
         if (PlayerScript.skill1CoolDown == true)
-        { 
             skill1CoolTime += 1.0f;
-
-        }
 
         if (skill1CoolTime >= 200f)
         { 
             PlayerScript.skill1CoolDown = false;
             skill1CoolTime = 0f;
         }
-
-        //Debug.Log(skill1CoolTime);
     }
 
     private void Update()

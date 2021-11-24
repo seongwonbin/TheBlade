@@ -1,31 +1,19 @@
 ﻿using System.Collections;
-
 using System.Collections.Generic;
-
 using UnityEngine;
-
 
 public class CameraScript : MonoBehaviour
 {
-
-   // private GameObject player;
-    private Camera titleCam;
-    //private bool bound;
+    public float smoothTimeX, smoothTimeY;
 
     public Vector2 velocity;
     public Vector2 minPos, maxPos;
-    public float smoothTimeX, smoothTimeY;
+
+    private Camera titleCam;
 
     void Start()
     {
         titleCam = GetComponent<Camera>();
-        //player = GameObject.FindGameObjectWithTag("Player");
-    }
-
-    private void Update()
-    {
-    //    TitleTrigger();
-        
     }
 
     private void TitleTrigger()

@@ -6,12 +6,11 @@ using UnityEngine.UI;
 
 public class HPSliderScript : MonoBehaviour
 {
-    // public Transform target;
-    Slider bossHP;
-
-    private RectTransform rectTransform;
-
     private float rectCtrlY = -653f;
+
+    private Slider bossHP;
+    private RectTransform rectTransform;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -31,24 +30,15 @@ public class HPSliderScript : MonoBehaviour
 
     void SetHPPos()
     {
-
-
         if (BossScript.dieBoss == false)
         {
-
             if (FindforPlayer.isBoss == true && BossEvent.finishBoss == true && rectCtrlY <= -441)
                 rectCtrlY += 5f;
             else if (FindforPlayer.isBoss == false)
                 rectCtrlY = -653f;
-
         }
         else
-        {
-            
             rectCtrlY -= 5f;
-
-        }
-
 
     }
 

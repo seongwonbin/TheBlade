@@ -4,38 +4,28 @@ using UnityEngine;
 
 public class BossScript : MonoBehaviour
 {
+    public static int readyPattern = 0;
+    public static float bossHP;
+    public static float isRot = -1;
     public static float speed = 1.5f;
+    public static bool blockLookAt = false;
+    public static bool dieBoss = false;
+    public static bool isDied = false;
 
-    public GameObject head;
-    
     public static Transform player;
     public static Rigidbody2D rb;
     public static EnemyScript enemy;
     public static Animator anim;
-
-    public static float isRot = -1;
-
-    public static bool blockLookAt = false;
-
-    public static int readyPattern = 0;
-
-    private bool activePattern = false;
-
-    private int temp = -1;
-
-    public GameObject dger;
-    public GameObject createDger;
-
     public static Rigidbody2D rig;
-
-    public static float bossHP;
-
-    public static bool dieBoss = false;
 
     public float timer = 0;
 
-    public static bool isDied = false;
+    public GameObject head;
+    public GameObject dger;
+    public GameObject createDger;
 
+    private int temp = -1;
+    private bool activePattern = false;
     private bool isCreated = false;
 
     // Start is called before the first frame update
@@ -51,9 +41,7 @@ public class BossScript : MonoBehaviour
     {
         SetPatternReady();
 
-        
         bossHP = GetComponent<EnemyScript>().currentHealth;
-
 
         if (PlayerLose.playerLose == true && bossHP >= 0f)
             Destroy(gameObject);
@@ -62,9 +50,7 @@ public class BossScript : MonoBehaviour
         {
             timer += Time.deltaTime;
             Die();
-
         }
-
 
         if (BossWeak.shield == 0 && BossWeak.isWeak == false)
         {
@@ -74,10 +60,12 @@ public class BossScript : MonoBehaviour
             GetVelocity();
             BossWeak.isWeak = true;
         }
+    }
 
-
-
-
+    private void FixedUpdate()
+    {
+        if (activePattern == false)
+            readyPattern++;
     }
 
     public void GetVelocity()
@@ -85,19 +73,10 @@ public class BossScript : MonoBehaviour
         GetComponent<EnemyScript>().LookAtPlayer();
 
         if (EnemyScript.isFlipped == false)
-        {
-
             BossScript.rb.AddForce(new Vector2(30f, 5f), ForceMode2D.Impulse);
-
-        }
         else
-        {
             BossScript.rb.AddForce(new Vector2(-30f, 5f), ForceMode2D.Impulse);
-
-        }
-
     }
-
 
     public void Die()
     {
@@ -112,31 +91,19 @@ public class BossScript : MonoBehaviour
         if (timer > 3.0f)
         {
             MessageSc2.messageBool2 = true;
-            
             isDied = true;
-
             Destroy(gameObject);
         }
 
 
         if (dieBoss == true)
         {
-
             if (isCreated == false)
             {
-                
                 Instantiate(head, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
                 isCreated = true;
             }
         }
-
-
-    }
-
-    private void FixedUpdate()
-    {
-        if(activePattern == false)
-            readyPattern++;
     }
 
     public void EarthQuake()
@@ -163,8 +130,6 @@ public class BossScript : MonoBehaviour
             SpawnBossDger();
         else if (temp == 1)
             Attack3Times();
-        //else if (temp == 2)
-          //  Assault();
     }
 
     public void SpawnBossDger()
@@ -178,7 +143,6 @@ public class BossScript : MonoBehaviour
     public void Attack3Times()
     {
         anim.SetBool("isAttack3", true);
-
         activePattern = false;
 
     }
@@ -187,14 +151,12 @@ public class BossScript : MonoBehaviour
     {
         Debug.Log("Assault");
         activePattern = false;
-        
     }
 
     public void ReturnDger()
     {
         GameObject goDger = Instantiate(createDger, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
         goDger.transform.SetParent(GameObject.Find("UI Canvas").transform);
-        //Instantiate(dger, new Vector3(0, 0,0), Quaternion.identity);
         anim.SetBool("isSpawnDger", false);
 
     }
@@ -202,24 +164,16 @@ public class BossScript : MonoBehaviour
     public void ActiveAttack3()
     {
         GetComponent<EnemyScript>().LookAtPlayer();
-        //rig.velocity = Vector3.zero;
         isRot *= -1;
-        //EnemyScript.temp += 180f;
         rig.AddForce(new Vector2(isRot * -100f, 0), ForceMode2D.Impulse);
         EnemyAttackScript.attackRange = 8f;
-
     }
     public void ActiveAttack4()
     {
         GetComponent<EnemyScript>().LookAtPlayer();
-        //rig.velocity = Vector3.zero;
         isRot *= -1;
-        //EnemyScript.temp += 180f;
         rig.AddForce(new Vector2(isRot * -200f, 0), ForceMode2D.Impulse);
-
-
     }
-
 
     public void ReturnAttack3()
     {
@@ -229,9 +183,7 @@ public class BossScript : MonoBehaviour
 
     public void ReturnRigid()
     {
-        
         rig.velocity = Vector3.zero;
-        
     }
 
 

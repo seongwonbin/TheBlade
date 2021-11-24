@@ -4,26 +4,19 @@ using UnityEngine;
 
 public class DgerAttackScript : MonoBehaviour
 {
+    public static float timer = 0f;
+
     public int attackDamage = 40;
     public float attackRange = 0.5f;
 
     public Transform attackPoint;
     public LayerMask enemyLayers;
 
-    public static float timer = 0f;
-    //private float attackTimer = 0f;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
         if(timer >= 1.5)
-            attackTask();
+            AttackTask();
 
         timer += Time.deltaTime;
     }
@@ -36,7 +29,7 @@ public class DgerAttackScript : MonoBehaviour
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
 
-    void attackTask()
+    private void AttackTask()
     {
         Collider2D[] hitPlayer = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 

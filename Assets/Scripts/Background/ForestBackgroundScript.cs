@@ -5,14 +5,14 @@ using UnityEngine;
 
 public class ForestBackgroundScript : MonoBehaviour
 {
-    SpriteRenderer spr;
-    SpriteRenderer mr;
-    Transform form;
-
-    Vector3 pos1 = new Vector3(0.94f, 0.6217f, 1f);
-    Vector3 pos2 = new Vector3(0.7f, 0.463f, 1f);
-
     public GameObject forestLights;
+
+    private Vector3 pos1 = new Vector3(0.94f, 0.6217f, 1f);
+    private Vector3 pos2 = new Vector3(0.7f, 0.463f, 1f);
+
+    private SpriteRenderer spr;
+    private SpriteRenderer mr;
+    private Transform form;
 
     // Start is called before the first frame update
     void Start()
@@ -32,24 +32,16 @@ public class ForestBackgroundScript : MonoBehaviour
         
         if (InvisibleTilemap.isEnter == true)
             form.localScale = Vector3.Lerp(pos1, pos2, Time.deltaTime);
-        //  form.localScale = new Vector3(0.94f, 0.6217f, 1f);
-
         else
             form.localScale = Vector3.Lerp(pos2, pos1, Time.deltaTime);
-        //  form.localScale = new Vector3(0.7f, 0.463f, 1f);
-
-
-        //form.localScale = Vector3.Lerp(pos1, pos2, Time.deltaTime);
 
         SetForestLights();
     }
 
-    void SetForestLights()
+    private void SetForestLights()
     {
         if (PlayerLose.playerLose == false && BossScript.isDied == false)
         {
-
-
             if (GameManager.isReady == true && PortalScript.portal2Checker == true)
                 forestLights.gameObject.SetActive(true);
             else

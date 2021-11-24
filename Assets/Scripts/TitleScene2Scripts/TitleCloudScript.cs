@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class TitleCloudScript : MonoBehaviour
 {
+    private float cloudPosY = 0f;
 
     private RectTransform rectTransform;
-
-    private float cloudPosY = 0f;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +18,6 @@ public class TitleCloudScript : MonoBehaviour
     void Update()
     {
         rectTransform.anchoredPosition = new Vector2(rectTransform.anchoredPosition.x, rectTransform.anchoredPosition.y + cloudPosY);
-
         cloudPosY = cloudPosY + 0.0003f;
     }
 }

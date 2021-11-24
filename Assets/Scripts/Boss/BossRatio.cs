@@ -5,11 +5,12 @@ using UnityEngine.UI;
 
 public class BossRatio : MonoBehaviour
 {
-    private RectTransform rectTransform;
+    public bool isDown = false;
 
     private float rectCtrlY = 700f;
 
-    public bool isDown = false;
+    private RectTransform rectTransform;
+
 
     // Start is called before the first frame update
     void Start()
@@ -32,31 +33,22 @@ public class BossRatio : MonoBehaviour
         { 
             if(BossScript.isDied == true)
                 EndBoss();
-
         }
-        
 
     }
 
     public void ActBossRatio()
     {
-
-
         if (FindforPlayer.isBoss == true && BossEvent.finishBoss == false && rectCtrlY >= 450) // 450
                 rectCtrlY -= 15f;
         else if (FindforPlayer.isBoss == true && BossEvent.finishBoss == true && rectCtrlY < 700) // 700
                   rectCtrlY += 15f;
-
-
-
     }
 
     public void EndBoss()
     {
-        if (rectCtrlY >= 450) // 
+        if (rectCtrlY >= 450)
             rectCtrlY -= 5f;
-
-        //MessageSc2.messageBool2 = true;
 
     }
 }

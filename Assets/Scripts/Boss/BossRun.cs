@@ -4,11 +4,7 @@ using UnityEngine;
 
 public class BossRun : StateMachineBehaviour
 {
-
     public static Vector3 moveVelocity = Vector3.zero;
-
-    //public static Transform player;
-
 
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -22,8 +18,6 @@ public class BossRun : StateMachineBehaviour
         if (BossScript.blockLookAt == false)
             BossScript.enemy.LookAtPlayer();
 
-        
-
         Vector2 target = new Vector2(BossScript.player.position.x, BossScript.rb.position.y);
         Vector2 newPos = Vector2.MoveTowards(BossScript.rb.position, target, BossScript.speed * Time.fixedDeltaTime);
         BossScript.rb.MovePosition(newPos);
@@ -34,12 +28,9 @@ public class BossRun : StateMachineBehaviour
 
         }
 
-
     }
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        //animator.ResetTrigger("Attack");
-
     }
 
 

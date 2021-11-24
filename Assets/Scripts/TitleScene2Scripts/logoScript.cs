@@ -8,14 +8,15 @@ public class logoScript : MonoBehaviour
 {
     public static float changeColor = 1.0f;
     public static float changeColorRed = 0f;
-    private TextMeshProUGUI title;
+    
     public bool isBlade = false;
+
+    private TextMeshProUGUI title;
 
     // Start is called before the first frame update
     void Start()
     {
         title = gameObject.GetComponent<TextMeshProUGUI>();
-
         changeColor = 0f;
     }
 
@@ -35,11 +36,9 @@ public class logoScript : MonoBehaviour
 
             if (TitleBlackScreen.changeColor <= 0.3f)
             { 
-
                 changeColor += 0.0012f;
                 changeColorRed += 0.0012f;
             }
-
         }
 
         if (changeColorRed >= 1.0f)

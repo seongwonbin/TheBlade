@@ -6,56 +6,40 @@ using System;
 
 public class PlayerMoveScript : MonoBehaviour
 {
-    public static Transform player;
-
-    private Animator animator;
-    private Rigidbody2D rigid;
-    private Vector3 movement;
-
     public static float movePower = 7f;
+    public static bool dashCoolTime = false;
+    public static bool flipController = false;
+    public static bool playerVanish = false;
+    public static bool dontDisturb = false;
+
+    public static Transform player;
+    public static SpriteRenderer spr;
+    public static Vector3 playerTracker;
+
     public float jumpPower = 1.0f;
     public float limitVelocity = 18;
-
-    public GameObject obj; // Dash CoolTimer
-    //public Text mytext;
-
-
     public bool isJumping = false;
 
-    public static bool dashCoolTime = false;
-    public static SpriteRenderer spr;
-
-    //public static Vector3 playerTracker;
-
+    public Vector3 swap;
+    public GameObject obj; // Dash CoolTimer
     public Vector2 leftDashVelocity = new Vector2(-20, 0);
     public Vector2 leftSkill1Velocity = new Vector2(-22, 0);
     public Vector2 rightDashVelocity = new Vector2(20, 0.3f);
     public Vector2 rightSkill1Velocity = new Vector2(22, 0);
     public Vector3 moveVelocity = Vector3.zero;
 
-    public Vector3 swap;
-    public static Vector3 playerTracker;
-
-    public static bool flipController = false;
-
-    public static bool playerVanish = false;
-
     private float vanishTimer = 0f;
 
-    public static bool dontDisturb = false;
-
-    // private BoxCollider2D bCol;
-    
+    private Animator animator;
+    private Rigidbody2D rigid;
+    private Vector3 movement;
 
     void Start()
     {
         rigid = gameObject.GetComponent<Rigidbody2D>();
         spr = gameObject.GetComponent<SpriteRenderer>();
         animator = gameObject.GetComponent<Animator>();
-        //mytext = GameObject.Find("Dash Cooltime Text").GetComponent<Text>();
-        //bCol = gameObject.GetComponent<BoxCollider2D>();
         player = GetComponent<Transform>();
-
     }
 
     void Update()
@@ -67,13 +51,9 @@ public class PlayerMoveScript : MonoBehaviour
 
             JumpTask();
             DashCoolTimeTask();
-
             Skill1();
-
             Vanish();
-
         }
-
     }
 
     
@@ -81,14 +61,8 @@ public class PlayerMoveScript : MonoBehaviour
     {
         if (MessageSc.messageBool == false)
         { 
-
             if(PlayerAttack1Script.playerAttack1 == false && PlayerAttack2Script.playerAttack2 == false)
-            { 
                 Move();
-
-            }
-
-            //Jump();
 
             if (Input.GetAxisRaw("Horizontal") != 0)
                 animator.SetBool("isMoving", true);
@@ -97,23 +71,18 @@ public class PlayerMoveScript : MonoBehaviour
 
             if (playerVanish == true)
                 vanishTimer += Time.deltaTime;
-
         }
     }
 
     public void Move()
     {
-
         // Vector3.zero == Vector3(0,0,0) // .zero는 0,0,0과 같음
         Vector3 moveVelocity = Vector3.zero;
 
         //유니티 내부 Input Horizontal 반영된 값
         if (Input.GetAxisRaw("Horizontal") < 0)
         {
-        
-
             moveVelocity = Vector3.left;
-            //spr.flipX = true;
             transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
             flipController = true;
         }
@@ -121,38 +90,29 @@ public class PlayerMoveScript : MonoBehaviour
 
         else if (Input.GetAxisRaw("Horizontal") > 0)
         {
-
             moveVelocity = Vector3.right;
             transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
             flipController = false;
         }
-
         transform.position += moveVelocity * movePower * Time.deltaTime;
         playerTracker = transform.position;
-
     }
 
     public void Jump()
     {
-            
-
             if (isJumping == false)
                 return;
 
             rigid.velocity = Vector2.zero;
-
             Vector2 jumpVelocity = new Vector2(0, jumpPower);
 
             // AddForce 일정량 힘을 가하는 함수
             // ForceMode  // .Force 연속적인 힘 .Impulse 순간적인 힘 (질량적용)
             rigid.AddForce(jumpVelocity, ForceMode2D.Impulse);
-
             isJumping = false;
-
     }
     public void JumpTask()
     {
-        //if (Input.GetButtonDown("Jump") && dontDisturb == false)
         if (Input.GetButtonDown("Jump") && dontDisturb == false)
         {
             PlayerAudio.jump.Play();
@@ -169,11 +129,6 @@ public class PlayerMoveScript : MonoBehaviour
             Instantiate(obj, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
             dashCoolTime = true;
         }
-
-        //if (dashCoolTime == false)
-        //    mytext.text = " ";
-        //else
-        //    mytext.text = "Dash Cooldown";
     }
 
 
@@ -181,8 +136,6 @@ public class PlayerMoveScript : MonoBehaviour
     {
         if (dashCoolTime == false && PlayerScript.isUnBeatTime == false)
         {
-            
-
             if (Input.GetKey(KeyCode.LeftArrow) && Input.GetKeyDown(KeyCode.X))
             {
                 PlayerAudio.dash.Play();
@@ -210,12 +163,10 @@ public class PlayerMoveScript : MonoBehaviour
                 moveVelocity = Vector3.right;
                 rigid.AddForce(rightDashVelocity*3, ForceMode2D.Impulse);
                 playerVanish = true;
-
             }
         }
         else
         {
-
             animator.SetBool("isDash", false);
             PlayerDashScript.playerDash = false;
         }
@@ -224,10 +175,6 @@ public class PlayerMoveScript : MonoBehaviour
             rigid.velocity = new Vector2(0, 0);
         if (rigid.velocity.x < 0 && rigid.velocity.x >= -limitVelocity)
             rigid.velocity = new Vector2(0, 0);
-
-
-        
-
     }
 
     public void Skill1()
@@ -236,12 +183,8 @@ public class PlayerMoveScript : MonoBehaviour
         {
             gameObject.transform.Translate(new Vector3(10, 0, 0));
             CameraShakeScript.VibrateForTime(0.3f);
-
             PlayerScript.setPlayerSkill1 = false;
-
-
         }
-
     }
 
     public void Vanish()
@@ -256,13 +199,6 @@ public class PlayerMoveScript : MonoBehaviour
 
         if (vanishTimer >= 0.10f) // 원래 0.65f
             playerVanish = false;
-
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        animator.SetBool("isJumping", false);
-        dontDisturb = false;
     }
 
     public void SetRigidZero()
@@ -274,6 +210,7 @@ public class PlayerMoveScript : MonoBehaviour
     {
         PlayerAudio.playerStep.Play();
     }
+
     public void RemovePlayerStep()
     {
         try
@@ -281,6 +218,12 @@ public class PlayerMoveScript : MonoBehaviour
             PlayerAudio.playerStep.Pause();
         }
         catch (NullReferenceException) { }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        animator.SetBool("isJumping", false);
+        dontDisturb = false;
     }
 
 

@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class GroggyRatio : MonoBehaviour
 {
-    private RectTransform rectTransform;
+    public bool isDown = false;
 
     private float rectCtrlY = 700f;
 
-    public bool isDown = false;
+    private RectTransform rectTransform;
+
 
     // Start is called before the first frame update
     void Start()
@@ -36,7 +37,5 @@ public class GroggyRatio : MonoBehaviour
             rectCtrlY -= 15f;
         else if (EnemyScript.isGroggy == false && rectCtrlY < 700) // 700
             rectCtrlY += 15f;
-
-
     }
 }

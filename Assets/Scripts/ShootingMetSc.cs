@@ -148,7 +148,7 @@ public class ShootingMetSc : MonoBehaviour
             if(ComboScript.rageMode == true)
                 CameraShakeScript.VibrateForTime(0.1f);
 
-            ComboScript.enemyHit();
+            ComboScript.EnemyHit();
         }
 
         attackDelay = true;
@@ -165,7 +165,7 @@ public class ShootingMetSc : MonoBehaviour
             if (ComboScript.rageMode == true)
                 CameraShakeScript.VibrateForTime(0.1f);
 
-            ComboScript.enemyHit();
+            ComboScript.EnemyHit();
         }
 
         attackDelay = true;
