@@ -179,6 +179,7 @@
     <Compile Include="Assets\Scripts\uiDgerScript.cs" />
     <Compile Include="Assets\Scripts\WorldFrameExitScript.cs" />
     <Compile Include="Assets\Scripts\WorldFrameScript.cs" />
+    <Compile Include="Assets\StageNameText.cs" />
     <Compile Include="Assets\Tuto.cs" />
     <Compile Include="Assets\TutoSideScreen.cs" />
     <Compile Include="Assets\VolButton.cs" />
