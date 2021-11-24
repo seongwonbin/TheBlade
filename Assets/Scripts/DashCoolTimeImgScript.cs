@@ -5,11 +5,10 @@ using UnityEngine.UI;
 
 public class DashCoolTimeImgScript : MonoBehaviour
 {
-    private Animator anim;
-
-    private Image img;
-
     private float temp = 0f;
+
+    private Animator anim;
+    private Image img;
 
     // Start is called before the first frame update
     void Start()
@@ -25,14 +24,12 @@ public class DashCoolTimeImgScript : MonoBehaviour
 
         if (PlayerMoveScript.dashCoolTime == false)
         {
-            
             color.a = 1f;
             img.color = color;
             temp = 0f;
         }
         else
         {
-
             color.a = temp;
             img.color = color;
             temp += 0.02f;

@@ -4,16 +4,13 @@ using UnityEngine;
 
 public class MovingTile2 : MonoBehaviour
 {
-    BoxCollider2D col;
-
-    Transform tf;
-
-    Transform player;
-
     private float temp = 0.1f;
     private float posX2 = 750f;
 
-    GameObject obj;
+    private BoxCollider2D col;
+    private Transform tf;
+    private Transform player;
+    private GameObject obj;
 
 
     // Start is called before the first frame update
@@ -28,7 +25,6 @@ public class MovingTile2 : MonoBehaviour
     void FixedUpdate()
     {
         transform.position = new Vector2(posX2, 5.38f);
-
         posX2 += temp;
 
         if (posX2 <= 750f)

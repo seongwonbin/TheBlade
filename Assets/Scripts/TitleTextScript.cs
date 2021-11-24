@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class TitleTextScript : MonoBehaviour
 {
-    
+
     public float changeColor = 0.0f;
     public float pivot = 0.001f;
     public float timer = 0.0f;

@@ -13,13 +13,7 @@ public class IntroScript : MonoBehaviour
         isInit = true;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    void introFunction()
+    private void IntroFunction()
     {
         MessageSc.messageBool = true;
         AudioManager.startBGM = true;

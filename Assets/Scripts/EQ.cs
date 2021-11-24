@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class EQ : MonoBehaviour
 {
-    AudioSource aud;
-    AudioSource explosion;
-
+    private AudioSource aud;
+    private AudioSource explosion;
 
     // Start is called before the first frame update
     void Start()

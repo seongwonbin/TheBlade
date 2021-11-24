@@ -7,19 +7,18 @@ using UnityEngine.Events;
 
 public class MessageSc : MonoBehaviour
 {
-    //public TextMeshProUGUI myScript;
-    public UnityEvent messageEvent;
     public static bool messageBool = false;
-    private RectTransform rectTransform;
+
+    public UnityEvent messageEvent;
 
     private float temp = 0f;
+
+    private RectTransform rectTransform;
 
     // Start is called before the first frame update
     void Start()
     {
-        // messageEvent = GetComponent<UnityEvent>();
         rectTransform = GetComponent<RectTransform>();
-        
     }
 
     // Update is called once per frame
@@ -28,25 +27,17 @@ public class MessageSc : MonoBehaviour
         rectTransform.localScale = new Vector3(1, temp, 1);
 
         if (Input.GetKeyDown(KeyCode.Return))
-        {
             messageEvent.Invoke();
-
-        }
 
         if (messageBool == true)
         {
             if (temp <= 1f)
                 temp += 0.05f;
-
-
-
         }
         else
         {
             if (temp > 0)
             temp -= 0.05f;
         }
-
-
     }
 }

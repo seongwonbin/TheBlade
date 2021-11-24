@@ -12,18 +12,9 @@ public class Thorn : MonoBehaviour
         player = GameObject.Find("Dummy Character").GetComponent<Transform>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         player.transform.position = new Vector2(735.93f, 24f);
         player.GetComponent<PlayerScript>().BlinkRoutine();
-        
-
-
     }
 }

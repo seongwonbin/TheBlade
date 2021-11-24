@@ -4,20 +4,18 @@ using UnityEngine;
 
 public class TitleScript : MonoBehaviour
 {
-    private float posX = 21f;
-    private float posY = -2f;
-    private bool createKeeper = false;
+    public static bool eventTrigger = false;
 
     public float timer = 0.0f;
     public float eventTimer = 0.0f;
     public float waitingTime = 20.0f;
 
-    public static bool eventTrigger = false;
-
     public GameObject obj;
     public GameObject obj2;
 
-    
+    private float posX = 21f;
+    private float posY = -2f;
+    private bool createKeeper = false;
 
     // Start is called before the first frame update
     void Start()
@@ -29,13 +27,10 @@ public class TitleScript : MonoBehaviour
     void Update()
     {
         TitleScriptManager();
-
-        
     }
 
     public void TitleScriptManager()
     {
-
         if (eventTrigger == true)
             eventTimer += Time.deltaTime;
 

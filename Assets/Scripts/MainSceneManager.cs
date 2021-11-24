@@ -4,37 +4,31 @@ using UnityEngine;
 using UnityEngine.UI;
 public class MainSceneManager : MonoBehaviour
 {
+    public static float dgerTimer = 0;
+    public static bool existDger = false;
 
     public static GameObject obj;
     public static GameObject obj2;
 
     public Image mainScreen;
-
     public GameObject createDger;
-
-    public static float dgerTimer = 0;
-
-    public static bool existDger = false;
-
     public Transform _parent;
-
-  
-
 
     void Start()
     {
         mainScreen = GameObject.Find("BlackMainImage").GetComponent<Image>();
-
         obj = GameObject.Find("ReButton").gameObject;
-
         obj2 = GameObject.Find("ExitButton").gameObject;
     }
 
     void Update()
     {
-        //GameManager.Instance.MainBlackScreen();
-        MainBlackScreen();
+        SetBlackScreen();
+    }
 
+    private void SetBlackScreen()
+    {
+        MainBlackScreen();
         mainScreen.color = new Color(mainScreen.color.r, mainScreen.color.g, mainScreen.color.b, GameManager.changeColor);
 
         if (GameManager.playerLocation == true && existDger == false)

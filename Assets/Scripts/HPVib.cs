@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class HPVib : MonoBehaviour
 {
-    public Vector3 initialPosition;
-
     public static float shakeAmount = 8f;
     public static float shakeTime;
     public static float timer = 0.0f;
+
+    public Vector3 initialPosition;
 
     // Start is called before the first frame update
     void Start()

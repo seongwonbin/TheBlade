@@ -5,11 +5,11 @@ using UnityEngine.Tilemaps;
 
 public class InvisibleTilemap : MonoBehaviour
 {
-    Tilemap tile;
+    public static bool isEnter = false;
 
     private float temp = 1f;
 
-    public static bool isEnter = false;
+    private Tilemap tile;
 
     // Start is called before the first frame update
     void Start()
@@ -21,16 +21,12 @@ public class InvisibleTilemap : MonoBehaviour
     void Update()
     {
         tile.color = new Color(255, 255, 255, temp);
-
-
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         isEnter = true;
-
     }
-
 
     private void OnTriggerStay2D(Collider2D collision)
     {
@@ -42,7 +38,6 @@ public class InvisibleTilemap : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         MainCameraScript.orthoSize = 11f;
-            
         isEnter = false;
         temp = 1f;
     }

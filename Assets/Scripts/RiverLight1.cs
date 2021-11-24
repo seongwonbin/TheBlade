@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class RiverLight1 : MonoBehaviour
 {
-    private UnityEngine.Experimental.Rendering.LWRP.Light2D riverLight;
-
     public bool firstLight, secondLight = false;
 
     private float temp = -0.03f;
+
+    private UnityEngine.Experimental.Rendering.LWRP.Light2D riverLight;
 
     // Start is called before the first frame update
     void Start()
@@ -23,11 +23,10 @@ public class RiverLight1 : MonoBehaviour
             gameObject.SetActive(false);
 
         riverLight.pointLightInnerAngle += temp;
-
         Blink();
     }
 
-    void Blink()
+    private void Blink()
     {
         if (firstLight)
         {
@@ -44,6 +43,5 @@ public class RiverLight1 : MonoBehaviour
             else if (riverLight.pointLightInnerAngle < 5f)
                 temp *= -1f;
         }
-
     }
 }

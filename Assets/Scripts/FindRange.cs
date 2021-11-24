@@ -5,11 +5,11 @@ using UnityEngine;
 public class FindRange : MonoBehaviour
 {
     public static float findRange = 8f;
-    public Transform findPoint;
-    public LayerMask enemyLayers;
 
     public bool isBoss = false;
 
+    public Transform findPoint;
+    public LayerMask enemyLayers;
 
     private void Update()
     {
@@ -24,7 +24,7 @@ public class FindRange : MonoBehaviour
         Gizmos.DrawWireSphere(findPoint.position, findRange);
     }
 
-    void FindPlayer()
+    private void FindPlayer()
     {
         Collider2D[] findPlayer = Physics2D.OverlapCircleAll(findPoint.position, findRange, enemyLayers);
 
@@ -35,9 +35,5 @@ public class FindRange : MonoBehaviour
             else
                 BossScript.anim.SetBool("isActive", true);
         }
-
     }
-
-
-
 }

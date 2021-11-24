@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class ForestLight : MonoBehaviour
 {
-    private UnityEngine.Experimental.Rendering.LWRP.Light2D forestLight;
-
     public bool firstLight, secondLight, thirdLight, forthLight = false;
 
     private float temp = -0.015f;
+
+    private UnityEngine.Experimental.Rendering.LWRP.Light2D forestLight;
 
     // Start is called before the first frame update
     void Start()
@@ -20,13 +20,10 @@ public class ForestLight : MonoBehaviour
     void Update()
     {
         forestLight.pointLightInnerAngle += temp;
-
         Blink();
-
-
     }
 
-    void Blink()
+    private void Blink()
     {
         if (firstLight)
         {
@@ -56,10 +53,5 @@ public class ForestLight : MonoBehaviour
             else if (forestLight.pointLightInnerAngle < 10f)
                 temp *= -1f;
         }
-
-
     }
-
- 
-
 }

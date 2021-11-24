@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using TMPro;
 
 public class ComboScript : MonoBehaviour
 {
 
-    public static float comboMover = 1790f;
+    public static float comboMover = 2200f; // 1790
     public static float comboSystem = 0;
     public static bool rageMode = false;
 
@@ -15,7 +16,7 @@ public class ComboScript : MonoBehaviour
 
     public bool isUnBeatTime = false;
 
-    public Text comboText;
+    public TextMeshProUGUI comboText;
     public GameObject obj;
     public UnityEvent modeRage;
     public UnityEvent returnRage;
@@ -23,7 +24,7 @@ public class ComboScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        comboText = GameObject.Find("Combo Text").GetComponent<Text>();
+        comboText = GameObject.Find("Combo Text").GetComponent<TextMeshProUGUI>();
         textPos = GetComponent<RectTransform>();
     }
 
@@ -50,7 +51,7 @@ public class ComboScript : MonoBehaviour
                 comboSystem += 0.2f;
         }
 
-        comboMover = 1800f;
+        comboMover = 2200f; // 1790
     }
 
     public void ShowComboText()
@@ -59,7 +60,7 @@ public class ComboScript : MonoBehaviour
         {
             comboText.text = (int)comboSystem + " combo";
 
-            if (comboMover >= 1750)
+            if (comboMover >= 2150f) // 1750
                 comboMover -= 5;
         }
         else

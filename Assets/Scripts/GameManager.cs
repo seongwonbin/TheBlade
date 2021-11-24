@@ -7,25 +7,18 @@ using System;
 
 public class GameManager : MonoBehaviour
 {
-    private AudioSource gameManagerAudio;
-
-    private static GameManager instance = null;
-
     public static float changeColor = 1.0f;
-
-    public static bool playerdied = false;
-
-    public static TextMeshProUGUI mytext;
-
-    public static bool playerLocation = false;
-
-    public static Transform player;
-
     public static bool isReady = false;
     public static bool isReady2 = false;
+    public static bool playerdied = false;
+    public static bool playerLocation = false;
 
+    public static TextMeshProUGUI mytext;
+    public static Transform player;
+    public static GameManager instance = null;
+
+    private AudioSource gameManagerAudio;
     
-
     private void Awake()
     {
         if (null == instance)
@@ -35,7 +28,6 @@ public class GameManager : MonoBehaviour
         }
         else
             Destroy(this.gameObject);
-
     }
 
     public static GameManager Instance
@@ -52,11 +44,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
-        //mytext = GameObject.Find("Died Text").GetComponent<TextMeshProUGUI>();
         player = GameObject.Find("Dummy Character").GetComponent<Transform>();
-
-        
     }
 
     // Update is called once per frame
@@ -73,31 +61,5 @@ public class GameManager : MonoBehaviour
             mytext = GameObject.Find("Died Text").GetComponent<TextMeshProUGUI>();
         }
         catch (NullReferenceException) { }
-        //Debug.Log(PlayerLose.playerLose);
-        //Debug.Log(PlayerScript.currentHealth);
-        //Debug.Log(playerdied);
     }
-
-
-
-    //public void MainBlackScreen()
-    //{
-    //    if (changeColor >= 0.0f && playerdied == false)
-    //    { 
-    //        changeColor -= 0.003f;
-    //        mytext.text = "";
-    //    }
-    //    else if (changeColor <= 1.0f && playerdied == true)
-    //    {
-    //        changeColor += 0.01f;
-    //        mytext.text = "당신은 이 행성을 빠져나가지 못했습니다.";
-            
-    //    }
-    //}
-
-
-
-
-
-    
 }

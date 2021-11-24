@@ -6,20 +6,17 @@ using TMPro;
 
 public class Quest : MonoBehaviour
 {
-    //private Image img;
-    private TextMeshProUGUI tmp;
-
     private float temp = 0f;
     private float temp2 = 0f;
     private float temp3 = 0f;
     private float temp4 = 1f;
-
     private float timer = 0;
     private float timer2 = 0;
-
     private bool isRun = false;
     private bool isRun2 = false;
     private bool isRun3 = false;
+
+    private TextMeshProUGUI tmp;
 
     void Start()
     {
@@ -49,8 +46,6 @@ public class Quest : MonoBehaviour
 
         if (BossEvent.finishBoss == true)
             SetText4();
-        
-
     }
 
     public void SetText1()
@@ -77,8 +72,6 @@ public class Quest : MonoBehaviour
             PlayerAudio.questSound.Play();
             isRun2 = true;
         }
-
-
     }
 
     public void SetText3()
@@ -92,7 +85,6 @@ public class Quest : MonoBehaviour
             PlayerAudio.questSound.Play();
             isRun3 = true;
         }
-
     }
 
     public void SetText4()
@@ -100,6 +92,5 @@ public class Quest : MonoBehaviour
         tmp.text = "계속해서 나아가자";
         tmp.color = new Color(255, 255, 255, temp4);
         temp4 -= 0.01f;
-
     }
 }

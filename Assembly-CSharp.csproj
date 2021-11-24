@@ -174,7 +174,6 @@
     <Compile Include="Assets\Scripts\TitleScript.cs" />
     <Compile Include="Assets\Scripts\TitleTextScript.cs" />
     <Compile Include="Assets\Scripts\Tuto.cs" />
-    <Compile Include="Assets\Scripts\TutorialMgr.cs" />
     <Compile Include="Assets\Scripts\TutoSideScreen.cs" />
     <Compile Include="Assets\Scripts\uiDgerScript.cs" />
     <Compile Include="Assets\Scripts\VolButton.cs" />

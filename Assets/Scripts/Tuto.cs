@@ -6,44 +6,36 @@ using TMPro;
 
 public class Tuto : MonoBehaviour
 {
-    private Image img;
-    private TextMeshProUGUI tmp;
 
-    public GameObject firstTuto;
-    public GameObject firstTutoText;
-
-    public GameObject dgerTuto;
-    public GameObject dgerTutoText;
-
-    public GameObject fkTuto;
-    public GameObject fkTutoText;
-    
-
-    
     public static float temp = -1;
     public static float temp2 = -1;
     public static float temp3 = -1;
-
     public static bool isFirst = false;
     public static bool isDger = false;
     public static bool isFK = false;
-
-    private float timer = 0f;
-    private float timer2 = 0f;
-    private float timer3 = 0f;
-
-    private bool firstFirst = false;
     public static bool firstDger = false;
     public static bool firstFK = false;
-
     public static bool setFirst = false;
     public static bool setDger = false;
     public static bool setFK = false;
 
+    public GameObject firstTuto;
+    public GameObject firstTutoText;
+    public GameObject dgerTuto;
+    public GameObject dgerTutoText;
+    public GameObject fkTuto;
+    public GameObject fkTutoText;
+
+    private float timer = 0f;
+    private float timer2 = 0f;
+    private float timer3 = 0f;
+    private bool firstFirst = false;
     private bool isOpen1 = false;
     private bool isOpen2 = false;
     private bool isOpen3 = false;
 
+    private Image img;
+    private TextMeshProUGUI tmp;
 
     // Update is called once per frame
     void FixedUpdate()
@@ -52,11 +44,6 @@ public class Tuto : MonoBehaviour
         DgerTuto();
         FKTuto();
 
-    }
-
-    private void Update()
-    {
-        
     }
 
     public void SetFirstTutorial()

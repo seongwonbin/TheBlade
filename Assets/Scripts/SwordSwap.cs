@@ -11,17 +11,13 @@ public class SwordSwap : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-    public void swapSprite()
+    public void SwapSprite()
     {
         anim.SetBool("isRage", true);
-
-
     }
 
-    public void returnSprite()
+    public void ReturnSprite()
     {
-
         anim.SetBool("isRage", false);
-
     }
 }

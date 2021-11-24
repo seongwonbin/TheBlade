@@ -5,10 +5,9 @@ using UnityEngine.UI;
 
 public class QuestImage : MonoBehaviour
 {
-    private Image img;
-    //private TextMeshProUGUI tmp;
-
     private float temp = 0f;
+
+    private Image img;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +21,6 @@ public class QuestImage : MonoBehaviour
         if (Tuto.setFirst == true && BossEvent.finishBoss == false)
         {
             img.color = new Color(255, 255, 255, temp);
-            //img.color = new Color(255, 255, 255, temp);
             temp += 0.01f;
         }
 
@@ -31,7 +29,5 @@ public class QuestImage : MonoBehaviour
             img.color = new Color(255, 255, 255, temp);
             temp -= 0.01f;
         }
-
-
     }
 }

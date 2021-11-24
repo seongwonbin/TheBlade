@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class MovingParticleScript : MonoBehaviour
 {
-    ParticleSystem ps;
-    ParticleSystem.Particle[] m_Particles;
-    public Transform target;
     public float speed = 5f;
+    public Transform target;
+    
     private int numParticlesAlive;
     private float step = 0;
+
+    private ParticleSystem ps;
+    private ParticleSystem.Particle[] m_Particles;
 
     // Start is called before the first frame update
     void Start()
@@ -32,19 +34,12 @@ public class MovingParticleScript : MonoBehaviour
         for (int i = 0; i < numParticlesAlive; i++)
         {
             m_Particles[i].position = Vector3.MoveTowards(m_Particles[i].position, target.position, step);
-
-
         }
-
-
         ps.SetParticles(m_Particles, numParticlesAlive);
     }
     public void InitAttractorMove(Transform _target)
     {
         target = _target;
-
         step = 0;
-
-       // distance = 0;
     }
 }

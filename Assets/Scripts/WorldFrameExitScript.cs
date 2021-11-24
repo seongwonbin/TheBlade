@@ -6,15 +6,14 @@ using UnityEngine.SceneManagement;
 public class WorldFrameExitScript : MonoBehaviour
 {
 
-    private bool nextScene = false;
-
     public SpriteRenderer spr;
     public Color color;
+
+    private bool nextScene = false;
 
     void Start()
     {
         spr = GetComponent<SpriteRenderer>();
-
         color = spr.color;
         color.a = 1f;
         spr.color = color;

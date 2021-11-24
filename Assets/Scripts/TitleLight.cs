@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class TitleLight : MonoBehaviour
 {
-    private UnityEngine.Experimental.Rendering.LWRP.Light2D titleLight;
+    public bool isDummyLight = false;
 
     private float temp = -0.01f;
     private float temp2 = -0.3f;
-    public bool isDummyLight = false;
+
+    private UnityEngine.Experimental.Rendering.LWRP.Light2D titleLight;
 
     // Start is called before the first frame update
     void Start()
@@ -19,18 +20,22 @@ public class TitleLight : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!isDummyLight)
-        { 
+        SetLight();
+    }
+
+    private void SetLight()
+    {
+        if (!isDummyLight)
+        {
             titleLight.pointLightInnerRadius += temp;
 
             if (titleLight.pointLightInnerRadius > 11)
                 temp *= -1f;
             else if (titleLight.pointLightInnerRadius <= 8)
                 temp *= -1f;
-
         }
 
-        if(isDummyLight)
+        if (isDummyLight)
         {
             titleLight.intensity += temp2;
 
@@ -38,10 +43,6 @@ public class TitleLight : MonoBehaviour
                 temp2 *= -1f;
             else if (titleLight.intensity <= 8)
                 temp2 *= -1f;
-
-
-
         }
-
     }
 }

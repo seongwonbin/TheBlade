@@ -5,22 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class TitleBlackScale : MonoBehaviour
 {
-    private float moveScreen = 1f;
-
     public float posY = 0f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private float moveScreen = 1f;
 
     // Update is called once per frame
     void Update()
     {
         posY = transform.position.y;
-
-
     }
 
     public void GoNextScene()
@@ -31,9 +23,6 @@ public class TitleBlackScale : MonoBehaviour
         {
             TitleCameraShaker.shakerReady = false;
             SceneManager.LoadScene("TitleScene2");
-
         }
-
-
     }
 }

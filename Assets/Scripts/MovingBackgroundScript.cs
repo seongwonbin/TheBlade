@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class MovingBackgroundScript : MonoBehaviour
 {
-    private float temp = 0;
     private int rotLimit;
-    private bool tempBool = false;
+    private float temp = 0;
     private float timer = 0f;
-
+    private bool tempBool = false;
 
     // Start is called before the first frame update
     void Start()
@@ -22,28 +21,17 @@ public class MovingBackgroundScript : MonoBehaviour
     {
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, temp));
 
-
         if (rotLimit > temp && tempBool == false)
             temp += timer;
         else
         {
             tempBool = true;
             temp -= timer;
-            
         }
 
         if (-rotLimit > temp)
             tempBool = false;
 
-
-
-
         timer = Time.deltaTime*0.8f;
-
-
-
-
-
-
     }
 }

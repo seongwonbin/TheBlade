@@ -9,12 +9,11 @@ public class FrameObjectScript : MonoBehaviour
     private float msec;
     private float fps;
     private float worstFps = 100f;
+    private bool isKeyDown = false;
     private string text;
 
     private GUIStyle style;
     private Rect rect;
-
-    private bool isKeyDown = false;
 
     void Awake()
     {
@@ -31,6 +30,13 @@ public class FrameObjectScript : MonoBehaviour
         StartCoroutine("worstReset");
     }
 
+    void Update()
+    {
+        deltaTime += (Time.deltaTime - deltaTime) * 0.1f;
+
+        if (Input.GetKeyDown(KeyCode.P))
+            isKeyDown = !isKeyDown;
+    }
 
     IEnumerator worstReset() //코루틴으로 15초 간격으로 최저 프레임 리셋해줌.
     {
@@ -41,16 +47,7 @@ public class FrameObjectScript : MonoBehaviour
         }
     }
 
-
-    void Update()
-    {
-        deltaTime += (Time.deltaTime - deltaTime) * 0.1f;
-
-        if (Input.GetKeyDown(KeyCode.P))
-            isKeyDown = !isKeyDown;
-    }
-
-    void OnGUI()//소스로 GUI 표시.
+    private void OnGUI()
     {
         msec = deltaTime * 1000.0f;
         fps = 1.0f / deltaTime;  //초당 프레임 - 1초에

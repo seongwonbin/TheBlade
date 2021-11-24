@@ -10,16 +10,12 @@ public class WorldFrameScript : MonoBehaviour
     public SpriteRenderer spr;
     public Color color;
 
-
-
     void Start()
     {
         spr = GetComponent<SpriteRenderer>();
         color = spr.color;
-
         color.a = 0f;
         spr.color = color;
-
     }
 
     void FixedUpdate()
@@ -31,14 +27,5 @@ public class WorldFrameScript : MonoBehaviour
         }
         else if (color.a > 2.0f)
             nextScene = true;
-
-
     }
-
-    private void LateUpdate()
-    {
-
-    }
-
-
 }

@@ -6,9 +6,9 @@ using UnityEngine.UI;
 
 public class DgerButton : MonoBehaviour
 {
-    Image img;
-
     private float temp = 118f;
+
+    private Image img;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +24,5 @@ public class DgerButton : MonoBehaviour
         else
             img.color = new Color(temp, temp, temp, 1);
 
-        //btn.colors.normalColor = new Color(temp, temp, temp, 1);
-        
     }
 }

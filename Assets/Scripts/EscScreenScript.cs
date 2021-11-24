@@ -5,16 +5,18 @@ using UnityEngine.UI;
 
 public class EscScreenScript : MonoBehaviour
 {
+    public static bool isKeyDown = false;
+    public static float rectCtrlX = 1162f;
+    
+    public bool isBlackScreen = false;
+    public bool isButton = false;
+
+    private float rectCtrlY = 0f;
+    private float whiteCtrl = 0f;
+
     private Image img;
     private RectTransform rectTransform;
     private Color color;
-    public static float rectCtrlX = 1162f;
-    private float rectCtrlY = 0f;
-    public bool isBlackScreen = false;
-    public static bool isKeyDown = false;
-    private float whiteCtrl = 0f;
-    public bool isButton = false;
-
 
     // Start is called before the first frame update
     void Start()
@@ -60,7 +62,6 @@ public class EscScreenScript : MonoBehaviour
         {
             PlayerAudio.esc.Play();
             isKeyDown = true;
-
         }
         else if (isKeyDown == true && Input.GetKeyDown(KeyCode.Escape))
             isKeyDown = false;

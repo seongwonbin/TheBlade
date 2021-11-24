@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class ParticleSysScript : MonoBehaviour
 {
-    float timer = 0f;
-
     public static float angleCtrl = 26.38f;
     public static float angleCtrlZ = 107.798f;
+
+    private float timer = 0f;
 
     // Start is called before the first frame update
     void Start()
@@ -16,14 +16,9 @@ public class ParticleSysScript : MonoBehaviour
             return;
 
         if(PlayerMoveScript.flipController == false)
-        { 
-            
             transform.rotation = Quaternion.Euler(197.887f, -angleCtrl, -angleCtrlZ);
-        }
         else
-        { 
             transform.rotation = Quaternion.Euler(197.887f, angleCtrl, angleCtrlZ);
-        }
 
         transform.position = new Vector2(transform.position.x, transform.position.y);
     }
@@ -35,6 +30,5 @@ public class ParticleSysScript : MonoBehaviour
 
         if (timer >= 1)
             Destroy(gameObject);
-
     }
 }

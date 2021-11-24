@@ -5,17 +5,10 @@ using UnityEngine;
 public class SpawnFK : MonoBehaviour
 {
     public static float fKnightTimer = 0f;
-    public GameObject fknight;
     public static bool isSpawn = false;
 
     public Transform player;
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject fknight;
 
     // Update is called once per frame
     void Update()
@@ -24,7 +17,7 @@ public class SpawnFK : MonoBehaviour
             SpawnFKnight();
     }
 
-    void SpawnFKnight()
+    private void SpawnFKnight()
     {
         fKnightTimer += Time.deltaTime;
         

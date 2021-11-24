@@ -5,26 +5,20 @@ using System;
 
 public class ShootingMetSc : MonoBehaviour
 {
+    public float mmSpeed = 1f;
+    public float rotCtrl = 60f;
+    public bool isOne = true;
+    public bool attackDelay = false;
 
+    public Transform attackPoint;
+    public LayerMask enemyLayers;
+    
+    private int attackDamage = 1;
+    private float attackRange = 0;
+    private float timer = 0f;
     private float movingMet = 0.0f;
 
     private SpriteRenderer spr;
-    public Transform attackPoint;
-    public LayerMask enemyLayers;
-
-    private float attackRange = 0;
-
-    private int attackDamage = 1;
-
-    private float timer = 0f;
-
-    public float mmSpeed = 1f;
-
-    public float rotCtrl = 60f;
-
-    public bool isOne = true;
-
-    public bool attackDelay = false;
 
     // Start is called before the first frame update
     void Start()
@@ -48,19 +42,10 @@ public class ShootingMetSc : MonoBehaviour
         if (timer >= 0.22)
             Destroy(gameObject);
 
-
-
-
         if (PlayerMoveScript.flipController == false)
-        {
-
             movingMet += mmSpeed;
-        }
         else
-        {
-
             movingMet -= mmSpeed;
-        }
 
         if (rotCtrl <= 90f)
             rotCtrl += 0.8f;
@@ -69,62 +54,7 @@ public class ShootingMetSc : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-
-        if (PlayerMoveScript.flipController == false)
-        {
-            transform.rotation = Quaternion.Euler(new Vector3(rotCtrl, 0f, 0));
-            transform.localScale = new Vector3(0.4f, 0.4f, 0f);
-
-            
-        }
-        else
-        {
-            transform.rotation = Quaternion.Euler(new Vector3(rotCtrl, 180f, 0));
-            transform.localScale = new Vector3(0.4f, 0.4f, 0f);
-
-        }
-
-        
-
-        transform.Translate(movingMet, 0, 0, Space.World);
-
-        if (timer >= 0.1)
-        {
-            
-            spr.color = new Color(255f, 255f, 255f, 1f - timer);
-            movingMet = 0;
-        }
-        if (timer >= 0.13)
-            attackPoint = null;
-
-       
-        
-        try
-        {
-            if (attackDelay == false)
-            { 
-                AttackTask();
-            }
-            else
-                attackDelay = false;
-        }
-        catch (NullReferenceException)
-        { }
-
-        try
-        {
-            if (attackDelay == false)
-            {
-                AttackTask2();
-            }
-            else
-                attackDelay = false;
-        }
-        catch (NullReferenceException)
-        { }
-
-
+        SetAttackPos();
     }
 
     void OnDrawGizmosSelected()
@@ -136,13 +66,12 @@ public class ShootingMetSc : MonoBehaviour
 
     }
 
-    void AttackTask()
+    public void AttackTask()
     {
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 
         foreach (Collider2D enemy in hitEnemies)
         {
-            //enemy.GetComponent<DgerScript>().TakeDamage(attackDamage);
             enemy.GetComponent<EnemyScript>().TakeDamage(attackDamage);
             PlayerAudio.sHit.Play();
             if(ComboScript.rageMode == true)
@@ -150,10 +79,10 @@ public class ShootingMetSc : MonoBehaviour
 
             ComboScript.EnemyHit();
         }
-
         attackDelay = true;
     }
-    void AttackTask2()
+
+    public void AttackTask2()
     {
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 
@@ -167,13 +96,53 @@ public class ShootingMetSc : MonoBehaviour
 
             ComboScript.EnemyHit();
         }
-
         attackDelay = true;
-
-
-
-
-
     }
 
+    private void SetAttackPos()
+    {
+        if (PlayerMoveScript.flipController == false)
+        {
+            transform.rotation = Quaternion.Euler(new Vector3(rotCtrl, 0f, 0));
+            transform.localScale = new Vector3(0.4f, 0.4f, 0f);
+        }
+        else
+        {
+            transform.rotation = Quaternion.Euler(new Vector3(rotCtrl, 180f, 0));
+            transform.localScale = new Vector3(0.4f, 0.4f, 0f);
+        }
+
+        transform.Translate(movingMet, 0, 0, Space.World);
+
+        if (timer >= 0.1)
+        {
+            spr.color = new Color(255f, 255f, 255f, 1f - timer);
+            movingMet = 0;
+        }
+        if (timer >= 0.13)
+            attackPoint = null;
+
+        try
+        {
+            if (attackDelay == false)
+            {
+                AttackTask();
+            }
+            else
+                attackDelay = false;
+        }
+        catch (NullReferenceException) { }
+
+        try
+        {
+            if (attackDelay == false)
+            {
+                AttackTask2();
+            }
+            else
+                attackDelay = false;
+        }
+        catch (NullReferenceException) { }
+
+    }
 }

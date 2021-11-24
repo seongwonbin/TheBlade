@@ -4,28 +4,34 @@ using UnityEngine;
 
 public class AttackParticleScript : MonoBehaviour
 {
-    private float initPosX, initPosY = 0;
-
-    private float temp = 0.3f; // 순차적 이펙트 생성 간격
-
     public bool isVariant = false;
 
-    SpriteRenderer spr;
+    private float initPosX, initPosY = 0;
+    private float temp = 0.3f; // 순차적 이펙트 생성 간격
+    
+    private SpriteRenderer spr;
 
     // Start is called before the first frame update
     void Start()
     {
+        SetParticle();
+    }
+
+    private void APDestroy() // AttackParticle
+    {
+        Destroy(gameObject);
+    }
+
+    private void SetParticle()
+    {
         if (Skill1ActiveSc.movePos >= 8f) // 과도한 이펙트 발생 억제 (플레이어 넘어서까지)
             return;
 
-        if(isVariant)
+        if (isVariant)
         {
             spr = GetComponent<SpriteRenderer>();
-
             spr.color = new Color(255, 255, 255, 1);
         }
-
-
         PlayerScript.changeRot = !PlayerScript.changeRot;
 
         if (PlayerScript.changeRot == true)
@@ -34,9 +40,9 @@ public class AttackParticleScript : MonoBehaviour
             transform.rotation = Quaternion.Euler(new Vector3(transform.rotation.x, transform.rotation.y, -45));
 
         if (Skill1ActiveRatio.active == false)
-        { 
+        {
             initPosX = Random.Range(-3.0f, 3.0f);
-           
+
         }
         else if (Skill1ActiveRatio.active == true)
         {
@@ -49,22 +55,7 @@ public class AttackParticleScript : MonoBehaviour
         }
 
         initPosY = Random.Range(-3.0f, 2.0f);
-        transform.position = new Vector3(transform.position.x + initPosX*0.7f, transform.position.y + initPosY*0.7f, 0f); // 0.7f
-                
-    }
+        transform.position = new Vector3(transform.position.x + initPosX * 0.7f, transform.position.y + initPosY * 0.7f, 0f); // 0.7f
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-       
-
-
-
-    }
-
-    private void APDestroy() // AttackParticle
-    {
-        Destroy(gameObject);
     }
 }

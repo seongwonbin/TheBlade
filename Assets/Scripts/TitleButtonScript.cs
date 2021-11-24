@@ -6,19 +6,15 @@ using UnityEngine.SceneManagement;
 
 public class TitleButtonScript : MonoBehaviour
 {
-
-
-    public Image titleScreen;
-
     public float changeColor = 1.0f;
     public float timer = 0.0f;
 
-    
+    public Image titleScreen;
+
     void Start()
     {
         titleScreen = GameObject.Find("Button").GetComponent<Image>();
     }
-
    
     void Update()
     {
@@ -28,7 +24,6 @@ public class TitleButtonScript : MonoBehaviour
     public void TitlebuttonClick()
     {
         TitleScript.eventTrigger = true;
-        
     }
 
     public void TitleEventTrigger()
@@ -37,8 +32,5 @@ public class TitleButtonScript : MonoBehaviour
 
         if (changeColor >= 0.0f && TitleScript.eventTrigger == false)
             changeColor -= 0.002f;
-
-
-        
     }
 }

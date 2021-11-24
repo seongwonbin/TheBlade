@@ -351,7 +351,7 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 0
-    functionName: changeMovePower
+    functionName: ChangeMovePower
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
@@ -365,7 +365,7 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 1.9833333
-    functionName: returnMovePower
+    functionName: ReturnMovePower
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

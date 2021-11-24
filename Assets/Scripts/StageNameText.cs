@@ -24,7 +24,5 @@ public class StageNameText : MonoBehaviour
 
         if (GameManager.isReady2 == true && BossEvent.finishBoss == false)
             tmp.text = "황무지";
-
-
     }
 }

@@ -5,20 +5,18 @@ using UnityEngine;
 public class FindforPlayer : MonoBehaviour
 {
     public static float findRange = 12f;
-    public Transform findPoint;
-    public LayerMask enemyLayers;
-
     public static bool isDger = false;
     public static bool isBoss = false;
+
+    public Transform findPoint;
+    public LayerMask enemyLayers;
 
     private bool endDger = false;
     private bool endFK = false;
 
-
     private void Update()
     {
         FindForPlayer();
-
     }
 
     void OnDrawGizmosSelected()
@@ -29,7 +27,7 @@ public class FindforPlayer : MonoBehaviour
         Gizmos.DrawWireSphere(findPoint.position, findRange);
     }
 
-    void FindForPlayer()
+    private void FindForPlayer()
     {
         Collider2D[] findPlayer = Physics2D.OverlapCircleAll(findPoint.position, findRange, enemyLayers);
 
@@ -40,22 +38,16 @@ public class FindforPlayer : MonoBehaviour
                 Tuto.isDger = true;
                 isDger = true;
                 endDger = true;
-
             }
 
             if (enemy.tag == "FK" && endFK == false)
             {
                 Tuto.isFK = true;
                 endFK = true;
-
             }
 
-
             if (enemy.tag == "Boss")
-
                 isBoss = true;
-
         }
-
     }
 }
