@@ -81,8 +81,11 @@ public class BossScript : MonoBehaviour
 
     public void GetVelocity()
     {
+        GetComponent<EnemyScript>().LookAtPlayer();
+
         if (EnemyScript.isFlipped == false)
         {
+
             BossScript.rb.AddForce(new Vector2(30f, 5f), ForceMode2D.Impulse);
 
         }
