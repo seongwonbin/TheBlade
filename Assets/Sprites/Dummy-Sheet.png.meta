@@ -1,0 +1,919 @@
+fileFormatVersion: 2
+guid: 8dd5ed7bbfa258c4ab81912526285ae1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6910963273591552302
+    second: Dummy-Sheet_0
+  - first:
+      213: 4748836245484727720
+    second: Dummy-Sheet_1
+  - first:
+      213: -5843657302234825881
+    second: Dummy-Sheet_2
+  - first:
+      213: 6037593939225415191
+    second: Dummy-Sheet_3
+  - first:
+      213: 6338578342198593819
+    second: Dummy-Sheet_4
+  - first:
+      213: -5556069547510464485
+    second: Dummy-Sheet_5
+  - first:
+      213: -854503757423437922
+    second: Dummy-Sheet_6
+  - first:
+      213: 3462978974860537009
+    second: Dummy-Sheet_7
+  - first:
+      213: 7460991462960794276
+    second: Dummy-Sheet_8
+  - first:
+      213: 6236257601809517072
+    second: Dummy-Sheet_9
+  - first:
+      213: -7195874716867070196
+    second: Dummy-Sheet_10
+  - first:
+      213: 1734496962639453867
+    second: Dummy-Sheet_11
+  - first:
+      213: -8810101862296144102
+    second: Dummy-Sheet_12
+  - first:
+      213: 1447422028970637752
+    second: Dummy-Sheet_13
+  - first:
+      213: 8466805094510208167
+    second: Dummy-Sheet_14
+  - first:
+      213: 6241363617289248508
+    second: Dummy-Sheet_15
+  - first:
+      213: 7048029708845930476
+    second: Dummy-Sheet_16
+  - first:
+      213: -2992745749468536175
+    second: Dummy-Sheet_17
+  - first:
+      213: -6187004297496277694
+    second: Dummy-Sheet_18
+  - first:
+      213: -6658130645082814029
+    second: Dummy-Sheet_19
+  - first:
+      213: 8063294903876209481
+    second: Dummy-Sheet_20
+  - first:
+      213: 5585275822796694483
+    second: Dummy-Sheet_21
+  - first:
+      213: 9016903377061125431
+    second: Dummy-Sheet_22
+  - first:
+      213: -6830524593317246888
+    second: Dummy-Sheet_23
+  - first:
+      213: -9219330563700722036
+    second: Dummy-Sheet_24
+  - first:
+      213: -5295874446856884373
+    second: Dummy-Sheet_25
+  - first:
+      213: -4495885592437713832
+    second: Dummy-Sheet_26
+  - first:
+      213: -7338165640534521270
+    second: Dummy-Sheet_27
+  - first:
+      213: -7052490546347053516
+    second: Dummy-Sheet_28
+  - first:
+      213: 4209577712070782890
+    second: Dummy-Sheet_29
+  - first:
+      213: 8578316426677535669
+    second: Dummy-Sheet_30
+  - first:
+      213: 7504558385343054171
+    second: Dummy-Sheet_31
+  - first:
+      213: 3734797548926053561
+    second: Dummy-Sheet_32
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 8192
+    resizeAlgorithm: 1
+    textureFormat: 12
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Dummy-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 177
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 760c29bdb35a6044fa6f0fe9755a9a59
+      internalID: -6910963273591552302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dummy-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 0
+        width: 177
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eff98ec9274e1674397821a0ec876074
+      internalID: 4748836245484727720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dummy-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 0
+        width: 177
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 428b3a09cf89a3c4c87ca0670f61e8ce
+      internalID: -5843657302234825881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dummy-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 0
+        width: 177
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a34f1417ffb052042a193359767c9354
+      internalID: 6037593939225415191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dummy-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 708
+        y: 0
+        width: 177
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ff9cbfcade375145889787a8887a7a8
+      internalID: 6338578342198593819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dummy-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 885
+        y: 0
+        width: 177
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab4c44facc7729e4bb3fdabefb8f03f2
+      internalID: -5556069547510464485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dummy-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 1062
+        y: 0
+        width: 177
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8866b69260c8d1469ca7ffd5215d04a
+      internalID: -854503757423437922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dummy-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 1239
+        y: 0
+        width: 177
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 787ca22bb3a59a444a88583a30eb7de4
+      internalID: 3462978974860537009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dummy-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 1416
+        y: 0
+        width: 177
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0b0c5f8b776d9341be7e2513e19c317
+      internalID: 7460991462960794276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dummy-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 1593
+        y: 0
+        width: 177
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b5793ff99c56f342ac246332c25242c
+      internalID: 6236257601809517072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dummy-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 1770
+        y: 0
+        width: 177
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a86dc1e6cd0bad48bf60247ac1ce241
+      internalID: -7195874716867070196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dummy-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 1947
+        y: 0
+        width: 177
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c3640ca032fb984dab7e6d2a02a1a77
+      internalID: 1734496962639453867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dummy-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 2124
+        y: 0
+        width: 177
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce0e44f03aed0194f86e428af8fcbb2d
+      internalID: -8810101862296144102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dummy-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 2301
+        y: 0
+        width: 177
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d453d52ee083ad44db18bdb47dde21c9
+      internalID: 1447422028970637752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dummy-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 2478
+        y: 0
+        width: 177
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8233ce7d79ff2d04d9546b41754e8a8d
+      internalID: 8466805094510208167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dummy-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 2655
+        y: 0
+        width: 177
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69a46223e12c28d4894d948f6044cb10
+      internalID: 6241363617289248508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dummy-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 2832
+        y: 0
+        width: 177
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b1094e1e03d3914595b26386e229b53
+      internalID: 7048029708845930476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dummy-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 3009
+        y: 0
+        width: 177
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 106a8b731642b7b49b24d40288c93fd4
+      internalID: -2992745749468536175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dummy-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 3186
+        y: 0
+        width: 177
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66f3e0474f97a8e4193aef2abd331abf
+      internalID: -6187004297496277694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dummy-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 3363
+        y: 0
+        width: 177
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f04dcedb760dc1a47a36e641030d30b8
+      internalID: -6658130645082814029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dummy-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 3540
+        y: 0
+        width: 177
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb83d0ec06e4eeb4ab6ee7233e7915f2
+      internalID: 8063294903876209481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dummy-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 3717
+        y: 0
+        width: 177
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 020ea0a006590d84ea3a1861213248bd
+      internalID: 5585275822796694483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dummy-Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 3894
+        y: 0
+        width: 177
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6d352e626693f14c81264328dc91939
+      internalID: 9016903377061125431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dummy-Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 4071
+        y: 0
+        width: 177
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd7d6da81be777f40b1790a32b0e6804
+      internalID: -6830524593317246888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dummy-Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 4248
+        y: 0
+        width: 177
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1a44d76e560a22478be9f8509390cb5
+      internalID: -9219330563700722036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dummy-Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 4425
+        y: 0
+        width: 177
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b062524e7b2ac840b4af8780508eb76
+      internalID: -5295874446856884373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dummy-Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 4602
+        y: 0
+        width: 177
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efd25df4b1dec0649b4497afe08d5c17
+      internalID: -4495885592437713832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dummy-Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 4779
+        y: 0
+        width: 177
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dd62ca812915db4981aa266c22bfca2
+      internalID: -7338165640534521270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dummy-Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 4956
+        y: 0
+        width: 177
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57b243b840644bc499ef6197fee4402b
+      internalID: -7052490546347053516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dummy-Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 5133
+        y: 0
+        width: 177
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 509646d7cccd364458a919449b2d423b
+      internalID: 4209577712070782890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dummy-Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 5310
+        y: 0
+        width: 177
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6498a5fe4de94254b9a541a6397306e3
+      internalID: 8578316426677535669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dummy-Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 5487
+        y: 0
+        width: 177
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efbcd5b468139d74fa4a55aa830c2b32
+      internalID: 7504558385343054171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dummy-Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 5664
+        y: 0
+        width: 177
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db427cf20ebbfab48be1980b95dbce49
+      internalID: 3734797548926053561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

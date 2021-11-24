@@ -67,7 +67,7 @@ public class AudioManager : MonoBehaviour
         }
 
 
-        mainBGM.volume = masterVol;
+        mainBGM.volume = masterVol*0.8f;
 
     }
 
