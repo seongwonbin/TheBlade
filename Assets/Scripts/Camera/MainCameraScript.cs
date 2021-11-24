@@ -65,15 +65,19 @@ public class MainCameraScript : MonoBehaviour
             if (MessageText2.isEnd == false)
             {
 
+                if (EnemyScript.isGroggy == false)
+                {
 
-                if (FindforPlayer.isBoss == true && BossEvent.finishBoss == false)
-                    player = GameObject.FindGameObjectWithTag("Boss");
+                    if (FindforPlayer.isBoss == true && BossEvent.finishBoss == false)
+                        player = GameObject.FindGameObjectWithTag("Boss");
+                    else
+                        setPlayer();
+
+
+
+                }
                 else
-                    setPlayer();
-
-
-
-
+                    player = GameObject.FindGameObjectWithTag("Boss");
             }
             else
                 player = this.gameObject;

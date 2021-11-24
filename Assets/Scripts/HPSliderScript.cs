@@ -51,4 +51,9 @@ public class HPSliderScript : MonoBehaviour
 
 
     }
+
+    public void SetShake()
+    {
+        //CameraShakeScript.VibrateForTime(1);
+    }
 }

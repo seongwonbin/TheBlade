@@ -34,7 +34,7 @@ public class BossRatio : MonoBehaviour
                 EndBoss();
 
         }
-
+        
 
     }
 

@@ -75,6 +75,8 @@
     <Compile Include="Assets\FKnightAttack.cs" />
     <Compile Include="Assets\FKnightStanding.cs" />
     <Compile Include="Assets\FKSideScreen.cs" />
+    <Compile Include="Assets\GroggyRatio.cs" />
+    <Compile Include="Assets\HPVib.cs" />
     <Compile Include="Assets\knightAttackReady.cs" />
     <Compile Include="Assets\MessageSc2.cs" />
     <Compile Include="Assets\MessageText2.cs" />

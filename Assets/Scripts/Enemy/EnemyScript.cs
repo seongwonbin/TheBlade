@@ -46,6 +46,8 @@ public class EnemyScript : MonoBehaviour
 
     public static Transform boss;
 
+    public static bool isGroggy = false;
+
     void Start()
     {
         currentHealth = maxHealth;
@@ -77,7 +79,7 @@ public class EnemyScript : MonoBehaviour
         if (stackDamage >= 1000f)
         {
             stackDamage = 0f;
-            BossWeak.shield = 30f;
+            BossWeak.shield = 30;
             BossWeak.isWeak = false;
             BossScript.anim.SetBool("isWeak", false);
         }
@@ -90,7 +92,7 @@ public class EnemyScript : MonoBehaviour
         if(isBoss == true && damage >= 40f)
         {
             if(BossWeak.isWeak == false)
-                BossWeak.shield--;
+                --BossWeak.shield;
             else if (BossWeak.isWeak == true)
             {
                 stackDamage += damage;
@@ -202,5 +204,10 @@ public class EnemyScript : MonoBehaviour
             enemy.SetBool("isActive", false);
 
 
+    }
+
+    public void SetGroggyCam()
+    {
+        isGroggy = false;
     }
 }
