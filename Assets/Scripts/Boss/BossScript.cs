@@ -64,10 +64,36 @@ public class BossScript : MonoBehaviour
             Die();
 
         }
-            
-        
-        
+
+
+        if (BossWeak.shield == 0 && BossWeak.isWeak == false)
+        {
+            BossScript.anim.SetBool("isWeak", true);
+            EnemyScript.isGroggy = true;
+            GetVelocity();
+            BossWeak.isWeak = true;
+        }
+
+
+
+
     }
+
+    public void GetVelocity()
+    {
+        if (EnemyScript.isFlipped == false)
+        {
+            BossScript.rb.AddForce(new Vector2(30f, 5f), ForceMode2D.Impulse);
+
+        }
+        else
+        {
+            BossScript.rb.AddForce(new Vector2(-30f, 5f), ForceMode2D.Impulse);
+
+        }
+
+    }
+
 
     public void Die()
     {

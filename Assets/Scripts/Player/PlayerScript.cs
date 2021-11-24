@@ -17,7 +17,7 @@ public class PlayerScript : MonoBehaviour
     public float coolTime = 0.5f;
     public float attackRange = 0.5f;
     public int attackDamage = 40;
-    public int maxHealth = 100;
+    public int maxHealth = 400;
     public static int currentHealth;
 
 

@@ -6,27 +6,79 @@ using TMPro;
 
 public class Quest : MonoBehaviour
 {
-    public TextMeshProUGUI tmp;
+    //private Image img;
+    private TextMeshProUGUI tmp;
 
     private float temp = 0f;
+    private float temp2 = 0f;
+    private float temp3 = 0f;
+    private float temp4 = 1f;
 
-    // Start is called before the first frame update
+    private float timer = 0;
+    private float timer2 = 0;
+
+
     void Start()
     {
         tmp = GetComponent<TextMeshProUGUI>();
     }
 
-    // Update is called once per frame
+    private void FixedUpdate()
+    {
+        if (PlayerScript.map1 == false)
+            timer += Time.deltaTime;
+
+        if (GameManager.isReady2)
+            timer2 += Time.deltaTime;
+    }
+
+
     void Update()
     {
-        if (MessageSc.messageBool == false && PlayerScript.startBool == true)
-        {
-            //tmp.text = "현재의 목표";
-//            tmp.text = tmp.text;
-            tmp.color = new Color(0, 0, 0, temp);
-            temp += 0.03f;
-        }
+        if(Tuto.setFirst == true && PlayerScript.map1 == true)
+            SetText1();
 
+        if (PlayerScript.map1 == false && timer >= 3.0f && GameManager.isReady2 == false)
+            SetText2();
+
+        if (GameManager.isReady2 == true && timer2 >= 3.0f && BossEvent.finishBoss == false)
+            SetText3();
+
+        if (BossEvent.finishBoss == true)
+            SetText4();
+        
+
+    }
+
+    public void SetText1()
+    {
+        tmp.text = "우측으로 이동하자";
+        tmp.color = new Color(0, 0, 0, temp);
+        temp += 0.01f;
+    }
+
+    public void SetText2()
+    {
+        tmp.text = "숲을 빠져나가자";
+        tmp.color = new Color(255, 255, 255, temp2);
+        temp2 += 0.01f;
+
+
+    }
+
+    public void SetText3()
+    {
+        tmp.text = "계속해서 나아가자";
+        tmp.color = new Color(255, 255, 255, temp3);
+        temp3 += 0.01f;
+
+    }
+
+    public void SetText4()
+    {
+        tmp.text = "계속해서 나아가자";
+        tmp.color = new Color(255, 255, 255, temp4);
+        temp4 -= 0.01f;
 
     }
 }

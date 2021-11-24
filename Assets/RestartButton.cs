@@ -23,7 +23,7 @@ public class RestartButton : MonoBehaviour
     {
         GameManager.changeColor = 1f;
 
-        PlayerScript.currentHealth = 300;
+        PlayerScript.currentHealth = 400;
 
         GameManager.playerdied = false;
         PlayerLose.playerLose = false;

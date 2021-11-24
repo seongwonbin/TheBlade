@@ -17,21 +17,8 @@ public class BossWeak : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (shield == 0 && isWeak == false)
-        { 
-            BossScript.anim.SetBool("isWeak", true);
-            EnemyScript.isGroggy = true;
-            GetVelocity();
-            isWeak = true;
-        }
-    }
-
-    public void GetVelocity()
-    {
-        if (EnemyScript.isFlipped == false)
-            BossScript.rb.AddForce(new Vector2(30f, 0), ForceMode2D.Impulse);
-        else
-            BossScript.rb.AddForce(new Vector2(-30f, 0), ForceMode2D.Impulse);
 
     }
+
+
 }

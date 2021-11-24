@@ -37,6 +37,6 @@ public class HPVib : MonoBehaviour
 
     public void GetVib()
     {
-        VibrateForTime(0.25f);
+        VibrateForTime(0.2f);
     }
 }
