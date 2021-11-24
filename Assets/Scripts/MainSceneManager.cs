@@ -43,6 +43,7 @@ public class MainSceneManager : MonoBehaviour
         {
             if (PortalScript.portal2Checker == false)
             {
+                PlayerAudio.dger.Play();
                 GameObject go = Instantiate(createDger, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
                 go.transform.SetParent(GameObject.Find("UI Canvas").transform);
             }

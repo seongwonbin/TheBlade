@@ -54,6 +54,7 @@ public class FKnightMgr : MonoBehaviour
     {
         if(isCreated == false)
         {
+            PlayerAudio.groggy.Play();
             SpawnFK.isSpawn = false;
             isCreated = true;
             Instantiate(head, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);

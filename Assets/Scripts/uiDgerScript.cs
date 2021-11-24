@@ -71,6 +71,7 @@ public class uiDgerScript : MonoBehaviour
 
         if (destroyTimer >= 1.0f)
         {
+            PlayerAudio.dger.Play();
             Instantiate(createDger, new Vector3(player.position.x + spawnDirection, 0, 0), Quaternion.identity);
             Destroy(gameObject);
         }

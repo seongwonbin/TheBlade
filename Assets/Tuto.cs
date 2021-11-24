@@ -40,6 +40,10 @@ public class Tuto : MonoBehaviour
     public static bool setDger = false;
     public static bool setFK = false;
 
+    private bool isOpen1 = false;
+    private bool isOpen2 = false;
+    private bool isOpen3 = false;
+
 
     // Update is called once per frame
     void FixedUpdate()
@@ -50,22 +54,53 @@ public class Tuto : MonoBehaviour
 
     }
 
+    private void Update()
+    {
+        
+    }
+
     public void SetFirstTutorial()
     {
-        if(setFirst == true)
+        if (setFirst == true)
+        {
+            isOpen1 = !isOpen1;
+
+            if (isOpen1 == true)
+                PlayerAudio.audioButton.Play();
+
             temp *= -1f;
+        }
+        else
+            PlayerAudio.block.Play();
     } 
 
     public void SetDgerTutorial()
     {
         if(setDger == true)
+        {
+            isOpen2 = !isOpen2;
+
+            if(isOpen2 == true)
+                PlayerAudio.audioButton.Play();
             temp2 *= -1f;
+        }
+        else
+            PlayerAudio.block.Play();
     }
 
     public void SetFkTutorial()
     {
         if (setFK == true)
+        {
+            isOpen3 = !isOpen3;
+
+            if(isOpen3 == true)
+                PlayerAudio.audioButton.Play();
             temp3 *= -1f;
+
+        }
+        else
+            PlayerAudio.block.Play();
     }
 
     public void FirstTuto()
@@ -75,6 +110,7 @@ public class Tuto : MonoBehaviour
 
         if (isFirst == true)
         {
+            PlayerAudio.audioButton.Play();
             temp *= -1f;
             firstFirst = true;
             isFirst = false;
@@ -99,6 +135,7 @@ public class Tuto : MonoBehaviour
 
         if (isDger == true)
         {
+            PlayerAudio.audioButton.Play();
             temp2 *= -1f;
             firstDger = true;
             isDger = false;
@@ -125,6 +162,7 @@ public class Tuto : MonoBehaviour
 
         if (isFK == true)
         {
+            PlayerAudio.audioButton.Play();
             temp3 *= -1f;
             firstFK = true;
             isFK = false;

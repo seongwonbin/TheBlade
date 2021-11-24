@@ -17,6 +17,9 @@ public class Quest : MonoBehaviour
     private float timer = 0;
     private float timer2 = 0;
 
+    private bool isRun = false;
+    private bool isRun2 = false;
+    private bool isRun3 = false;
 
     void Start()
     {
@@ -55,6 +58,12 @@ public class Quest : MonoBehaviour
         tmp.text = "우측으로 이동하자";
         tmp.color = new Color(0, 0, 0, temp);
         temp += 0.01f;
+
+        if (isRun == false && temp >= 0.5f)
+        { 
+            PlayerAudio.questSound.Play();
+            isRun = true;
+        }
     }
 
     public void SetText2()
@@ -62,6 +71,12 @@ public class Quest : MonoBehaviour
         tmp.text = "숲을 빠져나가자";
         tmp.color = new Color(255, 255, 255, temp2);
         temp2 += 0.01f;
+
+        if (isRun2 == false && temp2 >= 0.5f)
+        {
+            PlayerAudio.questSound.Play();
+            isRun2 = true;
+        }
 
 
     }
@@ -71,6 +86,12 @@ public class Quest : MonoBehaviour
         tmp.text = "계속해서 나아가자";
         tmp.color = new Color(255, 255, 255, temp3);
         temp3 += 0.01f;
+
+        if (isRun3 == false && temp3 >= 0.5f)
+        {
+            PlayerAudio.questSound.Play();
+            isRun3 = true;
+        }
 
     }
 

@@ -32,6 +32,7 @@ public class VolButton : MonoBehaviour
         if(AudioManager.masterVol <= 0.15f)
             AudioManager.masterVol += 0.015f;
 
+
         //Debug.Log("Up");
     }
 }

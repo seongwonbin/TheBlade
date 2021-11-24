@@ -70,6 +70,7 @@ public class BossScript : MonoBehaviour
         {
             BossScript.anim.SetBool("isWeak", true);
             EnemyScript.isGroggy = true;
+            PlayerAudio.groggy.Play();
             GetVelocity();
             BossWeak.isWeak = true;
         }
@@ -100,6 +101,7 @@ public class BossScript : MonoBehaviour
 
     public void Die()
     {
+        PlayerAudio.groggy.Play();
         anim.SetBool("Died", true);
         dieBoss = true;
 

@@ -52,6 +52,9 @@ public class AudioManager : MonoBehaviour
             setMainEQ();
 
 
+        Debug.Log(isReadyEQ);
+        Debug.Log(isStart);
+
         if (isStart == true)
             titleAudio.volume -= 0.01f;
 

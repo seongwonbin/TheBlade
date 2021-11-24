@@ -212,4 +212,10 @@ public class EnemyScript : MonoBehaviour
     {
         isGroggy = false;
     }
+
+    public void GetEnemyStep()
+    {
+        PlayerAudio.enemyStep.Play();
+
+    }
 }

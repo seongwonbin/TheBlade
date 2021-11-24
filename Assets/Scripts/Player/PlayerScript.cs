@@ -249,7 +249,7 @@ public class PlayerScript : MonoBehaviour
         if (skill1Trigger == false)
         {
             currentHealth -= damage;
-
+            PlayerAudio.takeDmg.Play();
             animator.SetTrigger("isTakeDamage");
 
             ComboScript.comboSystem = 0;
@@ -327,6 +327,7 @@ public class PlayerScript : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.F))
         {
+            PlayerAudio.charge.Play();
             animator.SetTrigger("isSkill1");
             skill1CoolDown = true;
 

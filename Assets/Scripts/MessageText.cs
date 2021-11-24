@@ -47,7 +47,7 @@ public class MessageText : MonoBehaviour
         //다음 텍스트 호출
         if (text_full == true)
         {
-            //PlayerAudio.message.Play();
+            PlayerAudio.message.Play();
 
             cnt++;
             text_full = false;
@@ -64,23 +64,27 @@ public class MessageText : MonoBehaviour
     //텍스트 시작호출
     public void Get_Typing(int _dialog_cnt, string[] _fullText)
     {
-        //재사용을 위한 변수초기화
-        text_exit = false;
-        text_full = false;
-        text_cut = false;
-        cnt = 0;
 
-        //변수 불러오기
-        dialog_cnt = _dialog_cnt;
-        fulltext = new string[dialog_cnt];
-        fulltext = _fullText;
+            //재사용을 위한 변수초기화
+            text_exit = false;
+            text_full = false;
+            text_cut = false;
+            cnt = 0;
 
-        //타이핑 코루틴시작
-        StartCoroutine(ShowText(fulltext));
+            //변수 불러오기
+            dialog_cnt = _dialog_cnt;
+            fulltext = new string[dialog_cnt];
+            fulltext = _fullText;
+
+
+            //타이핑 코루틴시작
+            StartCoroutine(ShowText(fulltext));
+        
     }
 
     IEnumerator ShowText(string[] _fullText)
     {
+
         //모든텍스트 종료
         if (cnt >= dialog_cnt)
         {

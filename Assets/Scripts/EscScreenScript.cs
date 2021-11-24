@@ -57,7 +57,11 @@ public class EscScreenScript : MonoBehaviour
         }
 
         if (isKeyDown == false && Input.GetKeyDown(KeyCode.Escape))
+        {
+            PlayerAudio.esc.Play();
             isKeyDown = true;
+
+        }
         else if (isKeyDown == true && Input.GetKeyDown(KeyCode.Escape))
             isKeyDown = false;
     }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class PlayerMoveScript : MonoBehaviour
 {
@@ -151,6 +152,7 @@ public class PlayerMoveScript : MonoBehaviour
         //if (Input.GetButtonDown("Jump") && dontDisturb == false)
         if (Input.GetButtonDown("Jump") && dontDisturb == false)
         {
+            PlayerAudio.jump.Play();
             dontDisturb = true;
             isJumping = true;
             animator.SetBool("isJumping", true);
@@ -180,7 +182,7 @@ public class PlayerMoveScript : MonoBehaviour
 
             if (Input.GetKey(KeyCode.LeftArrow) && Input.GetKeyDown(KeyCode.X))
             {
-
+                PlayerAudio.dash.Play();
                 PlayerDashScript.playerDash = true;
                 animator.SetBool("isDash", true);
                 moveVelocity = Vector3.left;
@@ -189,7 +191,7 @@ public class PlayerMoveScript : MonoBehaviour
             }
             else if (Input.GetKey(KeyCode.RightArrow) && Input.GetKeyDown(KeyCode.X))
             {
-
+                PlayerAudio.dash.Play();
                 PlayerDashScript.playerDash = true;
                 animator.SetBool("isDash", true);
                 moveVelocity = Vector3.right;
@@ -264,5 +266,19 @@ public class PlayerMoveScript : MonoBehaviour
     {
         rigid.velocity = Vector2.zero;
     }
+
+    public void GetPlayerStep()
+    {
+        PlayerAudio.playerStep.Play();
+    }
+    public void RemovePlayerStep()
+    {
+        try
+        {
+            PlayerAudio.playerStep.Pause();
+        }
+        catch (NullReferenceException) { }
+    }
+
 
 }

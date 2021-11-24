@@ -60,8 +60,6 @@ public class StageNameScript : MonoBehaviour
         else if (timer4 >= 4.0f && temp < 700f && timer4 < 7f)
             temp += 15f;
 
-        Debug.Log(timer3);
-        //Debug.Log(timer4);
     }
 
     public void SetFirstPos()
