@@ -22,4 +22,3 @@
 ![image](https://user-images.githubusercontent.com/49842193/143334870-0edbfe8b-fdc5-4c1c-9ed5-06674d637f66.png)
 ## 그래픽, 사운드
 ![image](https://user-images.githubusercontent.com/49842193/143336661-8d8c1cd9-a3c0-41e5-8d18-f8b842ca3985.png)
-
