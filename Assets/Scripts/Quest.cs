@@ -6,17 +6,23 @@ using TMPro;
 
 public class Quest : MonoBehaviour
 {
+
+    public static bool isGo = false;
+
     private float temp = 0f;
     private float temp2 = 0f;
     private float temp3 = 0f;
     private float temp4 = 1f;
+    private float temp5 = 0f;
     private float timer = 0;
     private float timer2 = 0;
     private bool isRun = false;
     private bool isRun2 = false;
     private bool isRun3 = false;
+    private bool isRun4 = false;
 
     private TextMeshProUGUI tmp;
+
 
     void Start()
     {
@@ -35,17 +41,35 @@ public class Quest : MonoBehaviour
 
     void Update()
     {
-        if(Tuto.setFirst == true && PlayerScript.map1 == true)
-            SetText1();
+        if (isGo == true && Tuto.setFirst == true)
+        {
+            if (Tuto.setFirst == true && PlayerScript.map1 == true)
+                SetText1();
 
-        if (PlayerScript.map1 == false && timer >= 3.0f && GameManager.isReady2 == false)
-            SetText2();
+            if (PlayerScript.map1 == false && timer >= 3.0f && GameManager.isReady2 == false)
+                SetText2();
 
-        if (GameManager.isReady2 == true && timer2 >= 3.0f && BossEvent.finishBoss == false)
-            SetText3();
+            if (GameManager.isReady2 == true && timer2 >= 3.0f && BossEvent.finishBoss == false)
+                SetText3();
 
-        if (BossEvent.finishBoss == true)
-            SetText4();
+            if (BossEvent.finishBoss == true)
+                SetText4();
+        }
+        else if (isGo == false && Tuto.setFirst == true)
+            SetTextKey();
+    }
+
+    public void SetTextKey()
+    {
+        tmp.text = "감각을 익히자";
+        tmp.color = new Color(0, 0, 0, temp5);
+        temp5 += 0.01f;
+
+        if (isRun4 == false && temp5 >= 0.5f)
+        {
+            PlayerAudio.questSound.Play();
+            isRun4 = true;
+        }
     }
 
     public void SetText1()

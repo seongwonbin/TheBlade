@@ -10,7 +10,7 @@ public class EnemyScript : MonoBehaviour
     public static bool isGroggy = false;
     public static bool isFlipped;
     public static bool isDger = false;
-
+    
     public static Vector3 myPos;
     public static Transform boss;
 
@@ -19,6 +19,7 @@ public class EnemyScript : MonoBehaviour
     public float timer = 0.0f;
     public bool isFKnight = false;
     public bool isBoss = false;
+    public bool isDummy = false;
 
     public Transform player;
     public GameObject hpBar;
@@ -69,6 +70,9 @@ public class EnemyScript : MonoBehaviour
             BossWeak.isWeak = false;
             BossScript.anim.SetBool("isWeak", false);
         }
+
+        if (isDummy && currentHealth != maxHealth)
+            Quest.isGo = true;
     }
 
     public void TakeDamage(int damage)
